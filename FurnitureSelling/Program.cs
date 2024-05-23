@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<FurnitureSellingDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Mysqlconnect")));
+builder.Services.AddDbContext<FurnitureSellingDbContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("Mysqlconnect")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

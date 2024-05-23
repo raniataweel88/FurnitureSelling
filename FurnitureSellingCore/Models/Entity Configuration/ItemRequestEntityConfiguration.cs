@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingCore.Models.Entity_Configuration
 {
-    public class OrderItemEntityConfiguration:IEntityTypeConfiguration<OrderItem>
+    public class ItemRequestEntityConfiguration:IEntityTypeConfiguration<ItemRequest>
     {
-        public void Configure(EntityTypeBuilder<OrderItem> builder)
+        public void Configure(EntityTypeBuilder<ItemRequest> builder)
         {
-            builder.HasKey(x=> x.Id);
+            builder.HasKey(x => x.Id);
             builder.Property(x=>x.Id).UseIdentityColumn();
-            builder.HasMany<Item>().WithOne().HasForeignKey(x=>x.ItemId);
-            builder.HasMany<Order>().WithOne().HasForeignKey(x => x.OrderId);
+            builder.HasOne<Category>().WithMany().HasForeignKey(x => x.CategoryId);
 
         }
     }

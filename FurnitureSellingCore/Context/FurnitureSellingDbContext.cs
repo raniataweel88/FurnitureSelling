@@ -1,6 +1,7 @@
 ﻿using FurnitureSellingCore.Models;
 using FurnitureSellingCore.Models.Entity_Configuration;
 using Microsoft.EntityFrameworkCore;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,6 @@ namespace FurnitureSellingCore.Context
             modelBuilder.ApplyConfiguration(new WhishListEntityConfiguration());
             modelBuilder.ApplyConfiguration(new OrderItemEntityConfiguration());
             modelBuilder.ApplyConfiguration(new LoginEntityConfiguration());
-
             modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
         }
         public virtual DbSet<User> Users { get; set; }

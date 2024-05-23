@@ -9,9 +9,8 @@ namespace FurnitureSellingCore.Models
 {
     public class Item
     {
-        [Key]
+        
         public int ItemId { get; set; }
-
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
@@ -21,6 +20,6 @@ namespace FurnitureSellingCore.Models
         public float? DisacountAmount { get; set; }
         public string? DiscountType { get; set; }
 
-          
+
     }
 }

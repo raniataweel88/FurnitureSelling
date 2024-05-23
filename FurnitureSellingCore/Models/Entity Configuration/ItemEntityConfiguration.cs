@@ -18,7 +18,6 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.Property(x => x.ItemId).UseIdentityColumn();
             builder.Property(x=>x.Quantity).HasDefaultValue(1);
             builder.Property(x=>x.Price).IsRequired();
-            
 
         }
 

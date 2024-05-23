@@ -16,8 +16,8 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.HasKey(x => x.UserId);
             builder.Property(x => x.UserId).UseIdentityColumn();
             builder.HasMany<Order>().WithOne().HasForeignKey(x=>x.OrderId);
-
-
+            builder.Property(x => x.Email).IsRequired();
+           
         }
     }
 }

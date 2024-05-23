@@ -12,7 +12,7 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
     {
         public void Configure(EntityTypeBuilder<Login> builder) { 
             builder.HasKey(x=>x.LoginId);
-            builder.Property(x=>x.LoginId).HasDefaultValue();
+            builder.Property(x=>x.LoginId).UseIdentityColumn();
             builder.HasOne<User>().WithOne().HasForeignKey<User>(x => x.LoginId);
 
         }
