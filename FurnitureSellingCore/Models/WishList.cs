@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingCore.Models
 {
-    public class OrderItem
+    public class WishList
     {
-        public int Id { get; set; }
+        public int WishListId { get; set; }
+        public int? UserId { get; set; }
         public int? ItemId { get; set; }
-        public int? OrderId { get; set; }
 
     }
 }

@@ -15,13 +15,15 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
         public void Configure(EntityTypeBuilder<Item> builder)
         {
             builder.HasKey(x => x.ItemId);
-            builder.Property(x => x.ItemId).UseIdentityColumn();
+            builder.Property(x => x.ItemId).UseIdentityColumn().ValueGeneratedOnAdd();
             builder.Property(x=>x.Quantity).HasDefaultValue(1);
+            builder.Property(x => x.isHaveDiscount).HasDefaultValue(false);
             builder.Property(x=>x.Price).IsRequired();
+            builder.HasOne<Category>().WithMany().HasForeignKey(x => x.CategoryId);
+            builder.HasMany<CartItem>().WithOne().HasForeignKey(x => x.ItemId);
+            builder.HasMany<WishList>().WithOne().HasForeignKey(x => x.ItemId);
+
 
         }
-
-
-
     }
 }

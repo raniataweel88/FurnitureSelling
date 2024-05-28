@@ -19,16 +19,23 @@ namespace FurnitureSellingCore.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new OrderEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ItemEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new WhishListEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderItemEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new WishListEntityConfiguration());
             modelBuilder.ApplyConfiguration(new LoginEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new CartEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new CartItemEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemRequestEntityConfiguration());
+
+
         }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<WishList> WishList { get; set; }
-        public virtual DbSet<OrderItem> OrderItems { get; set; }
         public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<CartItem> CartItems { get; set; }
+        public virtual DbSet<ItemRequest> ItemRequests { get; set; }
     }
 }

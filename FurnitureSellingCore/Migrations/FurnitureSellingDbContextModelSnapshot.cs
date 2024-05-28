@@ -20,13 +20,88 @@ namespace FurnitureSellingCore.Migrations
                 .HasAnnotation("ProductVersion", "7.0.19")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("FurnitureSellingCore.Models.Item", b =>
+            modelBuilder.Entity("FurnitureSellingCore.Models.Cart", b =>
                 {
-                    b.Property<int>("ItemId")
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsActiveId")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.CartItem", b =>
+                {
+                    b.Property<int>("CartItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1L)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ItemId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartItemId");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ItemId");
+
+                    b.ToTable("CartItems");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.Item", b =>
+                {
+                    b.Property<int>("ItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1L)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -55,11 +130,44 @@ namespace FurnitureSellingCore.Migrations
                         .HasDefaultValue(1);
 
                     b.Property<bool>("isHaveDiscount")
-                        .HasColumnType("tinyint(1)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false);
 
                     b.HasKey("ItemId");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.ItemRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1L)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ItemRequests");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Login", b =>
@@ -93,25 +201,22 @@ namespace FurnitureSellingCore.Migrations
             modelBuilder.Entity("FurnitureSellingCore.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CustomerNote")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 5, 23, 19, 12, 47, 853, DateTimeKind.Local).AddTicks(5256));
+                        .HasDefaultValue(new DateTime(2024, 5, 28, 21, 41, 9, 581, DateTimeKind.Local).AddTicks(6734));
 
                     b.Property<float>("Fee")
                         .HasColumnType("float");
-
-                    b.Property<int?>("ItemId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -120,29 +225,14 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<float>("TotalPrice")
                         .HasColumnType("float");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("OrderId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("FurnitureSellingCore.Models.OrderItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1L)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.User", b =>
@@ -154,12 +244,15 @@ namespace FurnitureSellingCore.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address")
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -172,19 +265,35 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<int?>("LoginId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("PlateNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Salary")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserType")
+                        .HasColumnType("int");
+
                     b.HasKey("UserId");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("LoginId")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", t =>
+                        {
+                            t.HasCheckConstraint("CHK_FirstName", "NOT (FirstName REGEXP '[0-9]') AND NOT(FirstName REGEXP '[^A-Za-z]')");
+
+                            t.HasCheckConstraint("CHK_LastName", "NOT (LastName REGEXP '[0-9]') AND  NOT(LastName REGEXP '[^A-Za-z]')");
+
+                            t.HasCheckConstraint("CK_Email_Recipient", "Email  LIKE '%@%.com'");
+                        });
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.WishList", b =>
@@ -196,29 +305,49 @@ namespace FurnitureSellingCore.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ItemImage")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int?>("ItemId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("ItemName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("itemId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("WishListId");
 
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("WishList");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.Cart", b =>
+                {
+                    b.HasOne("FurnitureSellingCore.Models.Order", null)
+                        .WithOne()
+                        .HasForeignKey("FurnitureSellingCore.Models.Cart", "OrderId");
+
+                    b.HasOne("FurnitureSellingCore.Models.User", null)
+                        .WithOne()
+                        .HasForeignKey("FurnitureSellingCore.Models.Cart", "UserId");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.CartItem", b =>
+                {
+                    b.HasOne("FurnitureSellingCore.Models.Cart", null)
+                        .WithMany()
+                        .HasForeignKey("CartId");
+
+                    b.HasOne("FurnitureSellingCore.Models.Item", null)
+                        .WithMany()
+                        .HasForeignKey("ItemId");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Item", b =>
                 {
-                    b.HasOne("FurnitureSellingCore.Models.OrderItem", null)
+                    b.HasOne("FurnitureSellingCore.Models.Category", null)
                         .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("FurnitureSellingCore.Models.WishList", null)
                         .WithMany()
@@ -227,19 +356,18 @@ namespace FurnitureSellingCore.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("FurnitureSellingCore.Models.ItemRequest", b =>
+                {
+                    b.HasOne("FurnitureSellingCore.Models.Category", null)
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
+                });
+
             modelBuilder.Entity("FurnitureSellingCore.Models.Order", b =>
                 {
-                    b.HasOne("FurnitureSellingCore.Models.OrderItem", null)
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("FurnitureSellingCore.Models.User", null)
                         .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.User", b =>
@@ -247,6 +375,17 @@ namespace FurnitureSellingCore.Migrations
                     b.HasOne("FurnitureSellingCore.Models.Login", null)
                         .WithOne()
                         .HasForeignKey("FurnitureSellingCore.Models.User", "LoginId");
+                });
+
+            modelBuilder.Entity("FurnitureSellingCore.Models.WishList", b =>
+                {
+                    b.HasOne("FurnitureSellingCore.Models.Item", null)
+                        .WithMany()
+                        .HasForeignKey("ItemId");
+
+                    b.HasOne("FurnitureSellingCore.Models.User", null)
+                        .WithOne()
+                        .HasForeignKey("FurnitureSellingCore.Models.WishList", "UserId");
                 });
 #pragma warning restore 612, 618
         }

@@ -15,9 +15,11 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
         {
             builder.HasKey(x => x.UserId);
             builder.Property(x => x.UserId).UseIdentityColumn();
-            builder.HasMany<Order>().WithOne().HasForeignKey(x=>x.OrderId);
             builder.Property(x => x.Email).IsRequired();
-           
+            builder.HasIndex(p => p.Email).IsUnique();
+            builder.HasCheckConstraint("CK_Email_Recipient", "Email  LIKE '%@%.com'");
+            builder.HasCheckConstraint("CHK_FirstName", "NOT (FirstName REGEXP '[0-9]') AND NOT(FirstName REGEXP '[^A-Za-z]')");
+            builder.HasCheckConstraint("CHK_LastName", "NOT (LastName REGEXP '[0-9]') AND  NOT(LastName REGEXP '[^A-Za-z]')");
         }
     }
 }

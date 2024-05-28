@@ -15,6 +15,8 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.HasKey(x => x.OrderId);
             builder.Property(x => x.OrderId).UseIdentityColumn();
             builder.Property(x=>x.Date).HasDefaultValue(DateTime.Now);
+            builder.HasOne<User>().WithMany().HasForeignKey(x => x.UserId);
+            builder.Property(x => x.CustomerNote).IsRequired(false);
 
         }
     }

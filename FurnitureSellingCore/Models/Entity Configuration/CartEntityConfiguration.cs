@@ -16,8 +16,10 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.HasKey(e => e.CartId);
             builder.Property(x=>x.CartId).UseIdentityColumn();
             builder.HasOne<User>().WithOne().HasForeignKey<Cart>(x => x.UserId);
-        }
+            builder.HasOne<Order>().WithOne().HasForeignKey<Cart>(x => x.OrderId);
+             builder.HasMany<CartItem>().WithOne().HasForeignKey(x => x.CartId);
 
-            
+
+        }
     }
 }

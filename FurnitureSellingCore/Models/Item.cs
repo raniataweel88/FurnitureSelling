@@ -9,7 +9,6 @@ namespace FurnitureSellingCore.Models
 {
     public class Item
     {
-        
         public int ItemId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,9 +16,11 @@ namespace FurnitureSellingCore.Models
         public float Price { get; set; }
         public int Quantity { get; set; }
         public bool isHaveDiscount { get; set; }
+        // value of discount
         public float? DisacountAmount { get; set; }
+        // Percentage or fixed value
         public string? DiscountType { get; set; }
-
+        public int? CategoryId {  get; set; }
 
     }
 }

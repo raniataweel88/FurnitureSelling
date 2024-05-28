@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingCore.Models.Entity_Configuration
 {
-    internal class WhishListEntityConfiguration:IEntityTypeConfiguration<WishList>
+    internal class WishListEntityConfiguration:IEntityTypeConfiguration<WishList>
     {
         public void Configure(EntityTypeBuilder<WishList> builder) {
             builder.HasKey(x => x.WishListId);
             builder.Property(x => x.WishListId).UseIdentityColumn();
+            builder.HasOne<User>().WithOne().HasForeignKey<WishList>(x => x.UserId);
             builder.HasMany<Item>().WithOne().HasForeignKey(x => x.ItemId);
+
         }
     }
 }
