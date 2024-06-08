@@ -12,6 +12,8 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
     {
         public void Configure(EntityTypeBuilder<ItemRequest> builder)
         {
+            builder.ToTable("ItemRequest");
+
             builder.HasKey(x => x.Id);
             builder.Property(x=>x.Id).UseIdentityColumn();
             builder.HasOne<Category>().WithMany().HasForeignKey(x => x.CategoryId);

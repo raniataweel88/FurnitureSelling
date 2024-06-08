@@ -1,5 +1,7 @@
 ﻿using FurnitureSellingCore.DTO.Item;
+using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
+using FurnitureSellingCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +10,51 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Services
 {
-    internal class ItemServices : IItemServices
+    public class ItemServices : IItemServices
     {
-        public Task CreateItemServices(CreateItemDTO dto)
+        private readonly IItemRepos _Repos;
+        public ItemServices(IItemRepos Repos)
         {
-            throw new NotImplementedException();
+            _Repos=Repos;
+        }
+        public async Task<DetailsItemDTO> GetByIdItem(int id)
+        {
+
+          return  await _Repos.GetByIdItem_Repose(id);
+
+
+        }
+        public async Task<List<CardItemDTO>> GetAllItem()
+        {
+           return await _Repos.GetAllItem_Repose();
+        }
+        public async Task CreateItemServices(CreateItemDTO dto)
+        {
+            Item i = new Item()
+            {
+                Name = dto.Name,
+                Description = dto.Description,
+                Image = dto.Image,
+                CategoryId = dto.CategoryId,
+                Price=dto.Price,
+
+
+            };
+            await _Repos.CreateItem_Repose(i);   
         }
 
-        public Task DeleteItem(int id)
+        public async Task<List<DetailsItemDTO>> SearchItem(string? name, string? discerption, float? price)
         {
-            throw new NotImplementedException();
+                return await _Repos.SearchItem(name,discerption,price);
         }
 
-        public Task<CardItemDTO> GetAllItem()
+        public async Task Updateitem(DetailsItemDTO dto)
         {
-            throw new NotImplementedException();
+            await _Repos.UpdateItem(dto);
         }
-
-        public Task<DetailsItemDTO> GetByIdItem(int id)
+        public async Task DeleteItem(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Updateitem(DetailsItemDTO dto)
-        {
-            throw new NotImplementedException();
+            await _Repos.DeleteItem(id);
         }
     }
 }

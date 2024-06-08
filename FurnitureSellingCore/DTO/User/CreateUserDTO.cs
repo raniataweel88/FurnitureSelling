@@ -12,8 +12,8 @@ namespace FurnitureSellingCore.DTO.User
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
-        public DateTime BirthDate { get; set; }
-        public UserType UserType { get; set; }
+        public UserType? UserType { get; set; }
+
+        public String  Password { get; set; }
     }
 }

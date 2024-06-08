@@ -10,11 +10,12 @@ namespace FurnitureSellingCore.Models
     {
         public int OrderId { get; set; }
 
-        public string Title { get; set; }
-        public float TotalPrice { get; set; }
-        public DateTime Date { get; set; }
-        public float Fee { get; set; }
+        public string? Title { get; set; }
+        public float? TotalPrice { get; set; }
+        public DateTime? Date { get; set; }
+        public float? Fee { get; set; }
         public string? CustomerNote { get; set; }
         public int? UserId { get; set; }
-    }
+        public bool StatusDelivery {  get; set; }
+    } 
 }

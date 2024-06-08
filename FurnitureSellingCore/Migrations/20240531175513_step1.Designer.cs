@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FurnitureSellingCore.Migrations
 {
     [DbContext(typeof(FurnitureSellingDbContext))]
-    [Migration("20240528184109_new")]
-    partial class @new
+    [Migration("20240531175513_step1")]
+    partial class step1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,10 +46,9 @@ namespace FurnitureSellingCore.Migrations
                     b.HasIndex("OrderId")
                         .IsUnique();
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Cart", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.CartItem", b =>
@@ -76,7 +75,7 @@ namespace FurnitureSellingCore.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItem", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Category", b =>
@@ -141,7 +140,7 @@ namespace FurnitureSellingCore.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Items");
+                    b.ToTable("Item", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.ItemRequest", b =>
@@ -170,7 +169,7 @@ namespace FurnitureSellingCore.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ItemRequests");
+                    b.ToTable("ItemRequest", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Login", b =>
@@ -192,13 +191,19 @@ namespace FurnitureSellingCore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("LoginId");
 
-                    b.ToTable("Logins");
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Login", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Order", b =>
@@ -216,10 +221,13 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 5, 28, 21, 41, 9, 581, DateTimeKind.Local).AddTicks(6734));
+                        .HasDefaultValue(new DateTime(2024, 5, 31, 20, 55, 13, 202, DateTimeKind.Local).AddTicks(2115));
 
                     b.Property<float>("Fee")
                         .HasColumnType("float");
+
+                    b.Property<bool>("StatusDelivery")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -235,7 +243,7 @@ namespace FurnitureSellingCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.User", b =>
@@ -247,10 +255,16 @@ namespace FurnitureSellingCore.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AccessKey")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("AccesskeyExpireDate")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Address")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
@@ -265,8 +279,13 @@ namespace FurnitureSellingCore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("LoginId")
-                        .HasColumnType("int");
+                    b.Property<string>("NewPassword")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Phone")
                         .IsRequired()
@@ -278,7 +297,7 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<string>("Salary")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UserType")
+                    b.Property<int?>("UserType")
                         .HasColumnType("int");
 
                     b.HasKey("UserId");
@@ -286,10 +305,7 @@ namespace FurnitureSellingCore.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.HasIndex("LoginId")
-                        .IsUnique();
-
-                    b.ToTable("Users", t =>
+                    b.ToTable("User", null, t =>
                         {
                             t.HasCheckConstraint("CHK_FirstName", "NOT (FirstName REGEXP '[0-9]') AND NOT(FirstName REGEXP '[^A-Za-z]')");
 
@@ -318,10 +334,9 @@ namespace FurnitureSellingCore.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
-                    b.ToTable("WishList");
+                    b.ToTable("WishList", (string)null);
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Cart", b =>
@@ -331,8 +346,8 @@ namespace FurnitureSellingCore.Migrations
                         .HasForeignKey("FurnitureSellingCore.Models.Cart", "OrderId");
 
                     b.HasOne("FurnitureSellingCore.Models.User", null)
-                        .WithOne()
-                        .HasForeignKey("FurnitureSellingCore.Models.Cart", "UserId");
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.CartItem", b =>
@@ -351,12 +366,6 @@ namespace FurnitureSellingCore.Migrations
                     b.HasOne("FurnitureSellingCore.Models.Category", null)
                         .WithMany()
                         .HasForeignKey("CategoryId");
-
-                    b.HasOne("FurnitureSellingCore.Models.WishList", null)
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.ItemRequest", b =>
@@ -366,18 +375,18 @@ namespace FurnitureSellingCore.Migrations
                         .HasForeignKey("CategoryId");
                 });
 
+            modelBuilder.Entity("FurnitureSellingCore.Models.Login", b =>
+                {
+                    b.HasOne("FurnitureSellingCore.Models.User", null)
+                        .WithOne()
+                        .HasForeignKey("FurnitureSellingCore.Models.Login", "UserId");
+                });
+
             modelBuilder.Entity("FurnitureSellingCore.Models.Order", b =>
                 {
                     b.HasOne("FurnitureSellingCore.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("FurnitureSellingCore.Models.User", b =>
-                {
-                    b.HasOne("FurnitureSellingCore.Models.Login", null)
-                        .WithOne()
-                        .HasForeignKey("FurnitureSellingCore.Models.User", "LoginId");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.WishList", b =>
@@ -387,8 +396,8 @@ namespace FurnitureSellingCore.Migrations
                         .HasForeignKey("ItemId");
 
                     b.HasOne("FurnitureSellingCore.Models.User", null)
-                        .WithOne()
-                        .HasForeignKey("FurnitureSellingCore.Models.WishList", "UserId");
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

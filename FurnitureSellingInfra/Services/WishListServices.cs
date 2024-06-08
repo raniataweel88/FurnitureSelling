@@ -1,5 +1,8 @@
 ﻿using FurnitureSellingCore.DTO.WishList;
+using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
+using FurnitureSellingCore.Models;
+using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +11,49 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Services
 {
-    internal class WishListServices : IWishListServices
+    public class WishListServices : IWishListServices
     {
-        public Task CreateWishList(WishListDTO dto)
+        private readonly IWishListRepos _repose;
+        public WishListServices(IWishListRepos repose)
         {
-            throw new NotImplementedException();
+            _repose = repose;
+        }
+        public async Task<WishListDTO> GetByIdWishList(int Id)
+        {
+            return  await _repose.GetByIdWishList_Repose(Id);  
+        }
+        public async Task<List<WishListDTO>> GetAllWishList()
+        {
+            return await _repose.GetAllWishList_Repose();
+        }
+        public async Task CreateWishList(CardWishListDTO dto)
+        {
+            WishList w = new WishList
+            {
+                ItemId = dto.ItemId,
+                UserId = dto.UserId,
+            };
+            await _repose.CreateWishList_Repose(w);
         }
 
-        public Task DeleteWishList(int Id)
+        public async Task UpdateWishList(WishListDTO dto)
         {
-            throw new NotImplementedException();
+            WishList w = new WishList
+            {
+                ItemId = dto.ItemId,
+                UserId = dto.UserId,
+                WishListId = dto.WishListId,
+            };
+            await _repose.UpdateWishList_Repose(w);
         }
+        public async Task DeleteWishList(int Id)
+        {
+            await _repose.DeleteWishList_Repose(Id);   
+        
+        }
+  
 
-        public Task<CardWishListDTO> GetAllWishList()
-        {
-            throw new NotImplementedException();
-        }
+     
 
-        public Task<WishListDTO> GetByIdWishList(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateWishList(WishListDTO dto)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

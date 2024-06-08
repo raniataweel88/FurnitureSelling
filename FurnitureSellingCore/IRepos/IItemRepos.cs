@@ -1,4 +1,4 @@
-﻿using FurnitureSellingCore.DTO.Item;
+﻿ using FurnitureSellingCore.DTO.Item;
 using FurnitureSellingCore.Models;
 using System;
 using System.Collections.Generic;
@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace FurnitureSellingCore.IRepos
 {
     public interface IItemRepos
-    {
-        public Task CreateItem_Repose(Item ct);
+    { 
+        public Task<DetailsItemDTO> GetByIdItem_Repose(int id);
+        public Task<List<CardItemDTO>> GetAllItem_Repose();
+        public Task CreateItem_Repose(Item t);
+        public Task UpdateItem(DetailsItemDTO t);
+        public Task<List<DetailsItemDTO>> SearchItem(string? name, string? description, float? price);
 
-        public Task<Item> GetByIdItem_Repose(int id);
-        public Task<List<Item>> GetAllItem_Repose();
-        public Task Updatetem(Item ct);
-
-
+        public Task DeleteItem(int Id);
 
     }
 }

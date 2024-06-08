@@ -14,13 +14,13 @@ namespace FurnitureSellingCore.Models
         public string FirstName { get; set; }
         public string LastName { get; set; } 
         public string Email { get; set; } 
-        public string Phone{ get; set; }
-        public DateTime BirthDate { get; set; }
-        public UserType UserType {  get; set; }
-        public int? LoginId { get; set; }
+        public string? Phone{ get; set; }
+        public DateTime? BirthDate { get; set; }
+        public UserType? UserType {get; set;}
         public string? Address { get; set; }
         public string? Salary { get; set; }
         public string? PlateNumber { get; set; }
+      
 
     }
 }

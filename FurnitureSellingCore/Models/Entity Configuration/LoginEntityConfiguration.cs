@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingCore.Models.Entity_Configuration
 {
-    public class LoginEntityConfiguration:IEntityTypeConfiguration<Login>
+    public class LoginEntityConfiguration:IEntityTypeConfiguration<Logins>
     {
-        public void Configure(EntityTypeBuilder<Login> builder) { 
+        public void Configure(EntityTypeBuilder<Logins> builder) {
+            builder.ToTable("Login");
             builder.HasKey(x=>x.LoginId);
             builder.Property(x=>x.LoginId).UseIdentityColumn();
-            builder.HasOne<User>().WithOne().HasForeignKey<User>(x => x.LoginId);
+            builder.HasOne<User>().WithOne().HasForeignKey<Logins>(x => x.UserId);
 
         }
     }

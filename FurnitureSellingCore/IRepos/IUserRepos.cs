@@ -1,4 +1,6 @@
-﻿using FurnitureSellingCore.Models;
+﻿using FurnitureSellingCore.DTO.Authantication;
+using FurnitureSellingCore.DTO.User;
+using FurnitureSellingCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,23 @@ namespace FurnitureSellingCore.IRepos
 {
     public interface IUserRepos
     {
-        public Task CreateUserRepos(User u);
+        #region User Repos
+        public Task<int> CreateUserRepos(User u);
 
-        public Task<User> GetByIdUserRepos(int Id);
-        public Task<List<User>> GetAllUserRepos();
-        public Task UpdateUserRepos(User u);
+        public Task<DetailsUserDTO> GetByIdUserRepos(int Id);
+        public Task<List<CardUserDTO>> GetAllUserRepos();
+        public Task UpdateUserRepos(DetailsUserDTO u);
+        public Task DeleteUser(int Id);
+
+        #endregion 
+        #region Authantication-Services
+        public Task CreateLogin(Logins l);
+        public Task Logout(int Id);
+        public  Task Login(int id);
+
+        public Task ResetPassword(ResetPasswordDTO dto) ;
+
+        #endregion
 
     }
 }

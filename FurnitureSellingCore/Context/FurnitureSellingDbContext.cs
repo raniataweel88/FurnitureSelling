@@ -29,7 +29,7 @@ namespace FurnitureSellingCore.Context
 
         }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<Logins> Logins { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<WishList> WishList { get; set; }
         public virtual DbSet<Item> Items { get; set; }

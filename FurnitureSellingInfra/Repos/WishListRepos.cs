@@ -1,5 +1,9 @@
-﻿using FurnitureSellingCore.IRepos;
+﻿using FurnitureSellingCore.Context;
+using FurnitureSellingCore.DTO.WishList;
+using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.Models;
+using Mysqlx;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +14,97 @@ namespace FurnitureSellingInfra.Repos
 {
     public class WishListRepos : IWishListRepos
     {
-        public Task CreateWishList_Repose(WishList dto)
+        private readonly FurnitureSellingDbContext _context;
+        public WishListRepos(FurnitureSellingDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<WishListDTO> GetByIdWishList_Repose(int Id)
+        {
+            Log.Information("start to  GetByIdWishList_Repose");
+
+            var wl =_context.WishList.FirstOrDefault(x=>x.WishListId == Id);
+            if(wl != null)
+            {
+            WishListDTO w = new WishListDTO();
+            w.WishListId=wl.WishListId ; 
+            w.ItemId = wl.ItemId;
+            w.UserId = wl.UserId;
+            return w;
+            }
+            else
+            {
+                Log.Error("cann't found this Wishlist");
+
+                throw new Exception("cann't found this Wishlist");
+            }
+            Log.Information("finished to  GetByIdWishList_Repose");
+
+
+        }
+        public async Task<List<WishListDTO>> GetAllWishList_Repose()
+        {
+            Log.Information("start to  GetAllWishList_Repose");
+
+            var query = from wl in _context.WishList
+                        select new WishListDTO
+                        { 
+                            WishListId= wl.WishListId,
+                            ItemId = wl.ItemId,
+                            UserId = wl.UserId,
+                        };
+            
+            return query.ToList();
+            Log.Information("finished to  GetAllWishList_Repose");
+
+        }
+        public async Task CreateWishList_Repose(WishList wl)
+        {
+            Log.Information("start to  CreateWishList_Repose");
+            
+            _context.WishList.Add(wl);
+        await _context.SaveChangesAsync();
+            Log.Information("finished to  CreateWishList_Repose");
+
         }
 
-        public Task<List<WishList>> GetAllWishList_Repose()
+        public async Task UpdateWishList_Repose(WishList wl)
         {
-            throw new NotImplementedException();
+            Log.Information("start to  UpdateWishList_Repose");
+            var w=_context.WishList.FindAsync(wl.WishListId);
+            if (w != null)
+            { 
+            _context.Update(wl);
+           await  _context.SaveChangesAsync();
+            }
+            else
+            {
+                Log.Error("cann't found this Wishlist");
+
+                throw new Exception("cann't found this Wishlist");
+            }
+            Log.Information("finished to  UpdateWishList_Repose");
+
         }
 
-        public Task<WishList> GetByIdWishList_Repose(int Id)
+        public async Task DeleteWishList_Repose(int id)
         {
-            throw new NotImplementedException();
-        }
+            Log.Information("start to  DeleteWishList_Repose");
 
-        public Task UpdateWishList_Repose(WishList dto)
-        {
-            throw new NotImplementedException();
+            var wl = _context.WishList.FirstOrDefault(x => x.WishListId == id);
+            if (wl != null)
+            {
+                _context.WishList.Remove(wl);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                Log.Error("cann't found this Wishlist");
+
+                throw new Exception("cann't found this Wishlist");
+            }
+            Log.Information("finished to  DeleteWishList_Repose");
+
         }
     }
 }

@@ -1,5 +1,9 @@
 ﻿using FurnitureSellingCore.DTO.ItemRequest;
+using FurnitureSellingCore.DTO.Order;
+using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
+using FurnitureSellingCore.Models;
+using FurnitureSellingInfra.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +12,46 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Services
 {
-    internal class ItemRequestServices : IItemRequestServices
+    public class ItemRequestServices : IItemRequestServices
     {
-        public Task CreateItemRequest(ItemRequestDTO dto)
+        private readonly IItemRequestRepos _Repose;
+        public ItemRequestServices(IItemRequestRepos Repose)
         {
-            throw new NotImplementedException();
+            _Repose = Repose;
         }
+        public async Task<ItemRequestDTO> GetByIdItemRequest(int id)
+        {
+           return  await _Repose.GetByIdItemRequest(id);
+           
+        }
+        public async Task<List<CardItemRequestDTO>> GetAllItemRequest()
+        {
+            return await _Repose.GetAllItemRequest();
+        }
+        public async Task CreateItemRequest(ItemRequestDTO dto)
+        {
+            ItemRequest ir = new ItemRequest
+            {
+                Title = dto.Title,
+                Description = dto.Description,
+                Image = dto.Image,
+                CategoryId = dto.CategoryId,
+               
+            };
+           await   _Repose.CreateItemRequest_Repose(ir);
+        }   
+        public async Task UpdatetemRequest(CardItemRequestDTO dto)
+        {
+        
+            await _Repose.UpdatetemRequest(dto);
+        }
+        public async Task DeleteItemRequest(int id)
+        {
+          await  _Repose.DeleteItemRequest(id);    }
 
-        public Task DeleteItemRequest(int id)
-        {
-            throw new NotImplementedException();
-        }
+   
 
-        public Task<CardItemRequestDTO> GetAllItemRequest()
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<ItemRequestDTO> GetByIdItemRequest(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdatetemRequest(ItemRequestDTO dto)
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }

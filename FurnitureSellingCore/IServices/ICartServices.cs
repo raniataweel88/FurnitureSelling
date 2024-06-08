@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 namespace FurnitureSellingCore.IServices
 {
     public  interface ICartServices
-    {
+    {      
+        public Task<CardCartDTO> GetByIdCart(int Id);
+        public Task<List<CardCartDTO>> GetAllCart();
         public Task CreateCart(CartDTO dto);
-
-        public Task<CartDTO> GetByIdCart(int Id);
-        public Task<CartDTO> GetAllCart();
-        public Task UpdateCart(CartDTO dto);
+        public Task UpdateCart(CardCartDTO dto);
         public Task DeleteCart(int Id);
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using FurnitureSellingCore.DTO.ItemRequest;
 using FurnitureSellingCore.Models;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,12 @@ namespace FurnitureSellingCore.IRepos
 {
     public interface IItemRequestRepos
     {
+        public Task<ItemRequestDTO> GetByIdItemRequest(int id);
+        public Task<List<CardItemRequestDTO>> GetAllItemRequest();
         public Task CreateItemRequest_Repose(ItemRequest ir);
-        public Task<ItemRequest> GetByIdItemRequest(int id);
-        public Task<List<ItemRequest>> GetAllItemRequest();
-        public Task UpdatetemRequest(ItemRequest ir);
+        public Task UpdatetemRequest(CardItemRequestDTO ir);
+        public Task DeleteItemRequest(int id);
+
 
 
     }

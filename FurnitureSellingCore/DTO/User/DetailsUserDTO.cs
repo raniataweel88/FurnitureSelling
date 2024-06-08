@@ -9,12 +9,15 @@ namespace FurnitureSellingCore.DTO.User
 {
     public class DetailsUserDTO
     {
+        public int UserId { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
         public DateTime BirthDate { get; set; }
-        public UserType UserType { get; set; }
+        public int? UserType { get; set; }
+
         public string? Address { get; set; }
         public string? Salary { get; set; }
         public string? PlateNumber { get; set; }

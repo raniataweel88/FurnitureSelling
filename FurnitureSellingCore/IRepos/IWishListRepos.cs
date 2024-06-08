@@ -1,4 +1,5 @@
-﻿using FurnitureSellingCore.Models;
+﻿using FurnitureSellingCore.DTO.WishList;
+using FurnitureSellingCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,12 @@ using System.Threading.Tasks;
 namespace FurnitureSellingCore.IRepos
 {
     public interface IWishListRepos
-    {
-        public Task CreateWishList_Repose(WishList dto);
+    {  
+        public Task<WishListDTO> GetByIdWishList_Repose(int Id);
+        public Task<List<WishListDTO>> GetAllWishList_Repose();
+        public Task CreateWishList_Repose(WishList w);
+        public Task UpdateWishList_Repose(WishList w);
+        public Task DeleteWishList_Repose(int id);
 
-        public Task<WishList> GetByIdWishList_Repose(int Id);
-        public Task<List<WishList>> GetAllWishList_Repose();
-        public Task UpdateWishList_Repose(WishList dto);
     }
 }

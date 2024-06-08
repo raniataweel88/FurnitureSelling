@@ -9,11 +9,10 @@ namespace FurnitureSellingCore.IServices
 {
     public interface ICartItemServices
     {
-        public Task CreateCartItem(CartItemDTO dto);
-        public Task UpdateCartItem(CartItemDTO dto);
-
         public Task<CartItemDTO> GetByIdCartItem(int Id);
-        public Task<CartItemDTO> GetAllCartItem();
+        public Task<List<CartItemDTO>> GetAllCartItem();
+        public Task CreateCartItem(CreateCartItemDTO dto);
+        public Task UpdateCartItem(CartItemDTO dto);
         public Task DeleteCartItem(int Id);
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FurnitureSellingCore.DTO
+namespace FurnitureSellingCore.DTO.Authantication
 {
     public class LoginDTO
     {

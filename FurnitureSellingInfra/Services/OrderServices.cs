@@ -1,38 +1,74 @@
 ﻿using FurnitureSellingCore.DTO.Order;
+using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
+using FurnitureSellingCore.Models;
+using FurnitureSellingInfra.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZstdSharp.Unsafe;
 
 namespace FurnitureSellingInfra.Services
 {
-    internal class OrderServices : IOrderServices
+    public class OrderServices : IOrderServices
     {
-        public Task CreateOrder(CreateOrderDTO dto)
+        private readonly IOrderRepos _repose;
+        public OrderServices(IOrderRepos repose)
         {
-            throw new NotImplementedException();
+            _repose = repose;
+        }
+        public async Task<DetailsOrdertDTO> GetByIdOrder(int id)
+        {
+            return await _repose.GetByIdOrder_Repose(id);
+        }
+        public async Task<List<CardOrdertDTO>> GetAllOrder()
+        {
+            return await _repose.GetAllOrder();
         }
 
-        public Task DeleteOrder(int id)
+        public async Task CreateOrder(CreateOrderDTO dto)
         {
-            throw new NotImplementedException();
+            Order o = new Order
+            {
+                CustomerNote = dto.CustomerNote,
+                Title = dto.Title,
+                Date= dto.Date, 
+            };
+           
+            await _repose.CreateOrder_Repose(o);
+
         }
 
-        public Task<CardOrdertDTO> GetAllOrder()
+
+        public async Task UpdateOrder(DetailsOrdertDTO dto, int? userType)
         {
-            throw new NotImplementedException();
+          
+            await _repose.UpdateOrder(dto, userType);
+        }
+        public async Task DeleteOrder(int id)
+        {
+          await  _repose.DeleteOrder(id);   
         }
 
-        public Task<DetailsOrdertDTO> GetByIdOrder(int id)
+        public async Task<DeliveryOrdertDTO> GetByIdOrderforDelivery(int id)
         {
-            throw new NotImplementedException();
+           return await _repose.GetByIdOrder_ReposeforDelivery(id);        }
+
+        public async Task<List<DeliveryOrdertDTO>> GetAllOrderforDelivery()
+        {
+           return await _repose.GetAllOrderforDelivery();    
         }
 
-        public Task UpdateOrder(DetailsOrdertDTO dto)
+        public async Task UpdateOrderforDelivery(DeliveryOrder_updatetDTO dto)
         {
-            throw new NotImplementedException();
+          await  _repose.UpdateOrderforDelivery(dto);   
+        }
+
+        public async Task<List<DeliveryOrdertDTO>> SearchOrderforDelivery(string? adders)
+        {
+          return  await _repose.SearchOrderforDelivery(adders);      
         }
     }
 }

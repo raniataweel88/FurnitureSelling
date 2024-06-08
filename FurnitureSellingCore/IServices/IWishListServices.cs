@@ -10,10 +10,10 @@ namespace FurnitureSellingCore.IServices
 {
     public interface IWishListServices
     {
-        public Task CreateWishList(WishListDTO dto);
-
         public Task<WishListDTO> GetByIdWishList(int Id);
-        public Task<CardWishListDTO> GetAllWishList();
+        public Task<List<WishListDTO>>  GetAllWishList();
+        public Task CreateWishList(CardWishListDTO dto);
+
         public Task UpdateWishList(WishListDTO dto);
         public Task DeleteWishList(int Id);
     }

@@ -12,6 +12,8 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
+            builder.ToTable(nameof(Category));
+
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
         }
