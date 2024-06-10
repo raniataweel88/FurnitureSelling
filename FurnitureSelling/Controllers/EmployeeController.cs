@@ -9,7 +9,7 @@ namespace FurnitureSelling.Controllers
     public class EmployeeController : ControllerBase
     {
         //to customer
-        //get id by user
+        //get id by user 
         //greate user
       
      

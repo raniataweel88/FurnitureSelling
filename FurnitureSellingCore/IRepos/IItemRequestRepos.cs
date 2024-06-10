@@ -14,7 +14,7 @@ namespace FurnitureSellingCore.IRepos
         public Task<ItemRequestDTO> GetByIdItemRequest(int id);
         public Task<List<CardItemRequestDTO>> GetAllItemRequest();
         public Task CreateItemRequest_Repose(ItemRequest ir);
-        public Task UpdatetemRequest(CardItemRequestDTO ir);
+        public Task UpdateItemRequest(CardItemRequestDTO ir);
         public Task DeleteItemRequest(int id);
 
 

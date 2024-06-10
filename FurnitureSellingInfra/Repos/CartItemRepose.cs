@@ -56,6 +56,7 @@ namespace FurnitureSellingInfra.Repos
             var query = from q in _context.CartItems
                         select new CartItemDTO
                         {
+                            
                             CartItemId=q.CartItemId,
                             CartId = q.CartId,
                             ItemId = q.ItemId,
@@ -125,6 +126,34 @@ namespace FurnitureSellingInfra.Repos
             }
          
             Log.Information("finished to  DeleteCartItem_Repose");
+        }
+        public async Task<float> CalculateTotalPrice(int CartId)
+        {
+            var query = from o in _context.Orders
+
+                        join c in _context.Carts
+                        on o.OrderId equals c.OrderId
+                        join ct in _context.CartItems
+                        on c.CartId equals ct.CartId
+                        join i in _context.Items
+                   on ct.ItemId equals i.ItemId
+                        where c.CartId == CartId
+
+                        select new
+                        {
+
+                            TotalPrice = (i.Price * ct.Quantity) + o.Fee,
+
+                        };
+
+            var Calculate = query.ToList();
+            if (!Calculate.Any())
+                throw new Exception("No cart items found for the given cart id");
+            var totalCartPrice = Calculate.Sum(item => item.TotalPrice);
+
+
+            return (float)totalCartPrice;
+
         }
 
 

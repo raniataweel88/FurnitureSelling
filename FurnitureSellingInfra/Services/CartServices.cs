@@ -2,6 +2,7 @@
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,9 +39,9 @@ namespace FurnitureSellingInfra.Services
             };
             return _repose.CreateCart_Repose(c);
         }
-       public async Task UpdateCart(CardCartDTO dto)
+       public async Task UpdateCart(CardCartDTO C)
         {
-           await _repose.UpdateCart_Repose(dto);
+           await _repose.UpdateCart_Repose(C);
         }
       
 
@@ -48,11 +49,11 @@ namespace FurnitureSellingInfra.Services
         {
             await _repose.DeleteCart_Repose(Id);
         }
- 
-     
 
-     
-    }
+        
+
+
+}
 
 
 }

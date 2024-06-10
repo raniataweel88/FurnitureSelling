@@ -13,7 +13,7 @@ namespace FurnitureSellingCore.IServices
         public Task<ItemRequestDTO> GetByIdItemRequest(int id);
         public Task<List<CardItemRequestDTO>> GetAllItemRequest();
         public Task CreateItemRequest(ItemRequestDTO dto);
-        public Task UpdatetemRequest(CardItemRequestDTO dto);
+        public Task UpdateItemRequest(CardItemRequestDTO dto);
         public Task DeleteItemRequest(int id);
     }
 }

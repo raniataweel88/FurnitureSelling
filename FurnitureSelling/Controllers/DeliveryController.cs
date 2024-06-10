@@ -1,5 +1,6 @@
 ﻿using FurnitureSellingCore.IServices;
 using FurnitureSellingInfra.Repos;
+using FurnitureSellingInfra.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,28 +11,46 @@ namespace FurnitureSelling.Controllers
     public class DeliveryController : ControllerBase
     {
         private readonly IOrderServices _service;
-        public DeliveryController(IOrderServices services)
+        private readonly ICartServices _iservice;
+
+        public DeliveryController(IOrderServices services, ICartServices iservice)
         {
             _service = services;
+            _iservice = iservice;
         }
 
         //get id by order
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Get api/GetOrderByDeliveryId
+        ///     {        
+        ///       "Id": "Enter the id of Cart" 
+        ///     }
+        /// </remarks>
+        /// <returns>order</returns>
+        /// <response code="400">cann't get the Order</response>
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetOrderbyDelivery([FromRoute]int Id)
+        public async Task<IActionResult> GetCartByDeliveryId([FromRoute] int id)
         {
+
             try
             {
-                var d = await _service.GetByIdOrderforDelivery(Id);
-                return Ok(d);
+                var Cart = await _iservice.GetByIdCart(id);
+                return Ok(Cart);
+
             }
             catch
             {
-                return BadRequest("can not get this order");
+                return BadRequest("can not found  Cart");
             }
+        
 
-        }
+    }
         //get all order
+        /// <returns>Order</returns>
+        /// <response code="400">cann't  get the all  Order</response>
         [HttpGet]
         [Route("[action]")]
         public async Task<IActionResult> GetAllOrderbyDelivery()
@@ -47,7 +66,17 @@ namespace FurnitureSelling.Controllers
             }
         }
         //update order
-        [HttpPost]
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateOrder
+        ///     {        
+        ///       "ID": "Enter Your ID to Update Order" 
+        ///       "StatusDelivery":if user receive فاث خقيثق
+        ///     }
+        /// </remarks>
+        /// <response code="400">can not Update Order</response>  
+        [HttpPut]
         [Route("[action]")]
         public async Task<IActionResult> UpdateOrderbyDelivery([FromBody] DeliveryOrder_updatetDTO dto)
         {
@@ -62,10 +91,19 @@ namespace FurnitureSelling.Controllers
             }
         }
         //serach by address
-
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Get api/SearchDelivery
+        ///     {        
+        ///       "Address": "Enter the address of user to search" 
+        ///     }
+        /// </remarks>
+        /// <returns>order</returns>
+        /// <response code="400">cann't get the Order</response>
         [HttpGet]
         [Route("[action]")]
-        public async Task<IActionResult> Searchdelivery(string? Address)
+        public async Task<IActionResult> SearchDelivery(string? Address)
         {
             try
             {

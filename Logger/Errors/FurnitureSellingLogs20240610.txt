@@ -1,0 +1,35 @@
+2024-06-10 15:32:33.256 +03:00 [INF] start to  GetAllOrderforDelivery
+2024-06-10 15:33:34.884 +03:00 [INF] start to  GetAllOrder_Repose
+2024-06-10 15:33:48.489 +03:00 [INF] start to  GetByIdOrder_Repose
+2024-06-10 15:42:11.721 +03:00 [INF] start to  GetAllOrder_Repose
+2024-06-10 15:47:39.304 +03:00 [INF] Start to  GetAllUserRepos
+2024-06-10 15:48:03.000 +03:00 [INF] start to  GetByIdUserRepos
+2024-06-10 15:48:20.936 +03:00 [INF] start to  GetByIdCategory_Repose
+2024-06-10 15:48:27.406 +03:00 [INF] start to  GetAllCategory_Repose
+2024-06-10 15:48:45.743 +03:00 [INF] start to  GetByIdCategory_Repose
+2024-06-10 15:51:59.166 +03:00 [INF] start to  GetAllItem_Repose
+2024-06-10 15:52:55.773 +03:00 [INF] start to  GetAllOrder_Repose
+2024-06-10 15:53:04.885 +03:00 [INF] start to  GetAllCart_Repose
+2024-06-10 15:53:17.366 +03:00 [INF] start  GetByIdCart_Repose
+2024-06-10 15:57:30.049 +03:00 [INF] start  GetByIdCart_Repose
+2024-06-10 16:01:48.521 +03:00 [INF] start  GetByIdCart_Repose
+2024-06-10 23:08:20.899 +03:00 [INF] start to  CreateOrder_Repose
+2024-06-10 23:08:20.918 +03:00 [INF] the Order not null
+2024-06-10 23:09:04.012 +03:00 [INF] start to  CreateCart_Repose
+2024-06-10 23:09:04.012 +03:00 [INF] the cart ready to create
+2024-06-10 23:09:04.156 +03:00 [INF] finished to  CreateCart_Repose
+2024-06-10 23:09:45.858 +03:00 [INF] start  CreateCartItem_Repose
+2024-06-10 23:09:45.858 +03:00 [INF] CartItem not null
+2024-06-10 23:09:45.922 +03:00 [INF] Finished to add  CartItem_Repose
+2024-06-10 23:14:43.374 +03:00 [INF] start to  UpdateOrder _Repose
+2024-06-10 23:15:52.426 +03:00 [INF] start to  UpdateOrder _Repose
+2024-06-10 23:16:20.385 +03:00 [INF] start to  CreateOrder_Repose
+2024-06-10 23:16:20.386 +03:00 [INF] the Order not null
+2024-06-10 23:32:42.914 +03:00 [INF] start to  CreateCart_Repose
+2024-06-10 23:32:42.932 +03:00 [INF] the cart ready to create
+2024-06-10 23:32:57.884 +03:00 [INF] Start to  GetAllUserRepos
+2024-06-10 23:33:08.952 +03:00 [INF] start to  CreateCart_Repose
+2024-06-10 23:33:08.952 +03:00 [INF] the cart ready to create
+2024-06-10 23:33:18.378 +03:00 [INF] start to  CreateCart_Repose
+2024-06-10 23:33:18.378 +03:00 [INF] the cart ready to create
+2024-06-10 23:40:36.580 +03:00 [INF] start to  UpdateCart_Repose

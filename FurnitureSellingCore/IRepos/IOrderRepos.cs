@@ -13,14 +13,12 @@ namespace FurnitureSellingCore.IRepos
     {   
         public Task<DetailsOrdertDTO> GetByIdOrder_Repose(int id);
         public Task<List<CardOrdertDTO>> GetAllOrder();
-        public Task CreateOrder_Repose(Order o);
+        public Task<int> CreateOrder_Repose(Order o);
         public Task UpdateOrder(DetailsOrdertDTO dto, int? userType);
         public Task DeleteOrder(int id);
-        public Task<DeliveryOrdertDTO> GetByIdOrder_ReposeforDelivery(int id);
         public Task<List<DeliveryOrdertDTO>> GetAllOrderforDelivery();
         public Task UpdateOrderforDelivery(DeliveryOrder_updatetDTO dto);
         public Task<List<DeliveryOrdertDTO>> SearchOrderforDelivery(string? adders);
-
 
     }
 }

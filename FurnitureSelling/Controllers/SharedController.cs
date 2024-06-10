@@ -117,8 +117,8 @@ namespace FurnitureSelling.Controllers
             }
         }
         #endregion
-        // Managment order
         #region Order
+        // Managment order
         //get id by order
         /// <remarks>
         /// Sample request:
@@ -541,7 +541,10 @@ namespace FurnitureSelling.Controllers
                   }
               }
         #endregion
-    }
+      
+       
+   
+}
 
 
 

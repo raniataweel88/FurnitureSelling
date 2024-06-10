@@ -40,10 +40,10 @@ namespace FurnitureSellingInfra.Services
             };
            await   _Repose.CreateItemRequest_Repose(ir);
         }   
-        public async Task UpdatetemRequest(CardItemRequestDTO dto)
+        public async Task UpdateItemRequest(CardItemRequestDTO dto)
         {
         
-            await _Repose.UpdatetemRequest(dto);
+            await _Repose.UpdateItemRequest(dto);
         }
         public async Task DeleteItemRequest(int id)
         {

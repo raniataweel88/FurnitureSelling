@@ -73,7 +73,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Information("finished to  CreateItemRequest_Repose");
         }
 
-        public async Task UpdatetemRequest(CardItemRequestDTO dto)
+        public async Task UpdateItemRequest(CardItemRequestDTO dto)
         {
             var i =await _context.ItemRequests.FindAsync(dto.ItemRequestId);
             Log.Information("start to  UpdateItemRequest_Repose");

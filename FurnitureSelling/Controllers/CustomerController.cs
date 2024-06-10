@@ -31,10 +31,19 @@ namespace FurnitureSelling.Controllers
 
         #region wishList
         //get id by wishList
-     
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Get api/GetWishListById
+        ///     {        
+        ///       "Id": "Enter the id of whish List" 
+        ///     }
+        /// </remarks>
+        /// <returns>wishList</returns>
+        /// <response code="400">cann't get the wishList</response>
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetwishListbyid([FromRoute] int id)
+        public async Task<IActionResult> GetWishListById([FromRoute] int id)
         {
 
             try
@@ -49,10 +58,13 @@ namespace FurnitureSelling.Controllers
             }
         }
 
-        //get all wishList       
+        //get all wishList
+
+        /// <returns>wishList</returns>
+        /// <response code="400">cann't  get the all  wishList</response>
         [HttpGet]
         [Route("[action]")]
-        public async Task<IActionResult> GetAllwishList()
+        public async Task<IActionResult> GetAllWishList()
         {
 
             try
@@ -70,6 +82,16 @@ namespace FurnitureSelling.Controllers
 
 
         //greate wishList
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Post api/NewWishList
+        ///     {        
+        ///        UserId: "Enter the id of user the need to add  whish List" 
+        ///        ItemId: "Enter the id of  Item the need to add in whish List" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't  add the wishList</response>
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> NewWishList(CardWishListDTO d)
@@ -88,9 +110,20 @@ namespace FurnitureSelling.Controllers
 
 
         //update WishList
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateWishList
+        ///     {        
+        ///     Id: "Enter the id of WishList that need to update" 
+        ///        UserId: "Enter the id of user the need to add  whish List" 
+        ///        ItemId: "Enter the id of  Item the need to add in whish List" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't Update the wishList</response>
         [HttpPut]
         [Route("[action]")]
-        public async Task<IActionResult> UpdatWishList(WishListDTO dto)
+        public async Task<IActionResult> UpdateWishList(WishListDTO dto)
         {
             try
             {
@@ -105,6 +138,15 @@ namespace FurnitureSelling.Controllers
             }
         }
         //delete wishList
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Delete api/DeleteWishList
+        ///     {        
+        ///       "Id": "Enter the id of whish List to delete" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't delete the wishList</response>
         [HttpDelete]
         [Route("[action]/{id}")]
         public async Task<ActionResult> DeleteWishList([FromRoute] int id)
@@ -122,17 +164,27 @@ namespace FurnitureSelling.Controllers
         }
 
 
- 
+
 
 
         #endregion
         #region CartItem
 
         //get id by CartItem
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Get api/GetCartItemById
+        ///     {        
+        ///       "Id": "Enter the id of Cart Item" 
+        ///     }
+        /// </remarks>
+        /// <returns>Cart Item</returns>
+        /// <response code="400">cann't get the Cart Item</response>
 
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetCartItembyid([FromRoute]int id)
+        public async Task<IActionResult> GetCartItemById([FromRoute]int id)
         {
 
             try
@@ -147,7 +199,9 @@ namespace FurnitureSelling.Controllers
             }
         }
 
-        //get all CartItem       
+        //get all CartItem
+        /// <returns>all CartItem</returns>
+        /// <response code="400">cann't get the all  CartItem</response>
         [HttpGet]
         [Route("[action]")]
         public async Task<IActionResult> GetAllCartItem()
@@ -166,6 +220,18 @@ namespace FurnitureSelling.Controllers
         }
 
         //greate cartItem
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Post api/NewCartItem
+        ///     {        
+        ///        CartId: "Enter the id of user the Cart to add item" 
+        ///        ItemId: "Enter the id of  Item the need to add in CartItem" 
+        ///     Quantity: "Enter the Quantity of   Item the need to add in CartItem" 
+        /// }   
+        /// </remarks>
+        /// <returns>cartItem</returns>
+        /// <response code="400">cann't add the cartItem</response>
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> NewCartItem(CreateCartItemDTO c)
@@ -182,6 +248,18 @@ namespace FurnitureSelling.Controllers
             }
         }
         //update cartItem
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateCartItem
+        ///     {        
+        ///     Id: "Enter the id of cartItem that need to update" 
+        ///     CartId: "Enter the id of user the Cart to add item" 
+        ///        ItemId: "Enter the id of  Item the need to add in CartItem" 
+        ///     Quantity: "Enter the Quantity of   Item the need to add in CartItem" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't Update the cartItem</response>
         [HttpPut]
         [Route("[action]")]
         public async Task<IActionResult> UpdateCartItem(CartItemDTO dto)
@@ -199,6 +277,15 @@ namespace FurnitureSelling.Controllers
             }
         }
         //delete CartItem
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Delete api/DeleteCartItem
+        ///     {        
+        ///       "Id": "Enter the id of CartItem to delete" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't delete the CartItem</response>
         [HttpDelete]
         [Route("[action]/{id}")]
         public async Task<ActionResult> DeleteCartItem([FromRoute] int id)
@@ -218,9 +305,19 @@ namespace FurnitureSelling.Controllers
         #endregion
         #region Cart
         //get id by Cart
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Get api/GetCartById
+        ///     {        
+        ///       "Id": "Enter the id of Cart" 
+        ///     }
+        /// </remarks>
+        /// <returns>Cart</returns>
+        /// <response code="400">cann't get the Cart</response>
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetCartbyid([FromRoute]int id)
+        public async Task<IActionResult> GetCartById([FromRoute]int id)
         {
 
             try
@@ -236,6 +333,9 @@ namespace FurnitureSelling.Controllers
         }
 
         //get all Cart
+
+        /// <returns>Cart</returns>
+        /// <response code="400">cann't get the all  Cart</response>
         [HttpGet]
         [Route("[action]")]
         public async Task<IActionResult> GetCartAll()
@@ -254,6 +354,18 @@ namespace FurnitureSelling.Controllers
         }
 
         //greate Cart
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Post api/NewCart
+        ///     {        
+        ///        UserId : "Enter the id of user the Cart to add order" 
+        ///        OrderId : "Enter the id of   Order the need to add in Cart" 
+        ///        IsActive: "Enter the true or false if the cart is active " 
+        /// }   
+        /// </remarks>
+        /// <returns>cartItem</returns>
+        /// <response code="400">cann't add the cartItem</response>
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> NewCart([FromBody] CartDTO c)
@@ -270,6 +382,18 @@ namespace FurnitureSelling.Controllers
             }
         }
         //update Cart
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateCart
+        ///     {        
+        ///         Id: "Enter the id of cart that need to update" 
+        ///        UserId : "Enter the id of user the Cart to add order" 
+        ///        OrderId : "Enter the id of   Order the need to add in Cart" 
+        ///        IsActive: "Enter the true or false if the cart is active " 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't Update the cartItem</response>
         [HttpPut]
         [Route("[action]")]
         public async Task<IActionResult> UpdateCart([FromBody] CardCartDTO dto)
@@ -283,10 +407,19 @@ namespace FurnitureSelling.Controllers
             catch (Exception ex)
             {
 
-                return BadRequest("Con't updates this Cart");
+                return BadRequest("Can't updates this Cart");
             }
         }
         //delete Cart
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Delete api/DeleteCart
+        ///     {        
+        ///       "Id": "Enter the id of  Cart to delete" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't delete the Cart</response>
         [HttpDelete]
         [Route("[action]/{id}")]
         public async Task<ActionResult> DeleteCart([FromRoute]int id)
@@ -306,8 +439,19 @@ namespace FurnitureSelling.Controllers
         #endregion
 
         #region ItemRequest
-     
+
         //greate Item Request
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Post api/ItemRequest
+        ///     {        
+        ///         Title: "Enter the name ofItemRequest " 
+        ///         Description: "if have note of ItemRequest" 
+        ///         Image : "if have image of ItemRequest" 
+        //          CategoryId: "Enter the id of Category of item" 
+        /// </remarks>
+        /// <response code="400">cann't Update the ItemRequest</response>
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> CreateItemRequest([FromBody] ItemRequestDTO i)
@@ -324,13 +468,26 @@ namespace FurnitureSelling.Controllers
             }
         }
         //update Item Request
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateItemRequest
+        ///     {        
+        ///         Id: "Enter the id of ItemRequest that need to update" 
+        ///         Title: "Enter the name ofItemRequest " 
+        ///         Description: "if have note of ItemRequest" 
+        ///         Image : "if have image of ItemRequest" 
+        //          CategoryId: "Enter the id of Category of item"
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't Update the cartItem</response>
         [HttpPut]
         [Route("[action]")]
-        public async Task<IActionResult> UpdateItemReuest([FromBody] CardItemRequestDTO dto)
+        public async Task<IActionResult> UpdateItemRequest([FromBody] CardItemRequestDTO dto)
         {
             try
             {
-                await _itemRequestServices.UpdatetemRequest(dto);
+                await _itemRequestServices.UpdateItemRequest(dto);
                 return Ok("Update item Request");
 
             }
@@ -341,6 +498,15 @@ namespace FurnitureSelling.Controllers
             }
         }
         //delete Item Request
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Delete api/DeleteItemRequest
+        ///     {        
+        ///       "Id": "Enter the id of Item Request to delete" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't delete the ItemRequest</response>
         [HttpDelete]
         [Route("[action]/{id}")]
         public async Task<ActionResult> DeleteItemRequest([FromRoute] int id)

@@ -16,7 +16,6 @@ namespace FurnitureSellingCore.IServices
      
         public Task UpdateOrder(DetailsOrdertDTO dto, int? userType); 
         public Task DeleteOrder(int id);
-        public Task<DeliveryOrdertDTO> GetByIdOrderforDelivery(int id);
         public Task<List<DeliveryOrdertDTO>> GetAllOrderforDelivery();
         public Task UpdateOrderforDelivery(DeliveryOrder_updatetDTO dto);
         public Task<List<DeliveryOrdertDTO>> SearchOrderforDelivery(string? adders);
