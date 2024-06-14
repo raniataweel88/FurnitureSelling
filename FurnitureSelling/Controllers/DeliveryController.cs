@@ -1,8 +1,9 @@
-﻿using FurnitureSellingCore.IServices;
-using FurnitureSellingInfra.Repos;
+﻿using FurnitureSellingCore.DTO.Order.Delivery;
+using FurnitureSellingCore.IServices;
 using FurnitureSellingInfra.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace FurnitureSelling.Controllers
 {
@@ -31,18 +32,20 @@ namespace FurnitureSelling.Controllers
         /// <returns>order</returns>
         /// <response code="400">cann't get the Order</response>
         [HttpGet]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> GetCartByDeliveryId([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetCartByDeliveryId([FromRoute] int Id)
         {
 
             try
             {
-                var Cart = await _iservice.GetByIdCart(id);
+                Log.Debug("start GetCartById-controller{Id}", Id);
+                var Cart = await _iservice.GetByIdCart(Id);
                 return Ok(Cart);
 
             }
             catch
             {
+                Log.Error("can not found  Cart");
                 return BadRequest("can not found  Cart");
             }
         
@@ -57,11 +60,12 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start GetAllOrderbyDelivery-controller");
                 var d = await _service.GetAllOrderforDelivery();
                 return Ok(d.ToList());
             }
             catch
-            {
+            {Log.Error("can not get this order");
                 return BadRequest("can not get this order");
             }
         }
@@ -72,7 +76,7 @@ namespace FurnitureSelling.Controllers
         ///     Put api/UpdateOrder
         ///     {        
         ///       "ID": "Enter Your ID to Update Order" 
-        ///       "StatusDelivery":if user receive فاث خقيثق
+        ///       "StatusDelivery":if user receive 
         ///     }
         /// </remarks>
         /// <response code="400">can not Update Order</response>  
@@ -82,11 +86,12 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start UpdateOrderbyDelivery-controller");
                 await _service.UpdateOrderforDelivery(dto);
                 return Ok("done to update this order");
             }
             catch
-            {
+            {Log.Error("can not update this order");
                 return BadRequest("can not update this order");
             }
         }
@@ -103,15 +108,16 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">cann't get the Order</response>
         [HttpGet]
         [Route("[action]")]
-        public async Task<IActionResult> SearchDelivery(string? Address)
+        public async Task<IActionResult> SearchDelivery(string? address)
         {
             try
             {
-                var d = await _service.SearchOrderforDelivery(Address);
+                Log.Debug("start SearchDelivery-controller");
+                var d = await _service.SearchOrderforDelivery(address);
                 return Ok(d);
             }
             catch
-            {
+            {Log.Error("can not get this address");
                 return BadRequest("can not get this address");
             }
         }

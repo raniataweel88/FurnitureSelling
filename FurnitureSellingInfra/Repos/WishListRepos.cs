@@ -21,7 +21,7 @@ namespace FurnitureSellingInfra.Repos
         }
         public async Task<WishListDTO> GetByIdWishList_Repose(int Id)
         {
-            Log.Information("start to  GetByIdWishList_Repose");
+            Log.Debug("start to  GetByIdWishList_Repose");
 
             var wl =_context.WishList.FirstOrDefault(x=>x.WishListId == Id);
             if(wl != null)
@@ -38,13 +38,13 @@ namespace FurnitureSellingInfra.Repos
 
                 throw new Exception("cann't found this Wishlist");
             }
-            Log.Information("finished to  GetByIdWishList_Repose");
+            Log.Debug("finished to  GetByIdWishList_Repose");
 
 
         }
         public async Task<List<WishListDTO>> GetAllWishList_Repose()
         {
-            Log.Information("start to  GetAllWishList_Repose");
+            Log.Debug("start to  GetAllWishList_Repose");
 
             var query = from wl in _context.WishList
                         select new WishListDTO
@@ -55,22 +55,22 @@ namespace FurnitureSellingInfra.Repos
                         };
             
             return query.ToList();
-            Log.Information("finished to  GetAllWishList_Repose");
+            Log.Debug("finished to  GetAllWishList_Repose");
 
         }
         public async Task CreateWishList_Repose(WishList wl)
         {
-            Log.Information("start to  CreateWishList_Repose");
+            Log.Debug("start to  CreateWishList_Repose");
             
             _context.WishList.Add(wl);
         await _context.SaveChangesAsync();
-            Log.Information("finished to  CreateWishList_Repose");
+            Log.Debug("finished to  CreateWishList_Repose");
 
         }
 
         public async Task UpdateWishList_Repose(WishList wl)
         {
-            Log.Information("start to  UpdateWishList_Repose");
+            Log.Debug("start to  UpdateWishList_Repose");
             var w=_context.WishList.FindAsync(wl.WishListId);
             if (w != null)
             { 
@@ -83,15 +83,15 @@ namespace FurnitureSellingInfra.Repos
 
                 throw new Exception("cann't found this Wishlist");
             }
-            Log.Information("finished to  UpdateWishList_Repose");
+            Log.Debug("finished to  UpdateWishList_Repose");
 
         }
 
-        public async Task DeleteWishList_Repose(int id)
+        public async Task DeleteWishList_Repose(int Id)
         {
-            Log.Information("start to  DeleteWishList_Repose");
+            Log.Debug("start to  DeleteWishList_Repose");
 
-            var wl = _context.WishList.FirstOrDefault(x => x.WishListId == id);
+            var wl = _context.WishList.FirstOrDefault(x => x.WishListId == Id);
             if (wl != null)
             {
                 _context.WishList.Remove(wl);
@@ -103,7 +103,7 @@ namespace FurnitureSellingInfra.Repos
 
                 throw new Exception("cann't found this Wishlist");
             }
-            Log.Information("finished to  DeleteWishList_Repose");
+            Log.Debug("finished to  DeleteWishList_Repose");
 
         }
     }

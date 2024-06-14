@@ -1,11 +1,13 @@
 ﻿using FurnitureSellingCore.DTO.Catagory;
 using FurnitureSellingCore.DTO.Item;
+using FurnitureSellingCore.DTO.ItemRequest;
 using FurnitureSellingCore.DTO.Order;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
 using FurnitureSellingInfra.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace FurnitureSelling.Controllers
 {
@@ -16,11 +18,14 @@ namespace FurnitureSelling.Controllers
       private  readonly IItemServices _itemServices;
       private readonly IUserServices _UserServices;
         private readonly ICategoryServices _CategoryServices;
-        public AdmainController(IItemServices itemServices, IUserServices UserServices, ICategoryServices CategoryServices)
+        private readonly IItemRequestServices _ItemRequestServices;
+
+        public AdmainController(IItemServices ItemServices, IUserServices UserServices, ICategoryServices CategoryServices,IItemRequestServices ItemRequestservices)
         {
-            _itemServices = itemServices;
+            _itemServices = ItemServices;
             _UserServices = UserServices;
             _CategoryServices = CategoryServices;
+            _ItemRequestServices = ItemRequestservices;
         }
 
         #region Category
@@ -35,6 +40,7 @@ namespace FurnitureSelling.Controllers
         ///     }
         /// </remarks>
         /// <returns>new Category</returns>
+       /// <response code="201"> add new Category</response>
         /// <response code="400">can not add Category</response>
         [HttpPost]
         [Route("[action]")]
@@ -42,14 +48,17 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start NewCategory-controller");
                 await _CategoryServices.CreateCategory(c);
-                return Ok();
+                return StatusCode(201, " add new  Category");
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
 
             }
+
         }
         //update Category
         /// <remarks>
@@ -67,17 +76,20 @@ namespace FurnitureSelling.Controllers
         [Route("[action]")]
         public async Task<IActionResult> UpdateCategory([FromBody] CardCategoryDTO dto)
         {
+
             try
-            { 
-             await  _CategoryServices.UpdateCategory(dto);
+            {
+                Log.Debug("start UpdateCategory-controller{id}",dto.Id);
+                await _CategoryServices.UpdateCategory(dto);
                 return Ok("update this Category");
 
             }
             catch
             {
-
+                Log.Error("Can't updates this Category");
                 return BadRequest("Can't updates this Category");
             }
+
         }
         //delete Category
         /// <remarks>
@@ -91,19 +103,24 @@ namespace FurnitureSelling.Controllers
         /// <returns>Delete Category</returns>
         /// <response code="400">can not Delete Category</response>
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteCategory([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteCategory([FromRoute] int Id)
         {
+            Log.Debug("start DeleteCategory-controller {id}", Id);
 
             try
             {
-              await  _CategoryServices.DeleteCategory(id);
-                return Ok("delete this Category");
+              await  _CategoryServices.DeleteCategory(Id);
+                return StatusCode(204, "delete this Category");
+
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
             }
+
         }
         #endregion
         #region Item
@@ -120,6 +137,7 @@ namespace FurnitureSelling.Controllers
         ///       Price: "add the Price of item" 
         ///       Category :"add the Category of this item" 
         /// <returns>new Category</returns>
+        /// <response code="201">Create New Item</response>
         /// <response code="400">can not add Item</response>
         [HttpPost]
         [Route("[action]")]
@@ -127,11 +145,13 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start NewItem-controller");
                 await _itemServices.CreateItemServices(c);
-                return Ok("create new item");
+                return StatusCode(201, " create new  item");
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);   
                 return BadRequest(ex.Message);
 
             }
@@ -159,13 +179,14 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start UpdateItem-controller {id}", dto.ItemId);
                 await _itemServices.Updateitem(dto);
                 return Ok("Update this Item");
 
             }
             catch 
             {
-
+                Log.Error("Can't updates this Item", dto.ItemId);
                 return BadRequest("Can't updates this Item");
             }
         }
@@ -179,20 +200,24 @@ namespace FurnitureSelling.Controllers
         ///     }
         /// </remarks>
         /// <returns>Delete Item</returns>
-        /// <response code="400">can not Delete Item</response>
+       /// <response code="204"> Delete this item</response>
+        /// <response code="400">Cann't Delete Item</response>
 
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteItem([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteItem([FromRoute] int Id)
         {
-
+            Log.Debug("start DeleteItem-controller", Id);
             try
             {
-                await _itemServices.DeleteItem(id);
-                return Ok("delete this Item");
+                await _itemServices.DeleteItem(Id);
+                Log.Information("try DeleteItem-controller");
+                return StatusCode(204, "delete this Item");
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -205,16 +230,18 @@ namespace FurnitureSelling.Controllers
         [Route("[action]")]
         public async Task<IActionResult> GetUsers()
         {
-
             try
             {
+                Log.Debug("start GetUsers-controller");
                 var user = await _UserServices.GetAllUser();
+                Log.Information($"User: {user}");
                 return Ok(user);
 
             }
             catch
             {
-                return BadRequest("not found  users");
+                Log.Error("can not found  users");
+                return BadRequest("can not found  users");
             }
         }
 
@@ -229,28 +256,59 @@ namespace FurnitureSelling.Controllers
         ///     }
         /// </remarks>
         /// <returns>Delete User</returns>
-        /// <response code="400">can not Delete User</response>
+        /// <response code="204"> Delete this User</response>
+        /// <response code="400">Cann't Delete User</response>
 
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteUser([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteUser([FromRoute] int Id)
+        {
+
+
+            try
+            {
+                Log.Debug("start DeleteUser-controller{ID}", Id);
+                await _UserServices.DeleteUser(Id);
+                return StatusCode(204, "delete this User");
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+        #endregion
+        //response of item request
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateItemRequest
+        ///     {        
+        ///       "ID": "Enter Your Id for this item request" 
+        ///      "price": "Enter Your price for this item request" 
+        ///      "Note": "Enter Your Note for this item request" 
+        ///     }
+        /// </remarks>
+        /// <response code="400">can not response item</response>
+        [HttpPut]
+        [Route("[action]")]
+        public async Task<IActionResult> UpdateItemRequest([FromBody] ItemRequestFromAdmain dto)
         {
 
             try
             {
-                await _UserServices.DeleteUser(id);
-                return Ok("delete this user");
+                Log.Debug("start UpdateItemRequest-controller{id}", dto.Id);
+                await _ItemRequestServices.UpdateItemFromAdmain(dto);
+                return Ok("response Item Request");
+
             }
-            catch (Exception ex)
+            catch
             {
-                return BadRequest(ex.Message);
+                Log.Error("Can't response this item requst");
+                return BadRequest("Can't updates this response");
             }
+
         }
-
-        #endregion
-
-
-
-
+      
     }
 }

@@ -22,11 +22,11 @@ namespace FurnitureSellingInfra.Repos
             _context = context;
 
         }
-        public async Task<ItemRequestDTO> GetByIdItemRequest(int id)
+        public async Task<ItemRequestDTO> GetByIdItemRequest(int Id)
         {
-            Log.Information("start to  GetByIdItemRequest");
+            Log.Debug("start to  GetByIdItemRequest");
             var query = from i in _context.ItemRequests
-                        where i.Id == id
+                        where i.Id == Id
                         select new ItemRequestDTO
                         {
                             Image = i.Image,
@@ -35,11 +35,11 @@ namespace FurnitureSellingInfra.Repos
                             CategoryId = i.CategoryId,
                         };
                 return query.FirstOrDefault();
-            Log.Information("finished to  GetByIdItemRequest");
+            Log.Debug("finished to  GetByIdItemRequest");
         }
         public async Task<List<CardItemRequestDTO>> GetAllItemRequest()
         {
-            Log.Information("start to  GetAllItemRequest");
+            Log.Debug("start to  GetAllItemRequest");
 
             var Query = from ir in _context.ItemRequests
                         select new CardItemRequestDTO()
@@ -51,16 +51,16 @@ namespace FurnitureSellingInfra.Repos
                             CategoryId = ir.CategoryId,
                         };
             return Query.ToList();
-            Log.Information("finished to  GetAllItemRequest");
+            Log.Debug("finished to  GetAllItemRequest");
 
         }
 
         public async Task CreateItemRequest_Repose(ItemRequest ir)
         {
-            Log.Information("start to  CreateItemRequest_Repose");
+            Log.Debug("start to  CreateItemRequest_Repose");
             if (ir != null)
             {
-                Log.Information("the ItemRequest not null");
+                Log.Information("add the ItemRequest ");
                 await _context.ItemRequests.AddAsync(ir);
                 
                 await _context.SaveChangesAsync();
@@ -70,13 +70,13 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("the ItemRequest is empty");
                 throw new Exception("the ItemRequest is empty");
             }
-            Log.Information("finished to  CreateItemRequest_Repose");
+            Log.Debug("finished to  CreateItemRequest_Repose");
         }
 
         public async Task UpdateItemRequest(CardItemRequestDTO dto)
         {
             var i =await _context.ItemRequests.FindAsync(dto.ItemRequestId);
-            Log.Information("start to  UpdateItemRequest_Repose");
+            Log.Debug("start to  UpdateItemRequest_Repose");
             if (i != null)
             {
 
@@ -87,23 +87,25 @@ namespace FurnitureSellingInfra.Repos
                 i.Id = dto.ItemRequestId;
                 _context.Update(i);
                 await _context.SaveChangesAsync();
+                Log.Information("update this ItemRequest");
+
             }
             else
             {
                 Log.Error("can not found this Category");
                 throw new Exception("can not found this Category");
             }
-            Log.Information("finished to  UpdateCategory_Repose_Repose");
+            Log.Debug("finished to  UpdateCategory_Repose_Repose");
 
         }
 
-        public async Task DeleteItemRequest(int id)
+        public async Task DeleteItemRequest(int Id)
         {
-            Log.Information("start to  DeleteItemRequest_Repose");
-            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id == id);
+            Log.Debug("start to  DeleteItemRequest_Repose");
+            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id == Id);
             if (ir != null)
             {
-                Log.Information("found this ItemRequest");
+                Log.Information("delete this ItemRequest");
                 _context.ItemRequests.Remove(ir);
                 await _context.SaveChangesAsync();
             }
@@ -112,12 +114,26 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("can not found this ItemRequest");
                 throw new Exception("can not found this ItemRequest");
             }
-            Log.Information("Finished to DeleteItemRequest_Repose");
+            Log.Debug("Finished to DeleteItemRequest_Repose");
         }
-        public  float Total()
+        public async Task UpdateItemFromAdmain(ItemRequestFromAdmain dto)
         {
-
-            return 4;
+            Log.Debug("start to UpdateItemFromAdmain_Repose");
+            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id == dto.Id);
+            if (ir != null)
+            {
+                Log.Information("Update Item From Admain");
+                ir.Price = dto.Price;
+                ir.NoteStor = dto.Note;
+                _context.Update(ir);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                Log.Error("can not found this ItemRequest");
+                throw new Exception("can not found this ItemRequest");
+            }
+            Log.Debug("Finished to UpdateItemFromAdmain_Repose");
         }
 
     }

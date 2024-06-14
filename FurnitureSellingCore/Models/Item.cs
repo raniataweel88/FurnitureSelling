@@ -22,6 +22,8 @@ namespace FurnitureSellingCore.Models
         // Percentage or fixed value
         public string? DiscountType { get; set; }
         public int? CategoryId {  get; set; }
+        public string? Color { get; set; }
+        public float?  Size { get; set; }
 
     }
 }

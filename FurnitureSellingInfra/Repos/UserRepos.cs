@@ -28,7 +28,7 @@ namespace FurnitureSellingInfra.Repos
         #region User Repos
         public async Task<DetailsUserDTO> GetByIdUserRepos(int Id)
         {
-            Log.Information("start to  GetByIdUserRepos");
+            Log.Debug("start to  GetByIdUserRepos");
             var query = from user in _context.Users
                         where user.UserId == Id
                         select new DetailsUserDTO
@@ -41,12 +41,12 @@ namespace FurnitureSellingInfra.Repos
                         };
           
             return query.FirstOrDefault();
-            Log.Information("finised to  GetByIdUserRepos");
+            Log.Debug("finished to  GetByIdUserRepos");
 
         }
         public async Task<List<CardUserDTO>> GetAllUserRepos()
         {
-            Log.Information("Start to  GetAllUserRepos");
+            Log.Debug("Start to  GetAllUserRepos");
 
             var quer = from u in _context.Users
                        select new CardUserDTO
@@ -57,14 +57,14 @@ namespace FurnitureSellingInfra.Repos
                            UserId = u.UserId,
                        };
             return quer.ToList();
-            Log.Information("Finished to  GetAllUserRepos ");
+            Log.Debug("Finished to  GetAllUserRepos ");
 
 
         }
         public async Task<int> CreateUserRepos(User u)
         {
            
-            Log.Information("start  CreateUserRepos");
+            Log.Debug("start  CreateUserRepos");
             if (u != null)
             {
                 _context.Users.Add(u);
@@ -76,11 +76,11 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("User is empty");
                 throw new Exception("User is empty");
             }
-            Log.Information("finished to add  CreateUserRepos");
+            Log.Debug("finished to add  CreateUserRepos");
         }
         public async Task CreateLogin(Logins l)
         {
-            Log.Information("start to  CreateLogin_Repose");
+            Log.Debug("start to  CreateLogin_Repose");
             if (l != null)
             {
                 _context.Logins.Add(l);
@@ -91,12 +91,12 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("cann't Login");
                 throw new Exception("cann't Login");
             }
-                Log.Information("finished to  CreateLogin_Repose");
+                Log.Debug("finished to  CreateLogin_Repose");
 
             }
             public async Task UpdateUserRepos(DetailsUserDTO dto)
         {
-         Log.Information("start to  UpdateUserRepos");
+         Log.Debug("start to  UpdateUserRepos");
           var result = await _context.Users.FindAsync(dto.UserId);
             if (result != null)
                 {
@@ -123,59 +123,61 @@ namespace FurnitureSellingInfra.Repos
                 }
                 //update
                 _context.Update(result);
-                    //save changes 
                     await _context.SaveChangesAsync();
-                }
+                Log.Information("update this user",result.UserId);
+
+            }
             else
             {
                 Log.Error("can not found this User");
                 throw new Exception("can not found this User");
             }
-            Log.Information("finished to  UpdateUserRepos");
+            Log.Debug("finished to  UpdateUserRepos");
 
         }
         public async Task DeleteUser(int Id)
         {
             var user =  _context.Users.FirstOrDefault(x=>x.UserId==Id);
                  
-            Log.Information("start to  DeleteUser_Repose");
+            Log.Debug("start to  DeleteUser_Repose");
             if (user != null)
             {
-                Log.Information("found this User");
+                
                 _context.Remove(user);
                 await _context.SaveChangesAsync();
+                Log.Information("delete this user");
             }
             else
             {
                 Log.Error("can not found this User");
                 throw new Exception("can not found this User");
             }
-            Log.Information("Finished to DeleteUser_Repose");
+            Log.Debug("Finished to DeleteUser_Repose");
         }
         
         #endregion
         #region Authantication Repos
 
-        public async Task Login(int id)
+        public async Task Login(int Id)
         {
-            Log.Information("start to  Login_Repose");
+            Log.Debug("start to  Login_Repose");
 
-            var r =_context.Logins.FirstOrDefault(x=>x.LoginId==id);
+            var r =_context.Logins.Find(Id);
             if(r != null)
             {
             r.IsLoggedIn=true;
             r.LastLoginTime = DateTime.Now;
-
                 _context.Update(r);
                 await _context.SaveChangesAsync();
+                Log.Information("Login true");
             }
            else
             {
-                throw new Exception("Con not login");
                 Log.Error("Con not login");
-            }
+                throw new Exception("Con not login");
+                  }
    
-            Log.Information("finished to  Login_Repose");
+            Log.Debug("finished to  Login_Repose");
 
         }
 

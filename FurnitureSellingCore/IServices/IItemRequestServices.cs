@@ -15,5 +15,7 @@ namespace FurnitureSellingCore.IServices
         public Task CreateItemRequest(ItemRequestDTO dto);
         public Task UpdateItemRequest(CardItemRequestDTO dto);
         public Task DeleteItemRequest(int id);
+        public  Task UpdateItemFromAdmain(ItemRequestFromAdmain dto);
+
     }
 }

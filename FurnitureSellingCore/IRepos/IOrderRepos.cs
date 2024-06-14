@@ -1,6 +1,6 @@
 ﻿using FurnitureSellingCore.DTO.Order;
+using FurnitureSellingCore.DTO.Order.Delivery;
 using FurnitureSellingCore.Models;
-using FurnitureSellingInfra.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +14,13 @@ namespace FurnitureSellingCore.IRepos
         public Task<DetailsOrdertDTO> GetByIdOrder_Repose(int id);
         public Task<List<CardOrdertDTO>> GetAllOrder();
         public Task<int> CreateOrder_Repose(Order o);
-        public Task UpdateOrder(DetailsOrdertDTO dto, int? userType);
+        public Task UpdateOrder(DetailsOrdertDTO dto);
         public Task DeleteOrder(int id);
         public Task<List<DeliveryOrdertDTO>> GetAllOrderforDelivery();
         public Task UpdateOrderforDelivery(DeliveryOrder_updatetDTO dto);
-        public Task<List<DeliveryOrdertDTO>> SearchOrderforDelivery(string? adders);
+        public Task<List<DetalisDeliveryOrderDTO>> SearchOrderforDelivery(string? adders);
+  
+
 
     }
 }

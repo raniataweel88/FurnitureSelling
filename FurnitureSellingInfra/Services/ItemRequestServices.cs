@@ -4,6 +4,7 @@ using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
 using FurnitureSellingInfra.Repos;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,17 +20,19 @@ namespace FurnitureSellingInfra.Services
         {
             _Repose = Repose;
         }
-        public async Task<ItemRequestDTO> GetByIdItemRequest(int id)
+        public async Task<ItemRequestDTO> GetByIdItemRequest(int Id)
         {
-           return  await _Repose.GetByIdItemRequest(id);
-           
+            Log.Debug("start GetByIdItemRequest-Services", Id);
+            return await _Repose.GetByIdItemRequest(Id);  
         }
         public async Task<List<CardItemRequestDTO>> GetAllItemRequest()
         {
+            Log.Debug("start GetAllItemRequest-Services");
             return await _Repose.GetAllItemRequest();
         }
         public async Task CreateItemRequest(ItemRequestDTO dto)
         {
+            Log.Debug("start CreateItemRequest-Services");
             ItemRequest ir = new ItemRequest
             {
                 Title = dto.Title,
@@ -42,16 +45,19 @@ namespace FurnitureSellingInfra.Services
         }   
         public async Task UpdateItemRequest(CardItemRequestDTO dto)
         {
-        
+            Log.Debug("start GetByIdItemRequest-Services", dto.ItemRequestId);
             await _Repose.UpdateItemRequest(dto);
         }
-        public async Task DeleteItemRequest(int id)
+        public async Task DeleteItemRequest(int Id)
         {
-          await  _Repose.DeleteItemRequest(id);    }
+            Log.Debug("start DeleteItemRequest-Services", Id);
+            await _Repose.DeleteItemRequest(Id);
+        }
 
-   
+        public  async Task UpdateItemFromAdmain(ItemRequestFromAdmain dto)
+        {
+            Log.Debug("start UpdateItemFromAdmain-Services", dto.Id);
 
-
-     
+           await  _Repose.UpdateItemFromAdmain(dto);        }
     }
 }

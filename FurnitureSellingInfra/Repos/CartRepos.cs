@@ -24,7 +24,7 @@ namespace FurnitureSellingInfra.Repos
         }
         public async Task<CardCartDTO> GetByIdCart_Repose(int Id)
         {
-            Log.Information("start  GetByIdCart_Repose");
+            Log.Debug("start  GetByIdCart_Repose");
 
             var Qery = from c in _context.Carts.
                        Where(x => x.CartId == Id)
@@ -45,12 +45,14 @@ namespace FurnitureSellingInfra.Repos
                            Email = u.Email,
 
                        };
+            Log.Information("get tis cart" + Id);
+            Log.Debug("finished to  Get ByIdCart_Repose");
+
             return Qery.FirstOrDefault();
-            Log.Information("finished to  Get ByIdCart_Repose");
         }
         public async Task<List<CardCartDTO>> GetAllCart_Repose()
         {
-            Log.Information("start to  GetAllCart_Repose");
+            Log.Debug("start to  GetAllCart_Repose");
             var Qery = from c in _context.Carts
                        join u in _context.Users
                        on c.UserId equals u.UserId
@@ -68,22 +70,24 @@ namespace FurnitureSellingInfra.Repos
                            TotalPrice = o.TotalPrice,
 
                        };
+            Log.Information("get all cart");
+            Log.Debug("finished to  GetAllCart_Repose");
+
             return Qery.ToList();
-            Log.Information("finished to  GetAllCart_Repose");
 
         }
 
         public async Task CreateCart_Repose(Cart c)
         {
-            Log.Information("start to  CreateCart_Repose");
+            Log.Debug("start to  CreateCart_Repose");
             if (c != null)
             {
-                Log.Information("the cart ready to create");
+                Log.Information("add this cart",c.CartId);
                 await _context.Carts.AddAsync(c);
                 await _context.SaveChangesAsync();
                 var o = _context.Orders.FirstOrDefault(x => x.OrderId == c.OrderId);
                 o.UserId = c.UserId;
-                o.TotalPrice = await CalculateTotalPrice(c.CartId);
+                o.TotalPrice = o.TotalPrice;
                 _context.Update(o);
                 await _context.SaveChangesAsync();
 
@@ -95,22 +99,21 @@ namespace FurnitureSellingInfra.Repos
                 throw new Exception("the cart is empty");
             }
 
-            Log.Information("finished to  CreateCart_Repose");
+            Log.Debug("finished to  CreateCart_Repose");
 
         }
         public async Task UpdateCart_Repose(CardCartDTO c)
         {
-            Log.Information("start to  UpdateCart_Repose");
+            Log.Debug("start to  UpdateCart_Repose");
             var r = await _context.Carts.FindAsync(c.CartId);
             if (r != null)
             {
-                Log.Information("found this Cart");
                 //replacement 
                 r.CartId = c.CartId;
                 r.OrderId = c.OrderId;
                 r.UserId = c.UserId;
-
-                _context.Update(r);
+                _context.Update(r);    
+                Log.Information("update this Cart",c.CartId);
                 //save changes 
                 await _context.SaveChangesAsync();
             }
@@ -119,16 +122,16 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("can not found this cat");
                 throw new Exception("can not found this cat");
             }
-            Log.Information("finished to  UpdateCart_Repose");
+            Log.Debug("finished to  UpdateCart_Repose");
         }
         public async Task DeleteCart_Repose(int Id)
         {
-            Log.Information("start to  DeleteCart_Repose");
+            Log.Debug("start to  DeleteCart_Repose");
             var c = _context.Carts.FirstOrDefault(x => x.CartId == Id);
             if (c != null)
             {
-                Log.Information("found this cart");
-                _context.Carts.Remove(c);
+                _context.Carts.Remove(c);  
+                Log.Information("delete this cart", c.CartId);
                 await _context.SaveChangesAsync();
             }
             else
@@ -136,36 +139,10 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("can not found this cat");
                 throw new Exception("can not found this cat");
             }
-            Log.Information("Finished to DeleteCart_Repose");
+            Log.Debug("Finished to DeleteCart_Repose");
         }
-        public async Task<float> CalculateTotalPrice(int CartId)
-        {
-            var query = from o in _context.Orders
+     
 
-                        join c in _context.Carts
-                        on o.OrderId equals c.OrderId
-                        join ct in _context.CartItems
-                        on c.CartId equals ct.CartId
-                        join i in _context.Items
-                   on ct.ItemId equals i.ItemId
-                        where c.CartId == CartId
-
-                        select new
-                        {
-
-                            TotalPrice = (i.Price * ct.Quantity) + o.Fee,
-
-                        };
-
-            var Calculate = query.ToList();
-            if (!Calculate.Any())
-                throw new Exception("No cart items found for the given cart id");
-            var totalCartPrice = Calculate.Sum(item => item.TotalPrice);
-
-
-            return (float)totalCartPrice;
-
-        }
-
+       
     }
 }

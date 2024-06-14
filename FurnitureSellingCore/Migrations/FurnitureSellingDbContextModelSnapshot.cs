@@ -102,6 +102,9 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Color")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
@@ -131,6 +134,9 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);
 
+                    b.Property<float?>("size")
+                        .HasColumnType("float");
+
                     b.HasKey("ItemId");
 
                     b.HasIndex("CategoryId");
@@ -155,6 +161,12 @@ namespace FurnitureSellingCore.Migrations
 
                     b.Property<string>("Image")
                         .HasColumnType("longtext");
+
+                    b.Property<string>("NoteStor")
+                        .HasColumnType("longtext");
+
+                    b.Property<float?>("Price")
+                        .HasColumnType("float");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -216,12 +228,18 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<DateTime?>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 6, 7, 16, 8, 48, 132, DateTimeKind.Local).AddTicks(7702));
+                        .HasDefaultValue(new DateTime(2024, 6, 14, 18, 46, 8, 978, DateTimeKind.Local).AddTicks(406));
+
+                    b.Property<string>("DeliveryNote")
+                        .HasColumnType("longtext");
 
                     b.Property<float?>("Fee")
                         .HasColumnType("float");
 
-                    b.Property<bool>("StatusDelivery")
+                    b.Property<DateTime?>("RecivingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool?>("StatusDelivery")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);

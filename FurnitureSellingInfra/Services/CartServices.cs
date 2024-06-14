@@ -3,6 +3,7 @@ using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,20 @@ namespace FurnitureSellingInfra.Services
 
         public async Task<CardCartDTO> GetByIdCart(int Id)
         {
-         return await _repose.GetByIdCart_Repose(Id);
+            Log.Debug("start GetByIdCart-Services", Id);
+
+            return await _repose.GetByIdCart_Repose(Id);
         }
         public async Task<List<CardCartDTO>> GetAllCart()
         {
+            Log.Debug("start GetAllCart-Services");
+
             return await _repose.GetAllCart_Repose();
         }
         public Task CreateCart(CartDTO dto)
         {
+            Log.Debug("start CreateCart-Services");
+
             Cart c = new Cart
             {
                 OrderId = dto.OrderId,
@@ -41,12 +48,16 @@ namespace FurnitureSellingInfra.Services
         }
        public async Task UpdateCart(CardCartDTO C)
         {
-           await _repose.UpdateCart_Repose(C);
+            Log.Debug("start UpdateCart-Services", C.CartId);
+
+            await _repose.UpdateCart_Repose(C);
         }
       
 
         public async Task DeleteCart(int Id)
         {
+            Log.Debug("start DeleteCart-Services", Id);
+
             await _repose.DeleteCart_Repose(Id);
         }
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FurnitureSellingCore.Migrations
 {
     [DbContext(typeof(FurnitureSellingDbContext))]
-    [Migration("20240607130848_f")]
-    partial class f
+    [Migration("20240614152032_m1")]
+    partial class m1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -219,12 +219,18 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<DateTime?>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 6, 7, 16, 8, 48, 132, DateTimeKind.Local).AddTicks(7702));
+                        .HasDefaultValue(new DateTime(2024, 6, 14, 18, 20, 32, 338, DateTimeKind.Local).AddTicks(9180));
+
+                    b.Property<string>("DeliveryNote")
+                        .HasColumnType("longtext");
 
                     b.Property<float?>("Fee")
                         .HasColumnType("float");
 
-                    b.Property<bool>("StatusDelivery")
+                    b.Property<DateTime?>("RecivingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool?>("StatusDelivery")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);

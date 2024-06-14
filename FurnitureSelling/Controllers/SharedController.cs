@@ -8,6 +8,7 @@ using FurnitureSellingInfra.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Diagnostics.Eventing.Reader;
 using static FurnitureSellingCore.helper.Enums;
 
@@ -45,19 +46,20 @@ namespace FurnitureSelling.Controllers
         /// <returns>Login</returns>
         /// <response code="400">can not loggin</response>       
         [HttpPut]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> login([FromRoute]int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> login([FromRoute]int Id)
         {
             try
             {
-                await _userServices.Login(id);
+                Log.Debug("start login-controller{Id}", Id);
+                await _userServices.Login(Id);
                 return Ok("login");
 
             }
-            catch (Exception ex)
-            {
-
-                return BadRequest("Con't login");
+            catch 
+            {   
+                Log.Error("Can't login");
+                return BadRequest("Can't login");
             }
         }
         /// <remarks>
@@ -72,18 +74,19 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">can not logout</response>       
         //logout
         [HttpPut]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> logout([FromRoute]int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> logout([FromRoute]int Id)
         {
             try
             {
-                var logout = _userServices.Logout(id);
+                Log.Debug("start logout-controller{Id}", Id);
+                var logout = _userServices.Logout(Id);
                 return Ok("logout is done ");
 
             }
-            catch (Exception ex)
+            catch
             {
-
+                Log.Error($"Can't  Logged");
                 return BadRequest("Can't logout");
             }
         }
@@ -99,26 +102,26 @@ namespace FurnitureSelling.Controllers
         ///     }
         /// </remarks>
         /// <returns>new pass</returns>
-        /// <response code="400">can not restpassword</response>     
+        /// <response code="400">can not rest password</response>     
         [HttpPut]
         [Route("[action]")]
         public async Task<IActionResult> restpassword([FromBody] ResetPasswordDTO dto)
         {
             try
             {
+                Log.Debug("start restpassword-controller");
                 var logout = _userServices.ResetPassword(dto);
                 return Ok("create new password");
 
             }
-            catch (Exception ex)
+            catch 
             {
-
-                return BadRequest("Can't restpassword");
+                Log.Error("Can't rest password");
+            return BadRequest("Can't rest password");
             }
         }
         #endregion
         #region Order
-        // Managment order
         //get id by order
         /// <remarks>
         /// Sample request:
@@ -131,28 +134,22 @@ namespace FurnitureSelling.Controllers
         /// <returns>Order</returns>
         /// <response code="400">can not Get Order</response>   
         [HttpGet]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> GetOrder([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetOrder([FromRoute] int Id)
         {
-            if (id != null)
-            {
+          
                 try
-                {
-                    var Order = await _OrderServices.GetByIdOrder(id);
+            {
+                Log.Debug("start GetOrder-controller");
+                var Order = await _OrderServices.GetByIdOrder(Id);
                     return Ok(Order);
 
                 }
-                catch (Exception ex)
-                {
+                catch
+                {Log.Error("not found this order");
                     return BadRequest("not found this Order");
                 }
             }
-            else
-            {
-                return BadRequest("the id is emptye");
-            }
-
-        }
         //get all order
         /// <returns>AllOrder</returns>
         /// <response code="400">Cann't Get All Order</response>   
@@ -163,39 +160,40 @@ namespace FurnitureSelling.Controllers
 
             try
             {
+                Log.Debug("start GetAllOrder-controller");
                 var Order = await _OrderServices.GetAllOrder();
                 return Ok(Order.ToList()); ;
 
             }
             catch
             {
-                return BadRequest("not found this profile");
+                Log.Error("can not found orders");
+                return BadRequest("can not found orders");
             }
         }
 
         //greate order
+        /// <response code="201">add Order</response>  
         /// <response code="400">can not create Order</response>  
         [HttpPost]
         [Route("CreateOrder")]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderDTO dto)
         {
-            if (dto != null)
-            {
+           
                 try
                 {
-                    await _OrderServices.CreateOrder(dto);
-                    return Ok("New Order has Created");
+                Log.Debug("start CreateOrder-controller");
+                await _OrderServices.CreateOrder(dto);
+                    return StatusCode(201, "done to add new  Order ");
+
 
                 }
                 catch (Exception ex)
                 {
+                Log.Error($"Error {ex.Message}", ex);
                     return BadRequest(ex.Message);
                 }
-            }
-            else
-            {
-                return BadRequest("Please Full All Data");
-            }
+         
         }
 
         //update Order
@@ -210,17 +208,18 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">can not Update Order</response>  
         [HttpPut]
         [Route("[action]")]
-        public async Task<IActionResult> UpdateOrder([FromBody] DetailsOrdertDTO dto, int? userType)
+        public async Task<IActionResult> UpdateOrder([FromBody] DetailsOrdertDTO dto)
         {
             try
             {
-               await _OrderServices.UpdateOrder(dto, userType);
+                Log.Debug("start UpdateOrder-controller{Id}",dto.Id);
+                await _OrderServices.UpdateOrder(dto);
                 return Ok("Update Order");
 
             }
             catch 
             {
-
+                Log.Error("Can't updates this profile");
                 return BadRequest("Can't updates this profile");
             }
         }
@@ -233,19 +232,22 @@ namespace FurnitureSelling.Controllers
         ///       "ID": "Enter Your ID to delete Order" 
         ///     }
         /// </remarks>
+        /// <response code="204">done to delete this Order</response>  
         /// <response code="400">can not Delete this  Order</response>  
         [HttpDelete]
         [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteOrder([FromRoute] int id)
+        public async Task<ActionResult> DeleteOrder([FromRoute] int Id)
         {
 
             try
             {
-                await _OrderServices.DeleteOrder(id);
-                return Ok("delete this Order");
+                Log.Debug("start DeleteOrder-controller{Id}", Id);
+                await _OrderServices.DeleteOrder(Id);
+                return StatusCode(204, "done to delete this Order ");
             }
             catch (Exception ex)
             {
+                Log.Error($"{ex.Message}", ex);
                 return BadRequest(ex.Message);
             }
         }
@@ -255,26 +257,22 @@ namespace FurnitureSelling.Controllers
         //get id by user
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetProfile([FromRoute] int id)
+        public async Task<IActionResult> GetProfile([FromRoute] int Id)
         {
-            if (id != null)
-            {
+         
                 try
-                {
-                    var profile = await _userServices.GetByIdUser(id);
-                    return Ok(profile);
+                 {
+                       Log.Debug("start GetProfile-controller{Id}", Id);
+                       var profile = await _userServices.GetByIdUser(Id);
+                       return Ok(profile);
 
                 }
                 catch 
                 {
-                    return BadRequest("not found this profile");
+                        Log.Error("can not found this profile");
+                        return BadRequest("can not found this profile");
                 }
-            }
-            else
-            {
-                return BadRequest("the id is empty");
-            }
-
+           
         }
         //get all user
         /// <returns>List of User</returns>
@@ -286,41 +284,39 @@ namespace FurnitureSelling.Controllers
 
             try
             {
-                var profile = await _userServices.GetAllUser();
-                return Ok(profile.ToList());
+                   Log.Debug("start GetUsers-controller");
+                   var profile = await _userServices.GetAllUser();
+                   return Ok(profile.ToList());
 
             }
             catch
             {
-                return BadRequest("not found this profile");
+                   Log.Error("can not found all user");
+                   return BadRequest("can not found all user");
             }
         }
 
 
 
-        //greate user
+        //greate user  
+        /// <response code="201"> add new user</response>  
         /// <response code="400">can not add new user</response>  
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> NewProfile([FromBody] CreateUserDTO dto)
         {
-            if (dto != null)
-            {
-                try
+             try
                 {
-                    await _userServices.CreateUser(dto);
-                    return Ok("New Account has Created");
-
+                         Log.Debug("start NewProfile-controller");
+                         await _userServices.CreateUser(dto);
+                         return StatusCode(201, "done to add this user");
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                        Log.Error(ex.Message);
+                        return BadRequest(ex.Message);
                 }
-            }
-            else
-            {
-                return BadRequest("Please Full All Data");
-            }
+      
         }
         //update user
         //get id by order
@@ -339,13 +335,13 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
-                var user = _userServices.UpdateUser(dto);
-                return Ok("done to updates this profile");
-
+                        Log.Debug("start UpdateProfile-controller");
+                       await _userServices.UpdateUser(dto);
+                       return Ok("done to updates this profile");
             }
             catch 
             {
-
+                Log.Error("Can't updates this profile");
                 return BadRequest("Can't updates this profile");
             }
         }
@@ -358,20 +354,23 @@ namespace FurnitureSelling.Controllers
         ///       "ID": "Enter Your ID to delete profile" 
         ///     }
         /// </remarks>
+       /// <response code="204">Delete this  profile</response> 
         /// <response code="400">can not Delete this  profile</response> 
         [HttpDelete]
         [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteAccount([FromRoute] int id)
+        public async Task<ActionResult> DeleteAccount([FromRoute] int Id)
         {
 
             try
             {
-                await _userServices.DeleteUser(id);
-                return Ok("delete this record");
+                    Log.Debug("start DeleteAccount-controller",Id);
+                    await _userServices.DeleteUser(Id);
+                    return StatusCode(204, "done to delete this record");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                    Log.Error($"{ex.Message}");
+                    return BadRequest(ex.Message);
             }
         }
         #endregion
@@ -389,25 +388,22 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">can not Get Category</response>   
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetCategory([FromRoute]int id)
+        public async Task<IActionResult> GetCategory([FromRoute]int Id)
         {
-            if (id != null)
-            {
+            
                 try
                 {
-                    var Category = await _CategoryServices.GetByIdCategory(id);
-                    return Ok(Category);
+                     Log.Debug("start GetCategory-controller", Id);
+                     var Category = await _CategoryServices.GetByIdCategory(Id);
+                     return Ok(Category);
 
                 }
-                catch (Exception ex)
+                catch
                 {
-                    return BadRequest("not found this Category");
+                     Log.Error($"Could not find category: {Id}");
+                     return BadRequest("can not found this Category");
                 }
-            }
-            else
-            {
-                return BadRequest("please enter id ");
-            }
+          
 
         }
 
@@ -421,13 +417,15 @@ namespace FurnitureSelling.Controllers
 
             try
             {
+                Log.Debug("start GetAllCategory-controller");
                 var Categorys = await _CategoryServices.GetAllCategory();
                 return Ok(Categorys.ToList());
 
             }
             catch
             {
-                return BadRequest("con not found  Categorys");
+                Log.Error("con not found  Categories");
+                return BadRequest("con not found  Categories");
             }
         }
 
@@ -439,25 +437,21 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">can not Get  Item </response> 
         [HttpGet]
         [Route("[action]/{id}")]
-        public async Task<IActionResult> GetItemById([FromRoute]int id)
+        public async Task<IActionResult> GetItemById([FromRoute]int Id)
         {
-            if (id != null)
-            {
                 try
                 {
-                    var Item = await _ItemServices.GetByIdItem(id);
-                    return Ok(Item);
+                       Log.Debug("start GetItemById-controller", Id);
+                       var Item = await _ItemServices.GetByIdItem(Id);
+                       return Ok(Item);
 
                 }
                 catch 
                 {
-                    return BadRequest("not found this Item");
+                       Log.Error("not found this Item");
+                       return BadRequest("not found this Item");
                 }
-            }
-            else
-            {
-                return BadRequest("the id is empty");
-            }
+
 
         }
 
@@ -471,12 +465,13 @@ namespace FurnitureSelling.Controllers
 
             try
             {
+                Log.Debug("start GetAllItem-controller");
                 var AllItem = await _ItemServices.GetAllItem();
                 return Ok(AllItem.ToList());
 
             }
             catch 
-            {
+            {Log.Error("can not found  Item");
                 return BadRequest("can not found  Item");
             }
         }
@@ -490,11 +485,12 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
-              var i= await _ItemServices.SearchItem(name, description, price);
+                Log.Debug("start SearchItem-controller");
+                var i = await _ItemServices.SearchItem(name, description, price);
                 return Ok(i);
             }
             catch 
-            {
+            {Log.Error("can not found  Item");
                 return BadRequest("can not found  Item");
             }
 
@@ -506,40 +502,44 @@ namespace FurnitureSelling.Controllers
         //Get by Id Item Request
         /// <returns> Item Request</returns>
         /// <response code="400">can not Get  Item Request</response> 
-        [HttpGet]
-        [Route("[action]")]
-        public async Task<IActionResult> GetItemRequestById([FromRoute]int Id)
-        {
-            try
+            [HttpGet]
+            [Route("[action]")]
+            public async Task<IActionResult> GetItemRequestById([FromRoute]int Id)
             {
-                var it = await _itemRequestServices.GetByIdItemRequest(Id);
-                return Ok(it);
+                try
+                {
+                    Log.Debug("start GetItemRequestById-controller",Id);
+                    var it = await _itemRequestServices.GetByIdItemRequest(Id);
+                    return Ok(it);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex.Message);
+                    return BadRequest(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
 
         //get all ItemRequest
         /// <returns>List of ItemRequest</returns>
         /// <response code="400">can not Get All Item Request</response>   
-        [HttpGet]
-              [Route("[action]")]
-              public async Task<IActionResult> GetAllItemRequest()
-              {
+                 [HttpGet]
+                 [Route("[action]")]
+                     public async Task<IActionResult> GetAllItemRequest()
+                     {
 
-                  try
-                  {
-                      var ItemRequests = await _itemRequestServices.GetAllItemRequest();
-                      return Ok(ItemRequests);
-
-                  }
-                  catch
-                  {
-                      return BadRequest("con not found  ItemRequests");
-                  }
-              }
+                          try
+                          {
+                                   Log.Debug("start GetAllItemRequest-controller");
+                                   var ItemRequests = await _itemRequestServices.GetAllItemRequest();
+                                   return Ok(ItemRequests);
+                              
+                          }
+                          catch
+                          {
+                                   Log.Error("con not found  ItemRequest");
+                                   return BadRequest("con not found  ItemRequests");
+                          }
+                     }
         #endregion
       
        

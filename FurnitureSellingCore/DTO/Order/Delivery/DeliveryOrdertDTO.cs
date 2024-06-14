@@ -1,4 +1,4 @@
-﻿namespace FurnitureSellingCore.DTO.Order
+﻿namespace FurnitureSellingCore.DTO.Order.Delivery
 {
     public class DeliveryOrdertDTO
     {
@@ -8,10 +8,6 @@
         public float? TotalPrice { get; set; }
         public bool StatusDelivery { get; set; }
 
-   public string?  Phone      { get; set; }
-   public string?  FirstName  { get; set; }
-   public string?  LastName   { get; set; }
-   public string? Address { get; set; }
 
     }
 }

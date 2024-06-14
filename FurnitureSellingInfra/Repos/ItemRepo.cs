@@ -8,6 +8,7 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,11 @@ namespace FurnitureSellingInfra.Repos
         {
             _context = context;
         }
-        public async Task<DetailsItemDTO> GetByIdItem_Repose(int id)
+        public async Task<DetailsItemDTO> GetByIdItem_Repose(int Id)
         {
-            Log.Information("start to  GetByIdItem_Repose");
+            Log.Debug("start to  GetByIdItem_Repose");
           var Query=from i in _context.Items  
-                    where i.CategoryId == id
+                    where i.CategoryId == Id
                     select new DetailsItemDTO
             {
                 Name = i.Name,
@@ -36,15 +37,20 @@ namespace FurnitureSellingInfra.Repos
                 Price=i.Price,
                 DiscountType=i.DiscountType,
                 Quantity = i.Quantity,
-                CategoryId= i.CategoryId
-               
-            };
+                CategoryId= i.CategoryId,
+                Color =i.Color,
+                Size =i.Size,
+
+                    };
+            Log.Information("return Item");
+
+            Log.Debug("finished to  GetByIdItem_Repose");
+
             return Query.FirstOrDefault();         
-            Log.Information("finished to  GetByIdItem_Repose");
         }
         public async Task<List<CardItemDTO>> GetAllItem_Repose()
         {
-            Log.Information("start to  GetAllItem_Repose");
+            Log.Debug("start to  GetAllItem_Repose");
 
             var Query = from i in _context.Items
                         select new CardItemDTO
@@ -55,13 +61,16 @@ namespace FurnitureSellingInfra.Repos
                             ItemId = i.ItemId,
 
                         };
+            Log.Information("return all Item");
+
+            Log.Debug("finished to  GetAllItem_Repose");
+
             return Query.ToList();
-            Log.Information("finished to  GetAllItem_Repose");
         }
         public async Task CreateItem_Repose(Item ct)
         {
            
-            Log.Information("start to  CreateItem_Repose");
+            Log.Debug("start to  CreateItem_Repose");
             if (ct != null)
             {
                 Log.Information("the Item not null");
@@ -73,13 +82,13 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("the Item is empty");
                 throw new Exception("the Item is empty");
             }
-            Log.Information("finished to  CreateItem_Repose");
+            Log.Debug("finished to  CreateItem_Repose");
         }
 
         public async Task UpdateItem(DetailsItemDTO t)
         {
             var it = await _context.Items.FindAsync(t.ItemId);
-            Log.Information("start to  UpdateCategory_Repose");
+            Log.Debug("start to  UpdateCategory_Repose");
             it.ItemId = t.ItemId;
             it.Name = t.Name;
             it.Description = t.Description;
@@ -89,16 +98,17 @@ namespace FurnitureSellingInfra.Repos
             it.DiscountType = t.DiscountType;
             it.Quantity = t.Quantity;
             it.CategoryId = t.CategoryId;
-            
+            it.Color = t.Color;
+            it.Size = t.Size;
             _context.Update(it);
             _context.SaveChanges();
 
-            Log.Information("Finish to  UpdateCategory_Repose");
+            Log.Debug("Finish to  UpdateCategory_Repose");
     } 
 
         public async Task<List<DetailsItemDTO>> SearchItem(string? name, string? description, float? price)
         {
-            Log.Information("start to  SearchItem_Repose");
+            Log.Debug("start to  SearchItem_Repose");
 
             var items = await _context.Items.ToListAsync();
             if (name != null)
@@ -122,17 +132,18 @@ namespace FurnitureSellingInfra.Repos
                              Quantity= i.Quantity
 
                          };
-            return  (  result.ToList());
-            Log.Information("finished to  SearchItem_Repose");
+            Log.Debug("finished to  SearchItem_Repose");
+
+            return (  result.ToList());
 
         }
 
-        public async Task DeleteItem(int id)
+        public async Task DeleteItem(int Id)
         {
-         var i=_context.Items.FirstOrDefault(x=>x.ItemId==id);
+         var i=_context.Items.FirstOrDefault(x=>x.ItemId== Id);
             if (i != null)
             {
-                Log.Information("start to  DeleteItem");
+                Log.Debug("start to  DeleteItem");
                 if (i != null)
                 {
                     Log.Information("found this Item");
@@ -144,7 +155,7 @@ namespace FurnitureSellingInfra.Repos
                     Log.Error("can not found this Item");
                     throw new Exception("can not found this Item");
                 }
-                Log.Information("Finish to DeleteItem");
+                Log.Debug("Finish to DeleteItem");
             }
         }
 }

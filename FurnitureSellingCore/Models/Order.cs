@@ -16,6 +16,10 @@ namespace FurnitureSellingCore.Models
         public float? Fee { get; set; }
         public string? CustomerNote { get; set; }
         public int? UserId { get; set; }
-        public bool StatusDelivery {  get; set; }
-    } 
+        public bool? StatusDelivery {  get; set; }
+        public DateTime? RecivingDate { get; set; }
+        public string?   DeliveryNote { get; set; }
+
+
+    }
 }

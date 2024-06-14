@@ -22,10 +22,10 @@ namespace FurnitureSellingInfra.Repos
         public CartItemRepose(FurnitureSellingDbContext context)
         {
             _context = context;
-        }  
-     public async Task<CartItemDTO> GetByIdCartItem_Repose(int Id)
+        }
+        public async Task<CartItemDTO> GetByIdCartItem_Repose(int Id)
         {
-            Log.Information("start GetByIdCartItem_Repose");
+            Log.Debug("start GetByIdCartItem_Repose");
             var Query = from o in _context.CartItems
                         join i in _context.Items
                         on o.ItemId equals i.ItemId
@@ -39,65 +39,76 @@ namespace FurnitureSellingInfra.Repos
                             Name = i.Name,
                             Price = i.Price,
                             Image = i.Image,
-                            Quantity =o.Quantity,
-                            ItemId=o.ItemId,
-                            
-                          };
-            return  Query.FirstOrDefault();
-            Log.Information("end GetByIdCartItem_Repose");
-    
-        }
-        
+                            Quantity = o.Quantity,
+                            ItemId = o.ItemId,
 
-        public Task<List<CartItemDTO>> GetAllCartItem_Repose()
+                        };
+            Log.Information("return CartItem {CartItemId}", Id);
+
+            Log.Debug("end GetByIdCartItem_Repose");
+
+            return Query.FirstOrDefault();
+
+        }
+
+
+        public Task<List<UpdateCartItemDTO>> GetAllCartItem_Repose()
         {
-            Log.Information("start GetAllCartItem_Repose");
+            Log.Debug("start GetAllCartItem_Repose");
 
             var query = from q in _context.CartItems
-                        select new CartItemDTO
+                        select new UpdateCartItemDTO
                         {
-                            
-                            CartItemId=q.CartItemId,
+
+                            CartItemId = q.CartItemId,
                             CartId = q.CartId,
                             ItemId = q.ItemId,
                             Quantity = q.Quantity,
                         };
+            Log.Information("return AllCartItem");
+            Log.Debug("end AllCartItem_Repose");
+
             return query.ToListAsync();
-            Log.Information("return AllCartItem_Repose");
 
         }
         public async Task CreateCartItem_Repose(CartItem model)
         {
-            Log.Information("start  CreateCartItem_Repose");
+            Log.Debug("start CreateCartItem_Repose");
+
             if (model != null)
             {
-                Log.Information("CartItem not null");
-                 _context.CartItems.Add(model);
-                await _context.SaveChangesAsync();
+                // Add the new CartItem to the context
+                _context.CartItems.Add(model);
+                Log.Information("add new CartItem ", model.CartItemId);
+
+                // Save changes to generate CartItemId if not already set
+                   CalculateTotalPrice(model.CartItemId);
+                 await _context.SaveChangesAsync(); 
+               
             }
-            else
-            {
-                Log.Error("CartItem is empty");
-                throw new Exception("CartItem is empty");
-            }
-            Log.Information("Finished to add  CartItem_Repose");
+        
         }
-        public async Task UpdateCartItem_Repose(CartItemDTO dto)
+
+
+        public async Task UpdateCartItem_Repose(UpdateCartItemDTO dto)
         {
-            Log.Information("start  UpdateCartItem_Repose");
+            Log.Debug("start  UpdateCartItem_Repose");
             var result = await _context.CartItems.FindAsync(dto.CartItemId);
             if (result != null)
             {
-                Log.Information("found this CartItem");
 
                 //replacement 
                 result.CartItemId = dto.CartItemId;
                 result.Quantity = dto.Quantity;
                 result.CartId = dto.CartId;
                 result.ItemId = dto.ItemId;
-                //update
+       
+                
+                Log.Information("Update this CartItem", dto.CartItemId);
+
+      await CalculateTotalPrice(dto.CartItemId);
+
                 _context.Update(result);
-                //save changes 
                 await _context.SaveChangesAsync();
             }
             else
@@ -105,57 +116,56 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("cann't found this CartItem");
                 throw new Exception("can not found this CartItem");
             }
-            Log.Information("finished to  UpdateCartItem_Repose");
+            Log.Debug("finished to  UpdateCartItem_Repose");
         }
 
-        public async Task DeleteCartItem_Repose(int id)
+        public async Task DeleteCartItem_Repose(int Id)
         {
-            Log.Information("start  DeleteCartItem_Repose");
+            Log.Debug("start  DeleteCartItem_Repose");
 
-            var c =_context.CartItems.FirstOrDefault(x => x.CartItemId == id);
+            var c = _context.CartItems.FirstOrDefault(x => x.CartItemId == Id);
             if (c != null)
             {
-                Log.Information("found this CartItem");
+                Log.Information("delete this CartItem", Id);
                 _context.CartItems.Remove(c);
-                  await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             else
             {
                 Log.Error("can not found this CartItem");
                 throw new Exception("can not found this CartItem");
             }
-         
-            Log.Information("finished to  DeleteCartItem_Repose");
-        }
-        public async Task<float> CalculateTotalPrice(int CartId)
+
+            Log.Debug("finished to  DeleteCartItem_Repose");
+        } 
+        public async Task CalculateTotalPrice(int Id)
         {
-            var query = from o in _context.Orders
+            Log.Debug("start to CalculateTotalPrice");
 
-                        join c in _context.Carts
-                        on o.OrderId equals c.OrderId
-                        join ct in _context.CartItems
-                        on c.CartId equals ct.CartId
-                        join i in _context.Items
-                   on ct.ItemId equals i.ItemId
-                        where c.CartId == CartId
-
-                        select new
+            var query = from ct in _context.CartItems
+                        join c in _context.Carts on ct.CartId equals c.CartId
+                        join i in _context.Items on ct.ItemId equals i.ItemId
+                        join o in _context.Orders on c.OrderId equals o.OrderId
+                        where ct.CartItemId == Id
+                        select new TotalPticeDTO
                         {
-
-                            TotalPrice = (i.Price * ct.Quantity) + o.Fee,
-
+                            Id=o.OrderId,
+                         price=i.Price,
+                         Quintity=ct.Quantity,
+                            TotalPrice = (i.Price * ct.Quantity),
                         };
 
-            var Calculate = query.ToList();
-            if (!Calculate.Any())
-                throw new Exception("No cart items found for the given cart id");
-            var totalCartPrice = Calculate.Sum(item => item.TotalPrice);
-
-
-            return (float)totalCartPrice;
-
+            var result = await query.FirstOrDefaultAsync();
+            var or=await _context.Orders.FirstOrDefaultAsync(x=>x.OrderId==result.Id);
+            
+            if (result != null)
+            {
+            or.TotalPrice=result.TotalPrice;    
+                _context.Update(or);
+                await _context.SaveChangesAsync();
+            }
         }
-
 
     }
 }
+

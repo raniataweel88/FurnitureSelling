@@ -19,12 +19,12 @@ namespace FurnitureSellingInfra.Repos
         {
             _context = context;
         }
-        public async Task<CardCategoryDTO> GetByIdCategory_Repose(int id)
+        public async Task<CardCategoryDTO> GetByIdCategory_Repose(int Id)
         {
-            Log.Information("start to  GetByIdCategory_Repose");
+            Log.Debug("start to  GetByIdCategory_Repose");
 
             var Qery = from c in _context.Categories
-                       where c.Id == id
+                       where c.Id == Id
                        select new CardCategoryDTO
                        {
                            Title = c.Title,
@@ -32,12 +32,12 @@ namespace FurnitureSellingInfra.Repos
 
                        };
             return  Qery.FirstOrDefault();
-            Log.Information("finished to  GetByIdCategory_Repose");
+            Log.Debug("finished to  GetByIdCategory_Repose");
 
         }
         public async Task<List<CardCategoryDTO>> GetAllCategory_Repose()
         {
-            Log.Information("start to  GetAllCategory_Repose");
+            Log.Debug("start to  GetAllCategory_Repose");
 
             var Qery = from c in _context.Categories
                        select  new CardCategoryDTO{
@@ -45,12 +45,12 @@ namespace FurnitureSellingInfra.Repos
                            Id = c.Id,
                            };
                  return await Qery.ToListAsync();
-            Log.Information("finished to  GetAllCategory_Repose");
+            Log.Debug("finished to  GetAllCategory_Repose");
 
         }
         public async Task CreateCategory_Repose(Category c)
         {
-            Log.Information("start to  CreateCategory_Repose");
+            Log.Debug("start to  CreateCategory_Repose");
             if (c != null)
             {
                 Log.Information("the Category not null");
@@ -62,12 +62,12 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("the Category is empty");
                 throw new Exception("the Category is empty");
             }
-            Log.Information("finished to  CreateCategory_Repose");
+            Log.Debug("finished to  CreateCategory_Repose");
 
         }
         public async Task UpdateCategory_Repose(CardCategoryDTO c)
         {
-            Log.Information("start to  UpdateCategory_Repose");
+            Log.Debug("start to  UpdateCategory_Repose");
             var result = await _context.Categories.FindAsync(c.Id);
             if (result != null)
             {
@@ -85,14 +85,14 @@ namespace FurnitureSellingInfra.Repos
                 throw new Exception("can not found this Category");
                   }
            
-            Log.Information("finished to  UpdateCategory_Repose");
+            Log.Debug("finished to  UpdateCategory_Repose");
         }
 
-        public async Task DeleteCategory_Repose(int id)
+        public async Task DeleteCategory_Repose(int Id)
         {
            
-            Log.Information("start to  DeleteCategory_Repose");
-            var C = _context.Categories.FirstOrDefault(X => X.Id == id);
+            Log.Debug("start to  DeleteCategory_Repose");
+            var C = _context.Categories.FirstOrDefault(X => X.Id == Id);
             if (C != null)
             {
                 Log.Information("found this Category");
@@ -104,7 +104,7 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("can not found this Category");
                 throw new Exception("can not found this Category");
             }
-            Log.Information("Finished to DeleteCategory_Repose");
+            Log.Debug("Finished to DeleteCategory_Repose");
         }
     }
     }

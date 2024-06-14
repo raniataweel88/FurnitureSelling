@@ -7,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace FurnitureSellingCore.Migrations
 {
     /// <inheritdoc />
-    public partial class step1 : Migration
+    public partial class m1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,16 +38,12 @@ namespace FurnitureSellingCore.Migrations
                     FirstName = table.Column<string>(type: "longtext", nullable: false),
                     LastName = table.Column<string>(type: "longtext", nullable: false),
                     Email = table.Column<string>(type: "varchar(255)", nullable: false),
-                    Phone = table.Column<string>(type: "longtext", nullable: false),
-                    Password = table.Column<string>(type: "longtext", nullable: false),
-                    NewPassword = table.Column<string>(type: "longtext", nullable: false),
+                    Phone = table.Column<string>(type: "longtext", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     UserType = table.Column<int>(type: "int", nullable: true),
                     Address = table.Column<string>(type: "longtext", nullable: true),
                     Salary = table.Column<string>(type: "longtext", nullable: true),
-                    PlateNumber = table.Column<string>(type: "longtext", nullable: true),
-                    AccessKey = table.Column<string>(type: "longtext", nullable: true),
-                    AccesskeyExpireDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    PlateNumber = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -65,8 +61,8 @@ namespace FurnitureSellingCore.Migrations
                     ItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: false),
-                    Image = table.Column<string>(type: "longtext", nullable: false),
+                    Description = table.Column<string>(type: "longtext", nullable: true),
+                    Image = table.Column<string>(type: "longtext", nullable: true),
                     Price = table.Column<float>(type: "float", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     isHaveDiscount = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValue: false),
@@ -136,13 +132,15 @@ namespace FurnitureSellingCore.Migrations
                 {
                     OrderId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false),
-                    TotalPrice = table.Column<float>(type: "float", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: false, defaultValue: new DateTime(2024, 5, 31, 20, 55, 13, 202, DateTimeKind.Local).AddTicks(2115)),
-                    Fee = table.Column<float>(type: "float", nullable: false),
+                    Title = table.Column<string>(type: "longtext", nullable: true),
+                    TotalPrice = table.Column<float>(type: "float", nullable: true),
+                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: true, defaultValue: new DateTime(2024, 6, 14, 18, 20, 32, 338, DateTimeKind.Local).AddTicks(9180)),
+                    Fee = table.Column<float>(type: "float", nullable: true),
                     CustomerNote = table.Column<string>(type: "longtext", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: true),
-                    StatusDelivery = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    StatusDelivery = table.Column<bool>(type: "tinyint(1)", nullable: true, defaultValue: false),
+                    RecivingDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    DeliveryNote = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {

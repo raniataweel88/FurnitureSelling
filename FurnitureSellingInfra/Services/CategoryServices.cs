@@ -2,6 +2,7 @@
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +18,21 @@ namespace FurnitureSellingInfra.Services
         {
             _repose = repose;
         }
-        public async Task<CardCategoryDTO> GetByIdCategory(int id)
+        public async Task<CardCategoryDTO> GetByIdCategory(int Id)
         {
-            return await _repose.GetByIdCategory_Repose(id); }
+            Log.Debug("start GetByIdCategory-Services", Id);
+            return await _repose.GetByIdCategory_Repose(Id);
+        }
         public async Task<List<CardCategoryDTO>> GetAllCategory()
         {
-            return await _repose.GetAllCategory_Repose();
-        
-    }
+            Log.Debug("start GetAllCategory-Services");
+           return await _repose.GetAllCategory_Repose();
+         }
 
         public Task CreateCategory(CategoryDTO dto)
         {
+            Log.Debug("start CreateCategory-Services");
+
             Category c = new Category
             {
                 Title = dto.Title,
@@ -36,12 +41,14 @@ namespace FurnitureSellingInfra.Services
         }
         public async Task UpdateCategory(CardCategoryDTO dto)
         {
+            Log.Debug("start UpdateCategory-Services", dto.Id);
             await _repose.UpdateCategory_Repose(dto);
         }
 
-        public async Task DeleteCategory(int id)
+        public async Task DeleteCategory(int Id)
         {
-        await  _repose.DeleteCategory_Repose(id);
+            Log.Debug("start DeleteCategory-Services", Id);
+            await _repose.DeleteCategory_Repose(Id);
     }
   
     }

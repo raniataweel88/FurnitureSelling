@@ -1,4 +1,5 @@
-﻿using FurnitureSellingCore.DTO.Cart;
+﻿using Azure;
+using FurnitureSellingCore.DTO.Cart;
 using FurnitureSellingCore.DTO.CartItem;
 using FurnitureSellingCore.DTO.Item;
 using FurnitureSellingCore.DTO.ItemRequest;
@@ -6,9 +7,11 @@ using FurnitureSellingCore.DTO.Order;
 using FurnitureSellingCore.DTO.WishList;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
+using FurnitureSellingInfra.Repos;
 using FurnitureSellingInfra.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using ZstdSharp.Unsafe;
 
 namespace FurnitureSelling.Controllers
@@ -42,18 +45,19 @@ namespace FurnitureSelling.Controllers
         /// <returns>wishList</returns>
         /// <response code="400">cann't get the wishList</response>
         [HttpGet]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> GetWishListById([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetWishListById([FromRoute] int Id)
         {
-
             try
             {
-                var wishList = await _wishListServices.GetByIdWishList(id);
+                Log.Debug("start GetWishListById-controller", Id);
+                var wishList = await _wishListServices.GetByIdWishList(Id);
                 return Ok(wishList);
 
             }
             catch
             {
+                Log.Error("cannot found this wishList");
                 return BadRequest("cannot found this wishList");
             }
         }
@@ -69,12 +73,14 @@ namespace FurnitureSelling.Controllers
 
             try
             {
+                Log.Debug("start GetAllWishList-controller");
                 var wishList = await _wishListServices.GetAllWishList();    
                 return Ok(wishList);
 
             }
             catch
             {
+                Log.Error("con not found  wishList");
                 return BadRequest("con not found  wishList");
             }
         }
@@ -91,6 +97,7 @@ namespace FurnitureSelling.Controllers
         ///        ItemId: "Enter the id of  Item the need to add in whish List" 
         ///     }
         /// </remarks>
+        /// <response code="201">add new  wishList</response>
         /// <response code="400">cann't  add the wishList</response>
         [HttpPost]
         [Route("[action]")]
@@ -98,13 +105,15 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start NewWishList-controller");
                 await _wishListServices.CreateWishList(d);  
-                return Ok("done to add New  WishList");
+                return StatusCode(201, "done to add New  WishList");
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
-
             }
         }
 
@@ -127,13 +136,14 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start UpdateWishList-controller");
                 var WishList = _wishListServices.UpdateWishList(dto);
                 return Ok("done to update this");
 
             }
             catch 
             {
-
+                Log.Error("Can't updates this WishList");
                 return BadRequest("Can't updates this WishList");
             }
         }
@@ -146,19 +156,22 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of whish List to delete" 
         ///     }
         /// </remarks>
+    /// <response code="204"> delete the wishList</response>
         /// <response code="400">cann't delete the wishList</response>
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteWishList([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteWishList([FromRoute] int Id)
         {
-
             try
             {
-                await _wishListServices.DeleteWishList(id);
-                return Ok("delete this WishList");
+                Log.Debug("start DeleteWishList-controller{Id}",Id);
+                await _wishListServices.DeleteWishList(Id);
+                return StatusCode(204, "delete this WishList");
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);  
                 return BadRequest(ex.Message);
             }
         }
@@ -183,18 +196,19 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">cann't get the Cart Item</response>
 
         [HttpGet]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> GetCartItemById([FromRoute]int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetCartItemById([FromRoute]int Id)
         {
 
             try
             {
-                var CartItem = await _cartItemServices.GetByIdCartItem(id);
+                Log.Debug("start GetCartItemById-controller{Id}", Id);
+                var CartItem = await _cartItemServices.GetByIdCartItem(Id);
                 return Ok(CartItem);
 
             }
             catch
-            {
+            {  Log.Error("con not found  CartItem");
                 return BadRequest("con not found  CartItem");
             }
         }
@@ -209,12 +223,14 @@ namespace FurnitureSelling.Controllers
 
             try
             {
+                Log.Debug("start GetAllCartItem-controller");
                 var CartItem = await _cartItemServices.GetAllCartItem();
                 return Ok(CartItem);
 
             }
             catch
             {
+                Log.Error("con not found  CartItem");
                 return BadRequest("con not found  CartItem");
             }
         }
@@ -231,6 +247,7 @@ namespace FurnitureSelling.Controllers
         /// }   
         /// </remarks>
         /// <returns>cartItem</returns>
+    /// <response code="201">add  cartItem</response>
         /// <response code="400">cann't add the cartItem</response>
         [HttpPost]
         [Route("[action]")]
@@ -238,11 +255,14 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start NewCartItem-controller");
                 await _cartItemServices.CreateCartItem(c);
-                return Ok("create new cart item");
+                return StatusCode(201, "create new cart item");
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
 
             }
@@ -262,17 +282,18 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">cann't Update the cartItem</response>
         [HttpPut]
         [Route("[action]")]
-        public async Task<IActionResult> UpdateCartItem(CartItemDTO dto)
+        public async Task<IActionResult> UpdateCartItem(UpdateCartItemDTO dto)
         {
             try
             {
+                Log.Debug("start UpdateCartItem-controller{Id}",dto.CartItemId);
                 var CartItem = _cartItemServices.UpdateCartItem(dto);
-                return Ok(CartItem);
+                return Ok("done to update this CartItem");
 
             }
-            catch (Exception ex)
+            catch 
             {
-
+                Log.Error("Can't updates this CartItem");
                 return BadRequest("Can't updates this CartItem");
             }
         }
@@ -285,19 +306,23 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of CartItem to delete" 
         ///     }
         /// </remarks>
+        /// <response code="204"> delete this CartItem</response>
         /// <response code="400">cann't delete the CartItem</response>
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteCartItem([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteCartItem([FromRoute] int Id)
         {
 
             try
             {
-                await _cartItemServices.DeleteCartItem(id);
-                return Ok("delete this CartItem");
+                Log.Debug("start DeleteCartItem-controller{Id}",Id);
+                await _cartItemServices.DeleteCartItem(Id);
+                return StatusCode(204, "delete this CartItem");
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -316,18 +341,20 @@ namespace FurnitureSelling.Controllers
         /// <returns>Cart</returns>
         /// <response code="400">cann't get the Cart</response>
         [HttpGet]
-        [Route("[action]/{id}")]
-        public async Task<IActionResult> GetCartById([FromRoute]int id)
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetCartById([FromRoute]int Id)
         {
 
             try
             {
-                var Cart = await _cartServices.GetByIdCart(id);
+                Log.Debug("start GetCartById-controller{Id}", Id);
+                var Cart = await _cartServices.GetByIdCart(Id);
                 return Ok(Cart);
 
             }
             catch
-            {
+            {   
+                Log.Error("can not found  Cart");
                 return BadRequest("can not found  Cart");
             }
         }
@@ -343,12 +370,14 @@ namespace FurnitureSelling.Controllers
 
             try
             {
+                Log.Debug("start GetCartAll-controller");
                 var Carts = await _cartServices.GetAllCart();
                 return Ok(Carts);
 
             }
             catch
-            {
+            {   
+                Log.Error("can not found  Carts");
                 return BadRequest("can not found  Carts");
             }
         }
@@ -365,6 +394,7 @@ namespace FurnitureSelling.Controllers
         /// }   
         /// </remarks>
         /// <returns>cartItem</returns>
+        /// <response code="201">add the cart</response>
         /// <response code="400">cann't add the cartItem</response>
         [HttpPost]
         [Route("[action]")]
@@ -372,13 +402,14 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
-                await _cartServices.CreateCart(c); 
-                return Ok("create new cart");
+                Log.Debug("start NewCart-controller");
+                await _cartServices.CreateCart(c);
+                return StatusCode(201, "done to add New  Cart");
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
-
             }
         }
         //update Cart
@@ -419,25 +450,27 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of  Cart to delete" 
         ///     }
         /// </remarks>
+        /// <response code="204"> delete the Cart</response>
         /// <response code="400">cann't delete the Cart</response>
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteCart([FromRoute]int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteCart([FromRoute]int Id)
         {
 
             try
             {
-                await _cartServices.DeleteCart(id);
-                return Ok("delete this Cart");
+                Log.Debug("start DeleteCart-controller{Id}",Id);
+                await _cartServices.DeleteCart(Id);
+                return StatusCode(204, "delete this  Cart");
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
 
         #endregion
-
         #region ItemRequest
 
         //greate Item Request
@@ -449,22 +482,25 @@ namespace FurnitureSelling.Controllers
         ///         Title: "Enter the name ofItemRequest " 
         ///         Description: "if have note of ItemRequest" 
         ///         Image : "if have image of ItemRequest" 
-        //          CategoryId: "Enter the id of Category of item" 
+        /// CategoryId: "Enter the id of Category of item" 
         /// </remarks>
-        /// <response code="400">cann't Update the ItemRequest</response>
+        ///  <response code="201">create the ItemRequest</response>
+        /// <response code="400">cann't create the ItemRequest</response>
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> CreateItemRequest([FromBody] ItemRequestDTO i)
         {
             try
             {
+                Log.Debug("start CreateItemRequest-controller");
                 await _itemRequestServices.CreateItemRequest(i);
-                return Ok("new item request is add");
+                return StatusCode(201, "done to add New  item request ");
+
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message);
                 return BadRequest(ex.Message);
-
             }
         }
         //update Item Request
@@ -477,7 +513,7 @@ namespace FurnitureSelling.Controllers
         ///         Title: "Enter the name ofItemRequest " 
         ///         Description: "if have note of ItemRequest" 
         ///         Image : "if have image of ItemRequest" 
-        //          CategoryId: "Enter the id of Category of item"
+        ///          CategoryId: "Enter the id of Category of item"
         ///     }
         /// </remarks>
         /// <response code="400">cann't Update the cartItem</response>
@@ -487,13 +523,14 @@ namespace FurnitureSelling.Controllers
         {
             try
             {
+                Log.Debug("start UpdateItemRequest-controller");
                 await _itemRequestServices.UpdateItemRequest(dto);
                 return Ok("Update item Request");
 
             }
             catch 
             {
-
+                Log.Error("Can't updates this item Request");
                 return BadRequest("Can't updates this item Request");
             }
         }
@@ -506,19 +543,22 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of Item Request to delete" 
         ///     }
         /// </remarks>
+        /// <response code="204"> delete the ItemRequest</response>
         /// <response code="400">cann't delete the ItemRequest</response>
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task<ActionResult> DeleteItemRequest([FromRoute] int id)
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteItemRequest([FromRoute] int Id)
         {
 
             try
             {
-                await _itemRequestServices.DeleteItemRequest(id);
-                return Ok("delete this Item Request");
+                Log.Debug("start DeleteItemRequest-controller{Id}", Id);
+                await _itemRequestServices.DeleteItemRequest(Id);
+                return StatusCode(204, "done to delete this item request ");
             }
             catch (Exception ex)
             {
+                 Log.Error(ex.Message);
                 return BadRequest(ex.Message);
             }
         }

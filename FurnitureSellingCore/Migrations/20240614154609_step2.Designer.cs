@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FurnitureSellingCore.Migrations
 {
     [DbContext(typeof(FurnitureSellingDbContext))]
-    [Migration("20240531175513_step1")]
-    partial class step1
+    [Migration("20240614154609_step2")]
+    partial class step2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.19")
+                .HasAnnotation("ProductVersion", "7.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Cart", b =>
@@ -105,8 +105,10 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Color")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<float?>("DisacountAmount")
@@ -116,7 +118,6 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -135,6 +136,9 @@ namespace FurnitureSellingCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);
+
+                    b.Property<float?>("size")
+                        .HasColumnType("float");
 
                     b.HasKey("ItemId");
 
@@ -161,6 +165,12 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("NoteStor")
+                        .HasColumnType("longtext");
+
+                    b.Property<float?>("Price")
+                        .HasColumnType("float");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -172,7 +182,7 @@ namespace FurnitureSellingCore.Migrations
                     b.ToTable("ItemRequest", (string)null);
                 });
 
-            modelBuilder.Entity("FurnitureSellingCore.Models.Login", b =>
+            modelBuilder.Entity("FurnitureSellingCore.Models.Logins", b =>
                 {
                     b.Property<int>("LoginId")
                         .ValueGeneratedOnAdd()
@@ -218,22 +228,29 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<string>("CustomerNote")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime?>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 5, 31, 20, 55, 13, 202, DateTimeKind.Local).AddTicks(2115));
+                        .HasDefaultValue(new DateTime(2024, 6, 14, 18, 46, 8, 978, DateTimeKind.Local).AddTicks(406));
 
-                    b.Property<float>("Fee")
-                        .HasColumnType("float");
-
-                    b.Property<bool>("StatusDelivery")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
+                    b.Property<string>("DeliveryNote")
                         .HasColumnType("longtext");
 
-                    b.Property<float>("TotalPrice")
+                    b.Property<float?>("Fee")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("RecivingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool?>("StatusDelivery")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("longtext");
+
+                    b.Property<float?>("TotalPrice")
                         .HasColumnType("float");
 
                     b.Property<int?>("UserId")
@@ -255,12 +272,6 @@ namespace FurnitureSellingCore.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AccessKey")
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("AccesskeyExpireDate")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Address")
                         .HasColumnType("longtext");
 
@@ -279,16 +290,7 @@ namespace FurnitureSellingCore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("NewPassword")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("PlateNumber")
@@ -375,11 +377,11 @@ namespace FurnitureSellingCore.Migrations
                         .HasForeignKey("CategoryId");
                 });
 
-            modelBuilder.Entity("FurnitureSellingCore.Models.Login", b =>
+            modelBuilder.Entity("FurnitureSellingCore.Models.Logins", b =>
                 {
                     b.HasOne("FurnitureSellingCore.Models.User", null)
                         .WithOne()
-                        .HasForeignKey("FurnitureSellingCore.Models.Login", "UserId");
+                        .HasForeignKey("FurnitureSellingCore.Models.Logins", "UserId");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.Order", b =>

@@ -3,6 +3,7 @@ using FurnitureSellingCore.DTO.User;
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,18 +23,21 @@ namespace FurnitureSellingInfra.Services
         #region User Services
         public async Task<DetailsUserDTO> GetByIdUser(int Id)
         {
-         var user = await _repos.GetByIdUserRepos(Id);
+            Log.Debug("start GetByIdUser-Services", Id);
+            var user = await _repos.GetByIdUserRepos(Id);
 
             return user;
         }
 
         public async Task<List<CardUserDTO>> GetAllUser()
         {
-       return  await _repos.GetAllUserRepos();
+            Log.Debug("start GetAllUser-Services");
+            return  await _repos.GetAllUserRepos();
            
         }
         public async Task CreateUser(CreateUserDTO dto)
         {
+            Log.Debug("start CreateUser-Services");
             User u = new User()
             {
                 FirstName = dto.FirstName,
@@ -42,9 +46,6 @@ namespace FurnitureSellingInfra.Services
                 UserType = dto.UserType,
             }
             ;
-
-          
-
             
             int user_Id = await _repos.CreateUserRepos(u);
             Logins l = new Logins()
@@ -58,30 +59,33 @@ namespace FurnitureSellingInfra.Services
         }
 
         public async Task UpdateUser(DetailsUserDTO dto)
-        { 
+        {
+            Log.Debug("start UpdateUser-Services", dto.UserId);
             await _repos.UpdateUserRepos(dto);
-           
-           
+
         }
         public async Task DeleteUser(int Id)
         {
+            Log.Debug("start DeleteUser-Services", Id);
             await _repos.DeleteUser(Id);
         }
         #endregion
         #region Authantication Services
-        public async Task Login(int id)
+        public async Task Login(int Id)
         {
-
-           await _repos.Login(id);
+            Log.Debug("start Login-Services", Id);
+            await _repos.Login(Id);
         }
 
         public async Task Logout(int Id)
         {
-          await  _repos.Logout(Id);   
+            Log.Debug("start Logout-Services", Id);
+            await  _repos.Logout(Id);   
         }
 
         public async Task ResetPassword(ResetPasswordDTO dto)
         {
+            Log.Debug("start ResetPassword-Services");
             await _repos.ResetPassword(dto);
         }
 

@@ -1,0 +1,91 @@
+2024-06-14 09:48:56.515 +03:00 [INF] return AllCartItem
+2024-06-14 17:38:27.795 +03:00 [INF] add new CartItem 
+2024-06-14 17:38:30.729 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-14 17:39:00.488 +03:00 [INF] add new CartItem 
+2024-06-14 17:41:44.448 +03:00 [INF] add new CartItem 
+2024-06-14 18:01:31.520 +03:00 [INF] add new CartItem 
+2024-06-14 18:01:39.971 +03:00 [ERR] No cart items found for the given cart id
+2024-06-14 18:03:49.130 +03:00 [INF] add new CartItem 
+2024-06-14 18:05:03.474 +03:00 [ERR] No cart items found for the given cart id
+2024-06-14 18:07:38.147 +03:00 [INF] add new CartItem 
+2024-06-14 18:07:38.894 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-14 18:07:58.100 +03:00 [INF] add new CartItem 
+2024-06-14 18:08:04.813 +03:00 [ERR] No cart items found for the given cart id
+2024-06-14 18:09:58.844 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-14 18:11:36.359 +03:00 [INF] found this User
+2024-06-14 18:11:36.542 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:13:44.066 +03:00 [INF] found this User
+2024-06-14 18:13:44.244 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:13:47.048 +03:00 [INF] found this User
+2024-06-14 18:13:47.247 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:14:07.509 +03:00 [INF] found this User
+2024-06-14 18:14:07.703 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:14:16.340 +03:00 [INF] found this User
+2024-06-14 18:14:16.524 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:14:32.119 +03:00 [INF] found this User
+2024-06-14 18:14:48.502 +03:00 [INF] found this User
+2024-06-14 18:28:35.215 +03:00 [ERR] Con not login
+2024-06-14 18:28:35.468 +03:00 [ERR] Can't login
+2024-06-14 18:29:07.239 +03:00 [ERR] Con not login
+2024-06-14 18:29:07.304 +03:00 [ERR] Can't login
+2024-06-14 18:29:13.882 +03:00 [ERR] Con not login
+2024-06-14 18:29:13.949 +03:00 [ERR] Can't login
+2024-06-14 18:29:19.931 +03:00 [ERR] Con not login
+2024-06-14 18:29:19.999 +03:00 [ERR] Can't login
+2024-06-14 18:29:40.667 +03:00 [INF] start to  ResetPasswordDTO
+2024-06-14 18:29:47.386 +03:00 [ERR] Con not login
+2024-06-14 18:29:47.444 +03:00 [ERR] Can't login
+2024-06-14 18:30:46.556 +03:00 [ERR] Con not login
+2024-06-14 18:30:46.623 +03:00 [ERR] Can't login
+2024-06-14 18:30:52.412 +03:00 [ERR] Con not login
+2024-06-14 18:30:52.474 +03:00 [ERR] Can't login
+2024-06-14 18:32:48.895 +03:00 [INF] found this User
+2024-06-14 18:32:49.140 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:33:04.690 +03:00 [INF] found this User
+2024-06-14 18:33:04.895 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:33:19.170 +03:00 [INF] found this User
+2024-06-14 18:33:19.362 +03:00 [ERR] Can't updates this profile
+2024-06-14 18:33:27.748 +03:00 [INF] found this User
+2024-06-14 18:33:38.124 +03:00 [ERR] Con not login
+2024-06-14 18:33:38.192 +03:00 [ERR] Can't login
+2024-06-14 18:33:40.953 +03:00 [ERR] Con not login
+2024-06-14 18:33:41.019 +03:00 [ERR] Can't login
+2024-06-14 18:34:13.376 +03:00 [INF] the Category not null
+2024-06-14 18:34:23.626 +03:00 [INF] the Category not null
+2024-06-14 18:34:33.143 +03:00 [INF] the Category not null
+2024-06-14 18:34:42.155 +03:00 [INF] the Category not null
+2024-06-14 18:35:30.555 +03:00 [INF] the Item not null
+2024-06-14 19:20:15.171 +03:00 [INF] add Order
+2024-06-14 19:29:52.096 +03:00 [INF] Update Item From Admain
+2024-06-14 21:55:09.236 +03:00 [INF] add new CartItem 
+2024-06-14 21:55:13.539 +03:00 [ERR] No cart items found for the given cart id
+2024-06-14 21:56:49.806 +03:00 [ERR] cann't found this CartItem
+2024-06-14 22:31:44.363 +03:00 [INF] add new CartItem 
+2024-06-14 22:35:34.794 +03:00 [INF] add new CartItem 
+2024-06-14 22:40:42.578 +03:00 [INF] add new CartItem 
+2024-06-14 22:40:43.381 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-14 22:40:48.826 +03:00 [INF] add new CartItem 
+2024-06-14 22:47:43.968 +03:00 [INF] add new CartItem 
+2024-06-14 22:48:04.910 +03:00 [ERR] The entity type 'TotalPticeDto' was not found. Ensure that the entity type has been added to the model.
+2024-06-14 22:52:12.700 +03:00 [INF] add new CartItem 
+2024-06-14 22:53:18.648 +03:00 [INF] add new CartItem 
+2024-06-14 22:58:21.551 +03:00 [INF] add new CartItem 
+2024-06-14 22:59:12.984 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-06-14 22:59:15.961 +03:00 [INF] add new CartItem 
+2024-06-14 22:59:58.218 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-06-14 23:00:00.886 +03:00 [INF] add new CartItem 
+2024-06-14 23:01:35.427 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-06-14 23:01:40.150 +03:00 [INF] add new CartItem 
+2024-06-14 23:07:13.210 +03:00 [INF] add new CartItem 
+2024-06-14 23:07:33.506 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-14 23:07:43.653 +03:00 [INF] add new CartItem 
+2024-06-14 23:07:46.367 +03:00 [ERR] A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+2024-06-14 23:08:03.356 +03:00 [INF] add new CartItem 
+2024-06-14 23:08:06.482 +03:00 [ERR] A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+2024-06-14 23:09:07.137 +03:00 [INF] add new CartItem 
+2024-06-14 23:09:11.927 +03:00 [ERR] A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+2024-06-14 23:14:55.218 +03:00 [INF] add new CartItem 
+2024-06-14 23:14:55.634 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-14 23:15:02.533 +03:00 [INF] add new CartItem 
+2024-06-14 23:16:31.186 +03:00 [INF] return AllCartItem
+2024-06-14 23:16:48.665 +03:00 [INF] add new CartItem 
