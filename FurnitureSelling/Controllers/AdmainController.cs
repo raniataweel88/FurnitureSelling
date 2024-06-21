@@ -111,7 +111,7 @@ namespace FurnitureSelling.Controllers
             try
             {
               await  _CategoryServices.DeleteCategory(Id);
-                return StatusCode(204, "delete this Category");
+                return StatusCode(201, "delete this Category");
 
 
             }
@@ -190,6 +190,23 @@ namespace FurnitureSelling.Controllers
                 return BadRequest("Can't updates this Item");
             }
         }
+        [HttpPut]
+        [Route("[action]")]
+        public async Task<IActionResult> DiscountItem([FromBody] DiscountItemDTO i)
+        {
+            try
+            {
+                Log.Debug("start DiscountItem-controller {id}", i.ItemId);
+                await _itemServices.DiscountItem(i);
+                return Ok("add  Discount of this Item");
+
+            }
+            catch
+            {
+                Log.Error("Can't add  Discount of this Item", i.ItemId);
+                return BadRequest("Can't add  Discount of this Item");
+            }
+        }
         //delete Item
         /// <remarks>
         /// Sample request:
@@ -200,7 +217,7 @@ namespace FurnitureSelling.Controllers
         ///     }
         /// </remarks>
         /// <returns>Delete Item</returns>
-       /// <response code="204"> Delete this item</response>
+        /// <response code="201"> Delete this item</response>
         /// <response code="400">Cann't Delete Item</response>
 
         [HttpDelete]
@@ -212,7 +229,7 @@ namespace FurnitureSelling.Controllers
             {
                 await _itemServices.DeleteItem(Id);
                 Log.Information("try DeleteItem-controller");
-                return StatusCode(204, "delete this Item");
+                return StatusCode(201, "delete this Item");
 
             }
             catch (Exception ex)
@@ -256,7 +273,7 @@ namespace FurnitureSelling.Controllers
         ///     }
         /// </remarks>
         /// <returns>Delete User</returns>
-        /// <response code="204"> Delete this User</response>
+        /// <response code="201"> Delete this User</response>
         /// <response code="400">Cann't Delete User</response>
 
         [HttpDelete]
@@ -269,7 +286,7 @@ namespace FurnitureSelling.Controllers
             {
                 Log.Debug("start DeleteUser-controller{ID}", Id);
                 await _UserServices.DeleteUser(Id);
-                return StatusCode(204, "delete this User");
+                return StatusCode(201, "delete this User");
             }
             catch (Exception ex)
             {

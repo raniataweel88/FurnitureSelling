@@ -17,6 +17,6 @@ namespace FurnitureSellingCore.IRepos
         public Task<List<DetailsItemDTO>> SearchItem(string? name, string? description, float? price);
 
         public Task DeleteItem(int Id);
-
+        public Task DiscountItem(DiscountItemDTO d);
     }
 }

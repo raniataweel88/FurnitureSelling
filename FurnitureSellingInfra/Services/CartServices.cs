@@ -28,7 +28,7 @@ namespace FurnitureSellingInfra.Services
 
             return await _repose.GetByIdCart_Repose(Id);
         }
-        public async Task<List<CardCartDTO>> GetAllCart()
+        public async Task<List<Cart>> GetAllCart()
         {
             Log.Debug("start GetAllCart-Services");
 
@@ -46,7 +46,7 @@ namespace FurnitureSellingInfra.Services
             };
             return _repose.CreateCart_Repose(c);
         }
-       public async Task UpdateCart(CardCartDTO C)
+       public async Task UpdateCart(Cart C)
         {
             Log.Debug("start UpdateCart-Services", C.CartId);
 

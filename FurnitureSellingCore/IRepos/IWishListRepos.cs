@@ -13,7 +13,7 @@ namespace FurnitureSellingCore.IRepos
         public Task<WishListDTO> GetByIdWishList_Repose(int Id);
         public Task<List<WishListDTO>> GetAllWishList_Repose();
         public Task CreateWishList_Repose(WishList w);
-        public Task UpdateWishList_Repose(WishList w);
+        public Task UpdateWishList_Repose(WishListDTO w);
         public Task DeleteWishList_Repose(int id);
 
     }

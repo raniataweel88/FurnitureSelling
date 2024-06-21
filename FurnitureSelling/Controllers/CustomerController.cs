@@ -156,7 +156,7 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of whish List to delete" 
         ///     }
         /// </remarks>
-    /// <response code="204"> delete the wishList</response>
+    /// <response code="201"> delete the wishList</response>
         /// <response code="400">cann't delete the wishList</response>
         [HttpDelete]
         [Route("[action]/{Id}")]
@@ -166,7 +166,7 @@ namespace FurnitureSelling.Controllers
             {
                 Log.Debug("start DeleteWishList-controller{Id}",Id);
                 await _wishListServices.DeleteWishList(Id);
-                return StatusCode(204, "delete this WishList");
+                return StatusCode(201, "delete this WishList");
 
             }
             catch (Exception ex)
@@ -287,7 +287,7 @@ namespace FurnitureSelling.Controllers
             try
             {
                 Log.Debug("start UpdateCartItem-controller{Id}",dto.CartItemId);
-                var CartItem = _cartItemServices.UpdateCartItem(dto);
+                await _cartItemServices.UpdateCartItem(dto);
                 return Ok("done to update this CartItem");
 
             }
@@ -306,7 +306,7 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of CartItem to delete" 
         ///     }
         /// </remarks>
-        /// <response code="204"> delete this CartItem</response>
+        /// <response code="201"> delete this CartItem</response>
         /// <response code="400">cann't delete the CartItem</response>
         [HttpDelete]
         [Route("[action]/{Id}")]
@@ -317,7 +317,7 @@ namespace FurnitureSelling.Controllers
             {
                 Log.Debug("start DeleteCartItem-controller{Id}",Id);
                 await _cartItemServices.DeleteCartItem(Id);
-                return StatusCode(204, "delete this CartItem");
+                return StatusCode(201, "delete this CartItem");
 
             }
             catch (Exception ex)
@@ -427,15 +427,15 @@ namespace FurnitureSelling.Controllers
         /// <response code="400">cann't Update the cartItem</response>
         [HttpPut]
         [Route("[action]")]
-        public async Task<IActionResult> UpdateCart([FromBody] CardCartDTO dto)
+        public async Task<IActionResult> UpdateCart([FromBody] Cart c)
         {
             try
             {
-                var Cart = _cartServices.UpdateCart(dto);
-                return Ok(Cart);
+               await _cartServices.UpdateCart(c);
+                return Ok("done to update this cart");
 
             }
-            catch (Exception ex)
+            catch 
             {
 
                 return BadRequest("Can't updates this Cart");
@@ -450,7 +450,7 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of  Cart to delete" 
         ///     }
         /// </remarks>
-        /// <response code="204"> delete the Cart</response>
+        /// <response code="201"> delete the Cart</response>
         /// <response code="400">cann't delete the Cart</response>
         [HttpDelete]
         [Route("[action]/{Id}")]
@@ -461,7 +461,7 @@ namespace FurnitureSelling.Controllers
             {
                 Log.Debug("start DeleteCart-controller{Id}",Id);
                 await _cartServices.DeleteCart(Id);
-                return StatusCode(204, "delete this  Cart");
+                return StatusCode(201, "delete this  Cart");
             }
             catch (Exception ex)
             {
@@ -543,7 +543,7 @@ namespace FurnitureSelling.Controllers
         ///       "Id": "Enter the id of Item Request to delete" 
         ///     }
         /// </remarks>
-        /// <response code="204"> delete the ItemRequest</response>
+        /// <response code="201"> delete the ItemRequest</response>
         /// <response code="400">cann't delete the ItemRequest</response>
         [HttpDelete]
         [Route("[action]/{Id}")]
@@ -554,7 +554,7 @@ namespace FurnitureSelling.Controllers
             {
                 Log.Debug("start DeleteItemRequest-controller{Id}", Id);
                 await _itemRequestServices.DeleteItemRequest(Id);
-                return StatusCode(204, "done to delete this item request ");
+                return StatusCode(201, "done to delete this item request ");
             }
             catch (Exception ex)
             {

@@ -35,8 +35,8 @@ namespace FurnitureSellingCore.Migrations
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(type: "longtext", nullable: false),
-                    LastName = table.Column<string>(type: "longtext", nullable: false),
+                    FirstName = table.Column<string>(type: "longtext", nullable: true),
+                    LastName = table.Column<string>(type: "longtext", nullable: true),
                     Email = table.Column<string>(type: "varchar(255)", nullable: false),
                     Phone = table.Column<string>(type: "longtext", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
@@ -61,13 +61,13 @@ namespace FurnitureSellingCore.Migrations
                     ItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: true),
+                    Description = table.Column<string>(type: "longtext", nullable: false),
                     Image = table.Column<string>(type: "longtext", nullable: true),
                     Price = table.Column<float>(type: "float", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
-                    isHaveDiscount = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValue: false),
+                    isHaveDiscount = table.Column<bool>(type: "tinyint(1)", nullable: true, defaultValue: false),
                     DisacountAmount = table.Column<float>(type: "float", nullable: true),
-                    DiscountType = table.Column<string>(type: "longtext", nullable: true),
+                    DiscountType = table.Column<int>(type: "int", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -90,7 +90,9 @@ namespace FurnitureSellingCore.Migrations
                     Title = table.Column<string>(type: "longtext", nullable: false),
                     Description = table.Column<string>(type: "longtext", nullable: true),
                     Image = table.Column<string>(type: "longtext", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: true)
+                    CategoryId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<float>(type: "float", nullable: true),
+                    NoteStor = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -110,10 +112,10 @@ namespace FurnitureSellingCore.Migrations
                     LoginId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(type: "int", nullable: true),
-                    UserName = table.Column<string>(type: "longtext", nullable: false),
-                    Password = table.Column<string>(type: "longtext", nullable: false),
-                    LastLoginTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    IsLoggedIn = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    UserName = table.Column<string>(type: "longtext", nullable: true),
+                    Password = table.Column<string>(type: "longtext", nullable: true),
+                    LastLoginTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    IsLoggedIn = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -134,7 +136,7 @@ namespace FurnitureSellingCore.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(type: "longtext", nullable: true),
                     TotalPrice = table.Column<float>(type: "float", nullable: true),
-                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: true, defaultValue: new DateTime(2024, 6, 14, 18, 20, 32, 338, DateTimeKind.Local).AddTicks(9180)),
+                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: true, defaultValue: new DateTime(2024, 6, 18, 23, 40, 43, 780, DateTimeKind.Local).AddTicks(9272)),
                     Fee = table.Column<float>(type: "float", nullable: true),
                     CustomerNote = table.Column<string>(type: "longtext", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: true),
@@ -186,7 +188,7 @@ namespace FurnitureSellingCore.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     OrderId = table.Column<int>(type: "int", nullable: true),
-                    IsActiveId = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    IsActiveId = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
                 {

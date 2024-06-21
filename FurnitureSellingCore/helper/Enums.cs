@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +16,12 @@ namespace FurnitureSellingCore.helper
             Employee,
             Admain,
             driver
+        }
+             public enum DisacountType
+        {
+            Percentage,
+            FixedValue,
+         
         }
     }
 }

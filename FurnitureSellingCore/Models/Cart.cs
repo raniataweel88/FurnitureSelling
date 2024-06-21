@@ -11,7 +11,7 @@ namespace FurnitureSellingCore.Models
         public int CartId { get; set; }
         public int? UserId { get; set; }
         public int?  OrderId { get; set; }
-        public bool IsActiveId { get; set; }
+        public bool? IsActiveId { get; set; }
     }
 
 }

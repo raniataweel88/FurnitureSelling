@@ -173,7 +173,7 @@ namespace FurnitureSellingInfra.Repos
             }
            else
             {
-                Log.Error("Con not login");
+                Log.Error("Can not login");
                 throw new Exception("Con not login");
                   }
    
@@ -188,7 +188,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Information("start to  Logout_Repose");
 
             var l = _context.Logins.FirstOrDefault(x=>x.LoginId==Id);
-            if (l != null)
+            if (l.IsLoggedIn==true)
             {
                 l.IsLoggedIn=false;
                 _context.Update(l);
@@ -196,7 +196,7 @@ namespace FurnitureSellingInfra.Repos
             }
             else
             {
-                throw new Exception("Con not Logout");
+                throw new Exception("Can not Logout");
                 Log.Error("Con not Logout");
             }
             Log.Information("finished to  Logout_Repose");

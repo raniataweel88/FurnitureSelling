@@ -37,14 +37,15 @@ namespace FurnitureSellingInfra.Repos
                         select new DetailsOrdertDTO
                         {
                             Id = o.OrderId,
-                            TotalPrice = (float)o.TotalPrice,
+                            TotalPrice = o.TotalPrice,
                             CustomerNote = o.CustomerNote,
-                            Date = (DateTime)o.Date,
-                            Fee = (float)o.Fee,
+                            Date = o.Date,
+                            Fee = o.Fee,
                             Title = o.Title,
+                            
 
                         };
-            return Query.FirstOrDefault();
+            return await Query.FirstOrDefaultAsync();
             Log.Debug("finished to  GetByIdOrder_Repose");
 
         }
@@ -56,9 +57,9 @@ namespace FurnitureSellingInfra.Repos
                         select new CardOrdertDTO
                         {
                             Id = o.OrderId,
-                            Date = (DateTime)o.Date,
+                            Date = o.Date,
                             Title = o.Title,
-                            TotalPrice = (float)o.TotalPrice,
+                            TotalPrice = o.TotalPrice,
                             
                         };
 
@@ -124,7 +125,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  DeleteOrder_Repose");
             if (o != null)
             {
-                _context.Orders.Remove(o);
+                _context.Remove(o);
                 await _context.SaveChangesAsync();
                 Log.Information("delete this Orders");
             }
@@ -212,6 +213,7 @@ namespace FurnitureSellingInfra.Repos
                             Address = u.Address,
                             DeliveryNote=o.DeliveryNote,
                             RecivingDate= (DateTime)o.RecivingDate
+                            
                         };
             return Query.ToList();
             Log.Debug("end  to  search Order forDelivery");

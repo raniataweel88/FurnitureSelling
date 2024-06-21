@@ -38,9 +38,7 @@ namespace FurnitureSellingInfra.Services
                 Image = dto.Image,
                 CategoryId = dto.CategoryId,
                 Price=dto.Price,
-                Color = dto.Color,
-                Size = dto.Size,
-
+                
             };
             await _Repos.CreateItem_Repose(i);   
         }
@@ -60,6 +58,12 @@ namespace FurnitureSellingInfra.Services
         {
             Log.Debug("start DeleteItem-Services", Id);
             await _Repos.DeleteItem(Id);
+        }
+
+        public Task DiscountItem(DiscountItemDTO d)
+        {
+         return  _Repos.DiscountItem(d);
+
         }
     }
 }

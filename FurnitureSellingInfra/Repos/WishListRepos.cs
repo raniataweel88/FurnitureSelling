@@ -68,21 +68,18 @@ namespace FurnitureSellingInfra.Repos
 
         }
 
-        public async Task UpdateWishList_Repose(WishList wl)
+        public async Task UpdateWishList_Repose(WishListDTO d)
         {
             Log.Debug("start to  UpdateWishList_Repose");
-            var w=_context.WishList.FindAsync(wl.WishListId);
-            if (w != null)
-            { 
-            _context.Update(wl);
-           await  _context.SaveChangesAsync();
-            }
-            else
-            {
-                Log.Error("cann't found this Wishlist");
+            var w= _context.WishList.Find(d.WishListId);
 
-                throw new Exception("cann't found this Wishlist");
-            }
+            w.ItemId = d.ItemId;
+                w.UserId = d.UserId;
+            w.WishListId = d.WishListId;
+               
+                _context.Update(w);
+           await  _context.SaveChangesAsync();
+              
             Log.Debug("finished to  UpdateWishList_Repose");
 
         }

@@ -3,6 +3,7 @@ using FurnitureSellingCore.DTO.Item;
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using MySqlX.XDevAPI.Common;
 using Serilog;
 using System;
@@ -29,18 +30,17 @@ namespace FurnitureSellingInfra.Repos
                     where i.CategoryId == Id
                     select new DetailsItemDTO
             {
+                        ItemId=i.ItemId,
                 Name = i.Name,
                 Description = i.Description,
                 Image=i.Image,
                 DisacountAmount=i.DisacountAmount,
                 isHaveDiscount=i.isHaveDiscount,
-                Price=i.Price,
+                Price= i.Price,
                 DiscountType=i.DiscountType,
-                Quantity = i.Quantity,
+                Quantity =i.Quantity,
                 CategoryId= i.CategoryId,
-                Color =i.Color,
-                Size =i.Size,
-
+          
                     };
             Log.Information("return Item");
 
@@ -87,21 +87,30 @@ namespace FurnitureSellingInfra.Repos
 
         public async Task UpdateItem(DetailsItemDTO t)
         {
-            var it = await _context.Items.FindAsync(t.ItemId);
+            var it =  _context.Items.Find(t.ItemId);
             Log.Debug("start to  UpdateCategory_Repose");
-            it.ItemId = t.ItemId;
+            
+            it.ItemId= t.ItemId;
             it.Name = t.Name;
-            it.Description = t.Description;
-            it.Image = t.Image;
-            it.DisacountAmount = t.DisacountAmount;
+            it.Description = t.Description;     
+                it.Image = t.Image;
+                it.Quantity = t.Quantity;
             it.Price = t.Price;
-            it.DiscountType = t.DiscountType;
-            it.Quantity = t.Quantity;
+            it.isHaveDiscount= t.isHaveDiscount;    
+            it.DisacountAmount= t.DisacountAmount;
+            it.DiscountType= t.DiscountType;
+            DiscountItemDTO d = new DiscountItemDTO();
+            if ((bool)t.isHaveDiscount)
+            {
+                d.ItemId= t.ItemId;
+               d.DisacountAmount = t.DisacountAmount;
+               d.DiscountType = t.DiscountType;
+                d.isHaveDiscount= t.isHaveDiscount;
+               await  DiscountItem(d);
+            }
             it.CategoryId = t.CategoryId;
-            it.Color = t.Color;
-            it.Size = t.Size;
-            _context.Update(it);
-            _context.SaveChanges();
+                _context.Update(it);
+            await _context.SaveChangesAsync();
 
             Log.Debug("Finish to  UpdateCategory_Repose");
     } 
@@ -158,9 +167,40 @@ namespace FurnitureSellingInfra.Repos
                 Log.Debug("Finish to DeleteItem");
             }
         }
-}
-        }
+        public async Task DiscountItem(DiscountItemDTO d)
+        {
+            var item = _context.Items.FirstOrDefault(x => x.ItemId == d.ItemId);
+            item.isHaveDiscount=d.isHaveDiscount;
+            item.DisacountAmount=d.DisacountAmount;
+            item.DiscountType=d.DiscountType;
+            item.EndDate=d.EndDateOfDiscount;
+           
+            float des = 0;
+                if (item.DiscountType == 0)
+                {
 
+                  des=  item.Price*((float)item.DisacountAmount / 100); 
+                item.Price-= des;
+                _context.Update(item);
+               await _context.SaveChangesAsync();
+                }
+                else
+                {
+                des= (float)item.DisacountAmount;
+                item.Price -= des;
+              
+                _context.Update(item);
+               await _context.SaveChangesAsync();
+                }
+            if (item.EndDate <= DateTime.UtcNow)
+            {
+                item.Price += des;
+            }
+            }
+          
+        }
+    }
+        
 
 
 

@@ -1,0 +1,184 @@
+2024-06-18 15:16:52.050 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:19:36.273 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:19:38.977 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:20:15.585 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:20:53.539 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:21:01.222 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:23:01.490 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:23:03.476 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:23:16.536 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:23:54.882 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:24:49.518 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:25:52.487 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:26:28.907 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:28:32.466 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:29:16.061 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:30:42.892 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:33:22.281 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:37:12.161 +03:00 [INF] Update this CartItem
+2024-06-18 15:42:37.882 +03:00 [INF] Update this CartItem
+2024-06-18 15:43:28.564 +03:00 [INF] Update this CartItem
+2024-06-18 15:46:09.903 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:49:43.611 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:50:28.924 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:51:14.872 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:51:27.779 +03:00 [ERR] Can't updates this Item
+2024-06-18 15:58:12.605 +03:00 [INF] Update this CartItem
+2024-06-18 15:58:19.353 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 15:59:05.575 +03:00 [INF] Update this CartItem
+2024-06-18 16:00:58.297 +03:00 [INF] add new CartItem 
+2024-06-18 16:01:13.726 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:01:29.873 +03:00 [INF] add new CartItem 
+2024-06-18 16:03:24.575 +03:00 [INF] add new CartItem 
+2024-06-18 16:03:40.880 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:04:07.005 +03:00 [INF] add new CartItem 
+2024-06-18 16:04:22.046 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:04:29.380 +03:00 [INF] add new CartItem 
+2024-06-18 16:05:40.616 +03:00 [INF] add new CartItem 
+2024-06-18 16:05:40.725 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:05:44.764 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:05:59.964 +03:00 [INF] add new CartItem 
+2024-06-18 16:06:57.570 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:07:09.720 +03:00 [INF] add new CartItem 
+2024-06-18 16:07:10.012 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-18 16:07:31.348 +03:00 [INF] add new CartItem 
+2024-06-18 16:07:36.206 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:08:15.668 +03:00 [INF] add new CartItem 
+2024-06-18 16:08:21.155 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:09:12.925 +03:00 [INF] add new CartItem 
+2024-06-18 16:09:20.369 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:10:32.316 +03:00 [INF] add new CartItem 
+2024-06-18 16:12:51.022 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:13:00.552 +03:00 [INF] return AllCartItem
+2024-06-18 16:13:34.427 +03:00 [INF] add new CartItem 
+2024-06-18 16:13:38.161 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:13:47.989 +03:00 [INF] return AllCartItem
+2024-06-18 16:24:36.469 +03:00 [INF] add new CartItem 
+2024-06-18 16:24:41.110 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:25:24.457 +03:00 [INF] add new CartItem 
+2024-06-18 16:25:24.704 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:25:38.515 +03:00 [INF] add new CartItem 
+2024-06-18 16:25:38.716 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:25:44.877 +03:00 [INF] add new CartItem 
+2024-06-18 16:25:45.048 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:26:08.171 +03:00 [INF] add new CartItem 
+2024-06-18 16:26:08.429 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:27:45.993 +03:00 [INF] add new CartItem 
+2024-06-18 16:27:59.043 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:28:36.190 +03:00 [INF] add new CartItem 
+2024-06-18 16:28:39.363 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:29:23.270 +03:00 [INF] add new CartItem 
+2024-06-18 16:29:36.478 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:30:25.407 +03:00 [INF] add new CartItem 
+2024-06-18 16:32:22.981 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:33:58.672 +03:00 [INF] add new CartItem 
+2024-06-18 16:40:14.292 +03:00 [INF] add this cart
+2024-06-18 16:40:14.508 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:40:27.179 +03:00 [INF] get all cart
+2024-06-18 16:41:06.265 +03:00 [INF] add new CartItem 
+2024-06-18 16:42:10.277 +03:00 [ERR] Nullable object must have a value.
+2024-06-18 16:42:43.837 +03:00 [INF] return AllCartItem
+2024-06-18 16:45:50.904 +03:00 [INF] Update this CartItem
+2024-06-18 16:47:00.570 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:47:27.304 +03:00 [INF] Update this CartItem
+2024-06-18 16:47:31.378 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:48:50.275 +03:00 [INF] Update this CartItem
+2024-06-18 16:48:52.745 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:49:12.149 +03:00 [INF] Update this CartItem
+2024-06-18 16:49:13.952 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:50:15.381 +03:00 [INF] Update this CartItem
+2024-06-18 16:50:50.505 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:51:06.618 +03:00 [INF] Update this CartItem
+2024-06-18 16:54:42.692 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:55:47.714 +03:00 [INF] Update this CartItem
+2024-06-18 16:55:57.978 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:56:30.984 +03:00 [INF] Update this CartItem
+2024-06-18 16:56:31.190 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:57:17.602 +03:00 [INF] Update this CartItem
+2024-06-18 16:57:49.768 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:58:04.665 +03:00 [INF] Update this CartItem
+2024-06-18 16:58:13.500 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 16:58:32.216 +03:00 [INF] Update this CartItem
+2024-06-18 16:58:37.186 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:00:29.011 +03:00 [INF] Update this CartItem
+2024-06-18 17:01:31.887 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:01:40.465 +03:00 [INF] Update this CartItem
+2024-06-18 17:02:02.332 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:06:39.020 +03:00 [INF] Update this CartItem
+2024-06-18 17:06:46.727 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:07:53.868 +03:00 [INF] Update this CartItem
+2024-06-18 17:07:54.085 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:08:56.841 +03:00 [INF] Update this CartItem
+2024-06-18 17:13:06.725 +03:00 [INF] add new CartItem 
+2024-06-18 17:20:24.802 +03:00 [INF] Update this CartItem
+2024-06-18 17:20:44.067 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:21:09.694 +03:00 [INF] Update this CartItem
+2024-06-18 17:21:11.868 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:22:21.980 +03:00 [INF] Update this CartItem
+2024-06-18 17:22:24.089 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:22:42.203 +03:00 [INF] Update this CartItem
+2024-06-18 17:22:45.462 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 17:23:23.561 +03:00 [INF] Update this CartItem
+2024-06-18 17:23:25.639 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:52:43.808 +03:00 [INF] Update this CartItem
+2024-06-18 22:52:59.051 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:53:25.234 +03:00 [INF] Update this CartItem
+2024-06-18 22:53:33.211 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:54:52.956 +03:00 [INF] Update this CartItem
+2024-06-18 22:56:16.197 +03:00 [INF] Update this CartItem
+2024-06-18 22:56:16.624 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:56:20.503 +03:00 [INF] Update this CartItem
+2024-06-18 22:56:20.769 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:56:38.747 +03:00 [INF] Update this CartItem
+2024-06-18 22:56:38.911 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:58:02.154 +03:00 [INF] Update this CartItem
+2024-06-18 22:58:46.252 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 22:58:58.520 +03:00 [INF] Update this CartItem
+2024-06-18 23:01:18.390 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:01:30.478 +03:00 [INF] Update this CartItem
+2024-06-18 23:01:30.632 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:01:34.655 +03:00 [INF] Update this CartItem
+2024-06-18 23:01:34.792 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:06:52.225 +03:00 [INF] Update this CartItem
+2024-06-18 23:07:29.810 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:09:18.058 +03:00 [INF] Update this CartItem
+2024-06-18 23:09:35.612 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:09:48.523 +03:00 [INF] Update this CartItem
+2024-06-18 23:09:50.912 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:10:25.063 +03:00 [INF] Update this CartItem
+2024-06-18 23:12:08.918 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:12:49.405 +03:00 [INF] return CartItem 10
+2024-06-18 23:13:45.547 +03:00 [INF] Update this CartItem
+2024-06-18 23:16:09.359 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:16:15.796 +03:00 [INF] Update this CartItem
+2024-06-18 23:16:18.013 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:16:40.297 +03:00 [INF] Update this CartItem
+2024-06-18 23:16:42.388 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:16:51.814 +03:00 [INF] Update this CartItem
+2024-06-18 23:17:15.328 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:22:49.960 +03:00 [INF] Update this CartItem
+2024-06-18 23:24:07.790 +03:00 [ERR] Can't updates this CartItem
+2024-06-18 23:42:15.627 +03:00 [INF] the Category not null
+2024-06-18 23:42:43.411 +03:00 [INF] the Category not null
+2024-06-18 23:42:52.444 +03:00 [INF] the Category not null
+2024-06-18 23:43:01.927 +03:00 [INF] the Category not null
+2024-06-18 23:43:18.950 +03:00 [INF] found this Category
+2024-06-18 23:44:27.106 +03:00 [INF] found this Category
+2024-06-18 23:45:31.654 +03:00 [INF] found this Category
+2024-06-18 23:46:44.717 +03:00 [INF] the Item not null
+2024-06-18 23:49:58.954 +03:00 [INF] found this Item
+2024-06-18 23:49:58.975 +03:00 [INF] try DeleteItem-controller
+2024-06-18 23:51:22.092 +03:00 [INF] User: System.Collections.Generic.List`1[FurnitureSellingCore.DTO.User.CardUserDTO]
+2024-06-18 23:52:30.833 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-06-18 23:52:57.129 +03:00 [INF] Login true
+2024-06-18 23:53:09.281 +03:00 [INF] Login true
+2024-06-18 23:53:25.816 +03:00 [INF] start to  Logout_Repose
+2024-06-18 23:53:34.700 +03:00 [INF] start to  Logout_Repose
+2024-06-18 23:55:33.288 +03:00 [INF] start to  Logout_Repose
+2024-06-18 23:55:50.641 +03:00 [INF] start to  Logout_Repose
+2024-06-18 23:58:08.567 +03:00 [INF] start to  ResetPasswordDTO
+2024-06-18 23:58:34.342 +03:00 [INF] start to  ResetPasswordDTO
+2024-06-18 23:59:07.414 +03:00 [INF] add Order
+2024-06-18 23:59:15.495 +03:00 [INF] add Order
+2024-06-18 23:59:18.956 +03:00 [INF] add Order
+2024-06-18 23:59:22.667 +03:00 [INF] add Order

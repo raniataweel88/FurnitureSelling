@@ -86,8 +86,8 @@ namespace FurnitureSelling.Controllers
             }
             catch
             {
-                Log.Error($"Can't  Logged");
-                return BadRequest("Can't logout");
+                Log.Error("Can't  Loggout");
+                return BadRequest("Can't Loggout");
             }
         }
         //restpassword
@@ -232,10 +232,10 @@ namespace FurnitureSelling.Controllers
         ///       "ID": "Enter Your ID to delete Order" 
         ///     }
         /// </remarks>
-        /// <response code="204">done to delete this Order</response>  
+        /// <response code="201">done to delete this Order</response>  
         /// <response code="400">can not Delete this  Order</response>  
         [HttpDelete]
-        [Route("[action]/{id}")]
+        [Route("[action]/{Id}")]
         public async Task<ActionResult> DeleteOrder([FromRoute] int Id)
         {
 
@@ -243,7 +243,7 @@ namespace FurnitureSelling.Controllers
             {
                 Log.Debug("start DeleteOrder-controller{Id}", Id);
                 await _OrderServices.DeleteOrder(Id);
-                return StatusCode(204, "done to delete this Order ");
+                return StatusCode(201, "done to delete this Order ");
             }
             catch (Exception ex)
             {
@@ -256,7 +256,7 @@ namespace FurnitureSelling.Controllers
         #region user
         //get id by user
         [HttpGet]
-        [Route("[action]/{id}")]
+        [Route("[action]/{Id}")]
         public async Task<IActionResult> GetProfile([FromRoute] int Id)
         {
          
@@ -357,7 +357,7 @@ namespace FurnitureSelling.Controllers
        /// <response code="204">Delete this  profile</response> 
         /// <response code="400">can not Delete this  profile</response> 
         [HttpDelete]
-        [Route("[action]/{id}")]
+        [Route("[action]/{Id}")]
         public async Task<ActionResult> DeleteAccount([FromRoute] int Id)
         {
 
@@ -365,7 +365,7 @@ namespace FurnitureSelling.Controllers
             {
                     Log.Debug("start DeleteAccount-controller",Id);
                     await _userServices.DeleteUser(Id);
-                    return StatusCode(204, "done to delete this record");
+                    return StatusCode(201, "done to delete this record");
             }
             catch (Exception ex)
             {
@@ -387,7 +387,7 @@ namespace FurnitureSelling.Controllers
         /// <returns>Order</returns>
         /// <response code="400">can not Get Category</response>   
         [HttpGet]
-        [Route("[action]/{id}")]
+        [Route("[action]/{Id}")]
         public async Task<IActionResult> GetCategory([FromRoute]int Id)
         {
             
@@ -436,7 +436,7 @@ namespace FurnitureSelling.Controllers
         /// <returns>Item</returns>
         /// <response code="400">can not Get  Item </response> 
         [HttpGet]
-        [Route("[action]/{id}")]
+        [Route("[action]/{Id}")]
         public async Task<IActionResult> GetItemById([FromRoute]int Id)
         {
                 try
@@ -503,7 +503,7 @@ namespace FurnitureSelling.Controllers
         /// <returns> Item Request</returns>
         /// <response code="400">can not Get  Item Request</response> 
             [HttpGet]
-            [Route("[action]")]
+            [Route("[action]/{Id}")]
             public async Task<IActionResult> GetItemRequestById([FromRoute]int Id)
             {
                 try

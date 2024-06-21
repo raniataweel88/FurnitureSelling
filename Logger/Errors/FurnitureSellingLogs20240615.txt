@@ -1,0 +1,17 @@
+2024-06-15 16:56:53.562 +03:00 [INF] add new CartItem 
+2024-06-15 17:31:36.569 +03:00 [INF] Update this CartItem
+2024-06-15 17:32:55.020 +03:00 [INF] Update this CartItem
+2024-06-15 17:35:19.625 +03:00 [INF] Update this CartItem
+2024-06-15 17:36:38.021 +03:00 [INF] Update this CartItem
+2024-06-15 17:43:02.370 +03:00 [INF] Update this CartItem
+2024-06-15 17:56:00.418 +03:00 [INF] Update this CartItem
+2024-06-15 17:56:51.662 +03:00 [INF] Update this CartItem
+2024-06-15 17:57:56.911 +03:00 [INF] Update this CartItem
+2024-06-15 17:58:41.484 +03:00 [INF] Update this CartItem
+2024-06-15 18:06:21.266 +03:00 [INF] Update this CartItem
+2024-06-15 18:08:58.720 +03:00 [INF] Update this CartItem
+2024-06-15 18:10:29.150 +03:00 [INF] Update this CartItem
+2024-06-15 18:11:53.520 +03:00 [INF] Update this CartItem
+2024-06-15 18:13:04.137 +03:00 [INF] Update this CartItem
+2024-06-15 18:14:48.033 +03:00 [INF] add new CartItem 
+2024-06-15 18:17:05.186 +03:00 [INF] Update this CartItem

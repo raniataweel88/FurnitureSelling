@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FurnitureSellingCore.Migrations
 {
     [DbContext(typeof(FurnitureSellingDbContext))]
-    [Migration("20240614152032_m1")]
+    [Migration("20240618204043_m1")]
     partial class m1
     {
         /// <inheritdoc />
@@ -32,7 +32,7 @@ namespace FurnitureSellingCore.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("IsActiveId")
+                    b.Property<bool?>("IsActiveId")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<int?>("OrderId")
@@ -106,13 +106,14 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<float?>("DisacountAmount")
                         .HasColumnType("float");
 
-                    b.Property<string>("DiscountType")
-                        .HasColumnType("longtext");
+                    b.Property<int?>("DiscountType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Image")
                         .HasColumnType("longtext");
@@ -129,7 +130,7 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
-                    b.Property<bool>("isHaveDiscount")
+                    b.Property<bool?>("isHaveDiscount")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);
@@ -159,6 +160,12 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("NoteStor")
+                        .HasColumnType("longtext");
+
+                    b.Property<float?>("Price")
+                        .HasColumnType("float");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -179,21 +186,19 @@ namespace FurnitureSellingCore.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1L)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("IsLoggedIn")
+                    b.Property<bool?>("IsLoggedIn")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("LastLoginTime")
+                    b.Property<DateTime?>("LastLoginTime")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("LoginId");
@@ -219,7 +224,7 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<DateTime?>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 6, 14, 18, 20, 32, 338, DateTimeKind.Local).AddTicks(9180));
+                        .HasDefaultValue(new DateTime(2024, 6, 18, 23, 40, 43, 780, DateTimeKind.Local).AddTicks(9272));
 
                     b.Property<string>("DeliveryNote")
                         .HasColumnType("longtext");
@@ -271,11 +276,9 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Phone")

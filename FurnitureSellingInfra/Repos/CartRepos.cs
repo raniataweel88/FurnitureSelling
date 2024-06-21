@@ -38,7 +38,7 @@ namespace FurnitureSellingInfra.Repos
                            TotalPrice = o.TotalPrice,
                            Title = o.Title,
                            Fee = o.Fee,
-                           IsActiveId = c.IsActiveId,
+                           IsActiveId = (bool)c.IsActiveId,
                            CartId = Id,
                            UserId = c.UserId,
                            Name = u.FirstName + u.LastName,
@@ -50,24 +50,18 @@ namespace FurnitureSellingInfra.Repos
 
             return Qery.FirstOrDefault();
         }
-        public async Task<List<CardCartDTO>> GetAllCart_Repose()
+        public async Task<List<Cart>> GetAllCart_Repose()
         {
             Log.Debug("start to  GetAllCart_Repose");
             var Qery = from c in _context.Carts
-                       join u in _context.Users
-                       on c.UserId equals u.UserId
-                       join o in _context.Orders
-                      on c.OrderId equals o.OrderId
-                       select new CardCartDTO
+                      
+                       select new Cart
                        {
                            CartId = c.CartId,
                            OrderId = c.OrderId,
                            UserId = c.UserId,
-                           IsActiveId = c.IsActiveId,
-                           Email = u.Email,
-                           Name = u.FirstName + u.LastName,
-                           Title = o.Title,
-                           TotalPrice = o.TotalPrice,
+                         
+                         
 
                        };
             Log.Information("get all cart");
@@ -102,7 +96,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("finished to  CreateCart_Repose");
 
         }
-        public async Task UpdateCart_Repose(CardCartDTO c)
+        public async Task UpdateCart_Repose(Cart c)
         {
             Log.Debug("start to  UpdateCart_Repose");
             var r = await _context.Carts.FindAsync(c.CartId);

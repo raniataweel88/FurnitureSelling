@@ -43,13 +43,8 @@ namespace FurnitureSellingInfra.Services
         public async Task UpdateWishList(WishListDTO dto)
         {
             Log.Debug("start UpdateWishList-Services");
-            WishList w = new WishList
-            {
-                ItemId = dto.ItemId,
-                UserId = dto.UserId,
-                WishListId = dto.WishListId,
-            };
-            await _repose.UpdateWishList_Repose(w);
+       
+            await _repose.UpdateWishList_Repose(dto);
         }
         public async Task DeleteWishList(int Id)
         {

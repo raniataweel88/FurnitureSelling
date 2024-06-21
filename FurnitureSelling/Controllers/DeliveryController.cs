@@ -39,7 +39,7 @@ namespace FurnitureSelling.Controllers
             try
             {
                 Log.Debug("start GetCartById-controller{Id}", Id);
-                var Cart = await _iservice.GetByIdCart(Id);
+                var Cart = await _service.GetByIdOrder(Id);
                 return Ok(Cart);
 
             }

@@ -1,18 +1,9 @@
 ﻿using FurnitureSellingCore.Context;
 using FurnitureSellingCore.DTO.CartItem;
-using FurnitureSellingCore.DTO.Item;
-using FurnitureSellingCore.DTO.Order;
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.Models;
 using Microsoft.EntityFrameworkCore;
-using MySqlX.XDevAPI.Common;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Repos
 {
@@ -39,7 +30,7 @@ namespace FurnitureSellingInfra.Repos
                             Name = i.Name,
                             Price = i.Price,
                             Image = i.Image,
-                            Quantity = o.Quantity,
+                            Quantity = (int)o.Quantity,
                             ItemId = o.ItemId,
 
                         };
@@ -63,7 +54,7 @@ namespace FurnitureSellingInfra.Repos
                             CartItemId = q.CartItemId,
                             CartId = q.CartId,
                             ItemId = q.ItemId,
-                            Quantity = q.Quantity,
+                            Quantity = (int)q.Quantity,
                         };
             Log.Information("return AllCartItem");
             Log.Debug("end AllCartItem_Repose");
@@ -82,18 +73,43 @@ namespace FurnitureSellingInfra.Repos
                 Log.Information("add new CartItem ", model.CartItemId);
 
                 // Save changes to generate CartItemId if not already set
-                   CalculateTotalPrice(model.CartItemId);
-                 await _context.SaveChangesAsync(); 
-               
+                await _context.SaveChangesAsync();
+
+                var cartId = model.CartId;
+                var cart = _context.Carts.FirstOrDefault(x => x.CartId == cartId);
+
+                if (cart != null)
+                {
+                    var order = _context.Orders.FirstOrDefault(x => x.OrderId == cart.OrderId);
+
+                    if (order != null)
+                    {
+                        order.TotalPrice = await CalculateTotalPrice(model.CartItemId);
+                      
+                        _context.Update(order);
+                      await  _context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        Log.Error($"Order not found for CartId {cartId}");
+                    }
+                }
+                else
+                {
+                    Log.Error($"Cart not found for CartItemId {model.CartItemId}");
+                }
             }
-        
+            else
+            {
+                Log.Error("Model is null");
+            }
         }
 
 
         public async Task UpdateCartItem_Repose(UpdateCartItemDTO dto)
         {
             Log.Debug("start  UpdateCartItem_Repose");
-            var result = await _context.CartItems.FindAsync(dto.CartItemId);
+            var result = _context.CartItems.FirstOrDefault(x => x.CartItemId.Equals(dto.CartItemId));
             if (result != null)
             {
 
@@ -102,28 +118,34 @@ namespace FurnitureSellingInfra.Repos
                 result.Quantity = dto.Quantity;
                 result.CartId = dto.CartId;
                 result.ItemId = dto.ItemId;
-       
-                
+                //update
                 Log.Information("Update this CartItem", dto.CartItemId);
-
-      await CalculateTotalPrice(dto.CartItemId);
-
                 _context.Update(result);
                 await _context.SaveChangesAsync();
+                var cart = _context.Carts.FirstOrDefault(x => x.CartId == result.CartId);
+                var order = _context.Orders.FirstOrDefault(x => x.OrderId == cart.OrderId);
+                if (order != null)
+                {
+                    order.TotalPrice = await  CalculateTotalPrice(result.CartItemId);
+              
+                    _context.Update(order);
+                    await _context.SaveChangesAsync();
+
+                }
+                else
+                {
+                    Log.Error("cann't found this CartItem");
+                    throw new Exception("can not found this CartItem");
+                }
+                Log.Debug("finished to  UpdateCartItem_Repose");
             }
-            else
-            {
-                Log.Error("cann't found this CartItem");
-                throw new Exception("can not found this CartItem");
-            }
-            Log.Debug("finished to  UpdateCartItem_Repose");
         }
 
         public async Task DeleteCartItem_Repose(int Id)
         {
             Log.Debug("start  DeleteCartItem_Repose");
 
-            var c = _context.CartItems.FirstOrDefault(x => x.CartItemId == Id);
+            var c = await _context.CartItems.FirstOrDefaultAsync(x => x.CartItemId == Id);
             if (c != null)
             {
                 Log.Information("delete this CartItem", Id);
@@ -137,8 +159,10 @@ namespace FurnitureSellingInfra.Repos
             }
 
             Log.Debug("finished to  DeleteCartItem_Repose");
-        } 
-        public async Task CalculateTotalPrice(int Id)
+        }
+
+
+        public async Task<float> CalculateTotalPrice(int Id)
         {
             Log.Debug("start to CalculateTotalPrice");
 
@@ -147,25 +171,16 @@ namespace FurnitureSellingInfra.Repos
                         join i in _context.Items on ct.ItemId equals i.ItemId
                         join o in _context.Orders on c.OrderId equals o.OrderId
                         where ct.CartItemId == Id
-                        select new TotalPticeDTO
+                        select new
                         {
-                            Id=o.OrderId,
-                         price=i.Price,
-                         Quintity=ct.Quantity,
-                            TotalPrice = (i.Price * ct.Quantity),
+                            TotalPrice = (float)((i.Price * ct.Quantity) + o.Fee),
                         };
 
-            var result = await query.FirstOrDefaultAsync();
-            var or=await _context.Orders.FirstOrDefaultAsync(x=>x.OrderId==result.Id);
-            
-            if (result != null)
-            {
-            or.TotalPrice=result.TotalPrice;    
-                _context.Update(or);
-                await _context.SaveChangesAsync();
-            }
+
+            return query.FirstOrDefault().TotalPrice;
         }
 
+     
     }
-}
 
+}

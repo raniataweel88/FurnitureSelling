@@ -1,0 +1,25 @@
+2024-06-17 19:48:31.269 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:48:59.094 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:51:41.767 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:51:45.011 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:51:54.798 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:52:08.745 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:52:20.299 +03:00 [ERR] Can't updates this Item
+2024-06-17 19:55:03.860 +03:00 [INF] Update this CartItem
+2024-06-17 19:55:05.921 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 19:55:25.387 +03:00 [INF] Update this CartItem
+2024-06-17 19:55:27.215 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 19:56:25.553 +03:00 [INF] Update this CartItem
+2024-06-17 19:56:29.264 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 19:57:31.214 +03:00 [INF] Update this CartItem
+2024-06-17 19:57:36.140 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 19:58:23.933 +03:00 [INF] Update this CartItem
+2024-06-17 19:58:25.714 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 19:59:28.301 +03:00 [INF] Update this CartItem
+2024-06-17 19:59:30.467 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 20:00:36.683 +03:00 [INF] Update this CartItem
+2024-06-17 20:00:38.713 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 20:07:32.873 +03:00 [INF] Update this CartItem
+2024-06-17 20:07:37.118 +03:00 [ERR] Can't updates this CartItem
+2024-06-17 20:07:57.864 +03:00 [INF] Update this CartItem
+2024-06-17 20:08:01.730 +03:00 [ERR] Can't updates this CartItem

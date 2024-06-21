@@ -12,9 +12,9 @@ namespace FurnitureSellingCore.IRepos
     public interface ICartRepos
     {
         public Task<CardCartDTO> GetByIdCart_Repose(int Id);
-        public Task<List<CardCartDTO>> GetAllCart_Repose();
+        public Task<List<Cart>> GetAllCart_Repose();
         public Task CreateCart_Repose(Cart c);  
-        public Task UpdateCart_Repose(CardCartDTO c);
+        public Task UpdateCart_Repose(Cart c);
         public Task DeleteCart_Repose(int Id);
 
     }
