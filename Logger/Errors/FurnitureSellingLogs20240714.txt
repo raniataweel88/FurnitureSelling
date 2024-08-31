@@ -1,0 +1,70 @@
+2024-07-14 21:02:52.701 +03:00 [INF] return Item
+2024-07-14 21:03:13.896 +03:00 [INF] return Item
+2024-07-14 21:03:20.959 +03:00 [INF] return Item
+2024-07-14 21:04:31.553 +03:00 [INF] return Item
+2024-07-14 21:05:49.545 +03:00 [INF] return Item
+2024-07-14 21:06:25.856 +03:00 [INF] return Item
+2024-07-14 21:06:33.787 +03:00 [INF] return Item
+2024-07-14 21:10:51.013 +03:00 [INF] add this cart
+2024-07-14 21:10:51.537 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:16:17.291 +03:00 [INF] add this cart
+2024-07-14 21:17:31.764 +03:00 [INF] add this cart
+2024-07-14 21:17:31.912 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:17:37.632 +03:00 [INF] add this cart
+2024-07-14 21:17:37.769 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:18:00.620 +03:00 [INF] add this cart
+2024-07-14 21:18:00.768 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:18:01.995 +03:00 [INF] add this cart
+2024-07-14 21:18:02.126 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:43:10.155 +03:00 [INF] add this cart
+2024-07-14 21:43:10.326 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:43:31.389 +03:00 [INF] add this cart
+2024-07-14 21:43:31.551 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:43:43.565 +03:00 [INF] add this cart
+2024-07-14 21:43:43.700 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:44:34.253 +03:00 [INF] add this cart
+2024-07-14 21:44:48.156 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:44:50.978 +03:00 [INF] add this cart
+2024-07-14 21:44:54.883 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:44:58.462 +03:00 [INF] add this cart
+2024-07-14 21:45:54.945 +03:00 [INF] add this cart
+2024-07-14 21:45:54.945 +03:00 [INF] add this cart
+2024-07-14 21:45:59.984 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:46:00.160 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:46:00.369 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:46:58.029 +03:00 [INF] add this cart
+2024-07-14 21:47:21.612 +03:00 [INF] add this cart
+2024-07-14 21:47:23.380 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:47:38.215 +03:00 [INF] add this cart
+2024-07-14 21:47:40.368 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:48:45.052 +03:00 [INF] add this cart
+2024-07-14 21:48:47.339 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:50:19.609 +03:00 [INF] add this cart
+2024-07-14 21:50:21.746 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:50:50.643 +03:00 [INF] add this cart
+2024-07-14 21:50:56.098 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:51:34.970 +03:00 [INF] add this cart
+2024-07-14 21:51:39.939 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:52:09.623 +03:00 [INF] add this cart
+2024-07-14 21:52:37.850 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:52:57.256 +03:00 [INF] add this cart
+2024-07-14 21:52:59.115 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:54:51.845 +03:00 [INF] add this cart
+2024-07-14 21:55:57.365 +03:00 [INF] add this cart
+2024-07-14 21:56:05.105 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 21:59:53.497 +03:00 [INF] add this cart
+2024-07-14 21:59:55.161 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 22:00:07.170 +03:00 [INF] add this cart
+2024-07-14 22:00:09.209 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 22:01:02.874 +03:00 [INF] add this cart
+2024-07-14 22:01:48.011 +03:00 [INF] add this cart
+2024-07-14 22:06:02.055 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-14 22:07:14.862 +03:00 [INF] found this User
+2024-07-14 22:07:15.087 +03:00 [ERR] Can't updates this profile
+2024-07-14 22:07:35.951 +03:00 [INF] found this User
+2024-07-14 22:07:36.002 +03:00 [INF] update this user
+2024-07-14 22:08:10.150 +03:00 [INF] found this User
+2024-07-14 22:08:10.154 +03:00 [INF] update this user
+2024-07-14 22:09:16.046 +03:00 [INF] delete this user
+2024-07-14 22:09:30.788 +03:00 [ERR] can not found this User
+2024-07-14 22:09:30.868 +03:00 [ERR] can not found this User

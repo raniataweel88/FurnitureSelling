@@ -17,11 +17,15 @@ namespace FurnitureSellingCore.helper
             Admain,
             driver
         }
-             public enum DisacountType
+        public enum DisacountType
         {
             Percentage,
             FixedValue,
-         
+        }
+        public enum Paymentmethod
+        {
+            cash,
+            CreditCard,
         }
     }
 }

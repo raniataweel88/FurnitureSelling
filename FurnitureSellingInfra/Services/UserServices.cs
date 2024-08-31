@@ -1,5 +1,6 @@
 ﻿using FurnitureSellingCore.DTO.Authantication;
 using FurnitureSellingCore.DTO.User;
+using FurnitureSellingCore.helper;
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
@@ -21,12 +22,18 @@ namespace FurnitureSellingInfra.Services
             _repos = repos;
         }
         #region User Services
-        public async Task<DetailsUserDTO> GetByIdUser(int Id)
+        public async Task<DetailsUserDTO> GetUserById(int Id)
         {
             Log.Debug("start GetByIdUser-Services", Id);
-            var user = await _repos.GetByIdUserRepos(Id);
-
-            return user;
+          var user = await _repos.GetByIdUserRepos(Id);
+            if (user == null)
+            {
+                throw new Exception("doesn't have this profile");
+            }
+            else
+            {
+                return user;
+            }
         }
 
         public async Task<List<CardUserDTO>> GetAllUser()
@@ -35,7 +42,7 @@ namespace FurnitureSellingInfra.Services
             return  await _repos.GetAllUserRepos();
            
         }
-        public async Task CreateUser(CreateUserDTO dto)
+        public async Task<int> CreateUser(CreateUserDTO dto)
         {
             Log.Debug("start CreateUser-Services");
             User u = new User()
@@ -43,19 +50,20 @@ namespace FurnitureSellingInfra.Services
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
-                UserType = dto.UserType,
+                UserType = 0,
             }
             ;
             
             int user_Id = await _repos.CreateUserRepos(u);
+            var usrname = dto.FirstName + " " + dto.LastName;
             Logins l = new Logins()
             {
-               UserName=dto.FirstName+" "+dto.LastName,
-                Password = dto.Password,
+               UserName= HashHelper.GenerateSHA384String(usrname),
+                Password =HashHelper.GenerateSHA384String( dto.Password),
                 UserId = user_Id
             };
             await _repos.CreateLogin(l);
-            
+            return user_Id;
         }
 
         public async Task UpdateUser(DetailsUserDTO dto)
@@ -71,15 +79,19 @@ namespace FurnitureSellingInfra.Services
         }
         #endregion
         #region Authantication Services
-        public async Task Login(int Id)
+        public async Task<int> Login(LoginDTO l)
         {
-            Log.Debug("start Login-Services", Id);
-            await _repos.Login(Id);
+            Log.Debug("Start Login-Services");
+
+       
+            return await _repos.LoginId(l);
         }
+
 
         public async Task Logout(int Id)
         {
             Log.Debug("start Logout-Services", Id);
+         
             await  _repos.Logout(Id);   
         }
 
@@ -87,6 +99,55 @@ namespace FurnitureSellingInfra.Services
         {
             Log.Debug("start ResetPassword-Services");
             await _repos.ResetPassword(dto);
+        }
+
+        public async Task<string> GenerateUserAccessToken(LoginDTO l)
+        {
+            var user = await TryAthinticate(l);
+
+            if (user == null)
+            {
+                Log.Error("User authentication failed");
+                throw new Exception("Cannot generate token: authentication failed");
+            }
+
+            return TokenHelper.GenerateJwtToken(user);
+        }
+
+
+        public async  Task<DetailsUserDTO> TryAthinticate(LoginDTO l)
+        {
+           l.UserName =HashHelper.GenerateSHA384String(l.UserName);
+            l.Password = HashHelper.GenerateSHA384String(l.Password);
+            int userId =await _repos.Login(l);
+            if (userId != 0)
+                return await _repos.GetByIdUserRepos(userId);
+            else
+                throw new Exception(" worng in email or  passwors");
+        }
+
+        public async Task CreateUserAdmain(DetailsUserAdmainDTO dto)
+        {
+            Log.Debug("start CreateUser-Services");
+            User u = new User()
+            {
+              
+                Email = dto.Email,
+                PlateNumber = dto.PlateNumber,
+                Salary = dto.Salary,
+                UserType = (UserType?)dto.UserType,
+            }
+            ;
+
+            int user_Id = await _repos.CreateUserReposAdmain(u);
+            Logins l = new Logins()
+            {
+                UserName = HashHelper.GenerateSHA384String(dto.Email),
+                Password = HashHelper.GenerateSHA384String(dto.password),
+                UserId = user_Id
+            };
+            await _repos.CreateLogin(l);
+
         }
 
         #endregion

@@ -16,6 +16,7 @@ namespace FurnitureSellingCore.IServices
         public Task CreateItemServices(CreateItemDTO dto);
         public Task Updateitem(DetailsItemDTO dto);
         public Task<List<DetailsItemDTO>> SearchItem(string? name, string? discerption, float? price);
+        public Task<List<DetailsItemDTO>> FilterProducts(ProductFilterDto filter);
         public Task DeleteItem(int id);
         public Task DiscountItem(DiscountItemDTO d);
 

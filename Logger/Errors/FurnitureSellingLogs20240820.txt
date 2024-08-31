@@ -1,0 +1,601 @@
+2024-08-20 16:11:31.024 +03:00 [INF] Login true
+2024-08-20 16:12:10.705 +03:00 [INF] Login true
+2024-08-20 16:14:19.418 +03:00 [INF] Login true
+2024-08-20 16:15:24.347 +03:00 [INF] Login true
+2024-08-20 16:45:07.475 +03:00 [INF] delete this Orders
+2024-08-20 16:45:36.863 +03:00 [INF] delete this Orders
+2024-08-20 17:41:12.516 +03:00 [INF] found this Category
+2024-08-20 17:41:34.491 +03:00 [INF] the Category not null
+2024-08-20 17:53:45.797 +03:00 [INF] found this Category
+2024-08-20 17:55:48.591 +03:00 [INF] found this Category
+2024-08-20 17:55:52.175 +03:00 [INF] found this Category
+2024-08-20 17:56:22.609 +03:00 [INF] found this Category
+2024-08-20 17:57:57.509 +03:00 [INF] found this Category
+2024-08-20 17:58:01.969 +03:00 [INF] found this Category
+2024-08-20 17:58:18.070 +03:00 [INF] found this Category
+2024-08-20 18:03:46.796 +03:00 [INF] found this Category
+2024-08-20 18:04:27.357 +03:00 [INF] found this Category
+2024-08-20 18:04:30.937 +03:00 [INF] found this Category
+2024-08-20 20:01:59.911 +03:00 [INF] found this Category
+2024-08-20 20:03:08.412 +03:00 [INF] found this Category
+2024-08-20 20:03:08.959 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-20 20:03:48.899 +03:00 [INF] found this Category
+2024-08-20 20:03:49.146 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-20 20:04:07.404 +03:00 [INF] the Category not null
+2024-08-20 20:04:14.950 +03:00 [INF] found this Category
+2024-08-20 20:04:20.435 +03:00 [INF] found this Category
+2024-08-20 20:04:26.338 +03:00 [INF] found this Category
+2024-08-20 20:04:32.433 +03:00 [INF] found this Category
+2024-08-20 20:04:32.645 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-20 20:04:44.715 +03:00 [INF] found this Category
+2024-08-20 20:05:41.917 +03:00 [INF] return all Item
+2024-08-20 20:05:42.012 +03:00 [ERR] can not found this Category
+2024-08-20 20:05:42.149 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:05:43.690 +03:00 [INF] return Item
+2024-08-20 20:07:45.334 +03:00 [INF] return all Item
+2024-08-20 20:07:45.894 +03:00 [ERR] can not found this Category
+2024-08-20 20:07:46.001 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:07:53.467 +03:00 [INF] return all Item
+2024-08-20 20:07:53.480 +03:00 [ERR] can not found this Category
+2024-08-20 20:07:53.638 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:08:14.003 +03:00 [INF] the Category not null
+2024-08-20 20:08:20.105 +03:00 [INF] found this Category
+2024-08-20 20:08:40.601 +03:00 [INF] return all Item
+2024-08-20 20:08:40.628 +03:00 [ERR] can not found this Category
+2024-08-20 20:08:40.792 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:09:09.228 +03:00 [INF] the Item not null
+2024-08-20 20:09:14.022 +03:00 [INF] return all Item
+2024-08-20 20:09:14.054 +03:00 [ERR] can not found this Category
+2024-08-20 20:09:14.251 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:09:19.950 +03:00 [INF] found this Item
+2024-08-20 20:09:19.990 +03:00 [INF] try DeleteItem-controller
+2024-08-20 20:09:23.449 +03:00 [INF] return all Item
+2024-08-20 20:09:23.590 +03:00 [ERR] can not found this Category
+2024-08-20 20:09:23.752 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:13:31.555 +03:00 [INF] return Item
+2024-08-20 20:19:20.239 +03:00 [INF] return Item
+2024-08-20 20:28:43.009 +03:00 [INF] return all Item
+2024-08-20 20:28:43.112 +03:00 [ERR] can not found this Category
+2024-08-20 20:28:43.472 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:28:47.778 +03:00 [INF] return all Item
+2024-08-20 20:28:47.807 +03:00 [ERR] can not found this Category
+2024-08-20 20:28:48.008 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:29:45.313 +03:00 [INF] return all Item
+2024-08-20 20:29:45.403 +03:00 [ERR] can not found this Category
+2024-08-20 20:29:45.724 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:30:01.869 +03:00 [INF] return all Item
+2024-08-20 20:30:01.892 +03:00 [ERR] can not found this Category
+2024-08-20 20:30:02.304 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:30:33.418 +03:00 [INF] return all Item
+2024-08-20 20:30:33.430 +03:00 [ERR] can not found this Category
+2024-08-20 20:30:33.677 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:30:53.199 +03:00 [INF] return all Item
+2024-08-20 20:30:53.222 +03:00 [ERR] can not found this Category
+2024-08-20 20:30:53.524 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:31:09.882 +03:00 [INF] return all Item
+2024-08-20 20:31:09.909 +03:00 [ERR] can not found this Category
+2024-08-20 20:31:10.085 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:31:15.315 +03:00 [INF] return all Item
+2024-08-20 20:31:15.330 +03:00 [ERR] can not found this Category
+2024-08-20 20:31:15.499 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:31:27.364 +03:00 [INF] return all Item
+2024-08-20 20:31:27.407 +03:00 [ERR] can not found this Category
+2024-08-20 20:31:27.704 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:31:29.488 +03:00 [INF] return all Item
+2024-08-20 20:31:29.500 +03:00 [ERR] can not found this Category
+2024-08-20 20:31:29.721 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:31:33.337 +03:00 [INF] return all Item
+2024-08-20 20:31:33.605 +03:00 [ERR] can not found this Category
+2024-08-20 20:31:33.920 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:35:14.077 +03:00 [INF] return all Item
+2024-08-20 20:35:14.172 +03:00 [ERR] can not found this Category
+2024-08-20 20:35:14.518 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:35:17.800 +03:00 [INF] return all Item
+2024-08-20 20:35:17.811 +03:00 [ERR] can not found this Category
+2024-08-20 20:35:17.960 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:37:11.171 +03:00 [INF] return all Item
+2024-08-20 20:37:11.233 +03:00 [ERR] can not found this Category
+2024-08-20 20:37:11.540 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:37:28.201 +03:00 [INF] return all Item
+2024-08-20 20:37:28.212 +03:00 [ERR] can not found this Category
+2024-08-20 20:37:28.467 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:37:33.744 +03:00 [INF] return all Item
+2024-08-20 20:37:33.759 +03:00 [ERR] can not found this Category
+2024-08-20 20:37:33.981 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:37:56.742 +03:00 [INF] return all Item
+2024-08-20 20:37:56.811 +03:00 [ERR] can not found this Category
+2024-08-20 20:37:57.084 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:38:24.111 +03:00 [INF] return all Item
+2024-08-20 20:38:24.122 +03:00 [ERR] can not found this Category
+2024-08-20 20:38:24.371 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:38:45.991 +03:00 [INF] return all Item
+2024-08-20 20:38:46.004 +03:00 [ERR] can not found this Category
+2024-08-20 20:38:46.189 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:38:59.715 +03:00 [INF] return all Item
+2024-08-20 20:38:59.739 +03:00 [ERR] can not found this Category
+2024-08-20 20:39:00.197 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:39:12.412 +03:00 [INF] return all Item
+2024-08-20 20:39:12.426 +03:00 [ERR] can not found this Category
+2024-08-20 20:39:12.578 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:42:06.178 +03:00 [INF] return all Item
+2024-08-20 20:42:06.370 +03:00 [ERR] can not found this Category
+2024-08-20 20:42:06.601 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:42:37.413 +03:00 [INF] return all Item
+2024-08-20 20:42:37.456 +03:00 [ERR] can not found this Category
+2024-08-20 20:42:37.589 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:43:02.358 +03:00 [INF] return all Item
+2024-08-20 20:43:02.367 +03:00 [ERR] can not found this Category
+2024-08-20 20:43:02.581 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:43:13.797 +03:00 [INF] return all Item
+2024-08-20 20:43:13.814 +03:00 [ERR] can not found this Category
+2024-08-20 20:43:14.123 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:43:36.361 +03:00 [INF] return all Item
+2024-08-20 20:43:36.370 +03:00 [ERR] can not found this Category
+2024-08-20 20:43:36.492 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:48:48.983 +03:00 [INF] return all Item
+2024-08-20 20:48:49.110 +03:00 [ERR] can not found this Category
+2024-08-20 20:48:49.259 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:49:33.425 +03:00 [INF] return all Item
+2024-08-20 20:49:33.565 +03:00 [ERR] can not found this Category
+2024-08-20 20:49:33.883 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:49:36.668 +03:00 [INF] return all Item
+2024-08-20 20:49:36.684 +03:00 [ERR] can not found this Category
+2024-08-20 20:49:36.887 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:49:53.038 +03:00 [INF] return all Item
+2024-08-20 20:49:53.064 +03:00 [ERR] can not found this Category
+2024-08-20 20:49:53.237 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:52:27.705 +03:00 [INF] return all Item
+2024-08-20 20:52:27.720 +03:00 [ERR] can not found this Category
+2024-08-20 20:52:27.944 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:53:01.997 +03:00 [INF] return all Item
+2024-08-20 20:53:02.030 +03:00 [ERR] can not found this Category
+2024-08-20 20:53:02.212 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:53:23.967 +03:00 [INF] return all Item
+2024-08-20 20:53:23.985 +03:00 [ERR] can not found this Category
+2024-08-20 20:53:24.078 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:54:56.786 +03:00 [INF] return all Item
+2024-08-20 20:54:56.980 +03:00 [ERR] can not found this Category
+2024-08-20 20:54:57.221 +03:00 [ERR] Can't updates this item Request
+2024-08-20 20:55:14.270 +03:00 [INF] return all Item
+2024-08-20 20:55:14.289 +03:00 [ERR] can not found this Category
+2024-08-20 20:55:14.477 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:02:12.399 +03:00 [INF] return all Item
+2024-08-20 21:02:12.497 +03:00 [ERR] can not found this Category
+2024-08-20 21:02:12.703 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:03:02.938 +03:00 [INF] return all Item
+2024-08-20 21:03:02.994 +03:00 [ERR] can not found this Category
+2024-08-20 21:03:03.706 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:04:41.114 +03:00 [INF] return all Item
+2024-08-20 21:04:41.199 +03:00 [ERR] can not found this Category
+2024-08-20 21:04:41.504 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:05:04.639 +03:00 [INF] return all Item
+2024-08-20 21:05:04.675 +03:00 [ERR] can not found this Category
+2024-08-20 21:05:05.034 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:05:07.350 +03:00 [INF] return all Item
+2024-08-20 21:05:07.359 +03:00 [ERR] can not found this Category
+2024-08-20 21:05:07.590 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:05:50.999 +03:00 [INF] return all Item
+2024-08-20 21:05:51.065 +03:00 [ERR] can not found this Category
+2024-08-20 21:05:51.369 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:12.273 +03:00 [INF] return all Item
+2024-08-20 21:06:12.282 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:12.626 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:15.943 +03:00 [INF] return all Item
+2024-08-20 21:06:15.954 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:16.139 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:26.084 +03:00 [INF] return all Item
+2024-08-20 21:06:26.131 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:26.440 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:32.496 +03:00 [INF] return all Item
+2024-08-20 21:06:32.507 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:32.669 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:35.036 +03:00 [INF] return all Item
+2024-08-20 21:06:35.047 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:35.281 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:37.890 +03:00 [INF] return all Item
+2024-08-20 21:06:37.977 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:38.491 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:43.325 +03:00 [INF] return all Item
+2024-08-20 21:06:43.341 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:43.541 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:49.476 +03:00 [INF] return all Item
+2024-08-20 21:06:49.497 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:49.732 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:06:56.308 +03:00 [INF] return all Item
+2024-08-20 21:06:56.667 +03:00 [ERR] can not found this Category
+2024-08-20 21:06:56.927 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:07:05.789 +03:00 [INF] return all Item
+2024-08-20 21:07:05.810 +03:00 [ERR] can not found this Category
+2024-08-20 21:07:06.227 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:07:57.079 +03:00 [INF] return all Item
+2024-08-20 21:07:57.095 +03:00 [ERR] can not found this Category
+2024-08-20 21:07:57.252 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:08:01.040 +03:00 [INF] return all Item
+2024-08-20 21:08:01.064 +03:00 [ERR] can not found this Category
+2024-08-20 21:08:01.225 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:08:31.918 +03:00 [INF] return all Item
+2024-08-20 21:08:31.944 +03:00 [ERR] can not found this Category
+2024-08-20 21:08:32.183 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:09:00.444 +03:00 [INF] return all Item
+2024-08-20 21:09:00.465 +03:00 [ERR] can not found this Category
+2024-08-20 21:09:00.640 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:09:04.267 +03:00 [INF] return all Item
+2024-08-20 21:09:04.281 +03:00 [ERR] can not found this Category
+2024-08-20 21:09:04.572 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:10:54.974 +03:00 [INF] return all Item
+2024-08-20 21:10:54.988 +03:00 [ERR] can not found this Category
+2024-08-20 21:10:55.135 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:11:19.262 +03:00 [INF] return all Item
+2024-08-20 21:11:19.302 +03:00 [ERR] can not found this Category
+2024-08-20 21:11:19.548 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:11:47.814 +03:00 [INF] return all Item
+2024-08-20 21:11:47.832 +03:00 [ERR] can not found this Category
+2024-08-20 21:11:47.982 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:11:58.578 +03:00 [INF] return all Item
+2024-08-20 21:11:58.593 +03:00 [ERR] can not found this Category
+2024-08-20 21:11:59.098 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:12:47.197 +03:00 [INF] return all Item
+2024-08-20 21:12:47.218 +03:00 [ERR] can not found this Category
+2024-08-20 21:12:47.593 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:12:51.209 +03:00 [INF] return all Item
+2024-08-20 21:12:51.232 +03:00 [ERR] can not found this Category
+2024-08-20 21:12:51.527 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:13:06.646 +03:00 [INF] return all Item
+2024-08-20 21:13:06.660 +03:00 [ERR] can not found this Category
+2024-08-20 21:13:06.955 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:13:17.130 +03:00 [INF] return all Item
+2024-08-20 21:13:17.157 +03:00 [ERR] can not found this Category
+2024-08-20 21:13:17.519 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:13:29.510 +03:00 [INF] return all Item
+2024-08-20 21:13:29.987 +03:00 [ERR] can not found this Category
+2024-08-20 21:13:30.683 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:15:20.286 +03:00 [INF] return all Item
+2024-08-20 21:15:20.312 +03:00 [ERR] can not found this Category
+2024-08-20 21:15:20.428 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:15:54.197 +03:00 [INF] return all Item
+2024-08-20 21:15:54.221 +03:00 [ERR] can not found this Category
+2024-08-20 21:15:54.310 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:16:01.613 +03:00 [INF] return all Item
+2024-08-20 21:16:01.747 +03:00 [ERR] can not found this Category
+2024-08-20 21:16:01.852 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:16:48.536 +03:00 [INF] return all Item
+2024-08-20 21:16:48.596 +03:00 [ERR] can not found this Category
+2024-08-20 21:16:48.749 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:16:59.909 +03:00 [INF] return all Item
+2024-08-20 21:16:59.920 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:00.053 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:17:10.111 +03:00 [INF] return all Item
+2024-08-20 21:17:10.132 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:10.241 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:17:22.868 +03:00 [INF] return all Item
+2024-08-20 21:17:22.880 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:22.961 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:17:28.431 +03:00 [INF] return all Item
+2024-08-20 21:17:28.443 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:28.563 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:17:31.701 +03:00 [INF] return all Item
+2024-08-20 21:17:31.710 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:31.840 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:17:34.611 +03:00 [INF] return all Item
+2024-08-20 21:17:34.622 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:34.702 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:17:53.898 +03:00 [INF] return all Item
+2024-08-20 21:17:53.949 +03:00 [ERR] can not found this Category
+2024-08-20 21:17:54.097 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:18:12.708 +03:00 [INF] return all Item
+2024-08-20 21:18:12.720 +03:00 [ERR] can not found this Category
+2024-08-20 21:18:12.826 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:18:28.796 +03:00 [INF] return all Item
+2024-08-20 21:18:28.809 +03:00 [ERR] can not found this Category
+2024-08-20 21:18:28.924 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:18:32.098 +03:00 [INF] return all Item
+2024-08-20 21:18:32.113 +03:00 [ERR] can not found this Category
+2024-08-20 21:18:32.235 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:18:33.737 +03:00 [INF] return all Item
+2024-08-20 21:18:33.745 +03:00 [ERR] can not found this Category
+2024-08-20 21:18:33.848 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:19:11.388 +03:00 [INF] return all Item
+2024-08-20 21:19:11.408 +03:00 [ERR] can not found this Category
+2024-08-20 21:19:11.502 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:19:12.804 +03:00 [INF] return all Item
+2024-08-20 21:19:12.814 +03:00 [ERR] can not found this Category
+2024-08-20 21:19:12.935 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:19:17.985 +03:00 [INF] return all Item
+2024-08-20 21:19:18.000 +03:00 [ERR] can not found this Category
+2024-08-20 21:19:18.139 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:20:41.655 +03:00 [INF] return all Item
+2024-08-20 21:20:41.680 +03:00 [ERR] can not found this Category
+2024-08-20 21:20:41.794 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:20:53.307 +03:00 [ERR] can not found this Category
+2024-08-20 21:20:53.410 +03:00 [ERR] Can't updates this item Request
+2024-08-20 21:21:24.143 +03:00 [INF] return all Item
+2024-08-20 21:21:24.169 +03:00 [ERR] can not found this Category
+2024-08-20 21:21:24.299 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:43:52.648 +03:00 [INF] return all Item
+2024-08-20 22:43:52.795 +03:00 [ERR] can not found this Category
+2024-08-20 22:43:53.010 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:44:56.288 +03:00 [INF] return all Item
+2024-08-20 22:44:56.338 +03:00 [ERR] can not found this Category
+2024-08-20 22:44:56.518 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:45:17.556 +03:00 [INF] return all Item
+2024-08-20 22:45:17.592 +03:00 [ERR] can not found this Category
+2024-08-20 22:45:17.717 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:30.237 +03:00 [INF] return all Item
+2024-08-20 22:46:30.270 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:30.352 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:34.395 +03:00 [INF] return all Item
+2024-08-20 22:46:34.409 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:34.533 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:37.458 +03:00 [INF] return all Item
+2024-08-20 22:46:37.470 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:37.588 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:40.962 +03:00 [INF] return all Item
+2024-08-20 22:46:40.972 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:41.112 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:42.549 +03:00 [INF] return all Item
+2024-08-20 22:46:42.580 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:42.738 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:49.135 +03:00 [INF] return all Item
+2024-08-20 22:46:49.151 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:49.239 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:54.610 +03:00 [INF] return all Item
+2024-08-20 22:46:54.634 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:54.749 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:46:56.248 +03:00 [INF] return all Item
+2024-08-20 22:46:56.262 +03:00 [ERR] can not found this Category
+2024-08-20 22:46:56.359 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:47:07.185 +03:00 [INF] return all Item
+2024-08-20 22:47:07.200 +03:00 [ERR] can not found this Category
+2024-08-20 22:47:07.283 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:47:10.240 +03:00 [INF] return all Item
+2024-08-20 22:47:10.248 +03:00 [ERR] can not found this Category
+2024-08-20 22:47:10.374 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:47:11.615 +03:00 [INF] return all Item
+2024-08-20 22:47:11.627 +03:00 [ERR] can not found this Category
+2024-08-20 22:47:11.719 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:47:42.707 +03:00 [INF] return all Item
+2024-08-20 22:47:42.757 +03:00 [ERR] can not found this Category
+2024-08-20 22:47:42.920 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:47:54.392 +03:00 [INF] return all Item
+2024-08-20 22:47:54.409 +03:00 [ERR] can not found this Category
+2024-08-20 22:47:54.549 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:48:03.624 +03:00 [INF] return all Item
+2024-08-20 22:48:03.638 +03:00 [ERR] can not found this Category
+2024-08-20 22:48:03.764 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:48:07.925 +03:00 [INF] return all Item
+2024-08-20 22:48:07.955 +03:00 [ERR] can not found this Category
+2024-08-20 22:48:08.136 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:48:22.035 +03:00 [INF] return all Item
+2024-08-20 22:48:22.043 +03:00 [ERR] can not found this Category
+2024-08-20 22:48:22.245 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:48:56.218 +03:00 [INF] return all Item
+2024-08-20 22:48:56.257 +03:00 [ERR] can not found this Category
+2024-08-20 22:48:56.418 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:49:00.685 +03:00 [INF] return all Item
+2024-08-20 22:49:00.709 +03:00 [ERR] can not found this Category
+2024-08-20 22:49:00.867 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:49:52.624 +03:00 [INF] return all Item
+2024-08-20 22:49:52.649 +03:00 [ERR] can not found this Category
+2024-08-20 22:49:52.876 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:49:54.224 +03:00 [INF] return all Item
+2024-08-20 22:49:54.257 +03:00 [ERR] can not found this Category
+2024-08-20 22:49:54.427 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:50:06.936 +03:00 [INF] return all Item
+2024-08-20 22:50:06.966 +03:00 [ERR] can not found this Category
+2024-08-20 22:50:07.196 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:50:09.281 +03:00 [INF] return all Item
+2024-08-20 22:50:09.301 +03:00 [ERR] can not found this Category
+2024-08-20 22:50:09.459 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:50:20.328 +03:00 [INF] return all Item
+2024-08-20 22:50:20.338 +03:00 [ERR] can not found this Category
+2024-08-20 22:50:20.469 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:50:30.327 +03:00 [INF] return all Item
+2024-08-20 22:50:30.343 +03:00 [ERR] can not found this Category
+2024-08-20 22:50:30.502 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:55:18.645 +03:00 [INF] return all Item
+2024-08-20 22:55:18.884 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:55:59.895 +03:00 [INF] return all Item
+2024-08-20 22:55:59.959 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:02.285 +03:00 [INF] return all Item
+2024-08-20 22:56:02.316 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:05.503 +03:00 [INF] return all Item
+2024-08-20 22:56:05.550 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:07.228 +03:00 [INF] return all Item
+2024-08-20 22:56:07.261 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:19.275 +03:00 [INF] return all Item
+2024-08-20 22:56:19.318 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:22.678 +03:00 [INF] return all Item
+2024-08-20 22:56:22.743 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:29.463 +03:00 [INF] return all Item
+2024-08-20 22:56:29.500 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:32.048 +03:00 [INF] return all Item
+2024-08-20 22:56:32.109 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:34.641 +03:00 [INF] return all Item
+2024-08-20 22:56:34.689 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:36.463 +03:00 [INF] return all Item
+2024-08-20 22:56:36.522 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:40.020 +03:00 [INF] return all Item
+2024-08-20 22:56:40.057 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:56:42.693 +03:00 [INF] return all Item
+2024-08-20 22:56:42.730 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:00.545 +03:00 [INF] return all Item
+2024-08-20 22:57:00.627 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:02.258 +03:00 [INF] return all Item
+2024-08-20 22:57:02.306 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:19.094 +03:00 [INF] return all Item
+2024-08-20 22:57:19.160 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:21.293 +03:00 [INF] return all Item
+2024-08-20 22:57:21.329 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:23.696 +03:00 [INF] return all Item
+2024-08-20 22:57:23.764 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:28.829 +03:00 [INF] return all Item
+2024-08-20 22:57:28.896 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:32.894 +03:00 [INF] return all Item
+2024-08-20 22:57:32.934 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:35.184 +03:00 [INF] return all Item
+2024-08-20 22:57:35.287 +03:00 [ERR] Can't updates this item Request
+2024-08-20 22:57:36.951 +03:00 [INF] return all Item
+2024-08-20 22:57:36.993 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:02:11.232 +03:00 [INF] return all Item
+2024-08-20 23:02:11.322 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:03:51.668 +03:00 [INF] return all Item
+2024-08-20 23:03:51.766 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:04:39.529 +03:00 [INF] return all Item
+2024-08-20 23:04:39.571 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:04:45.041 +03:00 [INF] return all Item
+2024-08-20 23:04:45.085 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:04:50.315 +03:00 [INF] return all Item
+2024-08-20 23:04:50.346 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:04:56.839 +03:00 [INF] return all Item
+2024-08-20 23:04:56.991 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:05:19.500 +03:00 [INF] return all Item
+2024-08-20 23:05:19.639 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:05:47.756 +03:00 [INF] return all Item
+2024-08-20 23:05:47.819 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:06:26.029 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:06:26.037 +03:00 [INF] return all Item
+2024-08-20 23:08:00.259 +03:00 [INF] return all Item
+2024-08-20 23:08:00.361 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:09:16.511 +03:00 [INF] return all Item
+2024-08-20 23:09:16.574 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:10:44.568 +03:00 [INF] return all Item
+2024-08-20 23:10:44.643 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:12:40.460 +03:00 [INF] return all Item
+2024-08-20 23:12:40.534 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:13:07.859 +03:00 [INF] return all Item
+2024-08-20 23:13:07.944 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:13:21.759 +03:00 [INF] Login true
+2024-08-20 23:13:26.043 +03:00 [INF] return all Item
+2024-08-20 23:13:26.162 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:14:10.180 +03:00 [INF] return all Item
+2024-08-20 23:14:10.266 +03:00 [ERR] can not found this Category
+2024-08-20 23:14:10.406 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:16:23.887 +03:00 [INF] return all Item
+2024-08-20 23:16:23.916 +03:00 [ERR] can not found this Category
+2024-08-20 23:16:24.189 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:19:22.134 +03:00 [INF] return all Item
+2024-08-20 23:19:22.171 +03:00 [ERR] can not found this Category
+2024-08-20 23:19:22.286 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:19:43.202 +03:00 [INF] return all Item
+2024-08-20 23:19:43.263 +03:00 [ERR] can not found this Category
+2024-08-20 23:19:43.403 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:20:35.003 +03:00 [INF] return all Item
+2024-08-20 23:20:35.052 +03:00 [ERR] can not found this Category
+2024-08-20 23:20:35.227 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:20:44.398 +03:00 [INF] return all Item
+2024-08-20 23:20:44.423 +03:00 [ERR] can not found this Category
+2024-08-20 23:20:44.766 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:21:39.887 +03:00 [INF] return all Item
+2024-08-20 23:21:39.918 +03:00 [ERR] can not found this Category
+2024-08-20 23:21:40.203 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:21:43.983 +03:00 [INF] return all Item
+2024-08-20 23:21:44.194 +03:00 [ERR] can not found this Category
+2024-08-20 23:21:44.757 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:22:06.425 +03:00 [INF] return all Item
+2024-08-20 23:22:06.462 +03:00 [ERR] can not found this Category
+2024-08-20 23:22:06.711 +03:00 [ERR] Can't updates this item Request
+2024-08-20 23:22:51.299 +03:00 [INF] return all Item
+2024-08-20 23:23:11.313 +03:00 [INF] return all Item
+2024-08-20 23:23:42.033 +03:00 [INF] return all Item
+2024-08-20 23:24:04.932 +03:00 [INF] return all Item
+2024-08-20 23:24:23.813 +03:00 [INF] return all Item
+2024-08-20 23:24:29.836 +03:00 [INF] found this Item
+2024-08-20 23:24:29.898 +03:00 [INF] try DeleteItem-controller
+2024-08-20 23:24:38.292 +03:00 [INF] return all Item
+2024-08-20 23:25:26.798 +03:00 [INF] return all Item
+2024-08-20 23:25:31.715 +03:00 [INF] return all Item
+2024-08-20 23:25:50.949 +03:00 [INF] return all Item
+2024-08-20 23:26:46.828 +03:00 [INF] return all Item
+2024-08-20 23:27:23.886 +03:00 [INF] return all Item
+2024-08-20 23:27:26.365 +03:00 [INF] return all Item
+2024-08-20 23:27:43.076 +03:00 [INF] return all Item
+2024-08-20 23:27:47.726 +03:00 [INF] return all Item
+2024-08-20 23:28:34.153 +03:00 [INF] return all Item
+2024-08-20 23:29:34.405 +03:00 [INF] return all Item
+2024-08-20 23:29:42.808 +03:00 [INF] return all Item
+2024-08-20 23:29:46.194 +03:00 [INF] return all Item
+2024-08-20 23:30:02.524 +03:00 [INF] return all Item
+2024-08-20 23:30:49.720 +03:00 [INF] return all Item
+2024-08-20 23:31:13.956 +03:00 [INF] return all Item
+2024-08-20 23:32:47.426 +03:00 [INF] return Item
+2024-08-20 23:32:47.656 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:33:10.824 +03:00 [INF] return all Item
+2024-08-20 23:33:14.959 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:34:06.552 +03:00 [INF] return all Item
+2024-08-20 23:34:09.413 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:35:23.424 +03:00 [INF] return all Item
+2024-08-20 23:35:23.721 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:37:50.835 +03:00 [INF] return all Item
+2024-08-20 23:37:50.984 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:39:31.371 +03:00 [INF] return all Item
+2024-08-20 23:39:31.739 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:41:34.297 +03:00 [INF] return all Item
+2024-08-20 23:41:34.746 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:43:07.483 +03:00 [INF] return all Item
+2024-08-20 23:43:07.686 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:43:14.313 +03:00 [INF] return all Item
+2024-08-20 23:43:14.448 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:43:28.195 +03:00 [INF] found this Item
+2024-08-20 23:43:29.229 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-20 23:43:36.654 +03:00 [INF] return all Item
+2024-08-20 23:43:36.842 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:45:52.518 +03:00 [INF] return all Item
+2024-08-20 23:45:53.008 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:46:28.006 +03:00 [INF] return all Item
+2024-08-20 23:46:28.170 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:46:59.918 +03:00 [INF] delete this user
+2024-08-20 23:47:06.047 +03:00 [INF] return all Item
+2024-08-20 23:47:06.188 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:47:30.566 +03:00 [INF] found this Category
+2024-08-20 23:47:42.816 +03:00 [INF] the Category not null
+2024-08-20 23:47:56.214 +03:00 [INF] found this Category
+2024-08-20 23:48:11.955 +03:00 [INF] return all Item
+2024-08-20 23:48:12.152 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:48:33.313 +03:00 [INF] found this Item
+2024-08-20 23:48:33.364 +03:00 [INF] try DeleteItem-controller
+2024-08-20 23:48:40.568 +03:00 [INF] return all Item
+2024-08-20 23:48:40.733 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:50:35.492 +03:00 [INF] return all Item
+2024-08-20 23:50:39.974 +03:00 [INF] return all Item
+2024-08-20 23:50:43.368 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:50:43.419 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:51:02.837 +03:00 [INF] return all Item
+2024-08-20 23:51:05.841 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:51:38.136 +03:00 [INF] return all Item
+2024-08-20 23:56:56.981 +03:00 [INF] return all Item
+2024-08-20 23:56:56.988 +03:00 [INF] return all Item
+2024-08-20 23:56:57.353 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:57:07.677 +03:00 [INF] return all Item
+2024-08-20 23:57:17.609 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:57:21.343 +03:00 [INF] return all Item
+2024-08-20 23:57:21.462 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:57:28.650 +03:00 [INF] return all Item
+2024-08-20 23:57:28.848 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:57:49.703 +03:00 [INF] return all Item
+2024-08-20 23:57:49.922 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:57:53.550 +03:00 [INF] return all Item
+2024-08-20 23:57:53.751 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:57:58.357 +03:00 [INF] return all Item
+2024-08-20 23:57:58.553 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:03.152 +03:00 [INF] return all Item
+2024-08-20 23:58:03.346 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:06.296 +03:00 [INF] return all Item
+2024-08-20 23:58:06.515 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:12.291 +03:00 [INF] return all Item
+2024-08-20 23:58:12.494 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:26.611 +03:00 [INF] return all Item
+2024-08-20 23:58:26.808 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:30.745 +03:00 [INF] return all Item
+2024-08-20 23:58:30.994 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:35.736 +03:00 [INF] return all Item
+2024-08-20 23:58:35.945 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:38.248 +03:00 [INF] return all Item
+2024-08-20 23:58:38.687 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:58:47.607 +03:00 [INF] return all Item
+2024-08-20 23:58:48.251 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:59:28.969 +03:00 [INF] return all Item
+2024-08-20 23:59:29.176 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:59:32.825 +03:00 [INF] return all Item
+2024-08-20 23:59:32.957 +03:00 [ERR] Can't updates this Item
+2024-08-20 23:59:37.790 +03:00 [INF] return all Item
+2024-08-20 23:59:37.993 +03:00 [ERR] Can't updates this Item

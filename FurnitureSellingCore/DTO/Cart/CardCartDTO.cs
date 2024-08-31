@@ -13,9 +13,8 @@ namespace FurnitureSellingCore.DTO.Cart
         public int? UserId { get; set; }
         public int? OrderId { get; set; }
         public bool IsActiveId { get; set; }
-        public string Email { get; set; }
-        public string Name { get; set; }
-        public string Title { get; set; }
+
+        public string? Title { get; set; }
         public float? TotalPrice { get; set; }
         public float? Fee { get; set; }
 

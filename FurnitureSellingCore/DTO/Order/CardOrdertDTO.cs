@@ -8,5 +8,7 @@
         public float? TotalPrice { get; set; }
         public DateTime? Date { get; set; }
 
+        public bool? StatusDelivery { get; set; }
+
     }
 }

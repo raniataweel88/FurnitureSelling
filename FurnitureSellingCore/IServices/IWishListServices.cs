@@ -11,7 +11,7 @@ namespace FurnitureSellingCore.IServices
     public interface IWishListServices
     {
         public Task<WishListDTO> GetByIdWishList(int Id);
-        public Task<List<WishListDTO>>  GetAllWishList();
+        public Task<List<WishListDTO>>  GetAllWishList(int userId);
         public Task CreateWishList(CardWishListDTO dto);
 
         public Task UpdateWishList(WishListDTO dto);

@@ -16,6 +16,7 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
+            builder.HasMany<ItemRequest>().WithOne().HasForeignKey(x => x.CategoryId);
         }
     }
 }

@@ -14,9 +14,10 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
         {
             builder.ToTable("ItemRequest");
 
-            builder.HasKey(x => x.Id);
-            builder.Property(x=>x.Id).UseIdentityColumn();
-            builder.HasOne<Category>().WithMany().HasForeignKey(x => x.CategoryId);
+        builder.HasKey(x => x.Id);
+           builder.Property(x=>x.Id).UseIdentityColumn();
+       builder.HasMany<ItemRequest>().WithOne().HasForeignKey(x => x.UserId);
+
         }
     }
 }

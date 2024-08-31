@@ -14,14 +14,11 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
         public void Configure(EntityTypeBuilder<Cart> builder)
         {
             builder.ToTable("Cart");
-
             builder.HasKey(e => e.CartId);
             builder.Property(x=>x.CartId).UseIdentityColumn();
             builder.HasOne<User>().WithMany().HasForeignKey(x => x.UserId);
             builder.HasOne<Order>().WithOne().HasForeignKey<Cart>(x => x.OrderId);
-             builder.HasMany<CartItem>().WithOne().HasForeignKey(x => x.CartId);
-
-
+            builder.HasMany<CartItem>().WithOne().HasForeignKey(x => x.CartId);
         }
     }
 }

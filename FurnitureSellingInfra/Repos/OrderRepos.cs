@@ -28,6 +28,7 @@ namespace FurnitureSellingInfra.Repos
             _cartRepos = cartRepos;
         }
         #region Oreder
+
         public async Task<DetailsOrdertDTO> GetByIdOrder_Repose(int Id)
         {
             Log.Debug("start to  GetByIdOrder_Repose");
@@ -42,13 +43,29 @@ namespace FurnitureSellingInfra.Repos
                             Date = o.Date,
                             Fee = o.Fee,
                             Title = o.Title,
+                            statusDelivery=o.StatusDelivery,
                             
+                            Paymentmethod = (int)o.Paymentmethod,
 
                         };
-            return await Query.FirstOrDefaultAsync();
+            var reslt = await Query.FirstOrDefaultAsync();
+
+            if (reslt.Paymentmethod == 0)
+            {
+                return reslt;
+                throw new Exception(" You are required to receive money from a customer");
+
+            }
+            else
+            {
+                return reslt;
+                throw new Exception("the money is received");
+            }
             Log.Debug("finished to  GetByIdOrder_Repose");
 
+
         }
+      
         public async Task<List<CardOrdertDTO>> GetAllOrder()
         {
             Log.Debug("start to  GetAllOrder_Repose");
@@ -60,12 +77,11 @@ namespace FurnitureSellingInfra.Repos
                             Date = o.Date,
                             Title = o.Title,
                             TotalPrice = o.TotalPrice,
-                            
+                            StatusDelivery = o.StatusDelivery,
+
                         };
-
-            return Query.ToList();
             Log.Debug("finished to  GetAllOrder_Repose");
-
+            return Query.ToList();
         }
         public async Task<int> CreateOrder_Repose(Order o)
         {
@@ -75,16 +91,15 @@ namespace FurnitureSellingInfra.Repos
                 await _context.Orders.AddAsync(o);
                 await _context.SaveChangesAsync();
                 Log.Information("add Order");
-
+                Log.Debug("finished to  CreateOrder_Repose");
                 return o.OrderId;
-
             }
+
             else
             {
                 Log.Error("the Order is empty");
                 throw new Exception("the Order is empty");
             }
-            Log.Information("finished to  CreateOrder_Repose");
         }
         public async Task UpdateOrder(DetailsOrdertDTO dto)
         {
@@ -92,23 +107,17 @@ namespace FurnitureSellingInfra.Repos
 
             Log.Debug("start to  UpdateOrder _Repose");
 
-            if (o != null)
-            {
-
-           
-                    o.OrderId = dto.Id;
-                    o.Title = dto.Title;
-                    o.Date = dto.Date;
-                    o.CustomerNote = dto.CustomerNote;
-                    o.Fee = dto.Fee;
-                    _context.Update(o);
-                    await _context.SaveChangesAsync();
+            if (o != null) { 
+                o.OrderId = dto.Id;
+                o.Title = dto.Title;
+                o.Date = dto.Date;
+                o.CustomerNote = dto.CustomerNote;
+                o.Fee = dto.Fee;
+                
+                _context.Update(o);
+                await _context.SaveChangesAsync();
                 Log.Information("Update this Orders");
-
             }
-
-
-
             else
             {
                 Log.Error("can not found this Orders");
@@ -137,13 +146,47 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("Finished to DeleteOrder_Repose");
         }
 
-
-
         #endregion
         #region Order delivery
+        public async Task<DetalisDeliveryOrderDTO> GetByIdOrder_Delivary(int Id)
+        {
+            Log.Debug("start to  GetByIdOrder_Repose");
+            var order=_context.Orders.Where(x=>x.OrderId == Id).FirstOrDefault();
+            var Query = from o in _context.Orders
+                        
+                        where o.OrderId == Id
+                        join user in _context.Users
+                        on o.UserId equals user.UserId
+                        select new DetalisDeliveryOrderDTO
+                        {
+                            Id = o.OrderId,
+                            TotalPrice = o.TotalPrice,
+                            Title = o.Title,
+                            Paymentmethod = (int)o.Paymentmethod,
+                            Address = user.Address,
+                            FirstName = user.FirstName,
+                            LastName = user.LastName,
+                            StatusDelivery = (bool)o.StatusDelivery,
+                            Phone = user.Phone,
+                            RecivingDate = o.RecivingDate,
+                        };
+            var reslt = await Query.FirstOrDefaultAsync();
+
+            if (reslt.Paymentmethod == 0)
+            {
+                return reslt;
+                throw new Exception(" You are required to receive money from a customer");
+
+            }
+            else
+            {
+                return reslt;
+                throw new Exception("the money is received");
+            }
+            Log.Debug("finished to  GetByIdOrder_Repose");
 
 
-
+        }
         public async Task<List<DeliveryOrdertDTO>> GetAllOrderforDelivery()
         {
             Log.Debug("start to  GetAllOrderforDelivery");
@@ -158,9 +201,8 @@ namespace FurnitureSellingInfra.Repos
                             Id = o.OrderId,
 
                         };
-
-            return Query.ToList();
             Log.Debug("finished to  GetAllOrderforDelivery");
+            return Query.ToList();
         }
 
         public async Task UpdateOrderforDelivery(DeliveryOrder_updatetDTO dto)
@@ -177,7 +219,6 @@ namespace FurnitureSellingInfra.Repos
                 _context.Update(o);
                 await _context.SaveChangesAsync();
                 Log.Information("Update this Order form Delivery");
-
             }
 
             else
@@ -202,7 +243,6 @@ namespace FurnitureSellingInfra.Repos
                         where u.Address.Contains(adders)
                         select new DetalisDeliveryOrderDTO
                         {
-                            
                             Id = o.OrderId,
                             TotalPrice = o.TotalPrice,
                             StatusDelivery = (bool)o.StatusDelivery,
@@ -211,17 +251,51 @@ namespace FurnitureSellingInfra.Repos
                             FirstName = u.FirstName,
                             LastName = u.LastName,
                             Address = u.Address,
-                            DeliveryNote=o.DeliveryNote,
-                            RecivingDate= (DateTime)o.RecivingDate
-                            
-                        };
-            return Query.ToList();
-            Log.Debug("end  to  search Order forDelivery");
+                            DeliveryNote = o.DeliveryNote,
+                            RecivingDate = (DateTime)o.RecivingDate,
+                            Paymentmethod = (int)o.Paymentmethod,
 
+                        };
+     
+            Log.Debug("end  to  search Order forDelivery");
+            return Query.ToList();
         }
 
-        #endregion
+        public async Task<Payment> IsvaildPayment(string code, string cardNumber, string cardHolder, float price)
+        {
+            var payments = await _context.Payments.FirstOrDefaultAsync(x => x.Blane >= price && x.Code == code && x.CardNumber == cardNumber &&
+            x.CardHolder == cardHolder);
 
+            return  payments;
+
+
+            #endregion
+        }
+
+        public async Task UpdatePayment(Payment p)
+        {
+            _context.Update(p);
+           await _context.SaveChangesAsync(); 
+        }
+
+        public async Task<List<CardOrdertDTO>> GetAllOrderForUser(int userId)
+        {
+            Log.Debug("start to  GetAllOrder_Repose");
+
+            var Query = from o in _context.Orders
+                        where o.UserId == userId
+                        select new CardOrdertDTO
+                        {
+                            Id = o.OrderId,
+                            Date = o.Date,
+                            Title = o.Title,
+
+                            TotalPrice = o.TotalPrice,
+
+                        };
+            Log.Debug("finished to  GetAllOrder_Repose");
+            return Query.ToList();
+        }
     }
     }
 

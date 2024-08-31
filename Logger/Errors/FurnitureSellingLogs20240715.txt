@@ -1,0 +1,233 @@
+2024-07-15 00:18:37.926 +03:00 [ERR] can not found this profile
+2024-07-15 00:19:05.284 +03:00 [ERR] can not found this profile
+2024-07-15 00:19:07.471 +03:00 [ERR] can not found this profile
+2024-07-15 00:19:08.730 +03:00 [ERR] can not found this profile
+2024-07-15 00:19:47.242 +03:00 [ERR] can not found this profile
+2024-07-15 00:19:48.543 +03:00 [ERR] can not found this profile
+2024-07-15 00:20:24.135 +03:00 [ERR] can not found this profile
+2024-07-15 00:20:51.803 +03:00 [ERR] can not found this profile
+2024-07-15 00:21:54.773 +03:00 [ERR] can not found this profile
+2024-07-15 00:23:18.829 +03:00 [ERR] can not found this profile
+2024-07-15 00:25:44.635 +03:00 [ERR] can not found this profile
+2024-07-15 00:29:33.808 +03:00 [INF] Login true
+2024-07-15 00:31:09.700 +03:00 [INF] the Item not null
+2024-07-15 00:31:10.301 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 00:31:41.375 +03:00 [INF] the Item not null
+2024-07-15 00:31:41.813 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 00:31:55.084 +03:00 [INF] the Item not null
+2024-07-15 00:32:16.643 +03:00 [INF] the Item not null
+2024-07-15 00:32:46.350 +03:00 [INF] the Item not null
+2024-07-15 00:36:21.138 +03:00 [ERR] Can't updates this Item
+2024-07-15 00:36:39.337 +03:00 [ERR] Can't updates this Item
+2024-07-15 00:37:36.010 +03:00 [ERR] Can't updates this Item
+2024-07-15 00:38:24.115 +03:00 [ERR] Can't updates this Item
+2024-07-15 00:38:42.654 +03:00 [ERR] Can't updates this Item
+2024-07-15 00:41:50.081 +03:00 [ERR] Can't updates this Item
+2024-07-15 00:41:50.089 +03:00 [INF] found this Item
+2024-07-15 00:41:50.135 +03:00 [INF] try DeleteItem-controller
+2024-07-15 00:42:54.784 +03:00 [INF] delete this user
+2024-07-15 00:43:33.656 +03:00 [ERR] IDX12739: JWT has three segments but is not in proper JWS format.
+2024-07-15 12:43:40.419 +03:00 [ERR] Can not login
+2024-07-15 12:43:41.128 +03:00 [ERR] Can't login
+2024-07-15 12:45:24.174 +03:00 [ERR] Can not login
+2024-07-15 12:45:25.666 +03:00 [ERR] Can't login
+2024-07-15 12:45:50.914 +03:00 [ERR] Can not login
+2024-07-15 12:45:51.911 +03:00 [ERR] Can't login
+2024-07-15 12:46:12.719 +03:00 [ERR] Can not login
+2024-07-15 12:46:14.392 +03:00 [ERR] Can't login
+2024-07-15 12:47:12.345 +03:00 [ERR] Can not login
+2024-07-15 12:47:13.730 +03:00 [ERR] Can't login
+2024-07-15 12:47:38.842 +03:00 [ERR] Can not login
+2024-07-15 12:47:39.525 +03:00 [ERR] Can't login
+2024-07-15 13:15:55.429 +03:00 [ERR] can not found this profile
+2024-07-15 13:16:42.605 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:17:17.583 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:19:16.705 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:19:18.388 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:19:19.497 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:19:54.407 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:20:12.942 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:20:19.332 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:21:11.238 +03:00 [INF] start to  Logout_Repose
+2024-07-15 13:22:58.948 +03:00 [ERR] Can not login
+2024-07-15 13:22:59.924 +03:00 [ERR] Can't login
+2024-07-15 13:23:42.307 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 13:24:50.739 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 13:25:33.784 +03:00 [INF] Login true
+2024-07-15 13:26:32.294 +03:00 [INF] start to  ResetPasswordDTO
+2024-07-15 13:26:32.316 +03:00 [ERR] Con not ResetPassword
+2024-07-15 13:28:24.549 +03:00 [INF] the Category not null
+2024-07-15 13:29:28.950 +03:00 [INF] found this Category
+2024-07-15 13:30:17.909 +03:00 [ERR] can not found this Category
+2024-07-15 13:30:17.976 +03:00 [ERR] can not found this Category
+2024-07-15 13:31:42.465 +03:00 [INF] Update Item From Admain
+2024-07-15 13:33:57.305 +03:00 [INF] Successfully deleted product warranty
+2024-07-15 13:36:30.634 +03:00 [ERR] cannot found this wishList
+2024-07-15 13:37:08.708 +03:00 [ERR] cann't found this Wishlist
+2024-07-15 13:37:08.778 +03:00 [ERR] cannot found this wishList
+2024-07-15 13:37:14.010 +03:00 [ERR] cann't found this Wishlist
+2024-07-15 13:37:14.074 +03:00 [ERR] cannot found this wishList
+2024-07-15 13:37:22.929 +03:00 [ERR] cann't found this Wishlist
+2024-07-15 13:37:22.999 +03:00 [ERR] cannot found this wishList
+2024-07-15 13:41:58.310 +03:00 [INF] return CartItem 1
+2024-07-15 13:42:58.591 +03:00 [INF] return AllCartItem
+2024-07-15 13:43:17.765 +03:00 [INF] return AllCartItem
+2024-07-15 13:44:09.547 +03:00 [ERR] IDX12739: JWT has three segments but is not in proper JWS format.
+2024-07-15 13:44:23.543 +03:00 [INF] add new CartItem 
+2024-07-15 13:44:26.419 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 13:44:40.163 +03:00 [INF] add new CartItem 
+2024-07-15 13:44:51.408 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 13:44:55.957 +03:00 [INF] add new CartItem 
+2024-07-15 13:44:56.155 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 13:45:00.521 +03:00 [INF] add new CartItem 
+2024-07-15 13:45:00.726 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 13:45:15.303 +03:00 [INF] get all cart
+2024-07-15 13:46:24.490 +03:00 [INF] add this cart
+2024-07-15 13:47:19.653 +03:00 [INF] delete this cart
+2024-07-15 13:53:58.435 +03:00 [ERR] can not found this cat
+2024-07-15 13:53:58.503 +03:00 [ERR] can not found this cat
+2024-07-15 13:54:56.756 +03:00 [INF] add the ItemRequest 
+2024-07-15 13:55:52.007 +03:00 [WRN] No product warranties found
+2024-07-15 13:57:07.590 +03:00 [INF] update this ItemRequest
+2024-07-15 13:57:51.799 +03:00 [INF] delete this ItemRequest
+2024-07-15 13:59:50.416 +03:00 [INF] add new CartItem 
+2024-07-15 13:59:50.620 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 14:00:11.430 +03:00 [INF] Update this CartItem
+2024-07-15 14:00:13.489 +03:00 [ERR] Can't updates this CartItem
+2024-07-15 14:00:44.663 +03:00 [INF] Update this CartItem
+2024-07-15 14:00:46.912 +03:00 [ERR] Can't updates this CartItem
+2024-07-15 14:04:18.173 +03:00 [INF] Update this Order form Delivery
+2024-07-15 14:06:38.776 +03:00 [INF] start to  Logout_Repose
+2024-07-15 15:24:18.103 +03:00 [INF] start to  ResetPasswordDTO
+2024-07-15 15:24:18.138 +03:00 [ERR] Con not ResetPassword
+2024-07-15 15:29:11.738 +03:00 [INF] Login true
+2024-07-15 15:31:54.977 +03:00 [INF] add Order
+2024-07-15 15:33:09.483 +03:00 [INF] Update this Orders
+2024-07-15 15:34:36.515 +03:00 [INF] delete this Orders
+2024-07-15 15:34:52.037 +03:00 [ERR] can not found this Orders
+2024-07-15 15:34:52.104 +03:00 [ERR] Error can not found this Orders
+2024-07-15 15:36:38.322 +03:00 [ERR] can not found this Orders
+2024-07-15 15:36:38.450 +03:00 [ERR] Error can not found this Orders
+2024-07-15 19:21:39.289 +03:00 [INF] add new CartItem 
+2024-07-15 19:21:44.818 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:22:00.639 +03:00 [INF] add new CartItem 
+2024-07-15 19:22:00.867 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 19:22:06.245 +03:00 [INF] add new CartItem 
+2024-07-15 19:22:06.478 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 19:23:41.851 +03:00 [INF] add new CartItem 
+2024-07-15 19:23:43.216 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 19:24:14.631 +03:00 [INF] add new CartItem 
+2024-07-15 19:24:15.456 +03:00 [ERR] Cart not found for CartItemId 0
+2024-07-15 19:24:38.281 +03:00 [INF] add new CartItem 
+2024-07-15 19:24:41.698 +03:00 [ERR] Cart not found for CartItemId 0
+2024-07-15 19:25:21.072 +03:00 [INF] add new CartItem 
+2024-07-15 19:25:44.269 +03:00 [ERR] Cart not found for CartItemId 0
+2024-07-15 19:25:55.297 +03:00 [INF] add new CartItem 
+2024-07-15 19:25:56.461 +03:00 [ERR] Cart not found for CartItemId 0
+2024-07-15 19:26:08.329 +03:00 [INF] add new CartItem 
+2024-07-15 19:27:10.839 +03:00 [ERR] Cart not found for CartItemId 0
+2024-07-15 19:27:16.774 +03:00 [INF] add new CartItem 
+2024-07-15 19:27:26.128 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-07-15 19:27:37.442 +03:00 [INF] add new CartItem 
+2024-07-15 19:30:53.785 +03:00 [INF] add new CartItem 
+2024-07-15 19:31:06.593 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-07-15 19:31:15.872 +03:00 [INF] add new CartItem 
+2024-07-15 19:32:17.724 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-07-15 19:32:50.593 +03:00 [INF] add new CartItem 
+2024-07-15 19:32:50.714 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-07-15 19:33:49.374 +03:00 [INF] add new CartItem 
+2024-07-15 19:33:49.553 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-07-15 19:34:20.574 +03:00 [INF] add new CartItem 
+2024-07-15 19:34:20.750 +03:00 [ERR] Object reference not set to an instance of an object.
+2024-07-15 19:43:37.045 +03:00 [INF] add new CartItem 
+2024-07-15 19:43:50.177 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:44:00.415 +03:00 [INF] add new CartItem 
+2024-07-15 19:44:10.978 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:44:44.258 +03:00 [INF] add new CartItem 
+2024-07-15 19:44:44.519 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:44:51.042 +03:00 [INF] add new CartItem 
+2024-07-15 19:44:51.383 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:45:01.788 +03:00 [INF] add new CartItem 
+2024-07-15 19:45:02.059 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:45:55.419 +03:00 [INF] add new CartItem 
+2024-07-15 19:45:55.634 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:46:17.085 +03:00 [INF] add new CartItem 
+2024-07-15 19:46:17.466 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:46:36.830 +03:00 [INF] add new CartItem 
+2024-07-15 19:47:04.704 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:47:17.026 +03:00 [INF] add new CartItem 
+2024-07-15 19:47:17.241 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:48:39.789 +03:00 [INF] add new CartItem 
+2024-07-15 19:48:40.247 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:48:47.884 +03:00 [INF] add new CartItem 
+2024-07-15 19:48:48.284 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:49:03.010 +03:00 [INF] add new CartItem 
+2024-07-15 19:49:03.197 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:49:20.031 +03:00 [INF] add new CartItem 
+2024-07-15 19:49:20.470 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:49:42.465 +03:00 [INF] add new CartItem 
+2024-07-15 19:49:42.629 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:50:47.470 +03:00 [INF] add new CartItem 
+2024-07-15 19:51:29.779 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:51:37.281 +03:00 [INF] add new CartItem 
+2024-07-15 19:53:20.792 +03:00 [ERR] One or more errors occurred. (Nullable object must have a value.)
+2024-07-15 19:53:27.528 +03:00 [INF] add new CartItem 
+2024-07-15 19:55:25.517 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:56:33.509 +03:00 [INF] add new CartItem 
+2024-07-15 19:56:51.572 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:58:50.047 +03:00 [INF] add new CartItem 
+2024-07-15 19:59:00.189 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 19:59:36.195 +03:00 [INF] add new CartItem 
+2024-07-15 19:59:55.333 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:01:19.518 +03:00 [INF] add new CartItem 
+2024-07-15 20:01:21.486 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:01:53.351 +03:00 [INF] add new CartItem 
+2024-07-15 20:01:57.172 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:02:49.304 +03:00 [INF] add new CartItem 
+2024-07-15 20:03:02.159 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:03:27.082 +03:00 [INF] add new CartItem 
+2024-07-15 20:03:30.611 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:04:28.572 +03:00 [INF] add new CartItem 
+2024-07-15 20:04:32.149 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:04:57.576 +03:00 [INF] add new CartItem 
+2024-07-15 20:04:59.618 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:05:06.128 +03:00 [INF] add new CartItem 
+2024-07-15 20:06:57.134 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:07:04.151 +03:00 [INF] add new CartItem 
+2024-07-15 20:08:28.328 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:09:32.490 +03:00 [INF] get all cart
+2024-07-15 20:10:10.942 +03:00 [INF] add new CartItem 
+2024-07-15 20:10:25.378 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:11:11.525 +03:00 [INF] add new CartItem 
+2024-07-15 20:13:16.727 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:14:19.251 +03:00 [INF] add new CartItem 
+2024-07-15 20:14:19.844 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 20:14:26.966 +03:00 [INF] add new CartItem 
+2024-07-15 20:14:28.137 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 20:14:37.904 +03:00 [INF] add new CartItem 
+2024-07-15 20:14:47.134 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-07-15 20:15:09.602 +03:00 [INF] add new CartItem 
+2024-07-15 20:15:26.809 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:15:34.456 +03:00 [INF] add new CartItem 
+2024-07-15 20:26:24.978 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:26:32.350 +03:00 [INF] add new CartItem 
+2024-07-15 20:26:57.725 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:27:04.171 +03:00 [INF] add new CartItem 
+2024-07-15 20:27:07.218 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:27:49.615 +03:00 [INF] add new CartItem 
+2024-07-15 20:27:51.186 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:27:57.356 +03:00 [INF] add new CartItem 
+2024-07-15 20:28:11.576 +03:00 [ERR] Nullable object must have a value.
+2024-07-15 20:29:19.833 +03:00 [INF] add new CartItem 
+2024-07-15 23:39:25.920 +03:00 [INF] Login true
+2024-07-15 23:39:36.800 +03:00 [INF] the Category not null
+2024-07-15 23:39:37.047 +03:00 [INF] found this Category
+2024-07-15 23:39:37.131 +03:00 [ERR] can not found this Category
+2024-07-15 23:39:37.398 +03:00 [ERR] can not found this Category
+2024-07-15 23:39:37.471 +03:00 [INF] return Item
+2024-07-15 23:39:37.650 +03:00 [INF] return all Item
+2024-07-15 23:39:38.451 +03:00 [ERR] can not found this ItemRequest
+2024-07-15 23:39:38.700 +03:00 [ERR] Can't response this item requst
+2024-07-15 23:39:39.104 +03:00 [INF] add Order
+2024-07-15 23:39:39.256 +03:00 [ERR] can not found this Orders
+2024-07-15 23:39:39.523 +03:00 [ERR] Error can not found this Orders

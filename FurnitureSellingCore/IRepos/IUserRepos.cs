@@ -13,7 +13,7 @@ namespace FurnitureSellingCore.IRepos
     {
         #region User Repos
         public Task<int> CreateUserRepos(User u);
-
+        public Task<int> CreateUserReposAdmain(User u);
         public Task<DetailsUserDTO> GetByIdUserRepos(int Id);
         public Task<List<CardUserDTO>> GetAllUserRepos();
         public Task UpdateUserRepos(DetailsUserDTO u);
@@ -23,7 +23,8 @@ namespace FurnitureSellingCore.IRepos
         #region Authantication-Services
         public Task CreateLogin(Logins l);
         public Task Logout(int Id);
-        public  Task Login(int id);
+        public Task<int> Login(LoginDTO l);
+        public Task<int> LoginId(LoginDTO l);
 
         public Task ResetPassword(ResetPasswordDTO dto) ;
 

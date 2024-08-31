@@ -50,6 +50,10 @@ namespace FurnitureSellingInfra.Services
             Log.Debug("start DeleteCategory-Services", Id);
             await _repose.DeleteCategory_Repose(Id);
     }
-  
+
+        public async Task<addmin> Expectations()
+        {
+         return   await _repose.Expectations();   
+        }
     }
 }

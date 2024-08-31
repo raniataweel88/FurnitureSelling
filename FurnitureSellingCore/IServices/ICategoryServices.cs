@@ -14,6 +14,7 @@ namespace FurnitureSellingCore.IServices
         public Task CreateCategory(CategoryDTO dto);
         public Task UpdateCategory(CardCategoryDTO dto);
         public Task DeleteCategory(int id);
+        public Task<addmin> Expectations();
 
     }
 }

@@ -24,20 +24,21 @@ namespace FurnitureSellingInfra.Services
             Log.Debug("start GetByIdWishList-Services", Id);
             return await _repose.GetByIdWishList_Repose(Id);  
         }
-        public async Task<List<WishListDTO>> GetAllWishList()
+        public async Task<List<WishListDTO>> GetAllWishList(int userId)
         {
             Log.Debug("start GetAllWishList-Services");
-            return await _repose.GetAllWishList_Repose();
+            return await _repose.GetAllWishList_Repose (userId);
         }
         public async Task CreateWishList(CardWishListDTO dto)
         {
-            Log.Debug("start CreateWishList-Services");
-            WishList w = new WishList
-            {
-                ItemId = dto.ItemId,
-                UserId = dto.UserId,
-            };
-            await _repose.CreateWishList_Repose(w);
+             Log.Debug("start CreateWishList-Services");
+                WishList w = new WishList
+                {
+                    ItemId = dto.ItemId,
+                    UserId = dto.UserId,
+                };
+                await _repose.CreateWishList_Repose(w);
+            
         }
 
         public async Task UpdateWishList(WishListDTO dto)

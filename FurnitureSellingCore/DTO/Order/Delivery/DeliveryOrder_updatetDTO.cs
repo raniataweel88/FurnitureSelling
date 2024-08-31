@@ -8,6 +8,6 @@ namespace FurnitureSellingCore.DTO.Order.Delivery
 
         public bool StatusDelivery { get; set; }
         public DateTime RecivingDate { get; set; }
-        public string DeliveryNote { get; set; }
+        public string? DeliveryNote { get; set; }
     }
 }

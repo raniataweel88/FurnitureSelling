@@ -15,8 +15,9 @@ namespace FurnitureSellingCore.IRepos
         public Task CreateItem_Repose(Item t);
         public Task UpdateItem(DetailsItemDTO t);
         public Task<List<DetailsItemDTO>> SearchItem(string? name, string? description, float? price);
-
+        public Task<List<DetailsItemDTO>> FilterProducts(ProductFilterDto filter);
         public Task DeleteItem(int Id);
         public Task DiscountItem(DiscountItemDTO d);
     }
 }
+ 

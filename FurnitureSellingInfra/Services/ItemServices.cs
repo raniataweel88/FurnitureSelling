@@ -2,9 +2,11 @@
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingCore.Models;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,8 +39,11 @@ namespace FurnitureSellingInfra.Services
                 Description = dto.Description,
                 Image = dto.Image,
                 CategoryId = dto.CategoryId,
-                Price=dto.Price,
-                
+                Quantity = (int)dto.Quantity,
+                Price =dto.Price,
+                Colors= dto.Colors,
+                Sizes=dto.Sizes,
+                DateAdd=DateTime.Now,
             };
             await _Repos.CreateItem_Repose(i);   
         }
@@ -64,6 +69,11 @@ namespace FurnitureSellingInfra.Services
         {
          return  _Repos.DiscountItem(d);
 
+        }
+
+        public async Task<List<DetailsItemDTO>> FilterProducts(ProductFilterDto filter)
+        {
+        return await   _Repos.FilterProducts(filter);
         }
     }
 }

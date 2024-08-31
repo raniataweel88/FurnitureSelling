@@ -30,6 +30,67 @@ namespace FurnitureSellingCore.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "ItemRequest",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Title = table.Column<string>(type: "longtext", nullable: true),
+                    Description = table.Column<string>(type: "longtext", nullable: true),
+                    Image = table.Column<string>(type: "longtext", nullable: true),
+                    CategoryId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<float>(type: "float", nullable: true),
+                    NoteAdmain = table.Column<string>(type: "longtext", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ItemRequest", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ItemRequest_ItemRequest_UserId",
+                        column: x => x.UserId,
+                        principalTable: "ItemRequest",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Payments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    CardNumber = table.Column<string>(type: "longtext", nullable: false),
+                    Code = table.Column<string>(type: "longtext", nullable: false),
+                    CardHolder = table.Column<string>(type: "longtext", nullable: false),
+                    ExpireDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Blane = table.Column<float>(type: "float", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Payments", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Raviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    RatingNumber = table.Column<int>(type: "int", nullable: false),
+                    Review = table.Column<string>(type: "longtext", nullable: true),
+                    RatingDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ItemId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Raviews", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "User",
                 columns: table => new
                 {
@@ -43,14 +104,13 @@ namespace FurnitureSellingCore.Migrations
                     UserType = table.Column<int>(type: "int", nullable: true),
                     Address = table.Column<string>(type: "longtext", nullable: true),
                     Salary = table.Column<string>(type: "longtext", nullable: true),
-                    PlateNumber = table.Column<string>(type: "longtext", nullable: true)
+                    PlateNumber = table.Column<string>(type: "longtext", nullable: true),
+                    Key = table.Column<string>(type: "longtext", nullable: true),
+                    IV = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.UserId);
-                    table.CheckConstraint("CHK_FirstName", "NOT (FirstName REGEXP '[0-9]') AND NOT(FirstName REGEXP '[^A-Za-z]')");
-                    table.CheckConstraint("CHK_LastName", "NOT (LastName REGEXP '[0-9]') AND  NOT(LastName REGEXP '[^A-Za-z]')");
-                    table.CheckConstraint("CK_Email_Recipient", "Email  LIKE '%@%.com'");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -61,14 +121,17 @@ namespace FurnitureSellingCore.Migrations
                     ItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: false),
+                    Description = table.Column<string>(type: "longtext", nullable: true),
                     Image = table.Column<string>(type: "longtext", nullable: true),
                     Price = table.Column<float>(type: "float", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     isHaveDiscount = table.Column<bool>(type: "tinyint(1)", nullable: true, defaultValue: false),
                     DisacountAmount = table.Column<float>(type: "float", nullable: true),
                     DiscountType = table.Column<int>(type: "int", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: true)
+                    EndDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    CategoryId = table.Column<int>(type: "int", nullable: true),
+                    Colors = table.Column<string>(type: "longtext", nullable: false),
+                    Sizes = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -82,36 +145,12 @@ namespace FurnitureSellingCore.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "ItemRequest",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: true),
-                    Image = table.Column<string>(type: "longtext", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: true),
-                    Price = table.Column<float>(type: "float", nullable: true),
-                    NoteStor = table.Column<string>(type: "longtext", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ItemRequest", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ItemRequest_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id");
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "Login",
                 columns: table => new
                 {
                     LoginId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "longtext", nullable: true),
                     Password = table.Column<string>(type: "longtext", nullable: true),
                     LastLoginTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
@@ -124,7 +163,8 @@ namespace FurnitureSellingCore.Migrations
                         name: "FK_Login_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
-                        principalColumn: "UserId");
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -136,13 +176,14 @@ namespace FurnitureSellingCore.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(type: "longtext", nullable: true),
                     TotalPrice = table.Column<float>(type: "float", nullable: true),
-                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: true, defaultValue: new DateTime(2024, 6, 18, 23, 40, 43, 780, DateTimeKind.Local).AddTicks(9272)),
+                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: true, defaultValue: new DateTime(2024, 8, 24, 22, 37, 19, 573, DateTimeKind.Local).AddTicks(4250)),
                     Fee = table.Column<float>(type: "float", nullable: true),
                     CustomerNote = table.Column<string>(type: "longtext", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     StatusDelivery = table.Column<bool>(type: "tinyint(1)", nullable: true, defaultValue: false),
                     RecivingDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
-                    DeliveryNote = table.Column<string>(type: "longtext", nullable: true)
+                    DeliveryNote = table.Column<string>(type: "longtext", nullable: true),
+                    Paymentmethod = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -152,6 +193,29 @@ namespace FurnitureSellingCore.Migrations
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "UserId");
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "ProductWarrantys",
+                columns: table => new
+                {
+                    ProductWarrantyId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    ItemId = table.Column<int>(type: "int", nullable: false),
+                    WarrantyCode = table.Column<string>(type: "longtext", nullable: false),
+                    WarrantyStartDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    WarrantyEndDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductWarrantys", x => x.ProductWarrantyId);
+                    table.ForeignKey(
+                        name: "FK_ProductWarrantys_Item_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Item",
+                        principalColumn: "ItemId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -172,11 +236,6 @@ namespace FurnitureSellingCore.Migrations
                         column: x => x.ItemId,
                         principalTable: "Item",
                         principalColumn: "ItemId");
-                    table.ForeignKey(
-                        name: "FK_WishList_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "UserId");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -188,6 +247,7 @@ namespace FurnitureSellingCore.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     OrderId = table.Column<int>(type: "int", nullable: true),
+                    Paymentmetod = table.Column<int>(type: "int", nullable: false),
                     IsActiveId = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
@@ -259,9 +319,9 @@ namespace FurnitureSellingCore.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ItemRequest_CategoryId",
+                name: "IX_ItemRequest_UserId",
                 table: "ItemRequest",
-                column: "CategoryId");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Login_UserId",
@@ -275,6 +335,12 @@ namespace FurnitureSellingCore.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProductWarrantys_ItemId",
+                table: "ProductWarrantys",
+                column: "ItemId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_User_Email",
                 table: "User",
                 column: "Email",
@@ -284,11 +350,6 @@ namespace FurnitureSellingCore.Migrations
                 name: "IX_WishList_ItemId",
                 table: "WishList",
                 column: "ItemId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WishList_UserId",
-                table: "WishList",
-                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -302,6 +363,15 @@ namespace FurnitureSellingCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "Login");
+
+            migrationBuilder.DropTable(
+                name: "Payments");
+
+            migrationBuilder.DropTable(
+                name: "ProductWarrantys");
+
+            migrationBuilder.DropTable(
+                name: "Raviews");
 
             migrationBuilder.DropTable(
                 name: "WishList");

@@ -4,11 +4,6 @@ using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.Models;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Repos
 {
@@ -25,27 +20,28 @@ namespace FurnitureSellingInfra.Repos
 
             var Qery = from c in _context.Categories
                        where c.Id == Id
+
                        select new CardCategoryDTO
                        {
                            Title = c.Title,
-                           Id= c.Id,
+                           Id = c.Id,
 
                        };
-            return  Qery.FirstOrDefault();
             Log.Debug("finished to  GetByIdCategory_Repose");
-
+            return Qery.FirstOrDefault();
         }
         public async Task<List<CardCategoryDTO>> GetAllCategory_Repose()
         {
             Log.Debug("start to  GetAllCategory_Repose");
 
             var Qery = from c in _context.Categories
-                       select  new CardCategoryDTO{
-                            Title = c.Title,
+                       select new CardCategoryDTO
+                       {
+                           Title = c.Title,
                            Id = c.Id,
-                           };
-                 return await Qery.ToListAsync();
+                       };
             Log.Debug("finished to  GetAllCategory_Repose");
+            return await Qery.ToListAsync();
 
         }
         public async Task CreateCategory_Repose(Category c)
@@ -73,8 +69,8 @@ namespace FurnitureSellingInfra.Repos
             {
                 //replacement 
                 Log.Information("found this Category");
-                 result.Id = c.Id;
-                 result.Title = c.Title;
+                result.Id = c.Id;
+                result.Title = c.Title;
                 //update
                 _context.Update(result);
                 await _context.SaveChangesAsync();
@@ -83,14 +79,14 @@ namespace FurnitureSellingInfra.Repos
             {
                 Log.Error("can not found this Category");
                 throw new Exception("can not found this Category");
-                  }
-           
+            }
+
             Log.Debug("finished to  UpdateCategory_Repose");
         }
 
         public async Task DeleteCategory_Repose(int Id)
         {
-           
+
             Log.Debug("start to  DeleteCategory_Repose");
             var C = _context.Categories.FirstOrDefault(X => X.Id == Id);
             if (C != null)
@@ -106,6 +102,24 @@ namespace FurnitureSellingInfra.Repos
             }
             Log.Debug("Finished to DeleteCategory_Repose");
         }
+    
+    
+        public async Task<addmin> Expectations()
+        {
+            var C =  _context.Categories.Count();
+            var i = _context.Items.Count();
+            var u = _context.Users.Count();
+            var o = _context.Orders.Count();
+            addmin a = new addmin()
+            {
+                Categorynumber = C,
+                Itemnumber = i,
+                salear = o,
+                UserNumber = u,
+            };
+            return a;
+        }
+
     }
     }
 

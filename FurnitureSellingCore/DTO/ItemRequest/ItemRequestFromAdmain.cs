@@ -8,7 +8,7 @@ namespace FurnitureSellingCore.DTO.ItemRequest
 {
     public class ItemRequestFromAdmain
     {
-        public int? Id { get; set; }
+        public int? ItemRequestId { get; set; }
 
         public float? Price { get; set; }
         public string? Note { get; set; }

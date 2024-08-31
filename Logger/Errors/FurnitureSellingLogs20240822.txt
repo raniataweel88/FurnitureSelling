@@ -1,0 +1,305 @@
+2024-08-22 13:26:51.764 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-08-22 13:28:12.332 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-08-22 13:29:14.065 +03:00 [INF] return all Item
+2024-08-22 13:29:37.084 +03:00 [INF] Login true
+2024-08-22 13:29:49.210 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-08-22 13:33:02.266 +03:00 [INF] delete this user
+2024-08-22 13:34:07.066 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-22 13:35:02.635 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-22 13:35:46.955 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-22 13:36:21.108 +03:00 [INF] delete this user
+2024-08-22 13:37:37.532 +03:00 [INF] delete this user
+2024-08-22 13:37:59.363 +03:00 [INF] delete this user
+2024-08-22 13:38:46.916 +03:00 [INF] delete this user
+2024-08-22 13:39:33.224 +03:00 [ERR] can not found this User
+2024-08-22 13:39:33.495 +03:00 [ERR] can not found this User
+2024-08-22 13:41:33.626 +03:00 [INF] delete this user
+2024-08-22 13:41:54.377 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-08-22 13:43:22.585 +03:00 [INF] delete this user
+2024-08-22 13:47:23.909 +03:00 [INF] delete this user
+2024-08-22 14:17:44.299 +03:00 [INF] found this Category
+2024-08-22 14:17:52.512 +03:00 [INF] the Category not null
+2024-08-22 14:17:58.530 +03:00 [INF] found this Category
+2024-08-22 14:18:10.628 +03:00 [INF] return all Item
+2024-08-22 14:18:13.649 +03:00 [INF] return all Item
+2024-08-22 14:25:26.614 +03:00 [INF] return all Item
+2024-08-22 14:29:01.386 +03:00 [INF] return all Item
+2024-08-22 14:29:16.778 +03:00 [INF] return all Item
+2024-08-22 14:29:42.166 +03:00 [INF] return all Item
+2024-08-22 14:31:44.535 +03:00 [INF] return all Item
+2024-08-22 14:31:47.766 +03:00 [INF] return all Item
+2024-08-22 14:32:12.213 +03:00 [INF] return all Item
+2024-08-22 14:33:30.486 +03:00 [INF] return all Item
+2024-08-22 14:35:45.020 +03:00 [INF] return all Item
+2024-08-22 14:36:02.346 +03:00 [INF] return all Item
+2024-08-22 14:36:46.052 +03:00 [INF] return all Item
+2024-08-22 14:37:05.242 +03:00 [INF] return all Item
+2024-08-22 14:37:33.566 +03:00 [INF] return all Item
+2024-08-22 14:37:44.143 +03:00 [INF] return all Item
+2024-08-22 14:38:43.732 +03:00 [INF] delete this Orders
+2024-08-22 16:07:30.459 +03:00 [INF] return all Item
+2024-08-22 16:14:44.588 +03:00 [INF] return all Item
+2024-08-22 16:17:52.851 +03:00 [INF] return all Item
+2024-08-22 16:18:51.828 +03:00 [INF] return Item
+2024-08-22 16:32:34.831 +03:00 [INF] return all Item
+2024-08-22 16:44:47.695 +03:00 [INF] return all Item
+2024-08-22 16:46:10.600 +03:00 [INF] return all Item
+2024-08-22 16:47:10.684 +03:00 [INF] return all Item
+2024-08-22 16:49:11.315 +03:00 [INF] return Item
+2024-08-22 16:50:04.199 +03:00 [INF] return Item
+2024-08-22 16:50:49.713 +03:00 [INF] return all Item
+2024-08-22 16:50:51.048 +03:00 [INF] return Item
+2024-08-22 16:51:09.996 +03:00 [INF] return Item
+2024-08-22 16:51:38.644 +03:00 [INF] return Item
+2024-08-22 16:51:55.991 +03:00 [INF] return Item
+2024-08-22 16:52:25.733 +03:00 [INF] return Item
+2024-08-22 16:52:29.141 +03:00 [INF] return Item
+2024-08-22 16:52:51.698 +03:00 [INF] return Item
+2024-08-22 16:53:10.413 +03:00 [INF] return Item
+2024-08-22 16:53:27.452 +03:00 [INF] return Item
+2024-08-22 18:19:28.397 +03:00 [INF] return Item
+2024-08-22 18:19:32.337 +03:00 [INF] return Item
+2024-08-22 18:19:42.312 +03:00 [INF] return Item
+2024-08-22 18:19:48.209 +03:00 [INF] return Item
+2024-08-22 18:19:54.888 +03:00 [INF] return Item
+2024-08-22 18:19:57.809 +03:00 [INF] return Item
+2024-08-22 18:20:04.751 +03:00 [INF] return Item
+2024-08-22 18:20:17.888 +03:00 [INF] return Item
+2024-08-22 18:20:21.070 +03:00 [INF] return Item
+2024-08-22 18:20:26.485 +03:00 [INF] return Item
+2024-08-22 18:20:43.471 +03:00 [INF] return Item
+2024-08-22 18:20:45.567 +03:00 [INF] return Item
+2024-08-22 18:20:53.673 +03:00 [INF] return Item
+2024-08-22 18:20:59.732 +03:00 [INF] return Item
+2024-08-22 18:21:03.888 +03:00 [INF] return Item
+2024-08-22 18:21:05.867 +03:00 [INF] return Item
+2024-08-22 18:21:08.686 +03:00 [INF] return Item
+2024-08-22 18:21:30.321 +03:00 [INF] return Item
+2024-08-22 18:21:32.572 +03:00 [INF] return Item
+2024-08-22 18:21:45.471 +03:00 [INF] return Item
+2024-08-22 18:22:06.189 +03:00 [INF] return Item
+2024-08-22 18:22:15.333 +03:00 [INF] return Item
+2024-08-22 18:22:25.325 +03:00 [INF] return Item
+2024-08-22 18:22:29.265 +03:00 [INF] return Item
+2024-08-22 18:22:31.695 +03:00 [INF] return Item
+2024-08-22 18:22:33.884 +03:00 [INF] return Item
+2024-08-22 18:22:36.021 +03:00 [INF] return Item
+2024-08-22 18:22:37.980 +03:00 [INF] return Item
+2024-08-22 18:22:53.337 +03:00 [INF] return Item
+2024-08-22 18:27:38.568 +03:00 [INF] return Item
+2024-08-22 18:27:44.888 +03:00 [INF] return Item
+2024-08-22 18:28:07.209 +03:00 [INF] return Item
+2024-08-22 18:28:12.257 +03:00 [INF] return Item
+2024-08-22 18:28:26.014 +03:00 [INF] return Item
+2024-08-22 18:28:38.447 +03:00 [INF] return Item
+2024-08-22 18:28:50.155 +03:00 [INF] return Item
+2024-08-22 18:29:16.122 +03:00 [INF] return Item
+2024-08-22 18:29:29.527 +03:00 [INF] return Item
+2024-08-22 18:29:36.708 +03:00 [INF] return Item
+2024-08-22 18:29:38.461 +03:00 [INF] return Item
+2024-08-22 18:29:49.612 +03:00 [INF] return Item
+2024-08-22 18:30:09.676 +03:00 [INF] return Item
+2024-08-22 18:30:19.311 +03:00 [INF] return Item
+2024-08-22 18:30:22.519 +03:00 [INF] return Item
+2024-08-22 18:30:24.742 +03:00 [INF] return Item
+2024-08-22 18:30:27.030 +03:00 [INF] return Item
+2024-08-22 18:30:31.100 +03:00 [INF] return Item
+2024-08-22 18:30:33.827 +03:00 [INF] return Item
+2024-08-22 18:30:35.650 +03:00 [INF] return Item
+2024-08-22 18:30:51.798 +03:00 [INF] return Item
+2024-08-22 18:34:31.391 +03:00 [INF] return Item
+2024-08-22 18:35:02.136 +03:00 [INF] return Item
+2024-08-22 18:35:19.910 +03:00 [INF] return Item
+2024-08-22 18:36:13.666 +03:00 [INF] return Item
+2024-08-22 18:36:29.293 +03:00 [INF] return Item
+2024-08-22 18:36:41.401 +03:00 [INF] return Item
+2024-08-22 18:36:44.326 +03:00 [INF] return Item
+2024-08-22 18:36:51.348 +03:00 [INF] return Item
+2024-08-22 18:37:05.665 +03:00 [INF] return Item
+2024-08-22 18:37:18.429 +03:00 [INF] return Item
+2024-08-22 18:37:21.646 +03:00 [INF] return Item
+2024-08-22 18:37:28.102 +03:00 [INF] return Item
+2024-08-22 18:37:34.006 +03:00 [INF] return Item
+2024-08-22 18:37:38.779 +03:00 [INF] return Item
+2024-08-22 18:37:50.099 +03:00 [INF] return Item
+2024-08-22 18:38:13.682 +03:00 [INF] return Item
+2024-08-22 18:38:15.401 +03:00 [INF] return Item
+2024-08-22 18:38:19.035 +03:00 [INF] return all Item
+2024-08-22 18:38:20.989 +03:00 [INF] return Item
+2024-08-22 18:38:21.889 +03:00 [INF] return all Item
+2024-08-22 18:38:24.477 +03:00 [INF] return Item
+2024-08-22 18:38:25.396 +03:00 [INF] return all Item
+2024-08-22 18:38:27.284 +03:00 [INF] return Item
+2024-08-22 18:38:28.322 +03:00 [INF] return all Item
+2024-08-22 18:39:42.261 +03:00 [INF] return Item
+2024-08-22 18:39:45.585 +03:00 [INF] return Item
+2024-08-22 18:40:34.116 +03:00 [INF] return Item
+2024-08-22 18:40:39.373 +03:00 [INF] return Item
+2024-08-22 18:43:00.208 +03:00 [INF] return Item
+2024-08-22 18:43:15.313 +03:00 [INF] return all Item
+2024-08-22 18:43:17.660 +03:00 [INF] return Item
+2024-08-22 18:53:54.901 +03:00 [INF] return Item
+2024-08-22 18:53:58.134 +03:00 [INF] return Item
+2024-08-22 18:54:00.780 +03:00 [INF] return Item
+2024-08-22 18:54:04.115 +03:00 [INF] return Item
+2024-08-22 18:54:06.285 +03:00 [INF] return Item
+2024-08-22 18:54:09.455 +03:00 [INF] return Item
+2024-08-22 18:54:14.028 +03:00 [INF] return Item
+2024-08-22 18:54:17.426 +03:00 [INF] return Item
+2024-08-22 18:54:19.389 +03:00 [INF] return Item
+2024-08-22 18:54:22.415 +03:00 [INF] return Item
+2024-08-22 18:54:24.828 +03:00 [INF] return Item
+2024-08-22 18:54:28.644 +03:00 [INF] return Item
+2024-08-22 18:54:31.734 +03:00 [INF] return Item
+2024-08-22 18:54:34.789 +03:00 [INF] return Item
+2024-08-22 18:54:36.659 +03:00 [INF] return Item
+2024-08-22 18:54:38.127 +03:00 [INF] return Item
+2024-08-22 18:54:40.855 +03:00 [INF] return Item
+2024-08-22 18:54:45.334 +03:00 [INF] return Item
+2024-08-22 18:57:17.946 +03:00 [INF] return Item
+2024-08-22 18:58:47.092 +03:00 [INF] return Item
+2024-08-22 18:59:05.859 +03:00 [INF] return all Item
+2024-08-22 18:59:07.667 +03:00 [INF] return Item
+2024-08-22 18:59:11.233 +03:00 [INF] return Item
+2024-08-22 18:59:36.330 +03:00 [INF] return Item
+2024-08-22 19:01:00.085 +03:00 [INF] return Item
+2024-08-22 19:01:02.311 +03:00 [INF] return Item
+2024-08-22 19:01:05.342 +03:00 [INF] return Item
+2024-08-22 19:01:08.662 +03:00 [INF] return Item
+2024-08-22 19:01:13.384 +03:00 [INF] return Item
+2024-08-22 19:01:14.977 +03:00 [INF] return Item
+2024-08-22 19:01:18.841 +03:00 [INF] return Item
+2024-08-22 19:01:37.146 +03:00 [INF] return Item
+2024-08-22 19:01:49.441 +03:00 [INF] return Item
+2024-08-22 19:03:51.894 +03:00 [INF] return Item
+2024-08-22 19:03:54.961 +03:00 [INF] return Item
+2024-08-22 19:04:00.127 +03:00 [INF] return Item
+2024-08-22 19:04:03.581 +03:00 [INF] return Item
+2024-08-22 19:04:07.487 +03:00 [INF] return Item
+2024-08-22 19:04:19.130 +03:00 [INF] return Item
+2024-08-22 19:04:38.323 +03:00 [INF] return Item
+2024-08-22 19:04:54.872 +03:00 [INF] return Item
+2024-08-22 19:04:57.533 +03:00 [INF] return Item
+2024-08-22 19:05:00.724 +03:00 [INF] return Item
+2024-08-22 19:05:06.358 +03:00 [INF] return Item
+2024-08-22 19:05:09.893 +03:00 [INF] return Item
+2024-08-22 19:05:33.631 +03:00 [INF] return Item
+2024-08-22 19:05:41.399 +03:00 [INF] return Item
+2024-08-22 19:05:47.140 +03:00 [INF] return Item
+2024-08-22 19:05:49.488 +03:00 [INF] return Item
+2024-08-22 19:05:51.684 +03:00 [INF] return Item
+2024-08-22 19:05:53.515 +03:00 [INF] return Item
+2024-08-22 19:05:55.746 +03:00 [INF] return Item
+2024-08-22 19:05:59.868 +03:00 [INF] return Item
+2024-08-22 19:06:15.085 +03:00 [INF] return Item
+2024-08-22 19:06:26.497 +03:00 [INF] return Item
+2024-08-22 19:06:30.252 +03:00 [INF] return Item
+2024-08-22 19:06:33.016 +03:00 [INF] return Item
+2024-08-22 19:06:35.224 +03:00 [INF] return Item
+2024-08-22 19:06:37.526 +03:00 [INF] return Item
+2024-08-22 19:06:39.470 +03:00 [INF] return Item
+2024-08-22 19:06:52.113 +03:00 [INF] return Item
+2024-08-22 19:07:28.026 +03:00 [INF] return Item
+2024-08-22 19:08:10.672 +03:00 [INF] return Item
+2024-08-22 19:08:32.961 +03:00 [INF] return Item
+2024-08-22 19:10:12.171 +03:00 [INF] return Item
+2024-08-22 19:10:25.784 +03:00 [INF] return Item
+2024-08-22 19:10:35.334 +03:00 [INF] return Item
+2024-08-22 19:10:38.536 +03:00 [INF] return Item
+2024-08-22 19:10:45.375 +03:00 [INF] return all Item
+2024-08-22 19:10:46.481 +03:00 [INF] return Item
+2024-08-22 19:10:47.713 +03:00 [INF] return all Item
+2024-08-22 19:10:48.728 +03:00 [INF] return Item
+2024-08-22 19:13:06.555 +03:00 [INF] return Item
+2024-08-22 19:13:52.863 +03:00 [INF] return Item
+2024-08-22 19:15:51.066 +03:00 [INF] return Item
+2024-08-22 19:15:55.821 +03:00 [INF] return Item
+2024-08-22 19:16:38.555 +03:00 [INF] return Item
+2024-08-22 19:17:01.510 +03:00 [INF] return Item
+2024-08-22 19:17:14.646 +03:00 [INF] return Item
+2024-08-22 19:17:29.391 +03:00 [INF] return Item
+2024-08-22 19:17:38.320 +03:00 [INF] return Item
+2024-08-22 19:17:53.127 +03:00 [INF] return Item
+2024-08-22 19:17:59.189 +03:00 [INF] return Item
+2024-08-22 19:18:02.146 +03:00 [INF] return Item
+2024-08-22 19:18:04.548 +03:00 [INF] return Item
+2024-08-22 19:18:08.342 +03:00 [INF] return Item
+2024-08-22 19:18:24.803 +03:00 [INF] return Item
+2024-08-22 19:18:33.032 +03:00 [INF] return Item
+2024-08-22 21:02:40.685 +03:00 [INF] return Item
+2024-08-22 21:06:25.860 +03:00 [INF] return Item
+2024-08-22 21:06:30.525 +03:00 [INF] return Item
+2024-08-22 21:06:34.399 +03:00 [INF] return Item
+2024-08-22 21:06:42.111 +03:00 [INF] return Item
+2024-08-22 21:07:05.590 +03:00 [INF] return Item
+2024-08-22 21:08:03.823 +03:00 [INF] return Item
+2024-08-22 21:08:36.289 +03:00 [INF] return Item
+2024-08-22 21:08:52.242 +03:00 [INF] return Item
+2024-08-22 21:09:22.989 +03:00 [INF] return Item
+2024-08-22 21:09:36.241 +03:00 [INF] return Item
+2024-08-22 21:09:46.052 +03:00 [INF] return Item
+2024-08-22 21:09:52.667 +03:00 [INF] return Item
+2024-08-22 21:09:56.837 +03:00 [INF] return Item
+2024-08-22 21:10:09.864 +03:00 [INF] return Item
+2024-08-22 21:12:15.264 +03:00 [INF] return Item
+2024-08-22 21:12:35.981 +03:00 [INF] return Item
+2024-08-22 21:16:46.217 +03:00 [INF] return Item
+2024-08-22 21:16:55.212 +03:00 [INF] return Item
+2024-08-22 21:17:19.028 +03:00 [INF] return Item
+2024-08-22 21:19:06.850 +03:00 [INF] return Item
+2024-08-22 21:19:14.832 +03:00 [INF] return Item
+2024-08-22 21:19:22.486 +03:00 [INF] return Item
+2024-08-22 21:19:43.213 +03:00 [INF] return all Item
+2024-08-22 21:19:45.201 +03:00 [INF] return Item
+2024-08-22 21:19:46.627 +03:00 [INF] return all Item
+2024-08-22 21:19:49.730 +03:00 [INF] return Item
+2024-08-22 21:19:51.733 +03:00 [INF] return all Item
+2024-08-22 21:19:57.701 +03:00 [INF] found this Item
+2024-08-22 21:19:57.829 +03:00 [INF] try DeleteItem-controller
+2024-08-22 21:20:00.820 +03:00 [INF] return all Item
+2024-08-22 21:22:33.302 +03:00 [INF] return all Item
+2024-08-22 21:22:38.112 +03:00 [INF] return all Item
+2024-08-22 21:22:58.726 +03:00 [INF] return all Item
+2024-08-22 21:23:09.777 +03:00 [INF] return all Item
+2024-08-22 21:23:23.541 +03:00 [INF] return all Item
+2024-08-22 21:23:26.855 +03:00 [INF] return all Item
+2024-08-22 21:24:01.243 +03:00 [INF] return all Item
+2024-08-22 21:24:32.069 +03:00 [INF] return all Item
+2024-08-22 21:24:50.401 +03:00 [INF] return all Item
+2024-08-22 21:24:53.128 +03:00 [INF] return all Item
+2024-08-22 21:25:17.843 +03:00 [INF] return all Item
+2024-08-22 21:25:23.145 +03:00 [INF] return all Item
+2024-08-22 21:25:27.299 +03:00 [INF] return all Item
+2024-08-22 21:25:35.510 +03:00 [INF] return all Item
+2024-08-22 21:25:57.676 +03:00 [INF] return all Item
+2024-08-22 21:26:15.034 +03:00 [INF] return all Item
+2024-08-22 21:30:15.399 +03:00 [INF] return all Item
+2024-08-22 21:33:59.541 +03:00 [INF] return all Item
+2024-08-22 21:34:38.911 +03:00 [INF] return all Item
+2024-08-22 21:35:17.335 +03:00 [INF] return all Item
+2024-08-22 21:35:41.324 +03:00 [INF] return all Item
+2024-08-22 21:35:48.682 +03:00 [INF] return all Item
+2024-08-22 21:35:52.027 +03:00 [INF] return all Item
+2024-08-22 21:35:57.894 +03:00 [INF] return all Item
+2024-08-22 21:36:11.853 +03:00 [INF] return all Item
+2024-08-22 21:36:23.082 +03:00 [INF] return all Item
+2024-08-22 21:36:30.674 +03:00 [INF] return all Item
+2024-08-22 21:37:16.616 +03:00 [INF] return all Item
+2024-08-22 21:38:07.953 +03:00 [INF] return all Item
+2024-08-22 21:38:15.469 +03:00 [INF] return all Item
+2024-08-22 21:38:21.698 +03:00 [INF] return all Item
+2024-08-22 21:39:21.134 +03:00 [INF] return all Item
+2024-08-22 21:40:57.963 +03:00 [INF] return all Item
+2024-08-22 21:42:55.154 +03:00 [INF] return all Item
+2024-08-22 21:44:04.827 +03:00 [INF] return all Item
+2024-08-22 21:44:12.469 +03:00 [INF] return all Item
+2024-08-22 21:44:33.737 +03:00 [INF] return all Item
+2024-08-22 21:45:18.174 +03:00 [INF] return all Item
+2024-08-22 21:48:59.161 +03:00 [INF] return Item
+2024-08-22 21:49:00.106 +03:00 [INF] return all Item
+2024-08-22 21:54:47.045 +03:00 [INF] return all Item
+2024-08-22 21:55:44.864 +03:00 [INF] return all Item
+2024-08-22 21:59:18.576 +03:00 [INF] return all Item
+2024-08-22 22:40:14.374 +03:00 [INF] return all Item
+2024-08-22 22:40:19.632 +03:00 [INF] return Item
+2024-08-22 22:40:21.589 +03:00 [INF] return all Item

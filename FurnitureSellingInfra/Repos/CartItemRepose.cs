@@ -32,7 +32,8 @@ namespace FurnitureSellingInfra.Repos
                             Image = i.Image,
                             Quantity = (int)o.Quantity,
                             ItemId = o.ItemId,
-
+                            Color = o.Color,
+                            Size = o.Size,
                         };
             Log.Information("return CartItem {CartItemId}", Id);
 
@@ -43,18 +44,23 @@ namespace FurnitureSellingInfra.Repos
         }
 
 
-        public Task<List<UpdateCartItemDTO>> GetAllCartItem_Repose()
+        public Task<List<UpdateCartItemDTO>> GetAllCartItem_Repose(int CartId )
         {
             Log.Debug("start GetAllCartItem_Repose");
 
             var query = from q in _context.CartItems
+                        join c in _context.Carts
+                    on q.CartId equals c.CartId
+                    where q.CartId == CartId
                         select new UpdateCartItemDTO
                         {
 
                             CartItemId = q.CartItemId,
                             CartId = q.CartId,
                             ItemId = q.ItemId,
-                            Quantity = (int)q.Quantity,
+                            Color = q.Color,
+                            Size = q.Size,
+                            Quantity = q.Quantity,
                         };
             Log.Information("return AllCartItem");
             Log.Debug("end AllCartItem_Repose");
@@ -71,23 +77,36 @@ namespace FurnitureSellingInfra.Repos
                 // Add the new CartItem to the context
                 _context.CartItems.Add(model);
                 Log.Information("add new CartItem ", model.CartItemId);
+                 _context.SaveChanges();
 
                 // Save changes to generate CartItemId if not already set
-                await _context.SaveChangesAsync();
 
                 var cartId = model.CartId;
-                var cart = _context.Carts.FirstOrDefault(x => x.CartId == cartId);
+                var cart =await  _context.Carts.FirstOrDefaultAsync(x => x.CartId == cartId);
 
+                var item = await _context.Items.FirstOrDefaultAsync(x => x.ItemId == model.ItemId);
+                if (item != null)
+                {
+                    item.RestQuantity = item.Quantity - model.Quantity;
+                    if (item.RestQuantity >= 0)
+                        _context.Update(item);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception("sorry the item finshed");
+                    
+
+                }
                 if (cart != null)
                 {
-                    var order = _context.Orders.FirstOrDefault(x => x.OrderId == cart.OrderId);
+                    var order = await _context.Orders.FirstOrDefaultAsync(x => x.OrderId == cart.OrderId);
 
                     if (order != null)
                     {
                         order.TotalPrice = await CalculateTotalPrice(model.CartItemId);
-                      
                         _context.Update(order);
-                      await  _context.SaveChangesAsync();
+                        await  _context.SaveChangesAsync();
                     }
                     else
                     {
@@ -115,7 +134,7 @@ namespace FurnitureSellingInfra.Repos
 
                 //replacement 
                 result.CartItemId = dto.CartItemId;
-                result.Quantity = dto.Quantity;
+                result.Quantity = (int)dto.Quantity;
                 result.CartId = dto.CartId;
                 result.ItemId = dto.ItemId;
                 //update
@@ -124,6 +143,16 @@ namespace FurnitureSellingInfra.Repos
                 await _context.SaveChangesAsync();
                 var cart = _context.Carts.FirstOrDefault(x => x.CartId == result.CartId);
                 var order = _context.Orders.FirstOrDefault(x => x.OrderId == cart.OrderId);
+
+                var item = await _context.Items.FirstOrDefaultAsync(x => x.ItemId == dto.ItemId);
+                if (item != null)
+                {
+                    item.RestQuantity = (int)(item.Quantity - dto.Quantity);
+
+                    _context.Update(item);
+                    await _context.SaveChangesAsync();
+
+                }
                 if (order != null)
                 {
                     order.TotalPrice = await  CalculateTotalPrice(result.CartItemId);
@@ -164,23 +193,20 @@ namespace FurnitureSellingInfra.Repos
 
         public async Task<float> CalculateTotalPrice(int Id)
         {
-            Log.Debug("start to CalculateTotalPrice");
+            Log.Debug("Start to CalculateTotalPrice");
 
-            var query = from ct in _context.CartItems
-                        join c in _context.Carts on ct.CartId equals c.CartId
-                        join i in _context.Items on ct.ItemId equals i.ItemId
-                        join o in _context.Orders on c.OrderId equals o.OrderId
-                        where ct.CartItemId == Id
-                        select new
-                        {
-                            TotalPrice = (float)((i.Price * ct.Quantity) + o.Fee),
-                        };
-
-
-            return query.FirstOrDefault().TotalPrice;
-        }
-
-     
+            var ct = _context.CartItems.FirstOrDefault(x=>x.CartItemId == Id);
+                var c = _context.Carts.FirstOrDefault(x => x.CartId == ct.CartId);
+                var o = _context.Orders.FirstOrDefault(x => x.OrderId == c.OrderId);
+                var i = _context.Items.FirstOrDefault(x => x.ItemId == ct.ItemId);
+            float or; 
+            if (o.Fee==null)
+          or = (float)((i.Price * ct.Quantity) + 0);
+            else
+                or = (float)((i.Price * ct.Quantity) + o.Fee);
+            return or;
+            }
+         
     }
 
 }

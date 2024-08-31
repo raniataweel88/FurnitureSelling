@@ -25,6 +25,7 @@ namespace FurnitureSellingCore.Context
             modelBuilder.ApplyConfiguration(new CartEntityConfiguration());
             modelBuilder.ApplyConfiguration(new CartItemEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ItemRequestEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductWarrantEntityConfigration());
 
 
         }
@@ -37,5 +38,11 @@ namespace FurnitureSellingCore.Context
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<CartItem> CartItems { get; set; }
         public virtual DbSet<ItemRequest> ItemRequests { get; set; }
+        public virtual DbSet<Raview> Raviews { get; set; }
+
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<ProductWarranty> ProductWarrantys { get; set; }
+
+
     }
 }

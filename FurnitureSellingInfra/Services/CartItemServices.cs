@@ -28,11 +28,11 @@ namespace FurnitureSellingInfra.Services
 
             return await _repose.GetByIdCartItem_Repose(Id);
         }
-        public async Task<List<UpdateCartItemDTO>> GetAllCartItem()
+        public async Task<List<UpdateCartItemDTO>> GetAllCartItem(int userId)
         {
             Log.Debug("start GetAllCartItem-Services");
 
-            return await _repose.GetAllCartItem_Repose();
+            return await _repose.GetAllCartItem_Repose(userId);
         }
         public async Task CreateCartItem(CreateCartItemDTO dto)
         {
@@ -43,6 +43,9 @@ namespace FurnitureSellingInfra.Services
                 CartId = dto.CartId,
                 Quantity = dto.Quantity,
                 ItemId = dto.ItemId,
+                Color=dto.Color,
+                Size=dto.Size,  
+
             };
            await _repose.CreateCartItem_Repose(c);
           
@@ -57,7 +60,8 @@ namespace FurnitureSellingInfra.Services
         {
             Log.Debug("start delete cart item-Services", Id);
 
-            await _repose.DeleteCartItem_Repose(Id);        }
+            await _repose.DeleteCartItem_Repose(Id);    
+        }
 
     }
 }

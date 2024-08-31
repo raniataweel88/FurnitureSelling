@@ -28,25 +28,30 @@ namespace FurnitureSellingInfra.Services
 
             return await _repose.GetByIdCart_Repose(Id);
         }
-        public async Task<List<Cart>> GetAllCart()
+        public async Task<List<Cart>> GetAllCart(int UserId)
         {
             Log.Debug("start GetAllCart-Services");
 
-            return await _repose.GetAllCart_Repose();
+            return await _repose.GetAllCart_Repose(UserId);
         }
-        public Task CreateCart(CartDTO dto)
+        public async Task<int> CreateCart(CartDTO dto)
         {
             Log.Debug("start CreateCart-Services");
 
+
             Cart c = new Cart
             {
-                OrderId = dto.OrderId,
                 IsActiveId = dto.IsActiveId,
                 UserId = dto.UserId,
             };
-            return _repose.CreateCart_Repose(c);
+           return  await _repose.CreateCart_Repose(c);
+
+      
+
+            Log.Debug("finished CreateCart-Services");
         }
-       public async Task UpdateCart(Cart C)
+
+            public async Task UpdateCart(CardCartDTO C)
         {
             Log.Debug("start UpdateCart-Services", C.CartId);
 

@@ -11,7 +11,7 @@ namespace FurnitureSellingCore.IServices
     public interface ICartItemServices
     {
         public Task<CartItemDTO> GetByIdCartItem(int Id);
-        public Task<List<UpdateCartItemDTO>> GetAllCartItem();
+        public Task<List<UpdateCartItemDTO>> GetAllCartItem(int CartId);
         public Task CreateCartItem(CreateCartItemDTO dto);
         public Task UpdateCartItem(UpdateCartItemDTO dto);
         public Task DeleteCartItem(int Id);

@@ -15,7 +15,6 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.ToTable(nameof(CartItem));
             builder.HasKey(x => x.CartItemId);
             builder.Property(x=>x.CartItemId).UseIdentityColumn();
-
         }
     }
 }

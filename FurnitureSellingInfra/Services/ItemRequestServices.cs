@@ -31,17 +31,20 @@ namespace FurnitureSellingInfra.Services
             return await _Repose.GetAllItemRequest();
         }
         public async Task CreateItemRequest(ItemRequestDTO dto)
-        {
+         {
             Log.Debug("start CreateItemRequest-Services");
+            int c = 23;
+
             ItemRequest ir = new ItemRequest
             {
                 Title = dto.Title,
                 Description = dto.Description,
                 Image = dto.Image,
-                CategoryId = dto.CategoryId,
-               
+                CategoryId = c, 
+                UserId = dto.UserId,
+
             };
-           await   _Repose.CreateItemRequest_Repose(ir);
+            await  _Repose.CreateItemRequest_Repose(ir);
         }   
         public async Task UpdateItemRequest(CardItemRequestDTO dto)
         {
@@ -56,8 +59,15 @@ namespace FurnitureSellingInfra.Services
 
         public  async Task UpdateItemFromAdmain(ItemRequestFromAdmain dto)
         {
-            Log.Debug("start UpdateItemFromAdmain-Services", dto.Id);
+            Log.Debug("start UpdateItemFromAdmain-Services", dto.ItemRequestId);
 
-           await  _Repose.UpdateItemFromAdmain(dto);        }
+           await  _Repose.UpdateItemFromAdmain(dto);   
+        }
+
+        public async Task<List<CardItemRequestDTO>> GetAllItemRequestfromuser(int userId)
+        {
+            Log.Debug("start GetAllItemRequest-Services");
+            return await _Repose.GetAllItemRequestforuser(userId);
+        }
     }
 }

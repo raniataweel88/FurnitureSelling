@@ -8,7 +8,7 @@ namespace FurnitureSellingCore.DTO.Authantication
 {
     public class ResetPasswordDTO
     {
-        public int  Id { get; set; }
+        public string Email { get; set; }
         public string NewPassword { get; set; }
     }
 }

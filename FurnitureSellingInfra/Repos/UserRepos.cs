@@ -1,6 +1,7 @@
 ﻿using FurnitureSellingCore.Context;
 using FurnitureSellingCore.DTO.Authantication;
 using FurnitureSellingCore.DTO.User;
+using FurnitureSellingCore.helper;
 using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.Models;
 using Microsoft.EntityFrameworkCore;
@@ -38,11 +39,14 @@ namespace FurnitureSellingInfra.Repos
                             LastName = user.LastName,
                             Email = user.Email,
                             Phone = user.Phone,
+                            UserType = (int?)user.UserType,
+                            Address = user.Address,
+                            BirthDate = user.BirthDate,
+                            PlateNumber = user.PlateNumber, 
+                            Salary = user.Salary
                         };
-          
-            return query.FirstOrDefault();
             Log.Debug("finished to  GetByIdUserRepos");
-
+            return await query.FirstOrDefaultAsync();
         }
         public async Task<List<CardUserDTO>> GetAllUserRepos()
         {
@@ -56,10 +60,8 @@ namespace FurnitureSellingInfra.Repos
                            LastName = u.LastName,
                            UserId = u.UserId,
                        };
-            return quer.ToList();
             Log.Debug("Finished to  GetAllUserRepos ");
-
-
+            return quer.ToList();
         }
         public async Task<int> CreateUserRepos(User u)
         {
@@ -67,8 +69,9 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start  CreateUserRepos");
             if (u != null)
             {
-                _context.Users.Add(u);
+               await _context.Users.AddAsync(u);
                 await _context.SaveChangesAsync();
+                Log.Debug("finished to add  CreateUserRepos");
                 return u.UserId;
             }
             else
@@ -76,7 +79,6 @@ namespace FurnitureSellingInfra.Repos
                 Log.Error("User is empty");
                 throw new Exception("User is empty");
             }
-            Log.Debug("finished to add  CreateUserRepos");
         }
         public async Task CreateLogin(Logins l)
         {
@@ -113,7 +115,7 @@ namespace FurnitureSellingInfra.Repos
                 {
                     result.Address = dto.Address;
                 }
-                if (dto.UserType == 1)
+                if (dto.UserType == 1|| dto.UserType == 4)
                 {
                     result.Salary = dto.Salary;
                 }
@@ -154,34 +156,40 @@ namespace FurnitureSellingInfra.Repos
             }
             Log.Debug("Finished to DeleteUser_Repose");
         }
-        
+
         #endregion
         #region Authantication Repos
 
-        public async Task Login(int Id)
+        public async Task<int> Login(LoginDTO l)
         {
-            Log.Debug("start to  Login_Repose");
+            Log.Debug("Start to Login_Repose");
+          
 
-            var r =_context.Logins.Find(Id);
-            if(r != null)
-            {
-            r.IsLoggedIn=true;
-            r.LastLoginTime = DateTime.Now;
-                _context.Update(r);
-                await _context.SaveChangesAsync();
-                Log.Information("Login true");
+              var r = await _context.Logins
+        .FirstOrDefaultAsync(x => x.Password == l.Password && x.UserName == l.UserName);
+
+    if (r != null)
+    {
+        r.IsLoggedIn = true;
+        r.LastLoginTime = DateTime.Now;
+
+        _context.Update(r);
+        await _context.SaveChangesAsync(); // Use SaveChangesAsync for async operations
+
+        Log.Information("Login successful for UserId: {UserId}", r.UserId);
+        Log.Debug("Finished Login_Response");
+
+        return r.UserId;
             }
-           else
-            {
-                Log.Error("Can not login");
-                throw new Exception("Con not login");
-                  }
-   
-            Log.Debug("finished to  Login_Repose");
+                else
+                {
+                    Log.Error("Login failed: Invalid username or password");
+                    throw new Exception("Cannot login: Invalid username or password");
+                }
+          
 
         }
 
-   
 
         public async Task Logout(int Id)
         {
@@ -196,33 +204,74 @@ namespace FurnitureSellingInfra.Repos
             }
             else
             {
-                throw new Exception("Can not Logout");
-                Log.Error("Con not Logout");
+                Log.Information("you are aready logout");
+                throw new Exception("you are aready logout");
             }
-            Log.Information("finished to  Logout_Repose");
-
         }
 
         public async Task ResetPassword(ResetPasswordDTO dto)
         {
             Log.Information("start to  ResetPasswordDTO");
-            var l = _context.Logins.FirstOrDefault(x => x.LoginId.Equals(dto.Id));
-         
+            var u= _context.Users.FirstOrDefault(x => x.Email.Equals(dto.Email));
+            var l = _context.Logins.FirstOrDefault(x => x.UserId.Equals(u.UserId));
+
             if (l != null)
             {
-                l.Password=dto.NewPassword;
-                l.LoginId=dto.Id;
+                l.Password= HashHelper.GenerateSHA384String(dto.NewPassword);
+                u.Email=dto.Email;
                 _context.Update(l);
                 await _context.SaveChangesAsync();
              
             }
             else
             {
-                throw new Exception("Con not ResetPassword");
                 Log.Error("Con not ResetPassword");
+                throw new Exception("Con not ResetPassword");
             }
             Log.Information("finished to  ResetPasswordDTO");
 
+        }
+
+        public async Task<int> CreateUserReposAdmain(User u)
+        {
+            Log.Debug("start  CreateUserRepos");
+            if (u != null)
+            {
+                await _context.Users.AddAsync(u);
+                await _context.SaveChangesAsync();
+                Log.Debug("finished to add  CreateUserRepos");
+                return u.UserId;
+            }
+            else
+            {
+                Log.Error("User is empty");
+                throw new Exception("User is empty");
+            }
+        }
+
+        public async Task<int> LoginId(LoginDTO l)
+        {
+            Log.Debug("Start to LoginId");
+            string pass = HashHelper.GenerateSHA384String(l.Password);
+            string name = HashHelper.GenerateSHA384String(l.UserName);
+
+            var r = await _context.Logins
+      .FirstOrDefaultAsync(x => x.Password == pass && x.UserName == name);
+
+            if (r != null)
+            {
+              // Use SaveChangesAsync for async operations
+
+                Log.Information("Login successful for UserId: {UserId}", r.UserId);
+                Log.Debug("Finished Login_Response");
+
+                return r.UserId;
+            }
+            else
+            {
+                Log.Error("Login failed: Invalid username or password");
+                throw new Exception("Cannot login: Invalid username or password");
+            }
         }
 
 

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FurnitureSellingCore.Migrations
 {
     /// <inheritdoc />
-    public partial class item : Migration
+    public partial class quntity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,24 +16,25 @@ namespace FurnitureSellingCore.Migrations
                 table: "Order",
                 type: "datetime(6)",
                 nullable: true,
-                defaultValue: new DateTime(2024, 6, 20, 14, 10, 1, 898, DateTimeKind.Local).AddTicks(3924),
+                defaultValue: new DateTime(2024, 8, 29, 18, 8, 57, 969, DateTimeKind.Local).AddTicks(9690),
                 oldClrType: typeof(DateTime),
                 oldType: "datetime(6)",
                 oldNullable: true,
-                oldDefaultValue: new DateTime(2024, 6, 18, 23, 40, 43, 780, DateTimeKind.Local).AddTicks(9272));
+                oldDefaultValue: new DateTime(2024, 8, 28, 21, 46, 4, 382, DateTimeKind.Local).AddTicks(367));
 
-            migrationBuilder.AddColumn<DateTime>(
-                name: "EndDate",
+            migrationBuilder.AddColumn<int>(
+                name: "RestQuantity",
                 table: "Item",
-                type: "datetime(6)",
-                nullable: true);
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "EndDate",
+                name: "RestQuantity",
                 table: "Item");
 
             migrationBuilder.AlterColumn<DateTime>(
@@ -41,11 +42,11 @@ namespace FurnitureSellingCore.Migrations
                 table: "Order",
                 type: "datetime(6)",
                 nullable: true,
-                defaultValue: new DateTime(2024, 6, 18, 23, 40, 43, 780, DateTimeKind.Local).AddTicks(9272),
+                defaultValue: new DateTime(2024, 8, 28, 21, 46, 4, 382, DateTimeKind.Local).AddTicks(367),
                 oldClrType: typeof(DateTime),
                 oldType: "datetime(6)",
                 oldNullable: true,
-                oldDefaultValue: new DateTime(2024, 6, 20, 14, 10, 1, 898, DateTimeKind.Local).AddTicks(3924));
+                oldDefaultValue: new DateTime(2024, 8, 29, 18, 8, 57, 969, DateTimeKind.Local).AddTicks(9690));
         }
     }
 }

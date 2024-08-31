@@ -11,7 +11,7 @@ namespace FurnitureSellingCore.IRepos
     public interface IWishListRepos
     {  
         public Task<WishListDTO> GetByIdWishList_Repose(int Id);
-        public Task<List<WishListDTO>> GetAllWishList_Repose();
+        public Task<List<WishListDTO>> GetAllWishList_Repose(int userId);
         public Task CreateWishList_Repose(WishList w);
         public Task UpdateWishList_Repose(WishListDTO w);
         public Task DeleteWishList_Repose(int id);

@@ -3,7 +3,9 @@ using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.IServices;
 using FurnitureSellingInfra.Repos;
 using FurnitureSellingInfra.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Configuration;
@@ -30,6 +32,21 @@ builder.Services.AddScoped<ICartItemRepose, CartItemRepose>();
 builder.Services.AddScoped<ICartItemServices, CartItemServices>();
 builder.Services.AddScoped<ICartServices, CartServices>();
 builder.Services.AddScoped<ICartRepos, CartRepos>();
+builder.Services.AddScoped<IProductWarrantyServies, ProductWarrantyServies>();
+builder.Services.AddScoped<IProductWarrantyRepose, ProductWarrantyRepose>();
+// to all acess to apo
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(name: "default", builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+
+//to docomention
 builder.Services.AddControllers().AddJsonOptions(x =>
 {
     x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
@@ -67,7 +84,8 @@ builder.Services.AddSwaggerGen(c =>
 
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
-});//enable comments});
+});
+
 Serilog.Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).
                 WriteTo.File(configuration.GetValue<string>("LoggerFilePath")
                 , rollingInterval: RollingInterval.Day).MinimumLevel.Debug().
@@ -89,8 +107,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();// to serve files
+//add custom staic files middlewre
+var imgesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Images");
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(imgesDirectory),
+    RequestPath = "/Images"
+
+});
 
 app.UseAuthorization();
-
+app.UseCors("default");
 app.MapControllers();
 app.Run();

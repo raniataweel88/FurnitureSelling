@@ -15,5 +15,6 @@ namespace FurnitureSellingCore.IRepos
         public Task CreateCategory_Repose(Category c);
         public Task UpdateCategory_Repose(CardCategoryDTO c);
         public Task DeleteCategory_Repose(int id);
+        public  Task<addmin> Expectations();
  }
 }

@@ -12,9 +12,10 @@ namespace FurnitureSellingCore.IServices
     public interface IUserServices
     {
         #region User Services
-      public Task CreateUser(CreateUserDTO dto);
+      public Task<int> CreateUser(CreateUserDTO dto);
+        public Task CreateUserAdmain(DetailsUserAdmainDTO dto);
 
-        public Task<DetailsUserDTO> GetByIdUser(int Id);
+        public Task<DetailsUserDTO> GetUserById(int Id);
         public Task<List<CardUserDTO>> GetAllUser();
         public Task UpdateUser(DetailsUserDTO dto);
         public Task DeleteUser(int Id);
@@ -22,9 +23,11 @@ namespace FurnitureSellingCore.IServices
 
 
         #region Authantication-Services
-        public  Task Login(int id);
+        public Task<int> Login(LoginDTO l);
         public Task Logout(int Id);
-         
+        public Task<string> GenerateUserAccessToken(LoginDTO d);
+        public Task<DetailsUserDTO> TryAthinticate(LoginDTO l);
+
         public Task ResetPassword(ResetPasswordDTO d);
 
         #endregion

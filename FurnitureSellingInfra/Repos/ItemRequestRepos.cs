@@ -1,4 +1,4 @@
-﻿using FurnitureSellingCore .Context;
+﻿using FurnitureSellingCore . Context; 
 using FurnitureSellingCore.DTO.CartItem;
 using FurnitureSellingCore.DTO.Item;
 using FurnitureSellingCore.DTO.ItemRequest;
@@ -25,34 +25,42 @@ namespace FurnitureSellingInfra.Repos
         public async Task<ItemRequestDTO> GetByIdItemRequest(int Id)
         {
             Log.Debug("start to  GetByIdItemRequest");
+
             var query = from i in _context.ItemRequests
                         where i.Id == Id
                         select new ItemRequestDTO
                         {
-                            Image = i.Image,
+                            Image = $"https://localhost:7148/Images/{i.Image}",
                             Title = i.Title,
                             Description = i.Description,
-                            CategoryId = i.CategoryId,
+                           
+                            UserId=i.UserId
+
                         };
-                return query.FirstOrDefault();
+
             Log.Debug("finished to  GetByIdItemRequest");
+            return query.FirstOrDefault();
         }
         public async Task<List<CardItemRequestDTO>> GetAllItemRequest()
         {
             Log.Debug("start to  GetAllItemRequest");
 
             var Query = from ir in _context.ItemRequests
+                      
+                      
+                    
                         select new CardItemRequestDTO()
                         {
                             Title = ir.Title,
-                            Image = ir.Image,
+                            Image = $"https://localhost:7148/Images/{ir.Image}",
                             ItemRequestId = ir.Id,
                             Description = ir.Description,
-                            CategoryId = ir.CategoryId,
+                            Note = ir.NoteAdmain,
+                            price=ir.Price,
+                            UserId = ir.UserId
                         };
-            return Query.ToList();
             Log.Debug("finished to  GetAllItemRequest");
-
+            return Query.ToList();
         }
 
         public async Task CreateItemRequest_Repose(ItemRequest ir)
@@ -60,11 +68,14 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  CreateItemRequest_Repose");
             if (ir != null)
             {
-                Log.Information("add the ItemRequest ");
-                await _context.ItemRequests.AddAsync(ir);
+
+                 Log.Information("add the ItemRequest ");
+               await _context.ItemRequests.AddAsync(ir);
                 
                 await _context.SaveChangesAsync();
-            }
+          
+                }
+               
             else
             {
                 Log.Error("the ItemRequest is empty");
@@ -79,11 +90,11 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  UpdateItemRequest_Repose");
             if (i != null)
             {
-
+                int c=23;
                 i.Title = dto.Title;
                 i.Description = dto.Description;
                 i.Image = dto.Image;
-                i.CategoryId = dto.CategoryId;
+                i.CategoryId =c;
                 i.Id = dto.ItemRequestId;
                 _context.Update(i);
                 await _context.SaveChangesAsync();
@@ -119,12 +130,12 @@ namespace FurnitureSellingInfra.Repos
         public async Task UpdateItemFromAdmain(ItemRequestFromAdmain dto)
         {
             Log.Debug("start to UpdateItemFromAdmain_Repose");
-            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id == dto.Id);
+            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id == dto.ItemRequestId);
             if (ir != null)
             {
                 Log.Information("Update Item From Admain");
                 ir.Price = dto.Price;
-                ir.NoteStor = dto.Note;
+                ir.NoteAdmain = dto.Note;
                 _context.Update(ir);
                 await _context.SaveChangesAsync();
             }
@@ -136,5 +147,23 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("Finished to UpdateItemFromAdmain_Repose");
         }
 
+        public async Task<List<CardItemRequestDTO>> GetAllItemRequestforuser(int userId)
+        {
+            Log.Debug("start to  GetAllItemRequest user");
+
+            var Query = from ir in _context.ItemRequests
+                        where ir.UserId == userId
+                        select new CardItemRequestDTO()
+                        {
+                            Title = ir.Title,
+                            Image = $"https://localhost:7148/Images/{ir.Image}",
+                            ItemRequestId = ir.Id,
+                            Description = ir.Description,
+                           UserId=ir.UserId,
+                            
+                        };
+            Log.Debug("finished to  GetAllItemRequest");
+            return Query.ToList();
+        }
     }
 }
