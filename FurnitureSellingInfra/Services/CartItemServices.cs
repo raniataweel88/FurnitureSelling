@@ -37,7 +37,7 @@ namespace FurnitureSellingInfra.Services
         public async Task CreateCartItem(CreateCartItemDTO dto)
         {
             Log.Debug("start CreateCartItem-Services");
-
+     
             CartItem c = new CartItem()
             {
                 CartId = dto.CartId,
@@ -63,5 +63,11 @@ namespace FurnitureSellingInfra.Services
             await _repose.DeleteCartItem_Repose(Id);    
         }
 
+        public async Task<List<UpdateCartItemDTO>> GetAllCartItemReview(int id)
+        {
+            Log.Debug("start GetAllCartItem-Services");
+
+            return await _repose.GetAllCartItemReview(id);
+        }
     }
 }

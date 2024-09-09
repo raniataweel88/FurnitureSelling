@@ -22,20 +22,21 @@ namespace FurnitureSellingInfra.Repos
             _context = context;
 
         }
-        public async Task<ItemRequestDTO> GetByIdItemRequest(int Id)
+        public async Task<CardItemRequestDTO> GetByIdItemRequest(int Id)
         {
             Log.Debug("start to  GetByIdItemRequest");
 
             var query = from i in _context.ItemRequests
                         where i.Id == Id
-                        select new ItemRequestDTO
+                        select new CardItemRequestDTO
                         {
                             Image = $"https://localhost:7148/Images/{i.Image}",
                             Title = i.Title,
                             Description = i.Description,
-                           
-                            UserId=i.UserId
-
+                            UserId =i.UserId,
+                            Note = i.NoteAdmain,
+                            price = i.Price,
+                            ItemRequestId=i.Id
                         };
 
             Log.Debug("finished to  GetByIdItemRequest");
@@ -46,18 +47,15 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  GetAllItemRequest");
 
             var Query = from ir in _context.ItemRequests
-                      
-                      
-                    
                         select new CardItemRequestDTO()
                         {
-                            Title = ir.Title,
+                            Title = ir.Title, 
                             Image = $"https://localhost:7148/Images/{ir.Image}",
                             ItemRequestId = ir.Id,
                             Description = ir.Description,
                             Note = ir.NoteAdmain,
                             price=ir.Price,
-                            UserId = ir.UserId
+                         UserId = ir.UserId
                         };
             Log.Debug("finished to  GetAllItemRequest");
             return Query.ToList();
@@ -71,8 +69,7 @@ namespace FurnitureSellingInfra.Repos
 
                  Log.Information("add the ItemRequest ");
                await _context.ItemRequests.AddAsync(ir);
-                
-                await _context.SaveChangesAsync();
+                       await _context.SaveChangesAsync();
           
                 }
                
@@ -90,12 +87,11 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  UpdateItemRequest_Repose");
             if (i != null)
             {
-                int c=23;
                 i.Title = dto.Title;
                 i.Description = dto.Description;
                 i.Image = dto.Image;
-                i.CategoryId =c;
-                i.Id = dto.ItemRequestId;
+                i.CategoryId =21;
+                i.Id=dto.ItemRequestId;
                 _context.Update(i);
                 await _context.SaveChangesAsync();
                 Log.Information("update this ItemRequest");
@@ -113,7 +109,7 @@ namespace FurnitureSellingInfra.Repos
         public async Task DeleteItemRequest(int Id)
         {
             Log.Debug("start to  DeleteItemRequest_Repose");
-            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id == Id);
+            var ir = await _context.ItemRequests.FirstOrDefaultAsync(x => x.Id==Id);
             if (ir != null)
             {
                 Log.Information("delete this ItemRequest");
@@ -152,7 +148,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  GetAllItemRequest user");
 
             var Query = from ir in _context.ItemRequests
-                        where ir.UserId == userId
+                     where ir.UserId == userId
                         select new CardItemRequestDTO()
                         {
                             Title = ir.Title,
@@ -160,7 +156,8 @@ namespace FurnitureSellingInfra.Repos
                             ItemRequestId = ir.Id,
                             Description = ir.Description,
                            UserId=ir.UserId,
-                            
+                            price = ir.Price,
+
                         };
             Log.Debug("finished to  GetAllItemRequest");
             return Query.ToList();

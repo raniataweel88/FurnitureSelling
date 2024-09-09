@@ -18,6 +18,6 @@ namespace FurnitureSellingCore.IRepos
         public Task CreateCartItem_Repose(CartItem model);
         public Task UpdateCartItem_Repose(UpdateCartItemDTO dto);
         public Task DeleteCartItem_Repose(int id);
-
+        public Task<List<UpdateCartItemDTO>> GetAllCartItemReview(int id);
     }
 }

@@ -5,7 +5,7 @@ namespace FurnitureSellingCore.DTO.Order
     public class DetailsOrdertDTO
     {
         
-        public int Id { get; set; }
+        public int OrderId { get; set; }
 
         public string? Title { get; set; }
         public float? TotalPrice { get; set; }
@@ -17,6 +17,8 @@ namespace FurnitureSellingCore.DTO.Order
         public string? CardHolder { get; set; }
         public bool? statusDelivery { get; set; }
         public int? Paymentmethod { get; set; }
+        public bool? Preparingrequest { get; set; }
+
 
     }
 }

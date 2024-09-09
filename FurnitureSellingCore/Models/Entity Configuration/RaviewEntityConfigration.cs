@@ -17,7 +17,6 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.Property(x => x.RatingDate).HasDefaultValue(DateTime.UtcNow);
             builder.HasOne<User>().WithMany().HasForeignKey(x => x.UserId);
             builder.HasOne<Item>().WithMany().HasForeignKey(x => x.ItemId);
-       //     builder.HasMany<ItemRequest>().WithOne().HasForeignKey(x => x.UserId);
 
             builder.Property(x => x.RatingNumber).HasMaxLength(5);
 

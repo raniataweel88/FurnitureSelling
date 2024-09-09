@@ -8,7 +8,8 @@ namespace FurnitureSellingCore.DTO.Order.Delivery
 {
     public class DetalisDeliveryOrderDTO
     {
-        public int Id { get; set; }
+        public int OrderId { get; set; }
+        public bool? Preparingrequest { get; set; }
 
         public string? Title { get; set; }
         public float? TotalPrice { get; set; }
@@ -19,7 +20,7 @@ namespace FurnitureSellingCore.DTO.Order.Delivery
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Address { get; set; }
-        public int Paymentmethod { get; set; }
+        public int? Paymentmethod { get; set; }
 
     }
 }

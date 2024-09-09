@@ -68,6 +68,30 @@ namespace FurnitureSellingInfra.Repos
             return query.ToListAsync();
 
         }
+        public Task<List<UpdateCartItemDTO>> GetAllCartItemReview(int orderid)
+        {
+            Log.Debug("start GetAllCartItem_Repose");
+
+            var query = from q in _context.CartItems
+                        join c in _context.Carts
+                        on q.CartId equals c.CartId
+                        where c.OrderId == orderid
+                        select new UpdateCartItemDTO
+                        {
+
+                            CartItemId = q.CartItemId,
+                            CartId = q.CartId,
+                            ItemId = q.ItemId,
+                            Color = q.Color,
+                            Size = q.Size,
+                            Quantity = q.Quantity,
+                        };
+            Log.Information("return AllCartItem");
+            Log.Debug("end AllCartItem_Repose");
+
+            return query.ToListAsync();
+
+        }
         public async Task CreateCartItem_Repose(CartItem model)
         {
             Log.Debug("start CreateCartItem_Repose");
@@ -81,42 +105,8 @@ namespace FurnitureSellingInfra.Repos
 
                 // Save changes to generate CartItemId if not already set
 
-                var cartId = model.CartId;
-                var cart =await  _context.Carts.FirstOrDefaultAsync(x => x.CartId == cartId);
-
-                var item = await _context.Items.FirstOrDefaultAsync(x => x.ItemId == model.ItemId);
-                if (item != null)
-                {
-                    item.RestQuantity = item.Quantity - model.Quantity;
-                    if (item.RestQuantity >= 0)
-                        _context.Update(item);
-                    await _context.SaveChangesAsync();
-                }
-                else
-                {
-                    throw new Exception("sorry the item finshed");
-                    
-
-                }
-                if (cart != null)
-                {
-                    var order = await _context.Orders.FirstOrDefaultAsync(x => x.OrderId == cart.OrderId);
-
-                    if (order != null)
-                    {
-                        order.TotalPrice = await CalculateTotalPrice(model.CartItemId);
-                        _context.Update(order);
-                        await  _context.SaveChangesAsync();
-                    }
-                    else
-                    {
-                        Log.Error($"Order not found for CartId {cartId}");
-                    }
-                }
-                else
-                {
-                    Log.Error($"Cart not found for CartItemId {model.CartItemId}");
-                }
+               
+          
             }
             else
             {

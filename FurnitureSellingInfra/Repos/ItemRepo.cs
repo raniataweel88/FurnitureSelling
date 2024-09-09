@@ -5,6 +5,7 @@ using FurnitureSellingCore.Models;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Core;
+using System;
 
 
 namespace FurnitureSellingInfra.Repos
@@ -18,34 +19,66 @@ namespace FurnitureSellingInfra.Repos
         }
         public async Task<DetailsItemDTO> GetByIdItem_Repose(int Id)
         {
-            Log.Debug("start to  GetByIdItem_Repose");
-            var Query = from i in _context.Items
-                        where i.ItemId == Id
-                        select new DetailsItemDTO
-                        {
-                            ItemId = i.ItemId,
-                            Name = i.Name,
-                            Description = i.Description,
-                            Image = $"https://localhost:7148/Images/{i.Image}",
-                            DisacountAmount = i.DisacountAmount,
-                            isHaveDiscount = i.isHaveDiscount,
-                            Price = i.Price,
-                            DiscountType = i.DiscountType,
-                            Quantity = i.Quantity,
-                            CategoryId = i.CategoryId,
-                            Colors = i.Colors,
-                            Sizes = i.Sizes,
-                            EndDate = i.EndDate,
-                            RestQuantity = i.RestQuantity,
-                            PriceAfterDiscount = i.PriceAfterDiscount
+            Log.Debug("Start to GetByIdItem_Repose");
+            var item = await _context.Items
+                    .Where(i => i.ItemId == Id)
+                    .FirstOrDefaultAsync();
 
-                        };
-            Log.Information("return Item");
+            if (item == null)
+            {
+                Log.Information("Item not found");
+                return null;
+            }
+            var result = new DetailsItemDTO
+            {
+                ItemId = item.ItemId,
+                Name = item.Name,
+                Description = item.Description,
+                Image = $"https://localhost:7148/Images/{item.Image}",
+                DisacountAmount = item.DisacountAmount,
+                isHaveDiscount = item.isHaveDiscount,
+                Price = item.Price,
+                DiscountType = item.DiscountType,
+                Quantity = item.Quantity,
+                CategoryId = item.CategoryId,
+                Colors = item.Colors,
+                Sizes = item.Sizes,
+                EndDate = item.EndDate,
+                RestQuantity = item.RestQuantity,
+                PriceAfterDiscount = item.PriceAfterDiscount
+            };
+            DateTime utcNow = DateTime.UtcNow;
 
-            Log.Debug("finished to  GetByIdItem_Repose");
 
-            return Query.FirstOrDefault();
+            if (item.EndDate.HasValue && item.EndDate.Value <= utcNow)
+            {
+                item.isHaveDiscount = false;
+                item.DisacountAmount = 0;
+                item.DiscountType = null;
+                item.PriceAfterDiscount = item.Price;
+                item.EndDate = null;
+                _context.Update(item);
+                await _context.SaveChangesAsync();
+            }
+
+
+            else if (item.EndDate.HasValue){
+
+                result.Price = (float)item.PriceAfterDiscount;
+
+            }
+
+
+
+            // تحويل الكائن `Item` إلى `DetailsItemDTO`
+
+
+            Log.Information("Returning Item");
+            Log.Debug("Finished GetByIdItem_Repose");
+
+            return result;
         }
+    
         public async Task<List<CardItemDTO>> GetAllItem_Repose()
         {
             Log.Debug("start to  GetAllItem_Repose");
@@ -58,7 +91,7 @@ namespace FurnitureSellingInfra.Repos
                             Price = i.Price,
                             ItemId = i.ItemId,
                             catogeryId = i.CategoryId,
-                            
+
 
                         };
             Log.Information("return all Item");
@@ -66,7 +99,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("finished to  GetAllItem_Repose");
 
             return Query.ToList();
-        } 
+        }
         public async Task CreateItem_Repose(Item ct)
         {
 
@@ -90,70 +123,60 @@ namespace FurnitureSellingInfra.Repos
             var it = _context.Items.Find(t.ItemId);
             Log.Debug("start to UpdateCategory_Repose");
 
-            if (it.Name != t.Name)
+            if (t.Name != null)
+            {
                 it.Name = t.Name;
 
-            if (it.Description != t.Description)
-                it.Description = t.Description;
+                if (t.Description != null)
+                    it.Description = t.Description;
 
-            if (t.Image != null && t.Image.Contains("https://localhost:7148/Images/"))
-            {
-                it.Image = t.Image.Replace("https://localhost:7148/Images/", "");
-            }
-            else
-            {
-                it.Image = t.Image;
-            }
+                if (t.Image != null && t.Image.Contains("https://localhost:7148/Images/"))
+                {
+                    it.Image = t.Image.Replace("https://localhost:7148/Images/", "");
+                }
+                else
+                {
+                    it.Image = t.Image;
+                }
+                if (t.RestQuantity != null)
+                    it.RestQuantity = (int)t.RestQuantity;
 
-
-            if (it.Quantity != t.Quantity)
                 it.Quantity = (int)t.Quantity;
-
-            if (it.Price != t.Price)
+                it.DateAdd = it.DateAdd;
                 it.Price = (float)t.Price;
-
-            if (it.isHaveDiscount != t.isHaveDiscount)
-                it.isHaveDiscount = t.isHaveDiscount;
-
-            if (it.DisacountAmount != t.DisacountAmount)
-                it.DisacountAmount = t.DisacountAmount;
-
-            if (it.DiscountType != t.DiscountType)
-                it.DiscountType = t.DiscountType;
-
-            if (it.Colors != t.Colors)
                 it.Colors = t.Colors;
-
-            if (it.Sizes != t.Sizes)
                 it.Sizes = t.Sizes;
 
-            if (it.EndDate != t.EndDate)
-                it.EndDate = t.EndDate;
 
-            if ((bool)t.isHaveDiscount)
-            {
-                DiscountItemDTO d = new DiscountItemDTO
+                if (t.isHaveDiscount == true)
                 {
-                    ItemId = t.ItemId,
-                    DisacountAmount = t.DisacountAmount,
-                    DiscountType = t.DiscountType,
-                    isHaveDiscount = t.isHaveDiscount
-                };
-                await DiscountItem(d);
+                    {
+                        DiscountItemDTO d = new DiscountItemDTO
+                        {
+                            ItemId = t.ItemId,
+                            DisacountAmount = t.DisacountAmount,
+                            DiscountType = t.DiscountType,
+                            isHaveDiscount = t.isHaveDiscount,
+                            EndDate = t.EndDate
+
+                        };
+                        await DiscountItem(d);
+                    }
+
+                    if (it.CategoryId != t.CategoryId)
+                        it.CategoryId = t.CategoryId;
+
+                    _context.Update(it);
+                    await _context.SaveChangesAsync();
+
+                    Log.Debug("Finish to UpdateCategory_Repose");
+
+                    _context.Update(it);
+                    await _context.SaveChangesAsync();
+
+                    Log.Debug("Finish to  UpdateCategory_Repose");
+                }
             }
-
-            if (it.CategoryId != t.CategoryId)
-                it.CategoryId = t.CategoryId;
-
-            _context.Update(it);
-            await _context.SaveChangesAsync();
-
-            Log.Debug("Finish to UpdateCategory_Repose");
-
-            _context.Update(it);
-            await _context.SaveChangesAsync();
-
-            Log.Debug("Finish to  UpdateCategory_Repose");
         }
 
         public async Task<List<DetailsItemDTO>> SearchItem(string? name, string? description, float? price)
@@ -220,27 +243,31 @@ namespace FurnitureSellingInfra.Repos
                 }
                 Log.Debug("Finish to DeleteItem");
             }
+
         }
-        public async Task<List<DetailsItemDTO>> FilterProducts(ProductFilterDto filter)
-        {
+    
+            public async Task<List<DetailsItemDTO>> FilterProducts(ProductFilterDto filter) { 
             var query = await _context.Items.ToListAsync();
 
             if (filter.MinPrice.HasValue)
             {
-                query = query.Where(p => p.Price >= filter.MinPrice.Value).ToList();
+                query = query.Where(p => p.Price <= filter.MinPrice.Value).ToList();
             }
             if (filter.MaxPrice.HasValue)
             {
-                query = query.Where(p => p.Price <= filter.MaxPrice.Value).ToList();
+                query = query.Where(p => p.Price >= filter.MaxPrice.Value).ToList();
             }
 
-            if (!string.IsNullOrEmpty(filter.Color))
+            if (filter.Color == "All")
+            {
+
+                query = query.ToList();
+            }
+            if (!string.IsNullOrEmpty(filter.Color) && filter.Color != "All")
             {
                 Log.Information("Filtering items with color: {Color}", filter.Color);
 
-                query = query.Where(p => p.Colors != null && p.Colors.Any(c => filter.Color.Contains(c))).ToList();
-                if (query.Where(p => p.Colors != null && p.Colors.Any(c => filter.Color.Contains(c))) == null)
-                    throw new Exception("");
+                query = query.Where(p => p.Colors.Any(c => c == filter.Color)).ToList();
             }
 
             if (filter.HasDiscount == true)
@@ -264,7 +291,26 @@ namespace FurnitureSellingInfra.Repos
                     query = query.OrderBy(p => p.Name).ToList(); ;
                     break;
             }
-
+            switch (filter.price)
+            {
+                case "0-50":
+                    query = query.Where(x => x.Price >= 0 && x.Price <= 50).ToList();
+                    break;
+                case "50-100":
+                    query = query.Where(x => x.Price > 50 && x.Price <= 100).ToList();
+                    break;
+                case "100-150":
+                    query = query.Where(x => x.Price > 100 && x.Price <= 150).ToList();
+                    break;
+                case "150-200":
+                    query = query.Where(x => x.Price > 150 && x.Price <= 200).ToList();
+                    break;
+                case "200+":
+                    query = query.Where(x => x.Price > 200).ToList();
+                    break;
+                default:
+                    break;
+            }
             var result = query.Select(i => new DetailsItemDTO
             {
                 ItemId = i.ItemId,
@@ -290,6 +336,7 @@ namespace FurnitureSellingInfra.Repos
 
         }
     
+    
     public async Task DiscountItem(DiscountItemDTO d)
         {
             var item = await _context.Items.FirstOrDefaultAsync(x => x.ItemId == d.ItemId);
@@ -308,14 +355,15 @@ namespace FurnitureSellingInfra.Repos
             {
                 item.isHaveDiscount = false;
                 item.DisacountAmount = 0;
-                item.DiscountType = 0;
+                item.DiscountType = null;
                 item.PriceAfterDiscount = item.Price;
             }
             else
             {
                 float discountAmount = 0;
 
-                if (item.DiscountType == 0)
+
+                if (item.DiscountType == "Percentage")
                 {
                     discountAmount = item.Price * ((float)item.DisacountAmount / 100);
                 }

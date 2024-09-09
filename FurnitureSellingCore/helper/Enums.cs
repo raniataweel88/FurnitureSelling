@@ -12,10 +12,10 @@ namespace FurnitureSellingCore.helper
     {
         public enum UserType
         {
-            Customer,
-            Employee,
-            Admain,
-            driver
+            Customer=0,
+            Employee=1,
+            Admain=2,
+            driver=3
         }
         public enum DisacountType
         {

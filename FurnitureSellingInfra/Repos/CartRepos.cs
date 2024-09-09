@@ -4,6 +4,7 @@ using FurnitureSellingCore.IRepos;
 using FurnitureSellingCore.Models;
 using K4os.Hash.xxHash;
 using Microsoft.EntityFrameworkCore;
+using MySqlX.XDevAPI.Common;
 using Org.BouncyCastle.Asn1.Crmf;
 using Serilog;
 using System;
@@ -71,35 +72,62 @@ namespace FurnitureSellingInfra.Repos
             return Qery.ToList();
 
         }
+        public async Task<List<Cart>> GetAllCart_ReposeReviw(int orderTd)
+        {
+            Log.Debug("start to  GetAllCart_Repose");
+            var Qery = from c in _context.Carts
+                     where c.OrderId == orderTd
+                    && c.IsActiveId==false
+                       select new Cart
+                       {
+                           IsActiveId = c.IsActiveId,
+                           CartId = c.CartId,
+                           OrderId = c.OrderId,
+                           UserId = c.UserId,
+                       };
+            Log.Information("get all cart");
+            Log.Debug("finished to  GetAllCart_Repose");
+
+            return Qery.ToList();
+
+        }
 
         public async Task<int> CreateCart_Repose(Cart c)
     
             {
                 Log.Debug("start to  CreateCart_Repose");
 
-                var existingCart = _context.Carts.FirstOrDefault(x => x.UserId == c.UserId);
+            var existingCart = await _context.Carts
+                  .Where(x => x.UserId == c.UserId)
+                  .OrderByDescending(x => x.CartId) 
+                  .FirstOrDefaultAsync();
 
-                if (existingCart != null)
+            if (existingCart != null)
                 {
+                
                     if (existingCart.IsActiveId==true)
                     {
                         return existingCart.CartId;
                     }
+               
                     else
                     {
-                    Cart cart = new Cart();
+                     Cart cart = new Cart();
                     cart.IsActiveId = true;
                     cart.UserId = c.UserId;
-                    cart.OrderId = c.OrderId;
+                     cart.OrderId = c.OrderId;
                     await _context.Carts.AddAsync(cart);
                     await _context.SaveChangesAsync();
                     return cart.CartId;
                     }
+                
+                    
                 }
                 else
                 {
-                    Log.Information("Adding new cart for user", c.CartId);
-                 await    _context.Carts.AddAsync(c);
+                  Log.Information("Adding new cart for user", c.CartId);
+                c.IsActiveId = true;
+                await    _context.Carts.AddAsync(c);
                 await _context.SaveChangesAsync();
                 return c.CartId; 
                 Log.Debug("finished CreateCart_Repose");
@@ -118,7 +146,31 @@ namespace FurnitureSellingInfra.Repos
                 r.OrderId = c.OrderId;
                 r.UserId = c.UserId;
                 r.IsActiveId = c.IsActiveId;
-                _context.Update(r);    
+
+                _context.Update(r);
+                var order = await _context.Orders.FirstOrDefaultAsync(x => x.OrderId == c.OrderId);
+                var cartiem = await _context.CartItems.FirstOrDefaultAsync(x => x.CartId == c.CartId);
+
+                var items =await _context.Items.Where(x => x.ItemId == cartiem.ItemId).ToListAsync();
+                if (items != null && items.Count > 0)
+                {
+                    foreach (var item in items)
+                    {
+                        item.RestQuantity = (int)(item.Quantity - cartiem.Quantity);
+                        _context.Update(item);
+                    }
+
+                    await _context.SaveChangesAsync();
+                }
+
+                if (order != null)
+                {
+                    order.TotalPrice = await CalculateTotalPrice(cartiem.CartItemId);
+
+                    _context.Update(order);
+                    await _context.SaveChangesAsync();
+
+                }
                 Log.Information("update this Cart",c.CartId);
                 //save changes 
                 await _context.SaveChangesAsync();
@@ -136,7 +188,7 @@ namespace FurnitureSellingInfra.Repos
             var c = _context.Carts.FirstOrDefault(x => x.CartId == Id);
             if (c != null)
             {
-                c.IsActiveId= false;
+                c.IsActiveId = false;
                 _context.Update(c);
 
                 Log.Information("delete this cart", c.CartId);
@@ -148,6 +200,22 @@ namespace FurnitureSellingInfra.Repos
                 throw new Exception("can not found this cat");
             }
             Log.Debug("Finished to DeleteCart_Repose");
-        } 
+        }
+    public async Task<float> CalculateTotalPrice(int Id)
+    {
+        Log.Debug("Start to CalculateTotalPrice");
+
+        var ct = _context.CartItems.FirstOrDefault(x => x.CartItemId == Id);
+        var c = _context.Carts.FirstOrDefault(x => x.CartId == ct.CartId);
+        var o = _context.Orders.FirstOrDefault(x => x.OrderId == c.OrderId);
+        var i = _context.Items.FirstOrDefault(x => x.ItemId == ct.ItemId);
+        float or;
+        if (o.Fee == null)
+            or = (float)((i.Price * ct.Quantity) + 0);
+        else
+            or = (float)((i.Price * ct.Quantity) + o.Fee);
+        return or;
     }
+
+}
 }

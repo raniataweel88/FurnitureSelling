@@ -93,7 +93,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await _CategoryServices.CreateCategory(c);
-                        return StatusCode(201, " add new  Category");
+                        return Ok(" add new  Category");
 
                     }
                     else
@@ -184,7 +184,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                        await _CategoryServices.DeleteCategory(Id);
-                    return StatusCode(201, "delete this Category");
+                    return Ok("delete this Category");
 
 }
                     else
@@ -219,7 +219,7 @@ namespace FurnitureSelling.Controllers
                     {
 
                         await _UserServices.CreateUserAdmain(dto);
-                        return Ok( " create new  user");
+                        return Ok( "create new  user");
                     }
                     else
                     {
@@ -270,7 +270,7 @@ namespace FurnitureSelling.Controllers
                     {
 
                         await _itemServices.CreateItemServices(dto);
-                        return StatusCode(201, " create new  item");
+                        return Ok(" create new  item");
                     }
                     else
                     {
@@ -400,7 +400,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token)) { 
                         await _itemServices.DeleteItem(Id);
                     Log.Information("try DeleteItem-controller");
-                    return StatusCode(201, "delete this Item");
+                    return Ok("delete this Item");
                     }
                     else
                     {
@@ -450,7 +450,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await _UserServices.DeleteUser(Id);
-                        return StatusCode(201, "delete this User");
+                        return Ok(" delete this User");
                     }
                     else
                     {
@@ -543,7 +543,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await IProductWarrantyServies.CreateProductWarranty(dto);
-                        return StatusCode(201, "Created new product warranty");
+                        return Ok( "Created new product warranty");
                     }
                     else
                     {
@@ -633,7 +633,7 @@ namespace FurnitureSelling.Controllers
                     {
                         await IProductWarrantyServies.DeleteProductWarranty(Id);
                         Log.Information("Successfully deleted product warranty");
-                        return StatusCode(201, "Deleted this product warranty");
+                        return Ok(" Deleted this product warranty");
                     }
                     else
                     {

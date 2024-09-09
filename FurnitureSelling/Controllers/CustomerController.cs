@@ -12,6 +12,7 @@ using FurnitureSellingCore.Models;
 using FurnitureSellingInfra.Repos;
 using FurnitureSellingInfra.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using ZstdSharp.Unsafe;
@@ -26,14 +27,21 @@ namespace FurnitureSelling.Controllers
         private readonly IWishListServices _wishListServices;
         private readonly IItemRequestServices _itemRequestServices;
         private readonly IProductWarrantyServies _service;
-
-        public CustomerController(IItemRequestServices itemRequestServices, ICartItemServices cartItemServices, ICartServices cartServices, IWishListServices wishListServices, IProductWarrantyServies service)
+        private readonly IRaviewServices _rating;
+        public CustomerController(
+            IRaviewServices RaviewServices,
+            IItemRequestServices itemRequestServices,
+            ICartItemServices cartItemServices,
+            ICartServices cartServices,
+            IWishListServices wishListServices, 
+            IProductWarrantyServies service)
         {
             _cartItemServices = cartItemServices;
             _cartServices = cartServices;
             _wishListServices = wishListServices;
             _itemRequestServices = itemRequestServices;
             _service = service;
+            _rating= RaviewServices;
         }
 
         #region wishList
@@ -145,7 +153,7 @@ namespace FurnitureSelling.Controllers
                 {
                     if (TokenHelper.IsVaildToken(token)) {
                         await _wishListServices.CreateWishList(d);
-                        return StatusCode(201, "done to add New  WishList");
+                        return Ok( "done to add New  WishList");
                     }
                     else
                     {
@@ -336,6 +344,42 @@ namespace FurnitureSelling.Controllers
             }
         }
 
+        //get all CartItemReview
+        /// <returns>all CartItemReview</returns>
+        /// <response code="400">cann't get the all  CartItemReview</response>
+        [HttpGet]
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetAllCartItemReview([FromHeader] string token, [FromRoute] int Id)
+        {
+            Log.Debug("start GetAllCartItemReview-controller");
+            if (token != null)
+            {
+                try
+                {
+                    if (TokenHelper.IsVaildToken(token))
+                    {
+                        var CartItem = await _cartItemServices.GetAllCartItemReview(Id);
+                        return Ok(CartItem);
+
+                    }
+                    else
+                    {
+                        return StatusCode(401, "you unatharized to use this function");
+                    }
+                }
+                catch
+                {
+
+                    Log.Error("con not found  CartItemReview");
+                    return BadRequest("con not found  CartItemReview");
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("token");
+            }
+        }
+
         //greate cartItem
         /// <remarks>
         /// Sample request:
@@ -362,7 +406,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await _cartItemServices.CreateCartItem(c);
-                        return StatusCode(201, "create new cart item");
+                        return Ok("create new cart item");
                     }
                     else
                     {
@@ -453,7 +497,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await _cartItemServices.DeleteCartItem(Id);
-                        return StatusCode(201, "delete this CartItem");
+                        return Ok("delete this CartItem");
                     }
                     else
                     {
@@ -666,7 +710,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await _cartServices.DeleteCart(Id);
-                        return StatusCode(201, "delete this  Cart");
+                        return Ok("delete this  Cart");
                     }
                     else
                     {
@@ -690,7 +734,7 @@ namespace FurnitureSelling.Controllers
         /// <returns>List of ItemRequest</returns>
         /// <response code="400">can not Get All Item Request</response>   
         [HttpGet]
-        [Route("[action] /{userId}")]
+        [Route("[action]/{userId}")]
         public async Task<IActionResult> GetAllItemRequestForUser([FromRoute]int userId)
         {
 
@@ -825,7 +869,7 @@ namespace FurnitureSelling.Controllers
                     if (TokenHelper.IsVaildToken(token))
                     {
                         await _itemRequestServices.DeleteItemRequest(Id);
-                        return StatusCode(201, "done to delete this item request ");
+                        return Ok("done to delete this item request ");
                     }
 
                     else
@@ -935,7 +979,198 @@ namespace FurnitureSelling.Controllers
 
         }
 
-            #endregion
+        #endregion
+        #region Raview
+        //get id by Raview
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Get api/GetRaview ById
+        ///     {        
+        ///       "Id": "Enter the id of Raview" 
+        ///     }
+        /// </remarks>
+        /// <returns>Cart</returns>
+        /// <response code="400">cann't get the Raview</response>
+        [HttpGet]
+        [Route("[action]/{Id}")]
+        public async Task<IActionResult> GetRaviewById([FromRoute] int Id)
+        {
+            Log.Debug("start GetRaviewById-controller{Id}", Id);
+          
+                try
+                {
+                   
+                        var Rating = await _rating.GetByIdRaview_Repose(Id);
+                        return Ok(Rating);
+                   
+                }
+                catch
+                {
+                    Log.Error("can not found  Rating");
+                    return BadRequest("can not found  Rating");
+                }
+         
+        }
+        //get all Raview
 
-        
-        } }
+        /// <returns>Raview</returns>
+        /// <response code="400">cann't get the all  Raview</response>
+        [HttpGet]
+        [Route("[action]/{ItemId}")]
+        public async Task<IActionResult> GetRaviewAll([FromRoute]int ItemId)
+        {
+            Log.Debug("start GetCartAll-controller");
+         
+                try
+                {
+                    
+                        var rating = await _rating.GetAllRaview_Repose(ItemId);
+                        return Ok(rating);
+                    
+                   
+                }
+                catch
+                {
+                    Log.Error("can not found  _rating");
+                    return BadRequest("can not found  _rating");
+                }
+            }
+
+
+        //greate Raview
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Post api/NewRaview
+        ///     {        
+        ///        UserId : "Enter the id of user the Cart to add order" 
+        ///        OrderId : "Enter the id of   Order the need to add in Cart" 
+        ///        IsActive: "Enter the true or false if the cart is active " 
+        /// }   
+        /// </remarks>
+        /// <returns>cartItem</returns>
+        /// <response code="201">add the Raview</response>
+        /// <response code="400">cann't add the Raview</response>
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<IActionResult> NewRaview([FromBody]  CreateRaviewDTO dto, [FromHeader] string token)
+        {
+            Log.Debug("start NewRaview-controller");
+            if (token != null)
+            {
+                try
+                {
+                    if (TokenHelper.IsVaildToken(token))
+                    {
+                         await _rating.CreateRaview_Repose(dto);
+
+                        return Ok("Raview viw");
+
+                        Log.Debug("finished CreateRaview-Controller");
+
+                    }
+
+                    else
+                    {
+                        return StatusCode(401, "you unatharized to use this function");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex.Message);
+                    return BadRequest(ex.Message);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("token");
+            }
+        }
+        //update Raview
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Put api/UpdateRaview
+        ///     {        
+        ///         Id: "Enter the id of cart that need to update" 
+        ///        UserId : "Enter the id of user the Cart to add order" 
+        ///        OrderId : "Enter the id of   Order the need to add in Cart" 
+        ///        IsActive: "Enter the true or false if the cart is active " 
+        ///     }
+        /// </remarks>
+        /// <response code="400">cann't Update the Raview</response>
+        [HttpPut]
+        [Route("[action]")]
+        public async Task<IActionResult> UpdateRaview([FromBody] CradRaviewDTO d, [FromHeader] string token)
+        {
+            Log.Debug("start UpdateRaview-controller");
+            if (token != null)
+            {
+                try
+                {
+                    if (TokenHelper.IsVaildToken(token))
+                    {
+                        await _rating.UpdateRaview_Repose(d);
+                        return Ok("done to update this Raview");
+                    }
+                    else
+                    {
+                        return StatusCode(401, "you unatharized to use this function");
+                    }
+                }
+                catch
+                {
+                    return BadRequest("Can't updates this Raview");
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("token");
+            }
+        }
+        //delete Raview
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     Delete api/DeleteRaview
+        ///     {        
+        ///       "Id": "Enter the id of  Raview to delete" 
+        ///     }
+        /// </remarks>
+        /// <response code="201"> delete the Raview</response>
+        /// <response code="400">cann't delete the Raview</response>
+        [HttpDelete]
+        [Route("[action]/{Id}")]
+        public async Task<ActionResult> DeleteReview([FromRoute] int Id, [FromHeader] string token)
+        {
+            Log.Debug("start DeleteRaviewg_Repose", Id);
+            if (token != null)
+            {
+                try
+                {
+                    if (TokenHelper.IsVaildToken(token))
+                    {
+                        await _rating.DeleteRaview_Repose(Id);
+                        return Ok("delete this  Rating");
+                    }
+                    else
+                    {
+                        return StatusCode(401, "you unatharized to use this function");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex.Message);
+                    return BadRequest(ex.Message);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("token");
+            }
+        }
+        #endregion
+
+    }
+}

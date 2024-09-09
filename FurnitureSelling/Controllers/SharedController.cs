@@ -250,7 +250,7 @@ namespace FurnitureSelling.Controllers
         [Route("[action]")]
         public async Task<IActionResult> UpdateOrder([FromBody] DetailsOrdertDTO dto, [FromHeader] string token)
         {
-            Log.Debug("start UpdateOrder-controller{Id}", dto.Id);
+            Log.Debug("start UpdateOrder-controller{Id}", dto.OrderId);
             if (token != null)
             {
                 try

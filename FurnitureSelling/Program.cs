@@ -34,6 +34,8 @@ builder.Services.AddScoped<ICartServices, CartServices>();
 builder.Services.AddScoped<ICartRepos, CartRepos>();
 builder.Services.AddScoped<IProductWarrantyServies, ProductWarrantyServies>();
 builder.Services.AddScoped<IProductWarrantyRepose, ProductWarrantyRepose>();
+builder.Services.AddScoped<IRaviewRepose, RaviewRepose>();
+builder.Services.AddScoped<IRaviewServices, RaviewServices>();
 // to all acess to apo
 builder.Services.AddCors(opt =>
 {

@@ -12,14 +12,14 @@ namespace FurnitureSellingCore.Models
         public float Price { get; set; }
         public int Quantity { get; set; }
         public DateTime? DateAdd { get; set; }
-        public int RestQuantity { get; set; }
-        public float PriceAfterDiscount { get; set; }
+        public int? RestQuantity { get; set; }
+        public float? PriceAfterDiscount { get; set; }
 
         public bool? isHaveDiscount { get; set; }
         // value of discount
         public float? DisacountAmount { get; set; }
         // Percentage or fixed value
-        public DisacountType? DiscountType { get; set; }
+        public string? DiscountType { get; set; }
         public DateTime? EndDate { get; set; }
 
         public int? CategoryId { get; set; }

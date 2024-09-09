@@ -18,7 +18,7 @@ namespace FurnitureSellingCore.Models.Entity_Configuration
             builder.Property(x => x.Email).IsRequired();
             builder.Property(x => x.BirthDate).IsRequired(false);
             builder.ToTable(nameof(User));
-            
+
             builder.HasIndex(p => p.Email).IsUnique();
  
 

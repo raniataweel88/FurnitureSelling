@@ -11,23 +11,23 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Services
 {
-    public class RaviewServices : IRatingServices
+    public class RaviewServices : IRaviewServices
     {
-        private readonly IRatingRepose _repose;
-        public RaviewServices(IRatingRepose repose) {
+        private readonly IRaviewRepose _repose;
+        public RaviewServices(IRaviewRepose repose) {
             _repose = repose;
         }
 
 
-        public async Task<CradRaviewDTO> GetByIdRating_Repose(int Id)
+        public async Task<CradRaviewDTO> GetByIdRaview_Repose(int Id)
         {
-            return await _repose.GetByIdRating_Repose(Id);      }
+            return await _repose.GetByIdRaview_Repose(Id);      }
 
-        public async Task<List<CradRaviewDTO>> GetAllRating_Repose()
+        public async Task<List<CradRaviewDTO>> GetAllRaview_Repose(int ItemId)
         {
-            return await _repose.GetAllRating_Repose();
+            return await _repose.GetAllRaview_Repose(ItemId);
         }
-        public async Task CreateRating_Repose(CreateRaviewDTO r)
+        public async Task CreateRaview_Repose(CreateRaviewDTO r)
         {
 
             Raview ra = new Raview()
@@ -39,15 +39,15 @@ namespace FurnitureSellingInfra.Services
                 UserId = r.UserId,
             };
        
-            await _repose.CreateRating_Repose(ra);
+            await _repose.CreateRaview_Repose(ra);
         }
-        public async Task UpdateRating_Repose(CradRaviewDTO dto)
+        public async Task UpdateRaview_Repose(CradRaviewDTO dto)
         {
-             await _repose.UpdateRating_Repose(dto);
+             await _repose.UpdateRaview_Repose(dto);
         }
-        public async Task DeleteRating_Repose(int Id)
+        public async Task DeleteRaview_Repose(int Id)
         {
-             await _repose.DeleteRating_Repose(Id);
+             await _repose.DeleteRaview_Repose(Id);
         }
 
 

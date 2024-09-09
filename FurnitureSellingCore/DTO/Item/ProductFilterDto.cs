@@ -11,7 +11,8 @@ namespace FurnitureSellingCore.DTO.Item
         public string? SortBy { get; set; }  // يمكن أن يكون "Default", "pice : high to low", إلخ
         public float? MinPrice { get; set; }
         public float? MaxPrice { get; set; }
-        public string? Color { get; set; }  
+        public string? Color { get; set; }
+        public string? price  { get; set; }
         public bool? HasDiscount { get; set; }
     }
 }

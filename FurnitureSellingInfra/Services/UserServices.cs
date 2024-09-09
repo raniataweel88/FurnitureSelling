@@ -50,7 +50,7 @@ namespace FurnitureSellingInfra.Services
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
-                UserType = 0,
+                UserType = "user",
             }
             ;
             
@@ -129,20 +129,20 @@ namespace FurnitureSellingInfra.Services
         public async Task CreateUserAdmain(DetailsUserAdmainDTO dto)
         {
             Log.Debug("start CreateUser-Services");
-            User u = new User()
-            {
-              
-                Email = dto.Email,
-                PlateNumber = dto.PlateNumber,
-                Salary = dto.Salary,
-                UserType = (UserType?)dto.UserType,
-            }
-            ;
+            User u = new User();
 
-            int user_Id = await _repos.CreateUserReposAdmain(u);
+            u.FirstName = dto.FirstName;
+             u.LastName = dto.LastName;
+            u.PlateNumber = dto.PlateNumber;
+            u.Salary = dto.Salary;
+            u.UserType = dto.UserType;
+            u.Email = dto.Email;
+            var username = dto.FirstName + " " + dto.LastName;
+           
+                int user_Id = await _repos.CreateUserReposAdmain(u);
             Logins l = new Logins()
             {
-                UserName = HashHelper.GenerateSHA384String(dto.Email),
+                UserName = HashHelper.GenerateSHA384String(username),
                 Password = HashHelper.GenerateSHA384String(dto.password),
                 UserId = user_Id
             };

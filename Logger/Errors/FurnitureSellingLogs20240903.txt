@@ -1,0 +1,732 @@
+2024-09-03 00:57:54.498 +03:00 [INF] add the ItemRequest 
+2024-09-03 00:59:21.615 +03:00 [INF] return all Item
+2024-09-03 00:59:21.620 +03:00 [INF] return AllCartItem
+2024-09-03 00:59:21.989 +03:00 [INF] return Item
+2024-09-03 01:00:13.256 +03:00 [INF] add the ItemRequest 
+2024-09-03 01:03:38.218 +03:00 [INF] add the ItemRequest 
+2024-09-03 01:06:10.686 +03:00 [INF] return AllCartItem
+2024-09-03 01:06:10.941 +03:00 [INF] return all Item
+2024-09-03 01:06:11.131 +03:00 [INF] return Item
+2024-09-03 01:07:35.301 +03:00 [INF] return all Item
+2024-09-03 01:07:37.209 +03:00 [INF] return AllCartItem
+2024-09-03 01:07:37.436 +03:00 [INF] return Item
+2024-09-03 01:09:18.838 +03:00 [INF] return AllCartItem
+2024-09-03 01:09:18.863 +03:00 [INF] return Item
+2024-09-03 01:09:19.023 +03:00 [INF] return all Item
+2024-09-03 01:11:45.930 +03:00 [INF] return all Item
+2024-09-03 01:11:45.931 +03:00 [INF] return AllCartItem
+2024-09-03 01:11:46.101 +03:00 [INF] return Item
+2024-09-03 01:13:11.981 +03:00 [INF] return all Item
+2024-09-03 01:13:12.010 +03:00 [INF] return AllCartItem
+2024-09-03 01:13:12.035 +03:00 [INF] return Item
+2024-09-03 01:14:21.227 +03:00 [INF] return AllCartItem
+2024-09-03 01:14:21.249 +03:00 [INF] return Item
+2024-09-03 01:14:21.531 +03:00 [INF] return all Item
+2024-09-03 01:14:48.007 +03:00 [INF] return all Item
+2024-09-03 01:14:48.072 +03:00 [INF] return AllCartItem
+2024-09-03 01:14:48.086 +03:00 [INF] return Item
+2024-09-03 01:15:07.357 +03:00 [INF] return AllCartItem
+2024-09-03 01:15:07.390 +03:00 [INF] return Item
+2024-09-03 01:15:07.440 +03:00 [INF] return all Item
+2024-09-03 01:15:27.063 +03:00 [INF] return AllCartItem
+2024-09-03 01:15:27.088 +03:00 [INF] return Item
+2024-09-03 01:15:27.221 +03:00 [INF] return all Item
+2024-09-03 01:15:40.151 +03:00 [INF] return all Item
+2024-09-03 01:15:40.328 +03:00 [INF] return AllCartItem
+2024-09-03 01:15:40.384 +03:00 [INF] return Item
+2024-09-03 01:16:30.512 +03:00 [INF] return all Item
+2024-09-03 01:16:30.687 +03:00 [INF] return AllCartItem
+2024-09-03 01:16:30.735 +03:00 [INF] return Item
+2024-09-03 01:16:36.332 +03:00 [INF] return AllCartItem
+2024-09-03 01:16:36.394 +03:00 [INF] return Item
+2024-09-03 01:16:36.531 +03:00 [INF] return all Item
+2024-09-03 01:16:54.347 +03:00 [INF] return all Item
+2024-09-03 01:16:54.371 +03:00 [INF] return AllCartItem
+2024-09-03 01:16:54.389 +03:00 [INF] return Item
+2024-09-03 01:17:04.882 +03:00 [INF] return AllCartItem
+2024-09-03 01:17:04.897 +03:00 [INF] return Item
+2024-09-03 01:17:04.910 +03:00 [INF] return all Item
+2024-09-03 01:18:36.090 +03:00 [INF] return all Item
+2024-09-03 01:18:36.148 +03:00 [INF] return AllCartItem
+2024-09-03 01:18:36.192 +03:00 [INF] return Item
+2024-09-03 01:19:43.133 +03:00 [INF] return all Item
+2024-09-03 01:19:43.244 +03:00 [INF] return AllCartItem
+2024-09-03 01:19:43.268 +03:00 [INF] return Item
+2024-09-03 01:19:46.867 +03:00 [INF] return AllCartItem
+2024-09-03 01:19:46.887 +03:00 [INF] return Item
+2024-09-03 01:19:46.910 +03:00 [INF] return all Item
+2024-09-03 01:20:25.713 +03:00 [INF] return all Item
+2024-09-03 01:20:25.760 +03:00 [INF] return AllCartItem
+2024-09-03 01:20:25.776 +03:00 [INF] return Item
+2024-09-03 01:21:08.586 +03:00 [INF] return AllCartItem
+2024-09-03 01:21:08.615 +03:00 [INF] return Item
+2024-09-03 01:21:08.758 +03:00 [INF] return all Item
+2024-09-03 01:21:11.607 +03:00 [INF] return AllCartItem
+2024-09-03 01:21:11.633 +03:00 [INF] return Item
+2024-09-03 01:21:11.801 +03:00 [INF] return all Item
+2024-09-03 01:21:16.268 +03:00 [INF] return all Item
+2024-09-03 01:21:16.452 +03:00 [INF] return AllCartItem
+2024-09-03 01:21:16.471 +03:00 [INF] return Item
+2024-09-03 19:15:00.557 +03:00 [INF] Login successful for UserId: 4
+2024-09-03 19:15:00.747 +03:00 [INF] Login successful for UserId: 4
+2024-09-03 19:15:01.333 +03:00 [ERR] Can't login
+2024-09-03 19:15:08.993 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-03 19:15:09.130 +03:00 [ERR] Can't login
+2024-09-03 19:15:30.386 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-03 19:15:30.477 +03:00 [ERR] Can't login
+2024-09-03 19:16:07.563 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-03 19:16:07.660 +03:00 [ERR] Can't login
+2024-09-03 19:17:15.127 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:17:15.156 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:17:15.473 +03:00 [ERR] Can't login
+2024-09-03 19:17:39.439 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:17:39.491 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:17:39.793 +03:00 [ERR] Can't login
+2024-09-03 19:17:55.924 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:17:55.947 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:17:56.229 +03:00 [ERR] Can't login
+2024-09-03 19:18:12.519 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:18:12.552 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:18:12.831 +03:00 [ERR] Can't login
+2024-09-03 19:18:40.371 +03:00 [INF] return all Item
+2024-09-03 19:18:52.234 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:18:52.275 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:18:52.615 +03:00 [ERR] Can't login
+2024-09-03 19:19:54.046 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:19:54.197 +03:00 [INF] Login successful for UserId: 8
+2024-09-03 19:19:54.610 +03:00 [ERR] Can't login
+2024-09-03 19:22:07.413 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 19:23:35.283 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 19:43:10.481 +03:00 [INF] return all Item
+2024-09-03 19:43:20.932 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-03 19:43:21.319 +03:00 [ERR] Can't login
+2024-09-03 19:43:24.314 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-03 19:43:24.407 +03:00 [ERR] Can't login
+2024-09-03 19:43:31.205 +03:00 [INF] return all Item
+2024-09-03 20:09:30.571 +03:00 [INF] Login successful for UserId: 1
+2024-09-03 20:09:30.643 +03:00 [INF] Login successful for UserId: 1
+2024-09-03 20:09:30.877 +03:00 [ERR] can not found this profile
+2024-09-03 20:09:30.896 +03:00 [INF] return all Item
+2024-09-03 20:09:36.529 +03:00 [INF] return all Item
+2024-09-03 20:11:49.376 +03:00 [INF] Login successful for UserId: 2
+2024-09-03 20:11:49.399 +03:00 [INF] Login successful for UserId: 2
+2024-09-03 20:11:49.495 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-03 20:11:54.685 +03:00 [INF] return all Item
+2024-09-03 20:12:29.382 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-03 20:12:34.785 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-03 20:13:53.478 +03:00 [INF] the Category not null
+2024-09-03 20:18:05.853 +03:00 [INF] found this Category
+2024-09-03 20:18:12.476 +03:00 [INF] found this Category
+2024-09-03 20:18:27.028 +03:00 [INF] found this Category
+2024-09-03 20:33:05.517 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 20:34:55.731 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 20:37:20.996 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 20:45:37.985 +03:00 [ERR] A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+2024-09-03 20:50:21.592 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 20:57:35.568 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 21:14:15.665 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 21:15:57.895 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 21:16:43.627 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 21:17:24.161 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 21:29:08.692 +03:00 [ERR] Could not save changes. Please configure your entity type accordingly.
+2024-09-03 21:30:06.222 +03:00 [ERR] can not found this profile
+2024-09-03 21:30:10.349 +03:00 [INF] return all Item
+2024-09-03 21:30:21.237 +03:00 [INF] Login successful for UserId: 1
+2024-09-03 21:30:21.325 +03:00 [INF] Login successful for UserId: 1
+2024-09-03 21:30:21.504 +03:00 [ERR] can not found this profile
+2024-09-03 21:30:21.506 +03:00 [INF] return all Item
+2024-09-03 21:30:23.611 +03:00 [ERR] can not found this profile
+2024-09-03 21:32:15.571 +03:00 [INF] found this User
+2024-09-03 21:32:15.646 +03:00 [INF] update this user
+2024-09-03 21:32:29.944 +03:00 [INF] return all Item
+2024-09-03 21:32:38.711 +03:00 [INF] return all Item
+2024-09-03 21:33:26.961 +03:00 [INF] the Item not null
+2024-09-03 21:33:29.373 +03:00 [INF] return all Item
+2024-09-03 21:33:31.879 +03:00 [INF] return Item
+2024-09-03 21:33:35.815 +03:00 [INF] return all Item
+2024-09-03 21:35:43.157 +03:00 [INF] return all Item
+2024-09-03 21:35:51.278 +03:00 [INF] return all Item
+2024-09-03 21:38:05.519 +03:00 [INF] return all Item
+2024-09-03 21:39:55.207 +03:00 [INF] return all Item
+2024-09-03 21:40:02.456 +03:00 [INF] return all Item
+2024-09-03 21:41:56.450 +03:00 [INF] return all Item
+2024-09-03 21:42:00.778 +03:00 [INF] return all Item
+2024-09-03 21:42:06.335 +03:00 [INF] return all Item
+2024-09-03 21:42:25.097 +03:00 [INF] return all Item
+2024-09-03 21:42:31.610 +03:00 [INF] return all Item
+2024-09-03 21:42:39.328 +03:00 [INF] return all Item
+2024-09-03 21:43:36.246 +03:00 [INF] return Item
+2024-09-03 21:48:41.255 +03:00 [INF] return Item
+2024-09-03 21:51:54.798 +03:00 [INF] return all Item
+2024-09-03 21:52:38.807 +03:00 [INF] return all Item
+2024-09-03 21:54:03.916 +03:00 [INF] return Item
+2024-09-03 21:56:09.929 +03:00 [INF] return Item
+2024-09-03 21:57:13.976 +03:00 [INF] return Item
+2024-09-03 21:58:09.069 +03:00 [INF] return Item
+2024-09-03 22:04:42.202 +03:00 [INF] return Item
+2024-09-03 22:04:44.222 +03:00 [INF] return Item
+2024-09-03 22:04:45.138 +03:00 [ERR] not found this Item
+2024-09-03 22:04:45.138 +03:00 [ERR] not found this Item
+2024-09-03 22:04:47.920 +03:00 [INF] return Item
+2024-09-03 22:04:48.315 +03:00 [ERR] not found this Item
+2024-09-03 22:05:26.167 +03:00 [INF] return Item
+2024-09-03 22:05:26.868 +03:00 [ERR] not found this Item
+2024-09-03 22:06:23.977 +03:00 [INF] return Item
+2024-09-03 22:06:24.744 +03:00 [ERR] not found this Item
+2024-09-03 22:07:05.516 +03:00 [INF] return Item
+2024-09-03 22:07:06.333 +03:00 [ERR] not found this Item
+2024-09-03 22:07:31.363 +03:00 [INF] return all Item
+2024-09-03 22:09:41.290 +03:00 [INF] return all Item
+2024-09-03 22:11:13.162 +03:00 [INF] return all Item
+2024-09-03 22:11:17.956 +03:00 [INF] return Item
+2024-09-03 22:11:18.089 +03:00 [ERR] not found this Item
+2024-09-03 22:15:06.586 +03:00 [INF] return all Item
+2024-09-03 22:15:07.962 +03:00 [INF] return all Item
+2024-09-03 22:15:09.134 +03:00 [INF] return Item
+2024-09-03 22:15:09.258 +03:00 [ERR] not found this Item
+2024-09-03 22:15:11.311 +03:00 [INF] return all Item
+2024-09-03 22:16:10.808 +03:00 [INF] the Item not null
+2024-09-03 22:16:13.127 +03:00 [INF] return all Item
+2024-09-03 22:16:40.280 +03:00 [INF] return all Item
+2024-09-03 22:16:43.399 +03:00 [INF] return all Item
+2024-09-03 22:17:35.647 +03:00 [INF] the Item not null
+2024-09-03 22:17:35.764 +03:00 [INF] return all Item
+2024-09-03 22:18:43.676 +03:00 [INF] the Item not null
+2024-09-03 22:18:43.734 +03:00 [INF] return all Item
+2024-09-03 22:19:42.133 +03:00 [INF] the Item not null
+2024-09-03 22:19:42.186 +03:00 [INF] return all Item
+2024-09-03 22:20:33.745 +03:00 [INF] the Item not null
+2024-09-03 22:20:33.798 +03:00 [INF] return all Item
+2024-09-03 22:21:27.965 +03:00 [INF] the Item not null
+2024-09-03 22:21:28.016 +03:00 [INF] return all Item
+2024-09-03 22:22:11.336 +03:00 [INF] the Item not null
+2024-09-03 22:22:11.402 +03:00 [INF] return all Item
+2024-09-03 22:22:18.110 +03:00 [INF] return Item
+2024-09-03 22:22:44.408 +03:00 [INF] return all Item
+2024-09-03 22:23:24.165 +03:00 [INF] the Item not null
+2024-09-03 22:23:24.221 +03:00 [INF] return all Item
+2024-09-03 22:24:17.262 +03:00 [INF] the Item not null
+2024-09-03 22:24:17.309 +03:00 [INF] return all Item
+2024-09-03 22:24:20.966 +03:00 [INF] return all Item
+2024-09-03 22:24:23.108 +03:00 [INF] return all Item
+2024-09-03 22:24:24.518 +03:00 [INF] return all Item
+2024-09-03 22:24:42.874 +03:00 [INF] the Item not null
+2024-09-03 22:24:42.936 +03:00 [INF] return all Item
+2024-09-03 22:24:47.884 +03:00 [INF] found this Item
+2024-09-03 22:24:47.955 +03:00 [INF] try DeleteItem-controller
+2024-09-03 22:24:52.249 +03:00 [INF] return all Item
+2024-09-03 22:25:04.462 +03:00 [INF] return all Item
+2024-09-03 22:25:09.628 +03:00 [INF] return Item
+2024-09-03 22:25:09.774 +03:00 [ERR] not found this Item
+2024-09-03 22:25:13.196 +03:00 [INF] return Item
+2024-09-03 22:25:13.287 +03:00 [ERR] not found this Item
+2024-09-03 22:25:16.006 +03:00 [INF] return all Item
+2024-09-03 22:25:21.732 +03:00 [INF] return Item
+2024-09-03 22:25:27.470 +03:00 [INF] Adding new cart for user
+2024-09-03 22:25:27.766 +03:00 [INF] add new CartItem 
+2024-09-03 22:25:28.040 +03:00 [ERR] Order not found for CartId 1
+2024-09-03 22:25:28.130 +03:00 [INF] get all cart
+2024-09-03 22:25:34.544 +03:00 [INF] get all cart
+2024-09-03 22:25:40.558 +03:00 [INF] get all cart
+2024-09-03 22:25:42.236 +03:00 [INF] return all Item
+2024-09-03 22:25:45.939 +03:00 [INF] return Item
+2024-09-03 22:25:50.212 +03:00 [INF] add new CartItem 
+2024-09-03 22:25:50.363 +03:00 [ERR] Order not found for CartId 2
+2024-09-03 22:25:50.439 +03:00 [INF] get all cart
+2024-09-03 22:25:50.582 +03:00 [INF] return AllCartItem
+2024-09-03 22:25:50.618 +03:00 [INF] return Item
+2024-09-03 22:25:52.064 +03:00 [INF] get all cart
+2024-09-03 22:25:54.215 +03:00 [INF] return AllCartItem
+2024-09-03 22:25:54.235 +03:00 [INF] return Item
+2024-09-03 22:25:56.881 +03:00 [INF] get all cart
+2024-09-03 22:25:56.900 +03:00 [INF] return AllCartItem
+2024-09-03 22:25:56.928 +03:00 [INF] return Item
+2024-09-03 22:25:58.202 +03:00 [INF] return all Item
+2024-09-03 22:26:01.204 +03:00 [INF] return Item
+2024-09-03 22:26:05.903 +03:00 [INF] add new CartItem 
+2024-09-03 22:26:06.046 +03:00 [ERR] Order not found for CartId 3
+2024-09-03 22:26:06.094 +03:00 [INF] get all cart
+2024-09-03 22:26:06.183 +03:00 [INF] return AllCartItem
+2024-09-03 22:26:06.183 +03:00 [INF] return AllCartItem
+2024-09-03 22:26:06.211 +03:00 [INF] return Item
+2024-09-03 22:26:06.214 +03:00 [INF] return Item
+2024-09-03 22:26:07.917 +03:00 [INF] get all cart
+2024-09-03 22:26:11.517 +03:00 [INF] return AllCartItem
+2024-09-03 22:26:11.517 +03:00 [INF] return AllCartItem
+2024-09-03 22:26:11.547 +03:00 [INF] return Item
+2024-09-03 22:26:11.547 +03:00 [INF] return Item
+2024-09-03 22:26:34.001 +03:00 [INF] add Order
+2024-09-03 22:26:34.304 +03:00 [INF] found this User
+2024-09-03 22:26:34.369 +03:00 [INF] update this user
+2024-09-03 22:26:35.603 +03:00 [INF] get all cart
+2024-09-03 22:26:35.604 +03:00 [INF] update this Cart
+2024-09-03 22:26:35.623 +03:00 [INF] return AllCartItem
+2024-09-03 22:26:35.669 +03:00 [INF] return Item
+2024-09-03 22:26:41.054 +03:00 [INF] return AllCartItem
+2024-09-03 22:26:41.074 +03:00 [INF] return Item
+2024-09-03 22:26:51.328 +03:00 [INF] get all cart
+2024-09-03 22:27:15.096 +03:00 [INF] return all Item
+2024-09-03 22:27:15.096 +03:00 [INF] return all Item
+2024-09-03 22:27:15.140 +03:00 [INF] return all Item
+2024-09-03 22:27:15.147 +03:00 [INF] get all cart
+2024-09-03 22:27:15.164 +03:00 [INF] get all cart
+2024-09-03 22:27:15.209 +03:00 [INF] return AllCartItem
+2024-09-03 22:27:15.217 +03:00 [INF] return AllCartItem
+2024-09-03 22:27:15.223 +03:00 [INF] return Item
+2024-09-03 22:27:15.234 +03:00 [INF] return Item
+2024-09-03 22:27:19.736 +03:00 [INF] return all Item
+2024-09-03 22:27:24.231 +03:00 [INF] return Item
+2024-09-03 22:27:24.231 +03:00 [INF] return Item
+2024-09-03 22:27:24.391 +03:00 [ERR] not found this Item
+2024-09-03 22:27:25.538 +03:00 [INF] return all Item
+2024-09-03 22:27:30.752 +03:00 [INF] return Item
+2024-09-03 22:27:30.752 +03:00 [INF] return Item
+2024-09-03 22:27:30.752 +03:00 [INF] return Item
+2024-09-03 22:27:30.914 +03:00 [ERR] not found this Item
+2024-09-03 22:28:06.223 +03:00 [INF] add the ItemRequest 
+2024-09-03 22:28:11.931 +03:00 [INF] return all Item
+2024-09-03 22:28:30.926 +03:00 [INF] return all Item
+2024-09-03 22:32:15.918 +03:00 [INF] return all Item
+2024-09-03 22:32:22.393 +03:00 [INF] return all Item
+2024-09-03 22:32:41.393 +03:00 [ERR] can not found  Cart
+2024-09-03 22:44:42.720 +03:00 [ERR] can not found  Cart
+2024-09-03 23:25:26.835 +03:00 [INF] Update this Orders
+2024-09-03 23:26:38.962 +03:00 [INF] Update this Orders
+2024-09-03 23:27:14.824 +03:00 [INF] get all cart
+2024-09-03 23:27:14.932 +03:00 [INF] return AllCartItem
+2024-09-03 23:27:14.992 +03:00 [INF] return Item
+2024-09-03 23:27:22.261 +03:00 [ERR] not found this order
+2024-09-03 23:27:25.251 +03:00 [ERR] not found this order
+2024-09-03 23:27:27.732 +03:00 [ERR] not found this order
+2024-09-03 23:27:29.158 +03:00 [INF] get all cart
+2024-09-03 23:27:29.181 +03:00 [INF] return AllCartItem
+2024-09-03 23:27:29.203 +03:00 [INF] return Item
+2024-09-03 23:33:44.800 +03:00 [INF] Update this Orders
+2024-09-03 23:33:47.049 +03:00 [INF] Update this Orders
+2024-09-03 23:34:17.136 +03:00 [INF] Update this Orders
+2024-09-03 23:34:20.164 +03:00 [INF] Update this Orders
+2024-09-03 23:35:34.745 +03:00 [INF] Update this Orders
+2024-09-03 23:35:38.031 +03:00 [INF] Update this Orders
+2024-09-03 23:36:14.071 +03:00 [INF] return AllCartItem
+2024-09-03 23:36:14.119 +03:00 [INF] return Item
+2024-09-03 23:37:34.725 +03:00 [INF] return AllCartItem
+2024-09-03 23:37:34.754 +03:00 [INF] return Item
+2024-09-03 23:37:55.858 +03:00 [INF] return AllCartItem
+2024-09-03 23:37:55.880 +03:00 [INF] return Item
+2024-09-03 23:40:06.959 +03:00 [INF] return all Item
+2024-09-03 23:40:09.069 +03:00 [INF] get all cart
+2024-09-03 23:40:09.211 +03:00 [INF] return AllCartItem
+2024-09-03 23:40:09.233 +03:00 [INF] return Item
+2024-09-03 23:40:10.951 +03:00 [INF] return all Item
+2024-09-03 23:40:16.080 +03:00 [INF] return Item
+2024-09-03 23:40:23.163 +03:00 [INF] add new CartItem 
+2024-09-03 23:40:23.486 +03:00 [ERR] Order not found for CartId 4
+2024-09-03 23:40:23.515 +03:00 [INF] get all cart
+2024-09-03 23:40:23.541 +03:00 [INF] return AllCartItem
+2024-09-03 23:40:23.552 +03:00 [INF] return AllCartItem
+2024-09-03 23:40:23.563 +03:00 [INF] return Item
+2024-09-03 23:40:23.586 +03:00 [INF] return Item
+2024-09-03 23:40:25.455 +03:00 [INF] get all cart
+2024-09-03 23:40:32.495 +03:00 [INF] return AllCartItem
+2024-09-03 23:40:32.495 +03:00 [INF] return AllCartItem
+2024-09-03 23:40:32.652 +03:00 [INF] return Item
+2024-09-03 23:40:32.661 +03:00 [INF] return Item
+2024-09-03 23:41:20.322 +03:00 [INF] get all cart
+2024-09-03 23:41:20.846 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:20.846 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:20.884 +03:00 [INF] return Item
+2024-09-03 23:41:20.884 +03:00 [INF] return Item
+2024-09-03 23:41:27.710 +03:00 [INF] get all cart
+2024-09-03 23:41:28.074 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:28.084 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:28.099 +03:00 [INF] return Item
+2024-09-03 23:41:28.105 +03:00 [INF] return Item
+2024-09-03 23:41:31.489 +03:00 [INF] get all cart
+2024-09-03 23:41:32.140 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:32.150 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:32.180 +03:00 [INF] return Item
+2024-09-03 23:41:32.194 +03:00 [INF] return Item
+2024-09-03 23:41:44.539 +03:00 [INF] get all cart
+2024-09-03 23:41:44.978 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:44.995 +03:00 [INF] return AllCartItem
+2024-09-03 23:41:45.013 +03:00 [INF] return Item
+2024-09-03 23:41:45.027 +03:00 [INF] return Item
+2024-09-03 23:42:09.037 +03:00 [INF] get all cart
+2024-09-03 23:42:09.369 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:09.375 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:09.400 +03:00 [INF] return Item
+2024-09-03 23:42:09.409 +03:00 [INF] return Item
+2024-09-03 23:42:12.298 +03:00 [INF] get all cart
+2024-09-03 23:42:12.792 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:12.808 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:12.818 +03:00 [INF] return Item
+2024-09-03 23:42:12.832 +03:00 [INF] return Item
+2024-09-03 23:42:33.384 +03:00 [INF] add Order
+2024-09-03 23:42:35.976 +03:00 [INF] found this User
+2024-09-03 23:42:36.008 +03:00 [INF] update this user
+2024-09-03 23:42:37.034 +03:00 [INF] get all cart
+2024-09-03 23:42:37.079 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:37.083 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:37.113 +03:00 [INF] return Item
+2024-09-03 23:42:37.119 +03:00 [INF] return Item
+2024-09-03 23:42:37.238 +03:00 [INF] update this Cart
+2024-09-03 23:42:41.103 +03:00 [INF] return AllCartItem
+2024-09-03 23:42:41.118 +03:00 [INF] return Item
+2024-09-03 23:47:02.695 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:02.715 +03:00 [INF] return Item
+2024-09-03 23:47:14.272 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:14.312 +03:00 [INF] return Item
+2024-09-03 23:47:20.830 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:20.850 +03:00 [INF] return Item
+2024-09-03 23:47:23.925 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:24.038 +03:00 [INF] return Item
+2024-09-03 23:47:25.059 +03:00 [INF] get all cart
+2024-09-03 23:47:25.141 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:25.157 +03:00 [INF] return Item
+2024-09-03 23:47:26.473 +03:00 [INF] get all cart
+2024-09-03 23:47:26.566 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:26.581 +03:00 [INF] return Item
+2024-09-03 23:47:30.866 +03:00 [INF] get all cart
+2024-09-03 23:47:31.110 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:31.127 +03:00 [INF] return Item
+2024-09-03 23:47:33.249 +03:00 [INF] get all cart
+2024-09-03 23:47:33.326 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:33.345 +03:00 [INF] return Item
+2024-09-03 23:47:34.733 +03:00 [INF] get all cart
+2024-09-03 23:47:34.751 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:34.762 +03:00 [INF] return Item
+2024-09-03 23:47:35.798 +03:00 [INF] return all Item
+2024-09-03 23:47:41.408 +03:00 [INF] return Item
+2024-09-03 23:47:51.791 +03:00 [INF] add new CartItem 
+2024-09-03 23:47:52.048 +03:00 [ERR] Order not found for CartId 5
+2024-09-03 23:47:52.075 +03:00 [INF] get all cart
+2024-09-03 23:47:52.095 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:52.097 +03:00 [INF] return AllCartItem
+2024-09-03 23:47:52.115 +03:00 [INF] return Item
+2024-09-03 23:47:52.123 +03:00 [INF] return Item
+2024-09-03 23:48:00.305 +03:00 [INF] return all Item
+2024-09-03 23:48:03.485 +03:00 [INF] return Item
+2024-09-03 23:48:11.830 +03:00 [INF] add new CartItem 
+2024-09-03 23:48:11.968 +03:00 [ERR] Order not found for CartId 6
+2024-09-03 23:48:12.051 +03:00 [INF] get all cart
+2024-09-03 23:48:12.074 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:12.082 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:12.084 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:12.102 +03:00 [INF] return Item
+2024-09-03 23:48:12.108 +03:00 [INF] return Item
+2024-09-03 23:48:12.114 +03:00 [INF] return Item
+2024-09-03 23:48:16.731 +03:00 [INF] return all Item
+2024-09-03 23:48:22.870 +03:00 [INF] return Item
+2024-09-03 23:48:29.875 +03:00 [INF] add new CartItem 
+2024-09-03 23:48:29.915 +03:00 [ERR] Order not found for CartId 7
+2024-09-03 23:48:29.936 +03:00 [INF] get all cart
+2024-09-03 23:48:29.953 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:29.962 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:29.962 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:29.968 +03:00 [INF] return AllCartItem
+2024-09-03 23:48:29.989 +03:00 [INF] return Item
+2024-09-03 23:48:29.998 +03:00 [INF] return Item
+2024-09-03 23:48:30.007 +03:00 [INF] return Item
+2024-09-03 23:48:30.061 +03:00 [INF] return Item
+2024-09-03 23:48:35.080 +03:00 [INF] return all Item
+2024-09-03 23:48:43.365 +03:00 [INF] return Item
+2024-09-03 23:48:59.894 +03:00 [INF] add new CartItem 
+2024-09-03 23:48:59.958 +03:00 [ERR] Order not found for CartId 8
+2024-09-03 23:48:59.979 +03:00 [INF] get all cart
+2024-09-03 23:48:59.997 +03:00 [INF] return AllCartItem
+2024-09-03 23:49:00.002 +03:00 [INF] return AllCartItem
+2024-09-03 23:49:00.008 +03:00 [INF] return AllCartItem
+2024-09-03 23:49:00.015 +03:00 [INF] return AllCartItem
+2024-09-03 23:49:00.025 +03:00 [INF] return AllCartItem
+2024-09-03 23:49:00.039 +03:00 [INF] return Item
+2024-09-03 23:49:00.047 +03:00 [INF] return Item
+2024-09-03 23:49:00.052 +03:00 [INF] return Item
+2024-09-03 23:49:00.058 +03:00 [INF] return Item
+2024-09-03 23:49:00.068 +03:00 [INF] return Item
+2024-09-03 23:50:21.658 +03:00 [INF] return all Item
+2024-09-03 23:50:27.790 +03:00 [INF] return Item
+2024-09-03 23:50:54.412 +03:00 [INF] add new CartItem 
+2024-09-03 23:51:03.093 +03:00 [ERR] Order not found for CartId 9
+2024-09-03 23:51:05.358 +03:00 [INF] get all cart
+2024-09-03 23:51:06.490 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:06.490 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:06.490 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:06.490 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:06.490 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:08.596 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:08.612 +03:00 [INF] return Item
+2024-09-03 23:51:08.622 +03:00 [INF] return Item
+2024-09-03 23:51:08.624 +03:00 [INF] return Item
+2024-09-03 23:51:08.633 +03:00 [INF] return Item
+2024-09-03 23:51:08.664 +03:00 [INF] return Item
+2024-09-03 23:51:08.669 +03:00 [INF] return Item
+2024-09-03 23:51:19.500 +03:00 [INF] get all cart
+2024-09-03 23:51:19.571 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:19.579 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:19.583 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:19.590 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:19.595 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:19.604 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:19.608 +03:00 [INF] return Item
+2024-09-03 23:51:19.609 +03:00 [INF] return Item
+2024-09-03 23:51:19.625 +03:00 [INF] return Item
+2024-09-03 23:51:19.634 +03:00 [INF] return Item
+2024-09-03 23:51:19.638 +03:00 [INF] return Item
+2024-09-03 23:51:19.646 +03:00 [INF] return Item
+2024-09-03 23:51:24.613 +03:00 [INF] get all cart
+2024-09-03 23:51:24.634 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:24.640 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:24.641 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:24.644 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:24.655 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:24.655 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:24.668 +03:00 [INF] return Item
+2024-09-03 23:51:24.674 +03:00 [INF] return Item
+2024-09-03 23:51:24.674 +03:00 [INF] return Item
+2024-09-03 23:51:24.687 +03:00 [INF] return Item
+2024-09-03 23:51:24.690 +03:00 [INF] return Item
+2024-09-03 23:51:24.696 +03:00 [INF] return Item
+2024-09-03 23:51:29.478 +03:00 [INF] delete this CartItem
+2024-09-03 23:51:30.930 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:31.031 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:31.941 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:32.055 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:34.445 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:34.537 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:36.677 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:36.757 +03:00 [ERR] can not found this CartItem
+2024-09-03 23:51:38.740 +03:00 [INF] get all cart
+2024-09-03 23:51:38.949 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:38.960 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:38.962 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:38.968 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:38.968 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:38.971 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:39.025 +03:00 [INF] return Item
+2024-09-03 23:51:39.039 +03:00 [INF] return Item
+2024-09-03 23:51:39.051 +03:00 [INF] return Item
+2024-09-03 23:51:39.056 +03:00 [INF] return Item
+2024-09-03 23:51:39.056 +03:00 [INF] return Item
+2024-09-03 23:51:42.069 +03:00 [INF] delete this CartItem
+2024-09-03 23:51:44.049 +03:00 [INF] get all cart
+2024-09-03 23:51:44.246 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:44.254 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:44.260 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:44.260 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:44.265 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:44.274 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:44.294 +03:00 [INF] return Item
+2024-09-03 23:51:44.297 +03:00 [INF] return Item
+2024-09-03 23:51:44.312 +03:00 [INF] return Item
+2024-09-03 23:51:44.317 +03:00 [INF] return Item
+2024-09-03 23:51:47.729 +03:00 [INF] delete this CartItem
+2024-09-03 23:51:49.432 +03:00 [INF] get all cart
+2024-09-03 23:51:49.753 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:49.759 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:49.760 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:49.766 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:49.769 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:49.783 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:49.815 +03:00 [INF] return Item
+2024-09-03 23:51:49.825 +03:00 [INF] return Item
+2024-09-03 23:51:49.834 +03:00 [INF] return Item
+2024-09-03 23:51:52.859 +03:00 [INF] delete this CartItem
+2024-09-03 23:51:54.762 +03:00 [INF] get all cart
+2024-09-03 23:51:55.036 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:55.042 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:55.042 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:55.042 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:55.042 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:55.051 +03:00 [INF] return AllCartItem
+2024-09-03 23:51:55.091 +03:00 [INF] return Item
+2024-09-03 23:51:55.106 +03:00 [INF] return Item
+2024-09-03 23:51:57.964 +03:00 [INF] delete this CartItem
+2024-09-03 23:52:00.107 +03:00 [INF] get all cart
+2024-09-03 23:52:00.383 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:00.391 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:00.391 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:00.394 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:00.401 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:00.401 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:00.430 +03:00 [INF] return Item
+2024-09-03 23:52:02.943 +03:00 [INF] delete this CartItem
+2024-09-03 23:52:05.814 +03:00 [INF] get all cart
+2024-09-03 23:52:06.037 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:06.047 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:06.047 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:06.054 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:06.054 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:06.064 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:07.404 +03:00 [INF] get all cart
+2024-09-03 23:52:07.484 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:07.490 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:07.492 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:07.492 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:07.507 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:07.516 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:08.665 +03:00 [INF] get all cart
+2024-09-03 23:52:08.680 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:08.687 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:08.688 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:08.688 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:08.688 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:08.706 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:09.373 +03:00 [INF] return all Item
+2024-09-03 23:52:12.284 +03:00 [INF] return Item
+2024-09-03 23:52:12.501 +03:00 [ERR] not found this Item
+2024-09-03 23:52:21.058 +03:00 [INF] return Item
+2024-09-03 23:52:41.165 +03:00 [INF] add new CartItem 
+2024-09-03 23:52:47.037 +03:00 [ERR] Order not found for CartId 10
+2024-09-03 23:52:47.094 +03:00 [INF] get all cart
+2024-09-03 23:52:47.114 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.130 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.133 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.133 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.145 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.146 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.188 +03:00 [INF] return AllCartItem
+2024-09-03 23:52:47.239 +03:00 [INF] return Item
+2024-09-03 23:53:20.359 +03:00 [INF] get all cart
+2024-09-03 23:53:20.671 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.727 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.735 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.735 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.741 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.793 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.798 +03:00 [INF] return AllCartItem
+2024-09-03 23:53:20.869 +03:00 [INF] return Item
+2024-09-03 23:54:24.586 +03:00 [INF] return all Item
+2024-09-03 23:54:28.730 +03:00 [INF] return Item
+2024-09-03 23:54:48.385 +03:00 [INF] add new CartItem 
+2024-09-03 23:54:48.630 +03:00 [ERR] Order not found for CartId 1
+2024-09-03 23:54:48.668 +03:00 [INF] get all cart
+2024-09-03 23:54:51.084 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.087 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.090 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.090 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.087 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.088 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.090 +03:00 [INF] return AllCartItem
+2024-09-03 23:54:51.135 +03:00 [INF] return Item
+2024-09-03 23:54:56.750 +03:00 [INF] return all Item
+2024-09-03 23:56:08.217 +03:00 [INF] return Item
+2024-09-03 23:56:20.650 +03:00 [INF] add new CartItem 
+2024-09-03 23:56:20.694 +03:00 [ERR] Order not found for CartId 1
+2024-09-03 23:56:20.715 +03:00 [INF] get all cart
+2024-09-03 23:56:20.765 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.766 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.766 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.790 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.791 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.836 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.852 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.864 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.864 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.871 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:20.901 +03:00 [INF] return Item
+2024-09-03 23:56:20.905 +03:00 [INF] return Item
+2024-09-03 23:56:20.909 +03:00 [INF] return Item
+2024-09-03 23:56:20.915 +03:00 [INF] return Item
+2024-09-03 23:56:20.915 +03:00 [INF] return Item
+2024-09-03 23:56:20.958 +03:00 [INF] return Item
+2024-09-03 23:56:23.966 +03:00 [INF] return all Item
+2024-09-03 23:56:26.824 +03:00 [INF] get all cart
+2024-09-03 23:56:26.847 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.860 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.860 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.863 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.863 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.876 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.876 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.877 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.877 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.878 +03:00 [INF] return Item
+2024-09-03 23:56:26.877 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:26.904 +03:00 [INF] return Item
+2024-09-03 23:56:26.904 +03:00 [INF] return Item
+2024-09-03 23:56:26.908 +03:00 [INF] return Item
+2024-09-03 23:56:26.941 +03:00 [INF] return Item
+2024-09-03 23:56:26.975 +03:00 [INF] return Item
+2024-09-03 23:56:30.332 +03:00 [INF] get all cart
+2024-09-03 23:56:30.441 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.451 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.451 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.451 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.460 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.467 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.467 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.467 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.489 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.492 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:30.510 +03:00 [INF] return Item
+2024-09-03 23:56:30.518 +03:00 [INF] return Item
+2024-09-03 23:56:30.523 +03:00 [INF] return Item
+2024-09-03 23:56:30.535 +03:00 [INF] return Item
+2024-09-03 23:56:30.553 +03:00 [INF] return Item
+2024-09-03 23:56:30.579 +03:00 [INF] return Item
+2024-09-03 23:56:46.145 +03:00 [INF] add Order
+2024-09-03 23:56:46.773 +03:00 [INF] found this User
+2024-09-03 23:56:46.796 +03:00 [INF] update this user
+2024-09-03 23:56:47.296 +03:00 [INF] get all cart
+2024-09-03 23:56:47.315 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.320 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.334 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.334 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.339 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.353 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.369 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.382 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.382 +03:00 [INF] return Item
+2024-09-03 23:56:47.382 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.391 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:47.394 +03:00 [INF] return Item
+2024-09-03 23:56:47.394 +03:00 [INF] return Item
+2024-09-03 23:56:47.422 +03:00 [INF] return Item
+2024-09-03 23:56:47.435 +03:00 [INF] return Item
+2024-09-03 23:56:47.472 +03:00 [INF] return Item
+2024-09-03 23:56:47.543 +03:00 [INF] update this Cart
+2024-09-03 23:56:49.869 +03:00 [INF] return AllCartItem
+2024-09-03 23:56:49.901 +03:00 [INF] return Item
+2024-09-03 23:59:18.356 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:18.377 +03:00 [INF] return Item
+2024-09-03 23:59:31.002 +03:00 [INF] get all cart
+2024-09-03 23:59:31.093 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.105 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.105 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.120 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.123 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.133 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.135 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.136 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.146 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:31.152 +03:00 [INF] return Item
+2024-09-03 23:59:31.169 +03:00 [INF] return Item
+2024-09-03 23:59:31.184 +03:00 [INF] return Item
+2024-09-03 23:59:32.144 +03:00 [INF] get all cart
+2024-09-03 23:59:32.246 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.252 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.253 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.253 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.255 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.256 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.274 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.274 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.279 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:32.316 +03:00 [INF] return Item
+2024-09-03 23:59:32.404 +03:00 [INF] return Item
+2024-09-03 23:59:32.448 +03:00 [INF] return Item
+2024-09-03 23:59:34.766 +03:00 [INF] return all Item
+2024-09-03 23:59:36.344 +03:00 [INF] get all cart
+2024-09-03 23:59:36.361 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.375 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.376 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.379 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.379 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.379 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.396 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.397 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.398 +03:00 [INF] return AllCartItem
+2024-09-03 23:59:36.399 +03:00 [INF] return Item
+2024-09-03 23:59:36.460 +03:00 [INF] return Item
+2024-09-03 23:59:36.493 +03:00 [INF] return Item
+2024-09-03 23:59:38.286 +03:00 [INF] return all Item

@@ -13,7 +13,9 @@ namespace FurnitureSellingCore.DTO.Rating
         public string? Review { get; set; }
         public int UserId { get; set; }
         public int ItemId { get; set; }
-        public string? Item { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
+        public string ItemName { get; set; }
+        public DateTime ratingDate { get; set; }
+
     }
 }

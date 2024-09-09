@@ -15,7 +15,7 @@ namespace FurnitureSellingCore.Models
         public string? Email { get; set; } 
         public string? Phone{ get; set; }
         public DateTime? BirthDate { get; set; }
-        public UserType? UserType {get; set;}
+        public string? UserType {get; set;}
         public string? Address { get; set; }
         public float? Salary { get; set; }
         public string? PlateNumber { get; set; }

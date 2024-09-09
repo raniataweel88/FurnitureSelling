@@ -7,6 +7,7 @@
         public string? Title { get; set; }
         public float? TotalPrice { get; set; }
         public bool StatusDelivery { get; set; }
+        public bool? Preparingrequest { get; set; }
 
 
     }

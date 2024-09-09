@@ -42,6 +42,7 @@ namespace FurnitureSellingCore.Context
 
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<ProductWarranty> ProductWarrantys { get; set; }
+        
 
 
     }

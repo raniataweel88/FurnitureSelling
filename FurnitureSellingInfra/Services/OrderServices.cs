@@ -49,7 +49,7 @@ namespace FurnitureSellingInfra.Services
 
         public async Task UpdateOrder(DetailsOrdertDTO dto)
         {
-            Log.Debug("start UpdateOrder-Services", dto.Id);
+            Log.Debug("start UpdateOrder-Services", dto.OrderId);
             await _repose.UpdateOrder(dto);
         }
         public async Task DeleteOrder(int Id)
@@ -120,6 +120,6 @@ namespace FurnitureSellingInfra.Services
 
             Log.Debug("start GetAllOrder-Services");
             return await _repose.GetByIdOrder_Delivary(Id);
-        }
+            }
     }
 }

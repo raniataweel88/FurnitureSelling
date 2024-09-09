@@ -13,57 +13,55 @@ using System.Threading.Tasks;
 
 namespace FurnitureSellingInfra.Repos
 {
-    public class RaviewRepose:IRatingRepose
+    public class RaviewRepose: IRaviewRepose
     {
         private readonly FurnitureSellingDbContext _context;
         public RaviewRepose(FurnitureSellingDbContext context) 
         {
         _context = context;
         }
-        public async Task<CradRaviewDTO> GetByIdRating_Repose(int Id)
+        public async Task<CradRaviewDTO> GetByIdRaview_Repose(int Id)
         {
             var r = _context.Raviews.FirstOrDefault(r => r.Id == Id);
-            var u = _context.Users.FirstOrDefault(r => r.UserId == r.UserId);
-            var i = _context.Items.FirstOrDefault(r => r.ItemId == r.ItemId);
+      
+       
             CradRaviewDTO c = new CradRaviewDTO()
             {
                 Review = r.Review,
                 Id = r.Id,
                 RatingNumber = r.RatingNumber,
-                Name = u.FirstName + u.LastName,
-                Item = i.Name
+            
             };
             return c;
         }
-        public Task<List<CradRaviewDTO>> GetAllRating_Repose()
+        public Task<List<CradRaviewDTO>> GetAllRaview_Repose(int ItemId)
         {
         var q=from i in _context.Raviews
-              from r in _context.Users
-              from it in _context.Items
-              where i.UserId == r.UserId
-              && it.ItemId ==i.ItemId
+              join u in _context.Users
+              on i.UserId equals u.UserId   
+              join it in _context.Items
+              on i.ItemId equals it.ItemId
+              where i.ItemId == ItemId
              select new CradRaviewDTO{
                 Id = i.Id,
                 RatingNumber = i.RatingNumber,
                 Review = i.Review,
                 ItemId = i.ItemId,
                 UserId = i.UserId,
-                Name=r.FirstName+" "+r.LastName,
-                Item=it.Name       
+                Name=u.FirstName+" "+u.LastName,
+                ratingDate=i.RatingDate,
+
+                ItemName=it.Name,
             };
       return q.ToListAsync(); 
         }
 
-        public async Task CreateRating_Repose(Raview r)
-        {var i=_context.Items.FirstOrDefault(r => r.ItemId==r.ItemId);
-            var ct = _context.CartItems.FirstOrDefault(x => x.ItemId == i.ItemId);
-            var c = _context.Carts.FirstOrDefault(r => r.CartId == ct.CartId);
-            var o = _context.Orders.FirstOrDefault(r => r.OrderId == c.OrderId);
-            if (o.StatusDelivery == true)
-            {
-                _context.Raviews.Add(r);
+        public async Task CreateRaview_Repose(Raview r)
+        {
+            
+               await _context.Raviews.AddAsync(r);
                  await _context.SaveChangesAsync(); 
-            }
+            
        
 
         }
@@ -72,7 +70,7 @@ namespace FurnitureSellingInfra.Repos
 
     
 
-        public async Task UpdateRating_Repose(CradRaviewDTO dto)
+        public async Task UpdateRaview_Repose(CradRaviewDTO dto)
         {
             var r= await _context.Raviews.FindAsync(dto.Id);
 
@@ -98,7 +96,7 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("finished to  UpdateOrder_Repose");
 
         }
-        public async Task DeleteRating_Repose(int Id)
+        public async Task DeleteRaview_Repose(int Id)
         {
             var rating = _context.Raviews.FirstOrDefault(x => x.Id == Id);
 

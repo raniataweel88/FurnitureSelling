@@ -39,7 +39,7 @@ namespace FurnitureSellingInfra.Repos
                             LastName = user.LastName,
                             Email = user.Email,
                             Phone = user.Phone,
-                            UserType = (int?)user.UserType,
+                            UserType = user.UserType,
                             Address = user.Address,
                             BirthDate = user.BirthDate,
                             PlateNumber = user.PlateNumber, 
@@ -111,18 +111,13 @@ namespace FurnitureSellingInfra.Repos
                     result.UserId = dto.UserId;
                     result.BirthDate = (DateTime)dto.BirthDate;
                     result.Phone = dto.Phone;
-                if (dto.UserType == 0)
-                {
+               
                     result.Address = dto.Address;
-                }
-                if (dto.UserType == 1|| dto.UserType == 4)
-                {
+               
                     result.Salary = dto.Salary;
-                }
-                if (dto.UserType == 4)
-                {
+              
                     result.PlateNumber = dto.PlateNumber;
-                }
+                
                 //update
                 _context.Update(result);
                     await _context.SaveChangesAsync();

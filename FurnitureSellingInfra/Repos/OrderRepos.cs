@@ -34,17 +34,19 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  GetByIdOrder_Repose");
 
             var Query = from o in _context.Orders
+  
                         where o.OrderId == Id
                         select new DetailsOrdertDTO
                         {
-                            Id = o.OrderId,
+                            OrderId = o.OrderId,
                             TotalPrice = o.TotalPrice,
                             CustomerNote = o.CustomerNote,
                             Date = o.Date,
                             Fee = o.Fee,
                             Title = o.Title,
                             statusDelivery=o.StatusDelivery,
-                            
+                           Preparingrequest=o.Preparingrequest,
+                           
                             Paymentmethod = (int)o.Paymentmethod,
 
                         };
@@ -73,12 +75,12 @@ namespace FurnitureSellingInfra.Repos
             var Query = from o in _context.Orders
                         select new CardOrdertDTO
                         {
-                            Id = o.OrderId,
+                            OrderId = o.OrderId,
                             Date = o.Date,
                             Title = o.Title,
                             TotalPrice = o.TotalPrice,
                             StatusDelivery = o.StatusDelivery,
-
+                            Preparingrequest=o.Preparingrequest,
                         };
             Log.Debug("finished to  GetAllOrder_Repose");
             return Query.ToList();
@@ -103,17 +105,16 @@ namespace FurnitureSellingInfra.Repos
         }
         public async Task UpdateOrder(DetailsOrdertDTO dto)
         {
-            var o = await _context.Orders.FindAsync(dto.Id);
+            var o = await _context.Orders.FindAsync(dto.OrderId);
 
             Log.Debug("start to  UpdateOrder _Repose");
 
             if (o != null) { 
-                o.OrderId = dto.Id;
-                o.Title = dto.Title;
-                o.Date = dto.Date;
-                o.CustomerNote = dto.CustomerNote;
-                o.Fee = dto.Fee;
-                
+                o.Preparingrequest = dto.Preparingrequest;
+                o.OrderId = dto.OrderId;
+      
+
+
                 _context.Update(o);
                 await _context.SaveChangesAsync();
                 Log.Information("Update this Orders");
@@ -132,7 +133,7 @@ namespace FurnitureSellingInfra.Repos
             var o = _context.Orders.FirstOrDefault(x => x.OrderId == Id);
 
             Log.Debug("start to  DeleteOrder_Repose");
-            if (o != null)
+            if (o != null&&o.Preparingrequest==false)
             {
                 _context.Remove(o);
                 await _context.SaveChangesAsync();
@@ -151,15 +152,18 @@ namespace FurnitureSellingInfra.Repos
         public async Task<DetalisDeliveryOrderDTO> GetByIdOrder_Delivary(int Id)
         {
             Log.Debug("start to  GetByIdOrder_Repose");
-            var order=_context.Orders.Where(x=>x.OrderId == Id).FirstOrDefault();
             var Query = from o in _context.Orders
                         
                         where o.OrderId == Id
+                        join c in _context.Carts
+                        on o.OrderId equals c.OrderId
                         join user in _context.Users
-                        on o.UserId equals user.UserId
+                      on c.UserId equals user.UserId
+
                         select new DetalisDeliveryOrderDTO
                         {
-                            Id = o.OrderId,
+                            Preparingrequest=o.Preparingrequest,
+                            OrderId = o.OrderId,
                             TotalPrice = o.TotalPrice,
                             Title = o.Title,
                             Paymentmethod = (int)o.Paymentmethod,
@@ -192,9 +196,10 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  GetAllOrderforDelivery");
 
             var Query = from o in _context.Orders
+                        where o.Preparingrequest==true
                         select new DeliveryOrdertDTO
                         {
-
+                            Preparingrequest= o.Preparingrequest,
                             Title = o.Title,
                             TotalPrice = o.TotalPrice,
                             StatusDelivery = (bool)o.StatusDelivery,
@@ -207,14 +212,14 @@ namespace FurnitureSellingInfra.Repos
 
         public async Task UpdateOrderforDelivery(DeliveryOrder_updatetDTO dto)
         {
-            var o = await _context.Orders.FindAsync(dto.Id);
+            var o = await _context.Orders.FindAsync(dto.OrderId);
 
             Log.Debug("start to  UpdateOrderforDelivery");
 
             if (o != null)
             {
 
-                o.OrderId = dto.Id;
+                o.OrderId = dto.OrderId;
                 o.StatusDelivery = dto.StatusDelivery;
                 _context.Update(o);
                 await _context.SaveChangesAsync();
@@ -238,12 +243,15 @@ namespace FurnitureSellingInfra.Repos
 
 
             var Query = from o in _context.Orders
+                        join c in _context.Carts
+                        on o.OrderId equals c.OrderId
                         join u in _context.Users
-                        on o.UserId equals u.UserId
+                        on c.UserId equals u.UserId
                         where u.Address.Contains(adders)
+                        &&  o.Preparingrequest == true
                         select new DetalisDeliveryOrderDTO
                         {
-                            Id = o.OrderId,
+                            OrderId = o.OrderId,
                             TotalPrice = o.TotalPrice,
                             StatusDelivery = (bool)o.StatusDelivery,
                             Title = o.Title,
@@ -283,10 +291,14 @@ namespace FurnitureSellingInfra.Repos
             Log.Debug("start to  GetAllOrder_Repose");
 
             var Query = from o in _context.Orders
-                        where o.UserId == userId
+                        join c in _context.Carts
+                       on o.OrderId equals c.OrderId
+                        join u in _context.Users
+                        on c.UserId equals u.UserId
+                        where c.UserId == userId
                         select new CardOrdertDTO
                         {
-                            Id = o.OrderId,
+                            OrderId = o.OrderId,
                             Date = o.Date,
                             Title = o.Title,
 

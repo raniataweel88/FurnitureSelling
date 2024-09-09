@@ -35,7 +35,7 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Paymentmetod")
+                    b.Property<int?>("Paymentmetod")
                         .HasColumnType("int");
 
                     b.Property<int?>("UserId")
@@ -124,8 +124,8 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<float?>("DisacountAmount")
                         .HasColumnType("float");
 
-                    b.Property<int?>("DiscountType")
-                        .HasColumnType("int");
+                    b.Property<string>("DiscountType")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime(6)");
@@ -140,7 +140,7 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<float>("Price")
                         .HasColumnType("float");
 
-                    b.Property<float>("PriceAfterDiscount")
+                    b.Property<float?>("PriceAfterDiscount")
                         .HasColumnType("float");
 
                     b.Property<int>("Quantity")
@@ -148,7 +148,7 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
-                    b.Property<int>("RestQuantity")
+                    b.Property<int?>("RestQuantity")
                         .HasColumnType("int");
 
                     b.Property<string>("Sizes")
@@ -251,7 +251,7 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<DateTime?>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 8, 31, 2, 33, 46, 410, DateTimeKind.Local).AddTicks(7805));
+                        .HasDefaultValue(new DateTime(2024, 9, 5, 0, 46, 2, 317, DateTimeKind.Local).AddTicks(1748));
 
                     b.Property<string>("DeliveryNote")
                         .HasColumnType("longtext");
@@ -259,8 +259,11 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<float?>("Fee")
                         .HasColumnType("float");
 
-                    b.Property<int>("Paymentmethod")
+                    b.Property<int?>("Paymentmethod")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("Preparingrequest")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("RecivingDate")
                         .HasColumnType("datetime(6)");
@@ -276,12 +279,7 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<float?>("TotalPrice")
                         .HasColumnType("float");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("OrderId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Order", (string)null);
                 });
@@ -296,18 +294,15 @@ namespace FurnitureSellingCore.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("CardHolder")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("CardNumber")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("ExpireDate")
+                    b.Property<DateTime?>("ExpireDate")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
@@ -411,8 +406,8 @@ namespace FurnitureSellingCore.Migrations
                     b.Property<float?>("Salary")
                         .HasColumnType("float");
 
-                    b.Property<int?>("UserType")
-                        .HasColumnType("int");
+                    b.Property<string>("UserType")
+                        .HasColumnType("longtext");
 
                     b.HasKey("UserId");
 
@@ -475,7 +470,7 @@ namespace FurnitureSellingCore.Migrations
 
             modelBuilder.Entity("FurnitureSellingCore.Models.ItemRequest", b =>
                 {
-                    b.HasOne("FurnitureSellingCore.Models.ItemRequest", null)
+                    b.HasOne("FurnitureSellingCore.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
@@ -487,13 +482,6 @@ namespace FurnitureSellingCore.Migrations
                         .HasForeignKey("FurnitureSellingCore.Models.Logins", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("FurnitureSellingCore.Models.Order", b =>
-                {
-                    b.HasOne("FurnitureSellingCore.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("FurnitureSellingCore.Models.ProductWarranty", b =>

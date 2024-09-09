@@ -14,7 +14,7 @@ namespace FurnitureSellingCore.DTO.Item
         // value of discount
         public float? DisacountAmount { get; set; }
         // Percentage or fixed value
-        public DisacountType? DiscountType { get; set; }
+        public string? DiscountType { get; set; }
         public DateTime? EndDate { get; set; }
 
     }

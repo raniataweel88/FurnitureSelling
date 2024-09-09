@@ -15,5 +15,6 @@ namespace FurnitureSellingCore.IServices
         public Task CreateCartItem(CreateCartItemDTO dto);
         public Task UpdateCartItem(UpdateCartItemDTO dto);
         public Task DeleteCartItem(int Id);
+        public Task<List<UpdateCartItemDTO>> GetAllCartItemReview(int id);
     }
 }

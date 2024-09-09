@@ -11,7 +11,7 @@ namespace FurnitureSellingCore.IRepos
 {
     public interface IItemRequestRepos
     {
-        public Task<ItemRequestDTO> GetByIdItemRequest(int id);
+        public Task<CardItemRequestDTO> GetByIdItemRequest(int id);
         public Task<List<CardItemRequestDTO>> GetAllItemRequest();
         public Task<List<CardItemRequestDTO>> GetAllItemRequestforuser(int userID);
 

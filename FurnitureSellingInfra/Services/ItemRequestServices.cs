@@ -20,7 +20,7 @@ namespace FurnitureSellingInfra.Services
         {
             _Repose = Repose;
         }
-        public async Task<ItemRequestDTO> GetByIdItemRequest(int Id)
+        public async Task<CardItemRequestDTO> GetByIdItemRequest(int Id)
         {
             Log.Debug("start GetByIdItemRequest-Services", Id);
             return await _Repose.GetByIdItemRequest(Id);  
@@ -33,15 +33,14 @@ namespace FurnitureSellingInfra.Services
         public async Task CreateItemRequest(ItemRequestDTO dto)
          {
             Log.Debug("start CreateItemRequest-Services");
-            int c = 23;
 
             ItemRequest ir = new ItemRequest
             {
                 Title = dto.Title,
                 Description = dto.Description,
                 Image = dto.Image,
-                CategoryId = c, 
-                UserId = dto.UserId,
+                CategoryId = 21, 
+             UserId = dto.UserId,
 
             };
             await  _Repose.CreateItemRequest_Repose(ir);

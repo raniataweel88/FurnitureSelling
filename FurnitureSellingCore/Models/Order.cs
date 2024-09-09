@@ -16,12 +16,12 @@ namespace FurnitureSellingCore.Models
         public DateTime? Date { get; set; }
         public float? Fee { get; set; }
         public string? CustomerNote { get; set; }
-        public int? UserId { get; set; }
         public bool? StatusDelivery {  get; set; }
         public DateTime? RecivingDate { get; set; }
         public string?   DeliveryNote { get; set; }
-        public Paymentmethod Paymentmethod { get; set; }
+        public Paymentmethod? Paymentmethod { get; set; }
 
+        public bool? Preparingrequest { get; set; }
 
     }
 }

@@ -1,0 +1,147 @@
+2024-09-05 00:10:58.997 +03:00 [INF] Update Item From Admain
+2024-09-05 00:11:02.039 +03:00 [INF] Update Item From Admain
+2024-09-05 00:22:37.503 +03:00 [INF] Update Item From Admain
+2024-09-05 00:23:32.450 +03:00 [INF] Update Item From Admain
+2024-09-05 00:24:38.161 +03:00 [INF] Update Item From Admain
+2024-09-05 00:30:23.316 +03:00 [INF] add the ItemRequest 
+2024-09-05 00:48:49.583 +03:00 [INF] return all Item
+2024-09-05 00:49:27.965 +03:00 [ERR] not found this Item
+2024-09-05 00:49:29.049 +03:00 [ERR] not found this Item
+2024-09-05 00:49:33.745 +03:00 [INF] Returning Item
+2024-09-05 00:49:36.456 +03:00 [INF] Returning Item
+2024-09-05 19:43:33.677 +03:00 [INF] Returning Item
+2024-09-05 19:49:14.638 +03:00 [INF] Returning Item
+2024-09-05 19:49:31.396 +03:00 [INF] return all Item
+2024-09-05 19:50:12.817 +03:00 [INF] Login successful for UserId: 2
+2024-09-05 19:50:12.907 +03:00 [INF] Login successful for UserId: 2
+2024-09-05 19:50:15.282 +03:00 [INF] return all Item
+2024-09-05 19:51:55.606 +03:00 [ERR] not found this Item
+2024-09-05 19:52:06.922 +03:00 [ERR] not found this Item
+2024-09-05 19:52:51.056 +03:00 [INF] return all Item
+2024-09-05 19:52:57.828 +03:00 [ERR] not found this Item
+2024-09-05 19:53:10.188 +03:00 [ERR] not found this Item
+2024-09-05 22:38:26.913 +03:00 [INF] Login successful for UserId: 2
+2024-09-05 22:38:27.249 +03:00 [INF] Login successful for UserId: 2
+2024-09-05 22:38:31.418 +03:00 [INF] return all Item
+2024-09-05 22:39:42.817 +03:00 [INF] Returning Item
+2024-09-05 22:42:22.346 +03:00 [INF] Returning Item
+2024-09-05 22:44:15.483 +03:00 [INF] return all Item
+2024-09-05 22:44:37.860 +03:00 [INF] Login successful for UserId: 12
+2024-09-05 22:44:38.141 +03:00 [INF] Login successful for UserId: 12
+2024-09-05 22:44:38.439 +03:00 [INF] return all Item
+2024-09-05 22:44:38.511 +03:00 [ERR] can not found this profile
+2024-09-05 22:44:59.837 +03:00 [INF] Returning Item
+2024-09-05 22:45:07.340 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-05 22:45:11.683 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-05 22:45:37.331 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-05 22:46:34.452 +03:00 [INF] return all Item
+2024-09-05 22:47:19.619 +03:00 [INF] return all Item
+2024-09-05 22:47:41.306 +03:00 [INF] return all Item
+2024-09-05 22:47:43.487 +03:00 [INF] return all Item
+2024-09-05 22:47:44.483 +03:00 [INF] return all Item
+2024-09-05 22:47:51.468 +03:00 [INF] Returning Item
+2024-09-05 22:47:58.550 +03:00 [INF] add new CartItem 
+2024-09-05 22:47:59.219 +03:00 [ERR] Order not found for CartId 24
+2024-09-05 22:47:59.328 +03:00 [INF] get all cart
+2024-09-05 22:47:59.464 +03:00 [INF] return AllCartItem
+2024-09-05 22:47:59.464 +03:00 [INF] return AllCartItem
+2024-09-05 22:47:59.464 +03:00 [INF] return AllCartItem
+2024-09-05 22:47:59.464 +03:00 [INF] return AllCartItem
+2024-09-05 22:47:59.465 +03:00 [INF] return AllCartItem
+2024-09-05 22:47:59.466 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:06.859 +03:00 [INF] Returning Item
+2024-09-05 22:48:08.409 +03:00 [ERR] not found this Item
+2024-09-05 22:48:09.161 +03:00 [INF] Returning Item
+2024-09-05 22:48:09.586 +03:00 [ERR] not found this Item
+2024-09-05 22:48:32.261 +03:00 [INF] get all cart
+2024-09-05 22:48:32.491 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:32.499 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:32.501 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:32.522 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:32.523 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:32.541 +03:00 [INF] return AllCartItem
+2024-09-05 22:48:39.203 +03:00 [INF] Returning Item
+2024-09-05 22:48:39.648 +03:00 [ERR] not found this Item
+2024-09-05 22:48:39.799 +03:00 [ERR] not found this Item
+2024-09-05 22:48:40.343 +03:00 [ERR] not found this Item
+2024-09-05 22:48:58.537 +03:00 [INF] add Order
+2024-09-05 22:48:58.838 +03:00 [INF] found this User
+2024-09-05 22:48:59.145 +03:00 [ERR] Can't updates this profile
+2024-09-05 22:49:03.883 +03:00 [INF] add Order
+2024-09-05 22:49:03.959 +03:00 [INF] found this User
+2024-09-05 22:49:04.420 +03:00 [ERR] Can't updates this profile
+2024-09-05 22:49:11.930 +03:00 [INF] add Order
+2024-09-05 22:49:11.953 +03:00 [INF] found this User
+2024-09-05 22:49:12.087 +03:00 [ERR] Can't updates this profile
+2024-09-05 22:49:16.475 +03:00 [INF] add Order
+2024-09-05 22:49:16.547 +03:00 [INF] found this User
+2024-09-05 22:49:16.975 +03:00 [ERR] Can't updates this profile
+2024-09-05 22:52:52.909 +03:00 [INF] add Order
+2024-09-05 22:52:52.937 +03:00 [INF] found this User
+2024-09-05 22:52:53.114 +03:00 [ERR] Can't updates this profile
+2024-09-05 22:53:09.453 +03:00 [INF] add Order
+2024-09-05 22:53:13.837 +03:00 [INF] found this User
+2024-09-05 22:53:14.032 +03:00 [ERR] Can't updates this profile
+2024-09-05 22:53:38.893 +03:00 [INF] add Order
+2024-09-05 22:53:43.156 +03:00 [INF] found this User
+2024-09-05 22:53:43.598 +03:00 [ERR] Can't updates this profile
+2024-09-05 23:00:58.911 +03:00 [INF] get all cart
+2024-09-05 23:00:59.383 +03:00 [INF] return AllCartItem
+2024-09-05 23:00:59.414 +03:00 [INF] return AllCartItem
+2024-09-05 23:00:59.415 +03:00 [INF] return AllCartItem
+2024-09-05 23:00:59.416 +03:00 [INF] return AllCartItem
+2024-09-05 23:00:59.430 +03:00 [INF] return AllCartItem
+2024-09-05 23:00:59.445 +03:00 [INF] return AllCartItem
+2024-09-05 23:00:59.678 +03:00 [ERR] not found this Item
+2024-09-05 23:00:59.693 +03:00 [INF] Returning Item
+2024-09-05 23:01:00.109 +03:00 [ERR] not found this Item
+2024-09-05 23:01:00.460 +03:00 [ERR] not found this Item
+2024-09-05 23:01:21.471 +03:00 [INF] add Order
+2024-09-05 23:01:24.302 +03:00 [INF] found this User
+2024-09-05 23:01:24.642 +03:00 [ERR] Can't updates this profile
+2024-09-05 23:02:15.962 +03:00 [INF] add Order
+2024-09-05 23:02:16.782 +03:00 [INF] found this User
+2024-09-05 23:02:16.988 +03:00 [ERR] Can't updates this profile
+2024-09-05 23:02:51.893 +03:00 [INF] add Order
+2024-09-05 23:05:53.984 +03:00 [INF] found this User
+2024-09-05 23:05:54.305 +03:00 [ERR] Can't updates this profile
+2024-09-05 23:06:23.069 +03:00 [INF] add Order
+2024-09-05 23:07:24.205 +03:00 [INF] found this User
+2024-09-05 23:07:24.641 +03:00 [ERR] Can't updates this profile
+2024-09-05 23:13:10.282 +03:00 [INF] return all Item
+2024-09-05 23:13:27.524 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-05 23:13:28.067 +03:00 [ERR] Can't login
+2024-09-05 23:13:42.325 +03:00 [ERR] Login failed: Invalid username or password
+2024-09-05 23:13:42.799 +03:00 [ERR] Can't login
+2024-09-05 23:13:57.283 +03:00 [INF] Login successful for UserId: 12
+2024-09-05 23:13:57.615 +03:00 [INF] Login successful for UserId: 12
+2024-09-05 23:13:57.958 +03:00 [ERR] can not found this profile
+2024-09-05 23:13:57.962 +03:00 [INF] return all Item
+2024-09-05 23:14:08.628 +03:00 [INF] Returning Item
+2024-09-05 23:14:13.023 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-05 23:14:15.779 +03:00 [ERR] IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+2024-09-05 23:28:16.203 +03:00 [INF] Filtering items with color: black
+2024-09-05 23:31:05.651 +03:00 [INF] Filtering items with color: black
+2024-09-05 23:31:26.389 +03:00 [INF] Filtering items with color: black
+2024-09-05 23:34:08.003 +03:00 [INF] Filtering items with color: black
+2024-09-05 23:40:58.055 +03:00 [INF] return all Item
+2024-09-05 23:41:00.794 +03:00 [INF] return all Item
+2024-09-05 23:42:13.538 +03:00 [INF] return all Item
+2024-09-05 23:42:18.789 +03:00 [INF] return all Item
+2024-09-05 23:42:40.281 +03:00 [INF] return all Item
+2024-09-05 23:42:48.234 +03:00 [INF] return all Item
+2024-09-05 23:43:31.933 +03:00 [INF] return all Item
+2024-09-05 23:43:41.555 +03:00 [INF] return all Item
+2024-09-05 23:44:35.099 +03:00 [INF] return all Item
+2024-09-05 23:44:45.578 +03:00 [INF] return all Item
+2024-09-05 23:45:50.407 +03:00 [INF] return all Item
+2024-09-05 23:47:00.145 +03:00 [INF] return all Item
+2024-09-05 23:47:13.413 +03:00 [INF] return all Item
+2024-09-05 23:47:15.603 +03:00 [INF] return all Item
+2024-09-05 23:47:20.477 +03:00 [INF] return all Item
+2024-09-05 23:47:49.769 +03:00 [INF] return all Item
+2024-09-05 23:47:52.183 +03:00 [INF] return all Item
+2024-09-05 23:48:23.029 +03:00 [INF] return all Item
+2024-09-05 23:48:26.007 +03:00 [INF] return all Item
+2024-09-05 23:48:28.438 +03:00 [INF] return all Item
+2024-09-05 23:48:42.911 +03:00 [INF] return all Item
